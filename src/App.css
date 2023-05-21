@@ -4,6 +4,7 @@
   align-items: center;
   color: #00151a;
   padding: 24px 0;
+  font-family: "Urbanist";
 }
 .loanwise_card_container_heading {
   font-weight: 700;
@@ -12,7 +13,7 @@
 }
 .card1_container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   grid-column-gap: 32px;
   row-gap: 0;
   margin: 0;
@@ -39,7 +40,7 @@
   margin-bottom: 32px;
 }
 .loanwise_card_container_text {
-  width: 55%;
+  width: 45%;
   text-align: center;
   color: #55666a;
 }

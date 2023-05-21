@@ -9,16 +9,16 @@ import WireframeAvatar5 from "../assets/Wireframe Avatar (5).svg";
 
 const UseLoanwise = () => {
   return (
-    <div className="card1_container">
-      <h3>Who Can Use Loanwise</h3>
-      <p>
+    <div className="loanwise_card_container">
+      <h3 className="loanwise_card_container_heading">Who Can Use Loanwise</h3>
+      <p className="loanwise_card_container_text">
         Our Loan Default Prediction App is designed to help various types of
         financial institutions streamline their lending process and reduce the
         risk of loan defaults. Whether you're a small credit union or a large
         financial institution, our Loan Default Prediction App can help you make
         more informed lending decisions and minimize the risk of loan defaults.
       </p>
-      <div className="card1_bottom_container">
+      <div className="card1_container">
         <Card1
           text={"WireframeAvatar"}
           body={
@@ -30,7 +30,7 @@ const UseLoanwise = () => {
         <Card1
           text={"WireframeAvatar1"}
           body={
-            " Our app can help these institutions provide loans to individuals and small businesses in developing countries while minimizing the risk of defaults."
+            "Our app can help these institutions provide loans to individuals and small businesses in developing countries while minimizing the risk of defaults."
           }
           link={WireframeAvatar1}
           title={"Microfinance Institutions"}
@@ -38,7 +38,7 @@ const UseLoanwise = () => {
         <Card1
           text={"WireframeAvatar2"}
           body={
-            " Our app can help these institutions provide loans to individuals and small businesses in developing countries while minimizing the risk of defaults."
+            "Our app can help these institutions provide loans to individuals and small businesses in developing countries while minimizing the risk of defaults."
           }
           link={WireframeAvatar2}
           title={"Peer-to-Peer Lenders"}
@@ -54,7 +54,7 @@ const UseLoanwise = () => {
         <Card1
           text={"WireframeAvatar4"}
           body={
-            " Our app is a valuable tool for financial institutions of all sizes, providing an easy-to-use platform for streamlining the lending process and minimizing risk."
+            "Our app is a valuable tool for financial institutions of all sizes, providing an easy-to-use platform for streamlining the lending process and minimizing risk."
           }
           link={WireframeAvatar4}
           title={"Financial Institutions"}
@@ -62,7 +62,7 @@ const UseLoanwise = () => {
         <Card1
           text={"WireframeAvatar5"}
           body={
-            ": Our app helps banks and credit unions reduce the risk of loan defaults and make more informed lending decisions, leading to increased profitability."
+            "Our app helps banks and credit unions reduce the risk of loan defaults and make more informed lending decisions, leading to increased profitability."
           }
           link={WireframeAvatar5}
           title={"Banks and Credit Unions"}

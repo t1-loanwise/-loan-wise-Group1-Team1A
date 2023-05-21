@@ -1,12 +1,7 @@
 import "./App.css";
-import UseLoanwise from "./components/UseLoanwise";
 
 function App() {
-  return (
-    <div className="App">
-      <UseLoanwise />
-    </div>
-  );
+  return <div className="App">App</div>;
 }
 
 export default App;

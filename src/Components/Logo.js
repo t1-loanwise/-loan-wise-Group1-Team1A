@@ -1,6 +1,6 @@
-import React from 'react'
-import { styled } from 'styled-components'
-import LoanwiseLogo from './Vector.png'
+import React from "react";
+import { styled } from "styled-components";
+import LoanwiseLogo from "../assets/Vector.png";
 
 const Logo = () => {
   const LogoImage = styled.img`
@@ -8,6 +8,6 @@ const Logo = () => {
     height: 100%;
   `;
   return <LogoImage src={LoanwiseLogo} alt="Loanwise Logo" />;
-}
+};
 
-export default Logo
+export default Logo;

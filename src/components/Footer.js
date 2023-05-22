@@ -1,17 +1,16 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
-import Logo from "../assets//Vector.png";
-import linkedin from "../assets/linkedin.png";
-import instagram from "../assets/insta.png";
-import twitter from "../assets/twitter.png";
+import Logo from "../assets//Vector.svg";
+import linkedin from "../assets/linkedin.svg";
+import instagram from "../assets/insta.svg";
+import twitter from "../assets/twitter.svg";
 
 const FooterContainer = styled.footer`
   padding: 0px 5% 32px;
   display: flex;
   flex-direction: column;
-  gap: 3em;
-  font-family: "Urbanist";
+  gap: 2.7em;
 `;
 
 const NewsLetterContainer = styled.div`
@@ -66,7 +65,7 @@ const DivContainers = styled.div`
   justify-content: space-between;
   gap: 2em;
   border-bottom: 1px solid #ccd1d2;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
 `;
 
 const Div1 = styled.div`
@@ -106,7 +105,7 @@ const Div2C = styled.div`
 `;
 
 const LogoImage = styled.img`
-  width: 70%;
+  width: 100%;
 `;
 const LoanText = styled.span`
   font-size: 1em;
@@ -209,7 +208,9 @@ const Footer = () => {
         </NewsLetterContainer>
         <DivContainers>
           <Div1>
-            <LogoImage src={Logo} alt="Loanwise Logo" />
+            <Link to="/">
+              <LogoImage src={Logo} alt="Loanwise Logo" />
+            </Link>
             <LoanText>
               With our app, you can access a suite of advanced analytics and
               data visualization tools to better understand loan performance and
@@ -285,15 +286,17 @@ const Footer = () => {
               123, Numberone Avenue, <br /> VI, Lagos
             </span>
             <SocialsContainer>
+              <a href="Home.js">
+                 <SocialsImage src={linkedin} alt="LinkedIn" />
+              </a>
 
-                <SocialsImage src={linkedin} alt="LinkedIn" />
-
-
+              <a href="Home.js">
                 <SocialsImage src={instagram} alt="Instagram" />
+              </a>
 
-
-                <SocialsImage src={twitter} alt="Twitter" />
-
+              <a href="Home.js">
+                 <SocialsImage src={twitter} alt="Twitter" />
+              </a>
             </SocialsContainer>
           </Div3>
         </DivContainers>

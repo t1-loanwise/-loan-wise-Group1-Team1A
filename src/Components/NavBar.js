@@ -1,11 +1,7 @@
 import React from "react";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { styled } from "styled-components";
-import Logo from "../assets/Vector.png";
-import About from "../LandingPage/About";
-import Home from "../LandingPage/Home";
-import Pricing from "../LandingPage/Pricing";
-import Blog from "../LandingPage/Blog";
+import Logo from "./Logo";
 
 const Navbar = styled.nav`
   display: flex;
@@ -73,7 +69,6 @@ const NavBar = () => {
           </Link>
           <List>
             <Nav
-              exact
               to="/"
               style={({ isActive }) => ({
                 color: isActive ? "#005466" : "#00191f",
@@ -112,16 +107,10 @@ const NavBar = () => {
           </List>
         </LogoNavContainer>
         <ButtonsContainer>
-          <Register>Register</Register>
+          <Register to="/register">Register</Register>
           <Login>Login</Login>
         </ButtonsContainer>
       </Navbar>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
     </>
   );
 };

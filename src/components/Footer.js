@@ -105,7 +105,7 @@ const Div2C = styled.div`
 `;
 
 const LogoImage = styled.img`
-  width: 100%;
+  width: 75%;
 `;
 const LoanText = styled.span`
   font-size: 1em;

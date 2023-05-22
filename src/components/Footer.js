@@ -117,7 +117,7 @@ const EmailForm = styled.form`
   width: 100%;
 `;
 const EmailInput = styled.input`
-  width: 98%;
+  width: 100%;
   padding: 8px 0 8px 5px;
   border: 1px solid #cbcbcb;
   border-radius: 5px;

@@ -1,15 +1,11 @@
 import React from "react";
 import AuthImage from "../assets/SignUpDesign.svg";
-import { styled } from "styled-components";
+import "../styles/Auth.css";
 
 const AuthenticationImage = () => {
-  const IMG = styled.img`
-    height: 1041px;
-    width: 693px;
-  `;
   return (
     <>
-      <IMG src={AuthImage} alt="AuthImage" />
+      <img src={AuthImage} alt="AuthImage" className="auth_image" />
     </>
   );
 };

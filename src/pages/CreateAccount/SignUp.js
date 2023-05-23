@@ -48,14 +48,14 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="signUp_parentContainer">
+      <div className="onboardingImg">
         <img src={onboardingImg} alt="Loan analysis graph image" />
       </div>
       <div>
         <Logo />
         <div>
-          <AuthenticationMainText title="Create an account" />
+          <AuthenticationMainText Title="Create an account"/>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete={"off"}>
             <div>
               <label>Full name</label>

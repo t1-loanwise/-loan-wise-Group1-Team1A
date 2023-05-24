@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import onboardingImg from "../../assets/SignUpDesign.svg";
-import "../../components/Logo";
-import Logo from "../../components/Logo";
-import "../../components/AuthenticationMainText";
-import { AuthenticationMainText } from "../../components/AuthenticationMainText";
+import onboardingImg from "../../../assets/SignUpDesign.svg";
+import Logo from "../../../components/Logo";
+import { AuthenticationMainText } from "../../../components/AuthenticationMainText";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import show from "../../assets/show.png";
-import hide from "../../assets/hide.png";
+import show from "../../../assets/show.png";
+import hide from "../../../assets/hide.png";
+import "./createAccount.css"
 
 
 const SignUp = () => {
@@ -50,13 +49,13 @@ const SignUp = () => {
   return (
     <div className="signUp_parentContainer">
       <div className="onboardingImg">
-        <img src={onboardingImg} alt="Loan analysis graph image" />
+        <img src={onboardingImg} alt="Loan analysis graph" />
       </div>
-      <div>
-        <Logo />
+      <div className="createAnAccountContainer">
+        <div className="loanWiseLogo_img"><Logo /></div>
         <div>
           <AuthenticationMainText Title="Create an account"/>
-          <form onSubmit={handleSubmit(onSubmit)} autoComplete={"off"}>
+          <form onSubmit={handleSubmit(onSubmit)} autoComplete={"off"} className="sign-up_form">
             <div>
               <label>Full name</label>
               <div>
@@ -99,6 +98,7 @@ const SignUp = () => {
                 <img
                   src={showPswd ? show : hide}
                   onClick={togglePasswordVisibility}
+                  alt="show or hide password"
                 />
               </div>
               <div className="">{errors.password?.message}</div>
@@ -118,6 +118,7 @@ const SignUp = () => {
                 <img
                   src={showConfirmPswd ? show : hide}
                   onClick={toggleConfirmPasswordVisibility}
+                  alt="show or hide password"
                 />
               </div>
               <div className="">{errors.confirmPassword?.message}</div>

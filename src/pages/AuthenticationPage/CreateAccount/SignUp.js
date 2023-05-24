@@ -91,7 +91,7 @@ const SignUp = () => {
               <div className="signUpErrorMsg">{errors.email?.message}</div>
             </div>
             <div className="passwordContainer">
-              <div className="">
+              <div className="passwd">
                 <label>Password</label>
                 <div className="passwordToggle inputDiv">
                   <input
@@ -108,7 +108,7 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="">
+              <div className="confirmPswd">
                 <label>Confirm Password</label>
                 <div className="passwordToggle inputDiv">
                   <input

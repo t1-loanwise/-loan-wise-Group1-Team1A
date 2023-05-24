@@ -1,7 +1,7 @@
 .signUp_parentContainer {
   display: flex;
   justify-content: center;
-  padding: 5vh 7%;
+  padding: 2.5vh 2%;
   width: 100%;
   color: #00151a;
   background-color: #f5f5f5;
@@ -12,7 +12,8 @@
   flex-direction: column;
   gap: 2em;
   height: 100%;
-  padding: 0 50px;
+  width: 60%;
+  padding: 0 70px;
 }
 
 .loanwiselogo-container {
@@ -47,6 +48,7 @@
   border-radius: 5px;
   border: 1.1px solid #cbcbcb;
   padding: 0 10px;
+  width: 100%;
 }
 
 .sign-up_form input::placeholder {
@@ -67,7 +69,13 @@
 .sign-up_form .passwordContainer {
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 0.7em;
+}
+
+.sign-up_form .passwordContainer .passwd,
+.sign-up_form .passwordContainer .confirmPswd {
+width: 50%
 }
 
 .signUpErrorMsg {
@@ -104,7 +112,7 @@
 
 .radio-btn:checked {
   border-radius: 50%;
-  background:#006980 ;
+  background: #006980;
   border: 3px solid #fff;
 }
 

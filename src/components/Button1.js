@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-
-const Button1 = ({text, style}) => {
+const Button1 = ({ text, style }) => {
   return (
-   <button style={style}>{text}</button>
-  )
-}
+    <button style={style} type="submit">
+      {text}
+    </button>
+  );
+};
 
-export default Button1
+export default Button1;

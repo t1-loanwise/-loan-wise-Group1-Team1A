@@ -1,15 +1,52 @@
 .signUp_parentContainer {
-    display: flex;
-}
+  display: flex;
+  justify-content: center;
+  padding: 5vh 2.5%;
+  width: 100%;
+  color: #00151A;
 
-.onboardingImg {
-    /* height: 80vh; */
 }
 
 .createAnAccountContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3em;
+  height: 90vh;
+  padding: 0 50px;
+}
+
+.loanwiselogo-container {
+  margin-left: 70%;
+  width: 40%;
+}
+
+.createAnAccount {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.sign-up_form {
 
 }
 
-.loanWiseLogo_img {
-    text-align: right;
+.sign-up_form label {
+    font-size: 1.25em;
+}
+
+.sign-up_form input:not(.radio-btn) {
+    width: 100%;
+     border: 1.1px solid #CBCBCB
+}
+
+.passwordToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1.1px solid #CBCBCB;
+    padding: 0 5px 0 0;
+}
+
+.sign-up_form .passwordToggle input {
+border: 0;
 }

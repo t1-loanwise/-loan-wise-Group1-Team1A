@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import onboardingImg from "../../../assets/SignUpDesign.svg";
 import Logo from "../../../components/Logo";
 import { AuthenticationMainText } from "../../../components/AuthenticationMainText";
+import AuthenticationImage from "../../../components/AuthenticationImage";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
-import "../../../styles/createAccount.css"
-
+import "../../../styles/createAccount.css";
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
@@ -48,14 +47,18 @@ const SignUp = () => {
 
   return (
     <div className="signUp_parentContainer">
-      <div className="onboardingImg">
-        <img src={onboardingImg} alt="Loan analysis graph" />
-      </div>
+        <AuthenticationImage/>
       <div className="createAnAccountContainer">
-        <div className="loanWiseLogo_img"><Logo /></div>
-        <div>
-          <AuthenticationMainText Title="Create an account"/>
-          <form onSubmit={handleSubmit(onSubmit)} autoComplete={"off"} className="sign-up_form">
+        <div className="loanwiselogo-container">
+          <Logo />
+        </div>
+        <div className="createAnAccount">
+          <AuthenticationMainText Title="Create an account" />
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            autoComplete={"off"}
+            className="sign-up_form"
+          >
             <div>
               <label>Full name</label>
               <div>
@@ -86,17 +89,15 @@ const SignUp = () => {
 
             <div className="">
               <label>Password</label>
-              <div>
+              <div className="passwordToggle">
                 <input
                   name="password"
                   type={showPswd ? "text" : "password"}
                   {...register("password")}
-                  className={` ${
-                    errors.password ? "is-invalid" : ""
-                  }`}
+                  className={` ${errors.password ? "is-invalid" : ""}`}
                 />
                 <img
-                  src={showPswd ? show : hide}
+                  src={showPswd ? hide :show}
                   onClick={togglePasswordVisibility}
                   alt="show or hide password"
                 />
@@ -106,17 +107,15 @@ const SignUp = () => {
 
             <div className="">
               <label>Confirm Password</label>
-              <div>
+              <div className="passwordToggle">
                 <input
                   name="confirmPassword"
                   type={showConfirmPswd ? "text" : "password"}
                   {...register("confirmPassword")}
-                  className={` ${
-                    errors.confirmPassword ? "is-invalid" : ""
-                  }`}
+                  className={` ${errors.confirmPassword ? "is-invalid" : ""}`}
                 />
                 <img
-                  src={showConfirmPswd ? show : hide}
+                  src={showConfirmPswd ? hide :show}
                   onClick={toggleConfirmPasswordVisibility}
                   alt="show or hide password"
                 />
@@ -124,14 +123,13 @@ const SignUp = () => {
               <div className="">{errors.confirmPassword?.message}</div>
             </div>
             <div className="">
-                <input
-                  name="Terms&Conditions"
-                  type="radio"
-                  {...register("radioBtn")}
-                  className={` ${
-                    errors.radioBtn ? "is-invalid" : ""
-                  }`}
-              />I agree to the terms of service and privacy policy
+              <input
+                name="Terms&Conditions"
+                type="radio"
+                {...register("radioBtn")}
+                className={` radio-btn ${errors.radioBtn ? "is-invalid" : ""}`}
+              />
+              I agree to the terms of service and privacy policy
               <div className="">{errors.radioBtn?.message}</div>
             </div>
 

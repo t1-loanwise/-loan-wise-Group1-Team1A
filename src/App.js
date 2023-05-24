@@ -4,7 +4,7 @@ import About from "./pages/LandingPage/About";
 import Home from "./pages/LandingPage/Home";
 import Pricing from "./pages/LandingPage/Pricing";
 import Blog from "./pages/LandingPage/Blog";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/AuthenticationPage/CreateAccount/SignUp";
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "./AuthenticationMainText.css"
+import "../styles/AuthenticationMainText.css"
 
 export const AuthenticationMainText = ({ Title, Body }) => {
   return (

@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
-import "./createAccount.css"
+import "../../../styles/createAccount.css"
 
 
 const SignUp = () => {

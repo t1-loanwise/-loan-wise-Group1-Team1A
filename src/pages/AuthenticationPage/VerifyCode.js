@@ -4,6 +4,7 @@ import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
 import Logo from "../../components/Logo";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
+import { Link } from "react-router-dom";
 
 const VerifyCode = () => {
   const { code, inputStates, inputClass, handleChange, handleKeyDown } =
@@ -42,7 +43,9 @@ const VerifyCode = () => {
               </p>
             </div>
             <div className="verify_btn_container">
-              <button className="verify_btn">Verify</button>
+              <Link to="/newpassword">
+                <button className="verify_btn">Verify</button>
+              </Link>
               <p className="no_code">Didn’t get OTP? Resend in 60s</p>
             </div>
           </div>

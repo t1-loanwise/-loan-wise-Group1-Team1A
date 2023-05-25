@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
+import { Link } from "react-router-dom";
 
 function CreateNewPassword() {
   const {
@@ -76,7 +77,9 @@ function CreateNewPassword() {
               )}
             </div>
           </div>
-          <button className="verify_btn">Submit</button>
+          <Link to="/congrat">
+            <button className="verify_btn">Submit</button>
+          </Link>
         </form>
       </div>
     </div>

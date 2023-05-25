@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
+import { Link } from "react-router-dom";
 
 const PasswordReset = () => {
   const {
@@ -51,8 +52,9 @@ const PasswordReset = () => {
             />
             {errors.email && <p className="errorMsg">{errors.email.message}</p>}
           </div>
-
-          <button className="verify_btn">Proceed</button>
+          <Link to="/verify">
+            <button className="verify_btn">Proceed</button>
+          </Link>
         </form>
       </div>
     </div>

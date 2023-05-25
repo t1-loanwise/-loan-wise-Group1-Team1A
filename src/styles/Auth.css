@@ -47,6 +47,12 @@
   font-size: 24px;
   margin-top: 48px;
 }
+.verify_btn:hover {
+  background: #007e99;
+}
+.verify_btn:focus {
+  transition: 5s;
+}
 input[type="number"] {
   margin: 16px;
   height: 20vh;

@@ -1,16 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { AuthenticationMainText } from "../../../components/AuthenticationMainText";
-import AuthenticationImage from "../../../components/AuthenticationImage"
-import Logo from "../../../components/Logo"
+import AuthenticationMainText from "../../../components/AuthenticationMainText";
+import AuthenticationImage from "../../../components/AuthenticationImage";
+import Logo from "../../../components/Logo";
+import { useNavigate } from "react-router";
 
 const SetSecurityQuestion = () => {
-  const {register, formState: {errors, isSubmitting}, handleSubmit, reset } = useForm();
+  const {
+    register,
+    formState: { isSubmitting },
+    handleSubmit,
+  } = useForm();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    alert(JSON.stringify(data, null, 6))
     console.log(data);
-    reset()
-  }
+    navigate("/verifyRegistration");
+  };
   return (
     <div className="createAccount_parentContainer">
       <div className="onboardingImg">

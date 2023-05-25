@@ -7,7 +7,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
-import "../../../styles/createAccount.css";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -28,17 +27,11 @@ const SignUp = () => {
 
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  const { register, handleSubmit, reset, formState } = useForm(formOptions);
-  const { errors } = formState;
+  const { register, handleSubmit, reset, formState: {errors, isSubmitting} } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
-  const togglePasswordVisibility = () => {
-    setShowPswd(showPswd ? false : true);
-  };
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPswd(showConfirmPswd ? false : true);
-  };
-
+  const togglePasswordVisibility = () => {setShowPswd(showPswd ? false : true);};
+  const toggleConfirmPasswordVisibility = () => {setShowConfirmPswd(showConfirmPswd ? false : true);};
   const onSubmit = (data) => {
     console.log(data);
     alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
@@ -46,18 +39,20 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signUp_parentContainer">
-      <AuthenticationImage />
-      <div className="createAnAccountContainer">
+    <div className="createAccount_parentContainer">
+      <div className="onboardingImg">
+        <AuthenticationImage />
+      </div>
+      <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />
         </div>
-        <div className="createAnAccount">
+        <div className="createAccount">
           <AuthenticationMainText Title="Create an account" />
           <form
             onSubmit={handleSubmit(onSubmit)}
             autoComplete={"off"}
-            className="sign-up_form"
+            className="createAccount_form"
           >
             <div className="formInputContainer">
               <label>Full name</label>
@@ -67,9 +62,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="Enter full name"
                   {...register("fullName")}
-                  className={`name-email-input ${
-                    errors.fullName ? "is-invalid" : ""
-                  }`}
+                  className="name-email-input"
                 />
               </div>
               <div className="signUpErrorMsg">{errors.fullName?.message}</div>

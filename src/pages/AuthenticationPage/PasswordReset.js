@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../assets/Vector.svg";
 import Button1 from "../../components/Button1";
 import { useForm } from "react-hook-form";
-import { AuthenticationMainText } from "../../components/AuthenticationMainText";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import AuthenticationImage from "../../components/AuthenticationImage";
 import "../../styles/Auth.css";
 

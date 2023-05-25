@@ -1,4 +1,63 @@
 .auth_image {
-  width: 40%;
-  height: 80%;
+  width: 60%;
+  height: 100%;
+}
+.verify_container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 70px;
+  padding: 2.5%;
+}
+.verify_head_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.logo_container {
+  align-self: flex-end;
+}
+.verify_body_content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.verify_btn {
+  background: #007e99;
+  border: 0;
+  color: white;
+  font-size: 1em;
+  height: fit-content;
+  padding: 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 87%;
+  font-size: 48px;
+  margin-top: 48px;
+}
+input[type="number"] {
+  margin: 40px;
+  height: 20vh;
+  width: 10vw;
+  border: 1px solid #aab2b4;
+  border-radius: 5px;
+}
+.auth_text {
+  font-size: 40px;
+  align-self: flex-end;
+}
+.no_code {
+  align-self: center;
+  font-size: 1.5em;
+}
+.hide {
+  display: none;
+}
+.verify_btn_container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 100px;
 }

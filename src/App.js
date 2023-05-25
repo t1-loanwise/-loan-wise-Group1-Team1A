@@ -4,8 +4,12 @@ import About from "./pages/LandingPage/About";
 import Home from "./pages/LandingPage/Home";
 import Pricing from "./pages/LandingPage/Pricing";
 import Blog from "./pages/LandingPage/Blog";
-import SignUp from "./pages/AuthenticationPage/CreateAccount/SignUp";
+import SignUp from "./pages/SignUp";
+import VerifyCode from "./pages/AuthenticationPage/VerifyCode";
+import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
+import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
+
 
 const App = () => {
   return (
@@ -16,7 +20,11 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="/verify" element={<VerifyCode />} />
+        <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />}/>
+
       </Routes>
     </div>
   );

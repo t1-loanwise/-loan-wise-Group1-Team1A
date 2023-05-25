@@ -7,13 +7,23 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 20px;
-  padding: 2.5%;
+  gap: 72px;
+  padding: 2.5% 3%;
 }
-.verify_head_content {
+.verify_head_content,
+.reset_head_content,
+.new_password_head_content {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.reset_head_content,
+.new_password_head_content {
+  justify-content: space-between;
+  margin-bottom: 18%;
+}
+.new_password_head_content {
+  margin-bottom: 10%;
 }
 .logo_container {
   align-self: flex-end;
@@ -30,11 +40,11 @@
   border: 0;
   color: white;
   font-size: 1em;
-  padding: 40px;
+  padding: 18px 32px;
   border-radius: 5px;
   text-decoration: none;
   width: 100%;
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 48px;
 }
 input[type="number"] {
@@ -53,7 +63,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .auth_text {
   font-size: 20px;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 .no_code {
   align-self: center;
@@ -66,4 +76,23 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   gap: 100px;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.form-label {
+  font-size: 20px;
+}
+input[type="text"],
+input[type="password"] {
+  padding: 11px 16px;
+  border: 1px solid #aab2b4;
+}
+.form_control_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
 }

@@ -7,6 +7,7 @@ import Blog from "./pages/LandingPage/Blog";
 import SignUp from "./pages/SignUp";
 import VerifyCode from "./pages/AuthenticationPage/VerifyCode";
 import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
+import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/verify" element={<VerifyCode />} />
         <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/newpassword" element={<CreateNewPassword />} />
       </Routes>
     </div>
   );

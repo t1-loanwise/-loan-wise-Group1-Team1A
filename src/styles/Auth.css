@@ -43,6 +43,8 @@ input[type="number"] {
   width: 10vw;
   border: 1px solid #aab2b4;
   border-radius: 5px;
+  font-size: 10rem;
+  text-align: center;
 }
 .auth_text {
   font-size: 40px;

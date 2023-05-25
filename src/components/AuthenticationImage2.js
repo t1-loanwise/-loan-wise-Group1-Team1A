@@ -1,5 +1,5 @@
 import React from "react";
-import AuthImage from "../assets/Sign Up Design.png";
+import AuthImage from "../assets/SignUpDesign.svg";
 import "../styles/Auth.css";
 
 const AuthenticationImage = () => {

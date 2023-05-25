@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
-import AuthenticationImage from "../../components/AuthenticationImage";
+import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
 
 function CreateNewPassword() {

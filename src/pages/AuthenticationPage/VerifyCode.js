@@ -1,6 +1,6 @@
 import React from "react";
 import useVerificationHook from "./lib/useVerificationHook";
-import AuthenticationImage from "../../components/AuthenticationImage";
+import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
 import Logo from "../../components/Logo";
 import AuthenticationMainText from "../../components/AuthenticationMainText";

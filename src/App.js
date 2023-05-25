@@ -4,7 +4,7 @@ import About from "./pages/LandingPage/About";
 import Home from "./pages/LandingPage/Home";
 import Pricing from "./pages/LandingPage/Pricing";
 import Blog from "./pages/LandingPage/Blog";
-import SignUp from "./pages/AuthenticationPage/";
+import SignUp from "./pages/AuthenticationPage/CreateAccount/SignUp";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 
 const App = () => {

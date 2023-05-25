@@ -1,4 +1,4 @@
-.signUp_parentContainer {
+.createAccount_parentContainer {
   display: flex;
   justify-content: center;
   padding: 2.5vh 2%;
@@ -7,7 +7,7 @@
   background-color: #f5f5f5;
 }
 
-.createAnAccountContainer {
+.createAccountContainer {
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -27,36 +27,36 @@
   gap: 0.3em;
 }
 
-.createAnAccount {
+.createAccount {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.sign-up_form {
+.createAccount_form {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
 }
 
-.sign-up_form label {
+.createAccount_form label {
   font-size: 1.1em;
   font-weight: 900;
 }
 
-.sign-up_form .inputDiv {
+.createAccount_form .inputDiv {
   border-radius: 5px;
   border: 1.1px solid #cbcbcb;
   padding: 0 10px;
   width: 100%;
 }
 
-.sign-up_form input::placeholder {
+.createAccount_form input::placeholder {
   opacity: 0.4;
   font-style: italic;
 }
 
-.sign-up_form input:not(.radio-btn) {
+.createAccount_form input:not(.radio-btn) {
   width: 100%;
   border: 0;
   height: 35px;
@@ -66,15 +66,15 @@
   background: transparent;
 }
 
-.sign-up_form .passwordContainer {
+.createAccount_form .passwordContainer {
   display: flex;
   align-items: center;
   width: 100%;
   gap: 0.7em;
 }
 
-.sign-up_form .passwordContainer .passwd,
-.sign-up_form .passwordContainer .confirmPswd {
+.createAccount_form .passwordContainer .passwd,
+.createAccount_form .passwordContainer .confirmPswd {
 width: 50%
 }
 

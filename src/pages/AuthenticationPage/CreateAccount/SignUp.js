@@ -46,18 +46,18 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signUp_parentContainer">
+    <div className="createAccount_parentContainer">
       <AuthenticationImage />
-      <div className="createAnAccountContainer">
+      <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />
         </div>
-        <div className="createAnAccount">
+        <div className="createAccount">
           <AuthenticationMainText Title="Create an account" />
           <form
             onSubmit={handleSubmit(onSubmit)}
             autoComplete={"off"}
-            className="sign-up_form"
+            className="createAccount_form"
           >
             <div className="formInputContainer">
               <label>Full name</label>

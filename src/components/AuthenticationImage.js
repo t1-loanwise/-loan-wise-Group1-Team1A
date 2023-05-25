@@ -4,9 +4,9 @@ import "../styles/Auth.css";
 
 const AuthenticationImage = () => {
   return (
-    <div className="onboardingImg ">
+    <>
       <img src={AuthImage} alt="AuthImage" className="auth_image" />
-    </div>
+    </>
   );
 };
 

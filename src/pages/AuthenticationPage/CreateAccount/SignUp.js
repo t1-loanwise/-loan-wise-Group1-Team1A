@@ -7,7 +7,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
-import "../../../styles/createAccount.css";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -40,18 +39,20 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signUp_parentContainer">
-      <AuthenticationImage />
-      <div className="createAnAccountContainer">
+    <div className="createAccount_parentContainer">
+      <div className="onboardingImg">
+        <AuthenticationImage />
+      </div>
+      <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />
         </div>
-        <div className="createAnAccount">
+        <div className="createAccount">
           <AuthenticationMainText Title="Create an account" />
           <form
             onSubmit={handleSubmit(onSubmit)}
             autoComplete={"off"}
-            className="sign-up_form"
+            className="createAccount_form"
           >
             <div className="formInputContainer">
               <label>Full name</label>

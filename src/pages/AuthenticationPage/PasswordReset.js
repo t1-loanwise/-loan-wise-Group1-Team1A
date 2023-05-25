@@ -1,9 +1,8 @@
 import React from "react";
-import Logo from "../../assets/Vector.svg";
-import Button1 from "../../components/Button1";
+import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import { AuthenticationMainText } from "../../components/AuthenticationMainText";
-import AuthenticationImage from "../../components/AuthenticationImage";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
+import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
 
 const PasswordReset = () => {
@@ -21,18 +20,22 @@ const PasswordReset = () => {
 
   console.log({ ...register("email") });
   return (
-    <div className="reset_container">
+    <div className="verify_container">
       <AuthenticationImage />
-      <div className="reset_content">
-        <img src={Logo} alt={"Loanwise logo"} className="logo_image" />
-        <AuthenticationMainText
-          Title={"Forgot Password?"}
-          Body={"We’ve got you, please enter your registered email address"}
-        />
+      <div className="reset_head_content">
+        <div className="logo_container">
+          <Logo />
+        </div>
+        <div className="auth_text">
+          <AuthenticationMainText
+            Title={"Forgot Password?"}
+            Body={"We’ve got you, please enter your registered email address"}
+          />
+        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
-            <label style={{ display: "block" }} htmlFor="email">
-              Email
+            <label className="form-label" htmlFor="email">
+              Email address
             </label>
             <input
               type="text"
@@ -49,7 +52,7 @@ const PasswordReset = () => {
             {errors.email && <p className="errorMsg">{errors.email.message}</p>}
           </div>
 
-          <Button1 text={"Proceed"} />
+          <button className="verify_btn">Proceed</button>
         </form>
       </div>
     </div>

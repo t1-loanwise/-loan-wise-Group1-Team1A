@@ -1,11 +1,11 @@
 import React from "react";
-import AuthImage from "../assets/Sign Up Design.png";
+import AuthImage from "../assets/SignUpDesign.svg";
 import "../styles/Auth.css";
 
 const AuthenticationImage = () => {
   return (
     <>
-      <img src={AuthImage} alt="AuthImage" className="auth_image1" />
+      <img src={AuthImage} alt="AuthImage" className="auth_image" />
     </>
   );
 };

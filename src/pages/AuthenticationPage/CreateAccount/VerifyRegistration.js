@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { AuthenticationMainText } from "../../../components/AuthenticationMainText";
+import  AuthenticationMainText from "../../../components/AuthenticationMainText";
 import AuthenticationImage from "../../../components/AuthenticationImage";
 import Logo from "../../../components/Logo";
 

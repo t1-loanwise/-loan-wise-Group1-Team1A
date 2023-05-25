@@ -13,7 +13,9 @@ const SetSecurityQuestion = () => {
   }
   return (
     <div className="createAccount_parentContainer">
-      <AuthenticationImage />
+      <div className="onboardingImg">
+        <AuthenticationImage />
+      </div>
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />

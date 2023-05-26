@@ -66,7 +66,8 @@
 .text-header {
   width: 50%;
   margin: auto;
-  text-align: center;
+  text-align: center;  
+  margin-bottom: 20px;
 }
 .text-header h3 {
   color: #00191f;
@@ -80,13 +81,30 @@
   justify-content: space-evenly;
 }
 
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 .price-card {
   border: 1px solid #aad4dd;
-  border-radius: 5px;
+  border-radius: 17.5px;
   padding: 20px;
   width: 300px;
+  height: 700px;
   text-align: center;
 }
+
+.price-card.active {
+  border: 10px solid #006980;
+  border-top: 25px solid #006980;
+  width: 310px;
+  height: 750px;
+}
+
 .price-card h3 {
   margin-bottom: 5px;
 }
@@ -102,6 +120,7 @@
 .price-card .price sup {
   font-size: 1.2rem;
 }
+
 .price-card .price-label {
   font-size: 0.8rem;
   line-height: 2rem;
@@ -111,9 +130,10 @@
 
 .price-card .price-discount {
   font-size: 1.5rem;
-  color: #ccc;
+  color: #777;
   text-decoration: line-through;
 }
+
 .price-card .price-discount sup {
   font-size: 1rem;
 }
@@ -160,7 +180,6 @@ ul{
   text-align: left;
 }
 .price-card ul li {
-  margin-bottom: 0.8rem;
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -203,6 +222,7 @@ ul{
   border-top: 1px solid #ccc;
   padding: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -219,4 +239,19 @@ ul{
 .faq-content{
   margin: auto;
   padding: 2rem;
+}
+
+.faq-accordion {
+  display: flex;
+  justify-content: space-between;
+}
+.faq-answer {
+  background-color: #ccc;
+  margin: 0;
+  padding: 20px 0;
+  line-height: 1rem;
+}
+.price {
+  display: flex;
+  align-items: center;
 }

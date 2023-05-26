@@ -8,13 +8,16 @@ const PriceCard = (props) => {
     const points = props.points?.map(point => <li><img src={mark} alt="Logo" height="15" /><p>{point}</p></li>)
 
   return (
-    <div className='price-card'>
+    <div className={`price-card ${props.active ? 'active' : ''}`}>
         <h3>{props.title}</h3>
         <p>{props.description}</p>
-        <div className='row justify-center'>
+        <div className='row justify-center align-center'>
             {props.oldPrice != null && <div className='price-discount'><sup>$</sup>{props.oldPrice}</div>}
             <div className='price'><sup>$</sup>{props.price}</div>
-            <div className='price-label'>{props.priceLabel}</div>            
+            <div className='price-label'>
+            <div>{props.priceLabel}</div>
+            <div>{props.priceLabel2}</div>
+            </div>            
         </div>
         {
           hasTwoButton === true &&  

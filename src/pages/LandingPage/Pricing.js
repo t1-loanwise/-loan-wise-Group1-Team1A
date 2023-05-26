@@ -5,6 +5,7 @@ import TextHeader from "../../components/TextHeader";
 import PriceCard from "../../components/PriceCard";
 import OptionCard from "../../components/OptionCard";
 import Faqs from "../../components/Faqs";
+import UseLoanWise from "../../components/UseLoanwise"
 import hand from "../../assets/icons/handWithCurrency.png";
 import bank from "../../assets/icons/bank.png";
 import lender from "../../assets/icons/lender.png";
@@ -20,15 +21,15 @@ const Pricing = () => {
         <TextHeader
           title="Choose your plan"
           description="Choose the pricing plan that works best for you, whether you’re looking for casual transactions or flexible customisations "
-          urlText="Learn More in FAQ’s"
-          url="#faq"
+          linkLabel="Learn more in FAQ's"
         />
-        <div className="row">
+        <div className="row align-center">
           <PriceCard
             title="Free"
             description="Basics for Individual and Organisations"
             price="0"
-            priceLabel="per year forever"
+            priceLabel="per year"
+            priceLabel2="forever"
             outlineButtonLabel="Join for free"
             points={[
               "Access core features, including predictive analytics and customizable loan criteria.",
@@ -45,7 +46,9 @@ const Pricing = () => {
             description="Advanced collaboration for individuals and organisations"
             price="30"
             oldPrice="15"
-            priceLabel="per year forever\n for the first 12months"
+            active={true}
+            priceLabel="per year forever"
+            priceLabel2="or the first 12months"
             fillButtonLabel="Get Started Premium"
             points={[
               "Basic Plan benefits plus fraud detection and financial behavioral analysis.",
@@ -62,7 +65,8 @@ const Pricing = () => {
             description="Security, compliance \n and flexible deployment"
             oldPrice="252"
             price="231"
-            priceLabel="per year forever\n for the first 12months"
+            priceLabel="per year forever"
+            priceLabel2="for the first 12months"
             fillButtonLabelLabel="Join for free"
             hasTwoButton={true}
             firstButtonLabel="Start a free trial"
@@ -78,10 +82,7 @@ const Pricing = () => {
             ]}
           />
         </div>
-        <TextHeader
-          title="Who Can Use Loanwise"
-          description="Our Loan Default Prediction App is designed to help various types of financial institutions streamline their lending process and reduce the risk of loan defaults. Whether you're a small credit union or a large financial institution, our Loan Default Prediction App can help you make more informed lending decisions and minimize the risk of loan defaults."
-        />
+        <UseLoanWise />
         <div className="row">
           <OptionCard
             image={hand}

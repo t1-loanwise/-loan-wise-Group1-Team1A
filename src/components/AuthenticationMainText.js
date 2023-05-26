@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/AuthenticationMainText.css"
 
 function AuthenticationMainText({ Title, Body }) {
   return (
-    <>
-      <h2>{Title}</h2>
-      <p>{Body}</p>
-    </>
+    <div className="mainTextContainer">
+      <span className="mainTextHeader">{Title}</span>
+      <span className="mainTextBody">{Body}</span>
+    </div>
   );
 }
 

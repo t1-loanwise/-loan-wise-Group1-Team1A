@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import AuthenticationImage from "../../components/AuthenticationImage2";
 import "../../styles/Auth.css";
-import { Link } from "react-router-dom";
 
 function CreateNewPassword() {
   const {
@@ -14,8 +13,9 @@ function CreateNewPassword() {
     reset,
   } = useForm();
 
-  const onSubmit = (password) => {
-    console.log(password);
+  const onSubmit = (password, confirmpassword) => {
+    window.location.href = "/success_page";
+    console.log(password, confirmpassword);
     reset();
   };
 
@@ -47,7 +47,8 @@ function CreateNewPassword() {
                   required: "Password is required.",
                   minLength: {
                     value: 6,
-                    message: "Password should be at-least 6 characters.",
+                    message:
+                      "Password must contain at-least 6 characters including numbers",
                   },
                 })}
               />
@@ -62,8 +63,8 @@ function CreateNewPassword() {
               <input
                 type="password"
                 placeholder="Enter answer"
-                name="password"
-                {...register("password", {
+                name="confirmpassword"
+                {...register("confirmpassword", {
                   required: "Password is required.",
                   minLength: {
                     value: 6,
@@ -72,14 +73,13 @@ function CreateNewPassword() {
                   },
                 })}
               />
-              {errors.password && (
-                <p className="errorMsg">{errors.password.message}</p>
+              {errors.confirmpassword && (
+                <p className="errorMsg">{errors.confirmpassword.message}</p>
               )}
             </div>
           </div>
-          <Link to="/congrat">
-            <button className="verify_btn">Submit</button>
-          </Link>
+
+          <button className="verify_btn">Submit</button>
         </form>
       </div>
     </div>

@@ -14,6 +14,7 @@ const PasswordReset = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    window.location.href = "/verify+email";
     console.log(data);
     reset();
   };
@@ -51,7 +52,6 @@ const PasswordReset = () => {
             />
             {errors.email && <p className="errorMsg">{errors.email.message}</p>}
           </div>
-
           <button className="verify_btn">Proceed</button>
         </form>
       </div>

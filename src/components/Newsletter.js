@@ -28,6 +28,7 @@ const SubscribeBtn = styled.button`
   padding: 20px 26px;
   border-radius: 5px;
   color: #006980;
+
   &:hover {
     background-color: #007e99;
     color: white;

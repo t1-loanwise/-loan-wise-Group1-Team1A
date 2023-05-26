@@ -70,6 +70,7 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
 .text-header h3 {
   color: #00191f;
   text-align: center;
@@ -234,12 +235,13 @@ ul{
 .faq-content h4{
   font-size: 3rem;
   padding-left: 2rem;
-  color: #ccc;
+  color: #1E1E1C;
+  font-weight: 200;;
 }
 
 .faq-content{
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 5%;
 }
 
 .Logo-loanwise {

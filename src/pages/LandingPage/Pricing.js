@@ -12,6 +12,7 @@ import lender from "../../assets/icons/lender.png";
 import underwriters from "../../assets/icons/underwriters.png";
 import business from "../../assets/icons/business.png";
 import notes from "../../assets/icons/notes.png";
+import Newsletter from "../../components/Newsletter";
 
 const Pricing = () => {
   return (
@@ -89,6 +90,7 @@ const Pricing = () => {
         />
       </div>
       <Faqs />
+      <Newsletter/>
       <Footer />
     </>
   );

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Logo from "../../../components/Logo";
-import { AuthenticationMainText } from "../../../components/AuthenticationMainText";
+import AuthenticationMainText from "../../../components/AuthenticationMainText";
 import AuthenticationImage from "../../../components/AuthenticationImage";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
@@ -27,15 +27,23 @@ const SignUp = () => {
 
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  const { register, handleSubmit, reset, formState: {errors, isSubmitting} } = useForm(formOptions);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
-  const togglePasswordVisibility = () => {setShowPswd(showPswd ? false : true);};
-  const toggleConfirmPasswordVisibility = () => {setShowConfirmPswd(showConfirmPswd ? false : true);};
+  const navigate = useNavigate();
+  const togglePasswordVisibility = () => {
+    setShowPswd(showPswd ? false : true);
+  };
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPswd(showConfirmPswd ? false : true);
+  };
   const onSubmit = (data) => {
     console.log(data);
-    alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
-    reset();
+    navigate("/securityQuestions");
   };
 
   return (

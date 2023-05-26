@@ -83,41 +83,6 @@ const Pricing = () => {
           />
         </div>
         <UseLoanWise />
-        <div className="row">
-          <OptionCard
-            image={hand}
-            title="Loan Officers"
-            description="Our app makes the loan application review process more efficient and accurate, enabling loan officers to spend less time on paperwork and more time interacting with clients."
-          />
-          <OptionCard
-          image={bank}
-            title="Microfinance Institutions"
-            description=" Our app can help these institutions provide loans to individuals and small businesses in developing countries while minimizing the risk of defaults."
-          />
-          <OptionCard
-            image={lender}
-            title="Peer-to-Peer Lenders"
-            description="Our app can help these lenders minimize the risk of loan defaults by analyzing borrower data and providing a risk score for each loan application."
-          />
-         
-        </div>
-        <div className="row">
-        <OptionCard
-        image={underwriters}
-        title="Underwriters"
-        description="Our app provides underwriters with the data they need to assess loan applications and make informed lending decisions, leading to reduced risk and increased profitability."
-      />
-      <OptionCard
-      image={business}
-        title="Financial Institutions"
-        description=" Our app is a valuable tool for financial institutions of all sizes, providing an easy-to-use platform for streamlining the lending process and minimizing risk."
-      />
-      <OptionCard
-      image={notes}
-        title="Banks and Credit Unions"
-        description="Our app helps banks and credit unions reduce the risk of loan defaults and make more informed lending decisions, leading to increased profitability."
-      />
-        </div>
         <TextHeader
           title="Frequently asked questions"
           description="Choose the pricing plan that works best for you, whether you’re looking for casual transactions or flexible customisations "

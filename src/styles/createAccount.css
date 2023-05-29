@@ -37,16 +37,18 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  gap: 0.3em;
 }
 
 .safe_easy {
-font-size: 35px;
+font-size: 33px;
 font-weight: 900;
 
 }
 
 .insight_click {
   font-size: 20px;
+  font-weight: 900;
   width: 470px;
 }
 

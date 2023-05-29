@@ -5,6 +5,7 @@ import Feature from "../assets/FeatureImage.svg";
 import SpecialFeaturesOne from "../assets/SpecialFeature.svg";
 import SpecialFeature2 from "../assets/SpecialFeature2.svg"
 import Checklist from './Checklist';
+import Clock from '../assets/History.svg';
 import Arrow from "../assets/Arrow.svg"
 import Button1 from './Button1';
 import Button2 from './Button2';
@@ -24,6 +25,7 @@ const HomeSections= ({link, text})=> {
     justifyContent: 'center',
     alignItems: 'center',
     gap: '10px',
+    borderRadius: '5px',
     fontSize: '16px',
   };
   return (
@@ -31,11 +33,12 @@ const HomeSections= ({link, text})=> {
    <div className="homepage_container">
       <div className="hero-section">
       <div className="hero-text">
-        <div className='history'>
+        <div id='history'>
+         <img id='clock' src= {Clock}/>
           <p>Watch Our History</p>
         </div>
         <HomeHeader header={"transform lending with accurate risk prediction"} text={"Our app accurately predicts default risk for borrowers, helping financial institutions make informed lending decisions and minimize the impact of defaults"}/>
-        <div className='buttons'>
+        <div id='buttons'>
         <Button1 text={"Get Started"} style={buttonStyle}/>
         <Button2 text={"Learn More"}/>
         </div>
@@ -48,7 +51,7 @@ const HomeSections= ({link, text})=> {
       <div className="about-us">
         <div className="hero-text">
         <HomeHeader header={" Revolutionising lending with predictive analytics."} text={"At Loan Default Prediction, we're passionate about revolutionising the lending industry by providing innovative technology that helps financial institutions make more informed lending decisions and minimise the risk of loan defaults."}/>  
-        <Button1 className="button_start" text={"Get Started"} />      
+        <Button1 id="about-button" style={buttonStyle} text={"Get Started"} />      
         </div>
         <div className="home-image">
         <img src={AboutImage} alt='about us section image'/>
@@ -58,10 +61,6 @@ const HomeSections= ({link, text})=> {
        <div className="feature-text">
         <HomeHeader header={"Discover how our innovative loan risk assessment tool can benefit your institution."} 
         text={"Our goal is to help financial institutions make more informed lending decisions and reduce the risk of loan default. We developed the Loan Default Prediction App to provide an innovative solution that simplifies the loan application process, reduces the time it takes to process loan applications, and improves the accuracy of loan decisions."}/>
-        <div id='arrow'>
-           <img src={Arrow}/>
-        </div>
-       
        </div>
        <div className="feature-image">
        <img src={Feature} alt='features section'/>
@@ -82,10 +81,11 @@ const HomeSections= ({link, text})=> {
       <div className="special-two">
        <div className="home-left">
         <HomeHeader header={"Identify loan defaulters with precision."} text={"Our innovative financial behavioral analysis feature goes beyond traditional credit checks to help financial institutions more accurately predict loan defaults. By analyzing a borrower's financial habits and behavior, our app provides a more comprehensive view of their creditworthiness, allowing lenders to make better-informed lending decisions."}/>
-       </div>
-       <Checklist text={"Enhance loan approval accuracy."}/>
+           <Checklist text={"Enhance loan approval accuracy."}/>
        <Checklist text={"Reduce the risk of defaults."}/>
        <Checklist text={"Streamline lending decisions."}/>
+       </div>
+    
        <div className="home-image">
        <img src={SpecialFeature2} alt='special features two image'/>
        </div>

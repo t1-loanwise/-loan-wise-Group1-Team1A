@@ -5,7 +5,7 @@ import mark from '../assets/icons/Vector.png'
 
 const PriceCard = (props) => {
     const hasTwoButton = props.hasTwoButton ?? false;
-    const points = props.points?.map(point => <li><img src={mark} alt="Logo" height="15" /><p>{point}</p></li>)
+    const points = props.points?.map((point, index) => <li key={index}><img src={mark} alt="Logo" height="15" /><p>{point}</p></li>)
 
   return (
     <div className={`price-card ${props.active ? 'active' : ''}`}>

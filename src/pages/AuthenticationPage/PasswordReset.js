@@ -1,9 +1,9 @@
 import React from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText";
-import AuthenticationImage from "../../components/AuthenticationImage2";
+import AuthenticationMainText from "../../components/AuthenticationMainText2";
 import "../../styles/Auth.css";
+import AuthCard from "../../components/AuthCard";
 
 const PasswordReset = () => {
   const {
@@ -14,7 +14,7 @@ const PasswordReset = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    window.location.href = "/verify+email";
+    window.location.href = "/verifyEmail";
     console.log(data);
     reset();
   };
@@ -22,7 +22,7 @@ const PasswordReset = () => {
   console.log({ ...register("email") });
   return (
     <div className="verify_container">
-      <AuthenticationImage />
+      <AuthCard />
       <div className="reset_head_content">
         <div className="logo_container">
           <Logo />
@@ -42,6 +42,7 @@ const PasswordReset = () => {
               type="text"
               placeholder="Enter answer"
               name="email"
+              className="email-box"
               {...register("email", {
                 required: "Email is required.",
                 pattern: {

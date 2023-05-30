@@ -57,6 +57,10 @@
   font-size: 16px;
   font-weight: 400;
 }
+.button2:hover {
+  background: #007e99;
+  color: #ffffff;
+}
 .react-icon1 {
   font-size: 32px;
 }

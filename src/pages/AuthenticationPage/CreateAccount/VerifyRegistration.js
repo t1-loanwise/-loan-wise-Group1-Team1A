@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import  AuthenticationMainText from "../../../components/AuthenticationMainText";
-import AuthenticationImage from "../../../components/AuthenticationImage";
 import Logo from "../../../components/Logo";
+import Onboarding from "../../../components/Onboarding";
 
 const VerifyRegistration = () => {
  const [otp, setOtp] = useState(["", "", "", ""]);
@@ -40,9 +40,7 @@ const handleKeyDown = (event, index) => {
 
   return (
     <div className="createAccount_parentContainer">
-      <div className="onboardingImg">
-        <AuthenticationImage />
-      </div>
+        <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />

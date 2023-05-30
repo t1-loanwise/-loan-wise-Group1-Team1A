@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../../components/AuthenticationMainText";
-import AuthenticationImage from "../../../components/AuthenticationImage";
 import Logo from "../../../components/Logo";
 import { useNavigate } from "react-router";
+import Onboarding from "../../../components/Onboarding";
 
 const SetSecurityQuestion = () => {
   const {
@@ -18,9 +18,7 @@ const SetSecurityQuestion = () => {
   };
   return (
     <div className="createAccount_parentContainer">
-      <div className="onboardingImg">
-        <AuthenticationImage />
-      </div>
+        <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />

@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import UseLoanwise from "../../components/UseLoanwise";
 import HomeSections from "../../components/HomeSections";
+import Newsletter from "../../components/Newsletter";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <NavBar />
       <HomeSections/>
        <UseLoanwise/>
+      <Newsletter/>
       <Footer />
     </>
   );

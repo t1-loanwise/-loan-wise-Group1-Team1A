@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Urbanist;
+}
+.loginParent-container {
+  padding: 15px 20px;
+  display: flex;
+  background-color: #f5f5f5;
+  width: 100%;
+  gap: 30px;
+}
+
+.logo-container2 {
+  width: 177px;
+  height: 62px;
+  align-self: flex-end;
+}
+.onboarding-img {
+  height: 95vh;
+  background-color: #007e99;
+  border-radius: 16px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.onboarding-img h3 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  font-family: Urbanist;
+  color: white;
+}
+.one-click {
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  margin: 10px 50px;
+  font-size: 18px;
+}
+
+.group-img {
+  width: 80%;
+}
+.login-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+.login-message {
+  padding: 0 30px;
+  justify-self: center;
+  margin-top: 25px;
+}
+.login-message h3 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #00191f;
+}
+.login-message p {
+  color: #55666a;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 10px;
+}
+.login-form-control {
+  display: flex;
+  flex-direction: column;
+}
+.login-form-control input {
+  border-radius: 5px;
+  padding: 10.5px 16px;
+  border: 1.1px solid #cbcbcb;
+  background-color: #ffffff;
+  outline: none;
+}
+.login-form-control input::placeholder {
+  font-style: italic;
+  font-size: 0.875rem;
+}
+.stay-login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.check-btn input[type="checkbox"] {
+  border: 2px solid #007e99;
+  border-radius: 4px;
+  width: 26px;
+  height: 20px;
+}
+
+.login-Btn {
+  width: 100%;
+  background-color: #007e99;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+div .login-Btn {
+  margin-top: 50px;
+}
+.sign-up {
+  margin-top: 60px;
+  text-align: center;
+}
+.sign-up span {
+  color: #55666a;
+}
+.login-form-control .errorMsg {
+  font-size: 0.875rem;
+}

@@ -49,8 +49,8 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 96px;
-  padding: 2.5% 3%;
+  gap: 70px;
+  padding: 5vh 2.5%;
 }
 .verify_head_content,
 .reset_head_content,
@@ -66,7 +66,7 @@
 }
 .logo_container {
   align-self: flex-end;
-  width: 12%;
+  width: 25%;
 }
 .verify_body_content {
   align-self: center;
@@ -131,8 +131,8 @@
   gap: 0.5em;
 }
 .form-label {
-  font-size: 20px;
-  font-size: 600;
+  font-size: 1.1em;
+  font-weight: 700;
   padding-top: 16px;
 }
 .email-box,
@@ -168,4 +168,3 @@
   background: none;
   cursor: pointer;
 }
-

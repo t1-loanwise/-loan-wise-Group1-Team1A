@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText";
-import AuthenticationImage from "../../components/AuthenticationImage2";
+import AuthenticationMainText from "../../components/AuthenticationMainText2";
 import "../../styles/Auth.css";
+import AuthCard from "../../components/AuthCard";
 
 function CreateNewPassword() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
     reset,
   } = useForm();
+  const password = useRef({});
+  password.current = watch("password", "");
 
   const onSubmit = (password, confirmpassword) => {
     window.location.href = "/success_page";
@@ -22,7 +25,7 @@ function CreateNewPassword() {
   console.log({ ...register("password") });
   return (
     <div className="verify_container">
-      <AuthenticationImage />
+      <AuthCard />
       <div className="new_password_head_content">
         <div className="logo_container">
           <Logo />
@@ -43,6 +46,7 @@ function CreateNewPassword() {
                 type="password"
                 placeholder="Enter answer"
                 name="password"
+                className="password-field"
                 {...register("password", {
                   required: "Password is required.",
                   minLength: {
@@ -64,6 +68,7 @@ function CreateNewPassword() {
                 type="password"
                 placeholder="Enter answer"
                 name="confirmpassword"
+                className="password-field"
                 {...register("confirmpassword", {
                   required: "Password is required.",
                   minLength: {
@@ -71,6 +76,9 @@ function CreateNewPassword() {
                     message:
                       "Password must contain at-least 6 characters including numbers",
                   },
+                  validate: (value) =>
+                    value === password.current ||
+                    "Password and confirm password should be same",
                 })}
               />
               {errors.confirmpassword && (

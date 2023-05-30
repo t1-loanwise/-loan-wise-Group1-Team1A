@@ -1,9 +1,10 @@
 import React from "react";
 import Logo from "../../components/Logo";
-import GroupMap from "../../assets/Group 8040.svg";
+
 import "../../styles/Login.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Onboarding from "../../components/Onboarding";
 
 const Login = () => {
   const {
@@ -18,17 +19,7 @@ const Login = () => {
 
   return (
     <div className="loginParent-container">
-      <div className="onboarding-img">
-        <img className="group-img" src={GroupMap} alt="group-image" />
-        <div className="onboarding-img-text">
-          <h3>Make safe and easy decisions</h3>
-          <p className="one-click">
-            Get insight for credit decision with an in-depth analysis in just
-            one click
-          </p>
-        </div>
-      </div>
-
+      <Onboarding />
       <div className="login-text-container">
         <div className="logo-container2">
           <Logo />

@@ -3,7 +3,7 @@ import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText2";
 import "../../styles/Auth.css";
-import AuthCard from "../../components/AuthCard";
+import Onboarding from "../../components/Onboarding";
 
 const PasswordReset = () => {
   const {
@@ -22,7 +22,7 @@ const PasswordReset = () => {
   console.log({ ...register("email") });
   return (
     <div className="verify_container">
-      <AuthCard />
+      <Onboarding />
       <div className="reset_head_content">
         <div className="logo_container">
           <Logo />

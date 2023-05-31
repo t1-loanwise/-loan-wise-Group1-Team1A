@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../components/Logo";
-
 import "../../styles/Login.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Onboarding from "../../components/Onboarding";
+import show from "../../assets/show.png";
+import hide from "../../assets/hide.png";
 
 const Login = () => {
   const {
@@ -12,6 +13,11 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const [showPswd, setShowPswd] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPswd(showPswd ? false : true);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -42,18 +48,28 @@ const Login = () => {
             </div>
             <div className="login-form-control">
               <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                {...register("password", {
-                  required: true,
-                  minLength: {
-                    pattern:
-                      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{6,20}$/,
-                    value: 6,
-                  },
-                })}
-              />
+
+              <div className="passwordToggle">
+                <input
+                  className="password-input"
+                  type={showPswd ? "text" : "password"}
+                  name="password"
+                  {...register("password", {
+                    required: true,
+                    minLength: {
+                      pattern:
+                        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{6,20}$/,
+                      value: 6,
+                    },
+                  })}
+                />
+                <img
+                  src={showPswd ? hide : show}
+                  onClick={togglePasswordVisibility}
+                  alt="show or hide password"
+                />
+              </div>
+
               {errors.password && errors.password.type === "required" && (
                 <p className="errorMsg">Password is required</p>
               )}
@@ -66,10 +82,14 @@ const Login = () => {
             <div className="stay-login-container">
               <div className="check-btn">
                 <input type="checkbox" name="password" />
-                <label>Keep me signed in</label>
+                <label>
+                  <span>Keep me signed in</span>
+                </label>
               </div>
               <div>
-                <Link to="/reset">Forgot Password?</Link>
+                <Link className="forgotpass-btn" to="/reset">
+                  Forgot Password?
+                </Link>
               </div>
             </div>
             <div>
@@ -79,8 +99,8 @@ const Login = () => {
             </div>
           </form>
           <div className="sign-up">
-            <Link to="/register">
-              <span> Don’t have an account? Sign Up</span>
+            <Link to="/register" className="forgotpass-btn">
+              Don’t have an account? Sign Up
             </Link>
           </div>
         </div>

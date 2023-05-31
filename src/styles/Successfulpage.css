@@ -1,4 +1,3 @@
-
 .success-logo-container {
   display: flex;
   flex-direction: column;
@@ -7,10 +6,7 @@
 
 .logo-container {
   align-self: flex-end;
-  width: 177px;
-  height: 62px;
-  margin-right: 80px;
-  margin-top: 20px;
+  width: 13%;
 }
 .Congrats {
   font-size: 50px;
@@ -19,32 +15,40 @@
   text-align: center;
   color: #00151a;
 }
-.image-container{
+.image-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
- .image-container img{
+.image-container img {
   position: relative;
- }
- .Eclipse1{
+}
+.Eclipse1 {
   position: relative;
-    width: 90px;
-      left: 40px;
-    top: 51px;
-    justify-self: center;
- }
- .checkmark{
-  width: 70px;
+  width: 95px;
+  left: 40px;
+  top: 51px;
+  justify-self: center;
+}
+.checkmark {
+  width: 60px;
   position: absolute;
-  top: 45px;
-  left: -10px;
- }
+  top: 50px;
+  left: -40px;
+}
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 5px;
+}
 .success-message p {
-    font-size: 25px;
+  font-size: 25px;
   font-weight: 500;
-  line-height: 10px;
+
   text-align: center;
   color: #55666a;
 }
@@ -52,10 +56,10 @@
   color: #007e99;
 }
 
-.Success-btn-container{
+.Success-btn-container {
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 .successful-btn {
   font-style: normal;
@@ -63,17 +67,20 @@
   font-size: 24px;
   line-height: 29px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 18px 132px;
   background-color: #007e99;
   border: none;
   width: 374px;
   height: 65px;
-  gap: 10px;
   border-radius: 5px;
+  margin-top: 50px;
 }
-.wave{
-height: 220px;
-width: 100%;
-  
+.bottom-image {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.bottom-image img {
+  width: 400px;
 }

@@ -73,14 +73,14 @@ const Faqs = () => {
             suscipit commodi eum enim atque at? Et perspiciatis dolore iure
             voluptatem`
         }
-    ]
+    ];
+    
     const faqList = faqs.map((faq, index)=> <li key={index}>
-        <Accordion title={faq.question} content={faq.answer} />
+        <Accordion title={faq.question} content={faq.answer}  />
         </li>)
   return (
     <div className='faq-content'>
-    <h4>Frequently asked <br/>
-    questions</h4>
+    <h4>Frequently asked <br/>questions</h4>
         <ul className='faqs'>
             {faqList}
         </ul>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
 import Onboarding from "../../components/Onboarding";
+import { useNavigate } from "react-router-dom";
 
 const PasswordReset = () => {
   const {
@@ -12,9 +13,9 @@ const PasswordReset = () => {
     formState: { errors },
     reset,
   } = useForm();
-
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    window.location.href = "/verifyEmail";
+    navigate("/verifyEmail");
     console.log(data);
     reset();
   };

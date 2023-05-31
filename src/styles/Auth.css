@@ -11,7 +11,7 @@
 .new_password_head_content {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 60%;
 }
 .reset_head_content {
   justify-content: space-between;

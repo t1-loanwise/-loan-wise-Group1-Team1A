@@ -108,7 +108,7 @@ const NavBar = () => {
         </LogoNavContainer>
         <ButtonsContainer>
           <Register to="/register">Register</Register>
-          <Login>Login</Login>
+          <Login to="/login">Login</Login>
         </ButtonsContainer>
       </Navbar>
     </>

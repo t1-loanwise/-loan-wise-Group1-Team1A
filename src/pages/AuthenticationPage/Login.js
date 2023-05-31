@@ -46,28 +46,29 @@ const Login = () => {
                 <p className="errorMsg">Email is required</p>
               )}
             </div>
-            <div className="login-form-control">
+            <div className="login-form-control2">
               <label>Password</label>
-
-              <div className="passwordToggle">
-                <input
-                  className="password-input"
-                  type={showPswd ? "text" : "password"}
-                  name="password"
-                  {...register("password", {
-                    required: true,
-                    minLength: {
-                      pattern:
-                        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{6,20}$/,
-                      value: 6,
-                    },
-                  })}
-                />
-                <img
-                  src={showPswd ? hide : show}
-                  onClick={togglePasswordVisibility}
-                  alt="show or hide password"
-                />
+              <div className="password-input-container">
+                <div className="passwordToggle">
+                  <input
+                    className="pass-input"
+                    type={showPswd ? "text" : "password"}
+                    name="password"
+                    {...register("password", {
+                      required: true,
+                      minLength: {
+                        pattern:
+                          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{6,20}$/,
+                        value: 6,
+                      },
+                    })}
+                  />
+                  <img
+                    src={showPswd ? hide : show}
+                    onClick={togglePasswordVisibility}
+                    alt="show or hide password"
+                  />
+                </div>
               </div>
 
               {errors.password && errors.password.type === "required" && (
@@ -80,8 +81,13 @@ const Login = () => {
               )}
             </div>
             <div className="stay-login-container">
-              <div className="check-btn">
-                <input type="checkbox" name="password" />
+              <div className="check-btn-container">
+                <input
+                  type="checkbox"
+                  name="password"
+                  {...register("checkbox")}
+                  className="check-btn"
+                />
                 <label>
                   <span>Keep me signed in</span>
                 </label>

@@ -13,12 +13,12 @@ const SuccessfulPage = () => {
           <Logo />
         </div>
       </div>
-      <div className="image-container">
-        <img className="Eclipse1" src={eclipse} alt="Eclipse" />
-        <img className="checkmark" src={check} alt="check-mark" />
-      </div>
 
       <div className="success-message">
+        <div className="image-container">
+          <img className="Eclipse1" src={eclipse} alt="Eclipse" />
+          <img className="checkmark" src={check} alt="check-mark" />
+        </div>
         <h3 className="Congrats">Congratulations!!!</h3>
         <p>
           You are set to explore <span>LoanWise</span> to make safe and easy

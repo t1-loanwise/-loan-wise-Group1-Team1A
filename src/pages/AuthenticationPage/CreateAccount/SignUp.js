@@ -48,9 +48,8 @@ const SignUp = () => {
 
   return (
     <div className="createAccount_parentContainer">
+      <Onboarding />
 
-       <Onboarding />
-    
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />
@@ -147,7 +146,7 @@ const SignUp = () => {
               Create Account
             </button>
           </form>
-          <Link className="toLoginPageBtn">
+          <Link className="toLoginPageBtn" to="/login">
             Already have an account? Sign in
           </Link>
         </div>

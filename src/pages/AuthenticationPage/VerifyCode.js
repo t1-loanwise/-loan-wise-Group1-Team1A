@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import useVerificationHook from "./lib/useVerificationHook";
 import "../../styles/Auth.css";
 import Logo from "../../components/Logo";
-import AuthenticationMainText from "../../components/AuthenticationMainText2";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import { useNavigate } from "react-router-dom";
-import AuthCard from "../../components/AuthCard";
+import Onboarding from "../../components/Onboarding";
 
 const VerifyCode = () => {
   const [seconds, setSeconds] = useState(60);
@@ -41,7 +41,7 @@ const VerifyCode = () => {
   return (
     <>
       <div className="verify_container">
-        <AuthCard />
+        <Onboarding />
         <div className="verify_head_content">
           <div className="logo_container">
             <Logo />

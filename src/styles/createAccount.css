@@ -17,8 +17,39 @@
 }
 
 .onboardingImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
   width: 40%;
   height: 95vh;
+  background-color: #007E99;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.onboardingGraph {
+  width: 80%;
+}
+
+.onboardingTextContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.3em;
+}
+
+.safe_easy {
+font-size: 33px;
+font-weight: 900;
+
+}
+
+.insight_click {
+  font-size: 20px;
+  font-weight: 900;
+  width: 470px;
 }
 
 .loanwiselogo-container {
@@ -53,6 +84,11 @@
 
 .verifyInputContainer input:focus {
    outline: 1.5px solid #007e99;
+}
+
+.resend_OTP {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .createAccount {
@@ -150,6 +186,7 @@
   background-color: #007e99;
   border: 0;
   height: 50px;
+  width: 100%;
   border-radius: 5px;
   color: #ffffff;
   font-size: 1.35em;

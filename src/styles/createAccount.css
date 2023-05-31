@@ -11,8 +11,8 @@
 .createAccountContainer {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  height: 100%;
+  gap: 1.5em;
+  height: fit-content;
   width: 60%;
   /* padding: 0 70px; */
 }
@@ -48,7 +48,7 @@
 
 .insight_click {
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 500;
   width: 470px;
 }
 
@@ -190,7 +190,7 @@
   border-radius: 5px;
   color: #ffffff;
   font-size: 1.35em;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .createAccountBtn:hover {

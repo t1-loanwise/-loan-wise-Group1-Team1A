@@ -1,15 +1,15 @@
 .mainTextContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 }
 
 .mainTextHeader {
-    font-size: 2.5em;
-    color:#00151A;
+  font-size: 40px;
+  color: #00151a;
 }
 
 .mainTextBody {
-    font-size: 1.5em ;
-    color: #55666A;
+  font-size: 24px;
+  color: #55666a;
 }

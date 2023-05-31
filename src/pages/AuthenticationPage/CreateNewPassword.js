@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText2";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
-import AuthCard from "../../components/AuthCard";
+import Onboarding from "../../components/Onboarding";
 
 function CreateNewPassword() {
   const {
@@ -25,7 +25,7 @@ function CreateNewPassword() {
   console.log({ ...register("password") });
   return (
     <div className="verify_container">
-      <AuthCard />
+      <Onboarding />
       <div className="new_password_head_content">
         <div className="logo_container">
           <Logo />

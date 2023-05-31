@@ -66,23 +66,30 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-}
-.verifyInputContainer {
-  display: flex;
-  gap: 1em;
+  width: 90%;
 }
 
-.verifyInputContainer input {
-  width: 146px;
-  height: 168px;
+.verifyInputContainer {
+  margin-bottom: 50px;
+}
+
+.verifyInput {
+  display: flex;
+  gap: 1.8em;
+}
+
+.verifyInput input {
+  height: 20vh;
+  width: 10vw;
   border-radius: 4px;
   border: 1px solid #cbcbcb;
   background: transparent;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 5px;
 }
 
-.verifyInputContainer input:focus {
+.verifyInput input:focus {
   outline: 1.5px solid #007e99;
 }
 
@@ -146,6 +153,8 @@
 
 .signUpErrorMsg {
   opacity: 0.7;
+  font-size: 16px;
+  color: red;
 }
 
 .passwordToggle {
@@ -234,8 +243,8 @@
   text-align: center;
   text-decoration: none;
   color: #00151a;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  /* margin-top: 10px; */
-  font-size: 1.2em;
+margin-top: 15px;
+  font-size: 19px;
 }

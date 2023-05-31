@@ -17,7 +17,7 @@ function CreateNewPassword() {
   password.current = watch("password", "");
 
   const onSubmit = (password, confirmpassword) => {
-    window.location.href = "/success_page";
+    window.location.href = "/success";
     console.log(password, confirmpassword);
     reset();
   };

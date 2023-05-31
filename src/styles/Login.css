@@ -110,6 +110,7 @@ div .login-Btn {
 }
 
 .login-form-control .errorMsg {
+  color: red;
   font-size: 0.875rem;
 }
 label {

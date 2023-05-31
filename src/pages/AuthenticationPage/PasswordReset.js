@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText2";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
 import Onboarding from "../../components/Onboarding";
 

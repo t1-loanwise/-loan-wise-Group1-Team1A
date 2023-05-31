@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import Onboarding from "../../components/Onboarding";
 import show from "../../assets/show.png";
 import hide from "../../assets/hide.png";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 
 const Login = () => {
   const {
@@ -31,8 +32,10 @@ const Login = () => {
           <Logo />
         </div>
         <div className="login-message">
-          <h3>Welcome Back!</h3>
-          <p>Enter your details to sign in</p>
+          <AuthenticationMainText
+            Title="Welcome Back!"
+            Body="Enter your details to sign in"
+          />
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="login-form-control">
               <label>Email address</label>

@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/successful" element={<Successfulpage />} />
+        <Route path="/success" element={<Successfulpage />} />
       </Routes>
     </div>
   );

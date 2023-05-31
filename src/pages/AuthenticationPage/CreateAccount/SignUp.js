@@ -43,7 +43,7 @@ const SignUp = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/securityQuestions");
+    navigate("/verifyRegistration");
   };
 
   return (

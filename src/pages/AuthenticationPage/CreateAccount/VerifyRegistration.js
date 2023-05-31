@@ -1,66 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../../components/AuthenticationMainText";
 import Logo from "../../../components/Logo";
 import Onboarding from "../../../components/Onboarding";
 
-
 const VerifyRegistration = () => {
-  const [otp, setOtp] = useState(["", "", "", ""]);
-  const inputRefs = useRef([]);
-  const [timer, setTimer] = useState(60);
-  const [disabled, setDisabled] = useState(false)
-  const [countdownFinished, setCountdownFinished] = useState(false)
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleOtpChange = (event, index) => {
-    const value = event.target.value;
-    if (!isNaN(value) || value === "") {
-      setOtp((prevOtp) => {
-        const newOtp = [...prevOtp];
-        newOtp[index] = value;
-        return newOtp;
-      });
-      if (value === "" && index > 0) {
-        inputRefs.current[index - 1].focus();
-      } else if (index < inputRefs.current.length - 1) {
-        inputRefs.current[index + 1].focus();
-      }
+  const handleVerify = (data) => {
+    const isAllFilled = Object.values(data.otp).every((digit) => digit !== "");
+    if (isAllFilled) {
+      navigate("/next-page");
     }
-  };
-
-  const handleKeyDown = (event, index) => {
-    if (event.key === "Backspace" && otp[index] === "") {
-      if (index > 0) {
-        inputRefs.current[index - 1].focus();
-      }
-    }
-  };
-
-  useEffect(() => {
-let interValId = null;
-
-if (timer === 0) {
-  setDisabled(false);
-  setCountdownFinished(true);
-  clearInterval(interValId);
-} else {
-  interValId = setInterval(() => {
-    setTimer(timer - 1);
-  }, 1000)
-}
-
-return () => clearInterval(interValId)
-  },[timer])
-
-  const handleResend = () => {
-    setTimer(60);
-    setDisabled(true);
-    setCountdownFinished(false)
-  }
-
-  const handleVerify = () => {
-    const enteredOtp = otp.join("");
-    // Perform verification logic here with enteredOtp
-    console.log("Entered OTP:", enteredOtp);
   };
 
   return (
@@ -75,32 +32,53 @@ return () => clearInterval(interValId)
             Title="Verify Email Address"
             Body="Thank you for signing up, please enter the verification code we sent to your email address @johndoe@gmail.com"
           />
-          <form onSubmit={handleVerify}>
+          <form onSubmit={handleSubmit(handleVerify)}>
             <div className="verifyInputContainer">
-              {otp.map((digit, index) => (
+              <div className="verifyInput">
                 <input
-                  key={index}
                   type="text"
                   maxLength={1}
-                  value={digit}
-                  onChange={(event) => handleOtpChange(event, index)}
-                  onKeyDown={(event) => handleKeyDown(event, index)}
-                  ref={(ref) => (inputRefs.current[index] = ref)}
+                  {...register("otp.0", { required: true, pattern: /^\d$/ })}
+                  className={
+                    errors.otp && errors.otp[0] ? "emptyBoxHighlight" : ""
+                  }
                 />
-              ))}
+                <input
+                  type="text"
+                  maxLength={1}
+                  {...register("otp.1", { required: true, pattern: /^\d$/ })}
+                  className={
+                    errors.otp && errors.otp[1] ? "emptyBoxHighlight" : ""
+                  }
+                />
+                <input
+                  type="text"
+                  maxLength={1}
+                  {...register("otp.2", { required: true, pattern: /^\d$/ })}
+                  className={
+                    errors.otp && errors.otp[2] ? "emptyBoxHighlight" : ""
+                  }
+                />
+                <input
+                  type="text"
+                  maxLength={1}
+                  {...register("otp.3", { required: true, pattern: /^\d$/ })}
+                  className={
+                    errors.otp && errors.otp[3] ? "emptyBoxHighlight" : ""
+                  }
+                />
+              </div>
+              {errors.otp && errors.otp.length > 0 && (
+                <div className="signUpErrorMsg">
+                  Please fill all the boxes before proceeding
+                </div>
+              )}
             </div>
-            <button className="createAccountBtn">Verify</button>
+            <button className="createAccountBtn" type="submit">
+              Verify
+            </button>
           </form>
         </div>
-        {/* <span className="no_OTP">Didn't get an OTP? Resend in 60s</span> */}
-        <span className="no_OTP">
-          Didn't get an OTP?
-          {countdownFinished ? (
-            <span onClick={handleResend} className="resend_OTP"> Resend</span>
-          ) : (
-            <span> Resend in {timer}s </span>
-          )}
-        </span>
       </div>
     </div>
   );

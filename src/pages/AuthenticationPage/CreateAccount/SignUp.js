@@ -43,14 +43,14 @@ const SignUp = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/securityQuestions");
+    navigate("/verifyRegistration");
   };
 
   return (
     <div className="createAccount_parentContainer">
 
        <Onboarding />
-    
+
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />

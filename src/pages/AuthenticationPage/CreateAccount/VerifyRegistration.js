@@ -93,6 +93,7 @@ const VerifyRegistration = () => {
                   onChange={(event) => handleOtpChange(event, index)}
                   onKeyDown={(event) => handleKeyDown(event, index)}
                   ref={(ref) => (inputRefs.current[index] = ref)}
+                  required
                 />
               ))}
             </div>

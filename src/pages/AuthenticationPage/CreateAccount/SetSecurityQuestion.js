@@ -14,7 +14,7 @@ const SetSecurityQuestion = () => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/");
+    navigate("/successful");
   };
   return (
     <div className="createAccount_parentContainer">

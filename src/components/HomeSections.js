@@ -41,7 +41,7 @@ const HomeSections = ({ link, text }) => {
               <p>Watch Our History</p>
             </div>
             <HomeHeader
-              header={"Transform lending with accurate risk prediction"}
+              header={"Transform lending          with accurate risk prediction"}
               text={
                 "Our app accurately predicts default risk for borrowers, helping financial institutions make informed lending decisions and minimize the impact of defaults"
               }

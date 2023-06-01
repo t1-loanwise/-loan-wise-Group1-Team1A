@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText2";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
-import AuthCard from "../../components/AuthCard";
+import Onboarding from "../../components/Onboarding";
+import { useNavigate } from "react-router-dom";
 
 function CreateNewPassword() {
   const {
@@ -16,8 +17,9 @@ function CreateNewPassword() {
   const password = useRef({});
   password.current = watch("password", "");
 
+  const navigate = useNavigate();
   const onSubmit = (password, confirmpassword) => {
-    window.location.href = "/success_page";
+    navigate("/success");
     console.log(password, confirmpassword);
     reset();
   };
@@ -25,7 +27,7 @@ function CreateNewPassword() {
   console.log({ ...register("password") });
   return (
     <div className="verify_container">
-      <AuthCard />
+      <Onboarding />
       <div className="new_password_head_content">
         <div className="logo_container">
           <Logo />

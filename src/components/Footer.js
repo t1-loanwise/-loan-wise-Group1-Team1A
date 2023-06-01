@@ -7,7 +7,7 @@ import instagram from "../assets/insta.svg";
 import twitter from "../assets/twitter.svg";
 
 const FooterContainer = styled.footer`
-  padding: 0px 5% 32px;
+  padding: 0px 5.5% 32px;
   display: flex;
   flex-direction: column;
   gap: 2.7em;
@@ -39,20 +39,26 @@ const Div2 = styled.div`
 const Div3 = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  gap: 1.3em;
   color: #2b3f44;
 `;
 const Div2A = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.4em;
 `;
 const Div2B = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.3em;
 `;
 const Div2C = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+`;
+
+const Div2D = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -102,7 +108,6 @@ const Company = styled.span`
 `;
 const Contact = styled.span`
   font-size: 1.25em;
-  padding-bottom: 20px;
 `;
 
 const ResourcesList = styled.ul`
@@ -110,14 +115,14 @@ const ResourcesList = styled.ul`
   padding-left: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 1.3em;
 `;
 const CompanyList = styled.ul`
   list-style-type: none;
   padding-left: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 1.3em;
 `;
 
 const List = styled(Link)`
@@ -219,33 +224,35 @@ const Footer = () => {
                 </li>
               </CompanyList>
             </Div2C>
+            <Div3>
+              <Contact>CONTACT</Contact>
+              <Div2D>
+                <span>loanwise@gmail.com</span>
+                <PhoneNumbers>
+                  <span>+123-456-789-00</span>
+                  <span>+123-456-789-00</span>
+                </PhoneNumbers>
+                <span>
+                  123, Numberone Avenue, <br /> VI, Lagos
+                </span>
+                <SocialsContainer>
+                  <a href="Home.js">
+                    <SocialsImage src={linkedin} alt="LinkedIn" />
+                  </a>
+
+                  <a href="Home.js">
+                    <SocialsImage src={instagram} alt="Instagram" />
+                  </a>
+
+                  <a href="Home.js">
+                    <SocialsImage src={twitter} alt="Twitter" />
+                  </a>
+                </SocialsContainer>
+              </Div2D>
+            </Div3>
           </Div2>
-          <Div3>
-            <Contact>CONTACT</Contact>
-            <span>loanwise@gmail.com</span>
-            <PhoneNumbers>
-              <span>+123-456-789-00</span>
-              <span>+123-456-789-00</span>
-            </PhoneNumbers>
-            <span>
-              123, Numberone Avenue, <br /> VI, Lagos
-            </span>
-            <SocialsContainer>
-              <a href="Home.js">
-                 <SocialsImage src={linkedin} alt="LinkedIn" />
-              </a>
-
-              <a href="Home.js">
-                <SocialsImage src={instagram} alt="Instagram" />
-              </a>
-
-              <a href="Home.js">
-                 <SocialsImage src={twitter} alt="Twitter" />
-              </a>
-            </SocialsContainer>
-          </Div3>
         </DivContainers>
-        <Copyright>© 2023Loanwise.All rights reserved</Copyright>
+        <Copyright>©2023 Loanwise. All rights reserved</Copyright>
       </FooterContainer>
     </>
   );

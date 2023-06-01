@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { styled } from "styled-components";
 
 const NewsLetterContainer = styled.div`
@@ -57,8 +58,10 @@ const Newsletter = () => {
         Join Our Newsletter to be up-to-date with our latest news.
       </NewsLetter>
       <SubscriptionContainer>
-        <SubscribeBtn>Subscribe</SubscribeBtn>
+          <SubscribeBtn>Subscribe</SubscribeBtn>
+        <Link to="/pricing">
         <MembershipBtn>Get A Membership</MembershipBtn>
+        </Link>
       </SubscriptionContainer>
     </NewsLetterContainer>
   );

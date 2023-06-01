@@ -18,9 +18,9 @@ const PrivacyForm = () => {
       <div className="setting-form">
         <label>Two factor authentication</label>
         <div>
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
         </div>
       </div>
@@ -50,9 +50,9 @@ const PrivacyForm = () => {
       <div className="setting-form">
         <label>Use security question for sign-in</label>
         <div>
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
         </div>
       </div>

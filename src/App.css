@@ -268,12 +268,12 @@ ul{
   display: flex;
   align-items: center;
 }
-.setting-accordion{
-}
+
 .accordion-header {
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .accordion-title h3{
@@ -288,7 +288,8 @@ ul{
 }
 .accordion-body {
   padding: 1.5rem;
-  background-color: #007e99;
+  background-color: #E6F2F5;
+  ;
 }
 
 .setting-form {
@@ -406,3 +407,9 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* .arrow{
+  width: 30px;
+  height: 30px;
+
+} */

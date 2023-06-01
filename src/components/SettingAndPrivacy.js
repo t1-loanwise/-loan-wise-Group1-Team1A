@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import DownChevron from '../assets/down_chevron.svg'
+import RightChevron from '../assets/right_chevron.svg'
 
 const SettingAndPrivacy = ({title, subtitle, component}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +13,9 @@ const SettingAndPrivacy = ({title, subtitle, component}) => {
                     <h3>{title}</h3>
                     <h4>{subtitle}</h4>
                 </div>
-                <div onClick={() => setIsOpen(!isOpen)} className='arrow'>{isOpen ? '&dsaquo;' :'&rsaquo;'}</div>
+                <div onClick={() => setIsOpen(!isOpen)} className='arrow'>
+                    {isOpen ? <img src={DownChevron} alt='chevron' className="arrow" height='10' width='10' />  
+                    : <img src={RightChevron} alt='chevron' className="arrow" height='10' width='10' /> }</div>
             </div>
             {
                isOpen && 

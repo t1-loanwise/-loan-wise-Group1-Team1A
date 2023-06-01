@@ -2,6 +2,7 @@ import React from "react";
 import Card2 from "../../components/Card2";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
+import Newsletter from "../../components/Newsletter";
 import WireframeA from "../../assets/WireframeA.svg";
 import WireframeB from "../../assets/WireframeB.svg";
 import WireframeC from "../../assets/WireframeC.svg";
@@ -15,8 +16,8 @@ import LoanOverview from "../../assets/Special Feature.svg";
 const About = () => {
   return (
     <>
-      <NavBar />
       <div className="about_us_container">
+        <NavBar />
         <div className="about_header_container">
           <h2 className="about-header">
             Simplifying lending, reducing loan default risk.
@@ -122,8 +123,9 @@ const About = () => {
             title={"Pelumi Oyediji "}
           />
         </div>
+        <Newsletter />
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

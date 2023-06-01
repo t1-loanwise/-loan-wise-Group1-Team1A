@@ -145,7 +145,7 @@
 
 .feature-section {
   display: flex;
-  gap: 1em;
+  gap: 2em;
   justify-content: space-between;
   padding: 5% 6.5%;
 }
@@ -179,7 +179,7 @@
   display: grid;
   grid-template-columns: 40% 40%;
   gap: 2em;
-  width: 67.5%;
+  width: 65%;
 }
 
 .featureCard-container {

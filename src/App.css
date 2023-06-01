@@ -38,7 +38,8 @@
   transition: border 0.25s ease-in-out;
 }
 .card1_content:hover {
-  box-shadow: 0 15px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
   border: none;
 }
 .card1_content p {
@@ -275,10 +276,10 @@ ul {
   justify-content: space-between;
 }
 .faq-answer {
-  background-color: #ccc;
   margin: 0;
   padding: 20px 0;
   line-height: 1rem;
+  transition: backgroud-color 0.5s ease-in-out;
 }
 .price {
   display: flex;

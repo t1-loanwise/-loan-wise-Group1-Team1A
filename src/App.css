@@ -1,10 +1,14 @@
 .loanwise_card_container {
+  font-family: "Urbanist";
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 24px;
   color: #00151a;
-  padding: 24px 0;
-  font-family: "Urbanist";
+  width: 100%;
+  padding-bottom: 48px;
 }
 .loanwise_card_container_heading {
   font-weight: 700;
@@ -13,11 +17,12 @@
 }
 .card1_container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   grid-column-gap: 32px;
   row-gap: 0;
   margin: 0;
-  padding: 0;
+  width: 90%;
+  /* padding: 24px; */
   text-align: center;
 }
 .card1_content {
@@ -27,8 +32,17 @@
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   align-items: center;
   color: rgb(25, 25, 25);
+  transition: border 0.25s ease-in-out;
+}
+.card1_content:hover {
+  box-shadow: 0 15px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+.card1_content p {
+  font-size: 16px;
 }
 .card1_image {
   width: 122px;
@@ -40,7 +54,7 @@
   margin-bottom: 32px;
 }
 .loanwise_card_container_text {
-  width: 45%;
+  width: 55%;
   text-align: center;
   color: #55666a;
 }
@@ -180,7 +194,7 @@
   transition: ease-in-out 0.3s;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
 }
@@ -194,7 +208,7 @@ ul{
   display: flex;
   align-items: center;
 }
-.price-card ul li img{
+.price-card ul li img {
   margin-right: 0.5rem;
 }
 .pricing-option-card {
@@ -207,7 +221,7 @@ ul{
   align-items: center;
 }
 
-.pricing-option-card img{
+.pricing-option-card img {
   margin: auto;
 }
 
@@ -222,7 +236,7 @@ ul{
   font-size: 0.6rem;
   text-align: center;
 }
-.pricing-option-card .button-section{
+.pricing-option-card .button-section {
   width: 70%;
   margin: auto;
   margin-top: 1rem;
@@ -236,18 +250,18 @@ ul{
   justify-content: space-between;
 }
 
-.faqs li:last-child{
+.faqs li:last-child {
   border-bottom: 1px solid #ccc;
 }
 
-.faq-content h4{
+.faq-content h4 {
   font-size: 3rem;
   padding-left: 2rem;
-  color: #1E1E1C;
-  font-weight: 200;;
+  color: #1e1e1c;
+  font-weight: 200;
 }
 
-.faq-content{
+.faq-content {
   margin: auto;
   padding: 2rem 5%;
 }

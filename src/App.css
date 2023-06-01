@@ -276,10 +276,10 @@ ul {
   justify-content: space-between;
 }
 .faq-answer {
-  background-color: #ccc;
   margin: 0;
   padding: 20px 0;
   line-height: 1rem;
+  transition: backgroud-color 0.5s ease-in-out;
 }
 .price {
   display: flex;

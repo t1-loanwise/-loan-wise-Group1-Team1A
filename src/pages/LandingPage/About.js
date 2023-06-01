@@ -14,18 +14,16 @@ import Table from "../../assets/Table.svg";
 // import Button1 from "../../components/Button1";
 import LoanOverview from "../../assets/Special Feature.svg";
 
-const UseLoanwise = () => {
+const About = () => {
   return (
     <>
       <NavBar />
-      <div className="loanwise_card_container">
-        <div>
+      <div className="about_us_container">
+        <div className="about_header_container">
           <h2 className="about-header">
             Simplifying lending, reducing loan default risk.
           </h2>
-        </div>
-        <div>
-          <p className="about-loan-defualt">
+          <p className="about_header_text">
             The Loan Default Prediction App is a company dedicated to
             simplifying the lending process for financial institutions and
             borrowers. Their experienced team understands the complexities and
@@ -34,7 +32,9 @@ const UseLoanwise = () => {
             informed lending decisions.
           </p>
         </div>
-        <img className="about-us" src={AboutUs} alt="avatar" />
+        <div className="about_us_img_container">
+          <img className="about_us_img" src={AboutUs} alt="avatar" />
+        </div>
         <div className="our-vision">
           <div>
             <h2>Our vision</h2>
@@ -137,9 +137,9 @@ const UseLoanwise = () => {
           />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
 
-export default UseLoanwise;
+export default About;

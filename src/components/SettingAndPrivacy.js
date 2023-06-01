@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SettingAndPrivacy = ({component}) => {
+const SettingAndPrivacy = ({title, subtitle, component}) => {
     const [isOpen, setIsOpen] = useState(false);
     
   return (
@@ -8,8 +8,8 @@ const SettingAndPrivacy = ({component}) => {
         <div className='setting-accordion'>
             <div className='accordion-header'>
                 <div className='accordion-title'>
-                    <h3>Security & Privacy</h3>
-                    <h4>Protect your account with maximum security</h4>
+                    <h3>{title}</h3>
+                    <h4>{subtitle}</h4>
                 </div>
                 <div onClick={() => setIsOpen(!isOpen)} className='arrow'>{isOpen ? '&dsaquo;' :'&rsaquo;'}</div>
             </div>

@@ -1,18 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { styled } from "styled-components";
 
 const NewsLetterContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0px 5% 45px;
+  padding: 32px 5.5% 45px;
 `;
 
 const NewsLetter = styled.span`
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 400px;
-  line-height: 1.4em;
-  width: 70%;
+  line-height: 1.3em;
+  width: 65%;
   color: #002a33;
 `;
 
@@ -57,8 +58,10 @@ const Newsletter = () => {
         Join Our Newsletter to be up-to-date with our latest news.
       </NewsLetter>
       <SubscriptionContainer>
-        <SubscribeBtn>Subscribe</SubscribeBtn>
+          <SubscribeBtn>Subscribe</SubscribeBtn>
+        <Link to="/pricing">
         <MembershipBtn>Get A Membership</MembershipBtn>
+        </Link>
       </SubscriptionContainer>
     </NewsLetterContainer>
   );

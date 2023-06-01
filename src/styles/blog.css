@@ -1,81 +1,94 @@
-  .background-one {
-      background-image: url("../assets/Ellipse\ 36.svg");
-      height: 100%;
-      background-position: 100% top;
-      background-repeat: no-repeat;
-      background-size: 65vw;
-    
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.not-spam {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.main-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 6.5% 0%;
+  position: relative;
+}
+
+.p-one {
+  font-family: Urbanist;
+  font-weight: 900;
+  background-image: conic-gradient(from 180deg at 50% 50%, rgba(0, 126, 153, 0.68) 0deg, rgba(0, 126, 153, 0.49) 360deg), linear-gradient(211.54deg, rgba(0, 126, 153, 0.5) 6.43%, rgba(0, 126, 153, 0.91) 23.31%, rgba(0, 126, 153, 0.85) 33.02%, rgba(0, 126, 153, 0.91) 50.92%, rgba(0, 126, 153, 0.5) 71.37%, rgba(0, 126, 153, 0.520203) 84.15%, rgba(0, 126, 153, 0.5) 92.33%);
+  -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+  font-size: 36px;
+}
+
+.h-one {
+  font-family: Urbanist;
+  font-weight: 900;
+  font-size: 55px;
+  color: #00191f;
+}
+
+.my-image {
+  position: relative;
+  width: 60%;
+  overflow-x: hidden;
+  height: fit-content;
+   overflow-y: hidden;
+}
+
+.my-image img:nth-of-type(2) {
+  width: 90%;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+}
+.my-image img:nth-of-type(1) {
+  width: 140%;
+  position: relative;
+  top: -10%;
+  left: -30%;
+}
+
+.child-div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+
+.notify-btn {
+  background: #007e99;
+  height: 55px;
+  width: 30%;
+  border: 0;
+  font-size: 1em;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.notify-btn:hover {
+  background-color: #006980;
+  transition: ease-in-out 0.3s;
+}
+
+.form-wrapper form {
+  width: 70%;
+}
+.my-email {
+  width: 100%;
+  height: 45px;
+  padding-left: 8px;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  font-size: 1em;
+  &:focus {
+    outline: 1px solid #007e99;
   }
-
-  .form-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.2em;
-
-  }
-
-  .main-div {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 5%;
-      padding-right: 0%;
-      padding-top: 2em;
-      padding-bottom: 2em;
-  }
-
-  .p-one {
-      font-family: Urbanist;
-      font-weight: 700;
-      color: #007E99;
-  }
-
-  .h-one {
-      font-family: Urbanist;
-      font-weight: 900;
-      font-size: 54px;
-      color: #00191f;
-
-  }
-
-  .my-image img {
-      width: 90%;
-
-  }
-
-  .child-div {
-      margin-top: 8rem;
-      font-size: x-large;
-
-  }
-
-  .my-image {
-      display: flex;
-      justify-content: flex-end;
-  }
-
-  .notify-btn {
-      background: #007e99;
-      padding: 20px 0px;
-      margin-left: 115px;
-      width: 70%;
-      border: 0;
-      font-size: 0.6em;
-      border-radius: 5px;
-      color: #ffffff;
-
-      &:hover {
-          background-color: #006980;
-          transition: ease-in-out 0.3s;
-      }
-    }
-    .my-email{
-        width: 160%;
-        height: 50px;
-        padding: 8px 0 8px 8px;
-        border: 1px solid #cbcbcb;
-        border-radius: 5px;
-        font-size: 0.6em;
-        &:focus {
-          outline: 1px solid #007e99;
-    }
 }

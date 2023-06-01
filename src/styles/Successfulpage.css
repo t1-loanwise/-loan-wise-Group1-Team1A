@@ -86,13 +86,8 @@
 .successful-btn:hover {
   background-color: #006980;
 }
-.bottom-image {
-  overflow: hidden;
-  width: 100%;
-  max-width: 1280px;
-}
 
 .wave {
-  height: 182px;
+  height: 184px;
   width: 100%;
 }

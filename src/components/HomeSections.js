@@ -29,6 +29,9 @@ const HomeSections = ({ link, text }) => {
     borderRadius: "5px",
     fontSize: "16px",
     cursor: "pointer",
+    "&:hover" : {
+      backgroundColor: "#006980",
+    }
   };
 
   return (

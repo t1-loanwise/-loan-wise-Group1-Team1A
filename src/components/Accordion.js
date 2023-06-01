@@ -1,14 +1,14 @@
-import React, {useState}  from 'react'
+import React, {useState} from 'react'
 import plus from '../assets/icons/plus.png'
 
-const Accordion = (props) => {
-    
-    const [isAccordionActive, setIsAccordionActive] = useState(false)
+const Accordion = (props) => {  
+    const [isOpen, setIsOpen] = useState(false)  
   return (
     <div>
-        <div className='faq-accordion'>{props.title} 
-        <img src={plus} height='20' width='20' alt='plus' onClick={(event) => setIsAccordionActive(!isAccordionActive)}/></div>
-        {isAccordionActive && <div className='faq-answer'>{props.content}</div>}
+        <div className='faq-accordion'>
+        <div>{props.title} {props.isOpen}</div>
+        <img src={plus} height='20' width='20' alt='plus' onClick={() => setIsOpen(!isOpen)}/></div>
+        {isOpen && <div className='faq-answer'>{props.content}</div>}
     </div>
   )
 }

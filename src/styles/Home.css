@@ -155,8 +155,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 75px 50px;
-  width: 30%;
+  padding: 75px 65px;
+  width: 35%;
   border-radius: 15px;
   background-color: #11252A;
   color: #ffffff
@@ -168,7 +168,7 @@
 }
 
 .amazing-text {
-  font-size: 40px;
+  font-size: 49px;
 }
 
 .featureArrow-image {

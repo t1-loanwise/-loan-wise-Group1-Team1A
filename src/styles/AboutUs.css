@@ -62,92 +62,66 @@
   border-radius: 0px;
 }
 
-.our-vision {
-  position: relative;
+.our-vision-container,
+.our-mision-container {
   display: flex;
-  gap: 10px;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 1150px;
+  padding: 64px;
+  /* margin: auto; */
+  gap: 96px;
+}
+.our-vision-img,
+.our-mision-img {
+  width: 40%;
+}
+.our-vision-text,
+.our-mision-text {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.our-vision-text P,
+.our-mision-text P {
+  margin: 0;
+  width: 85%;
 }
 .loan-analysis {
-  height: 400px;
-  width: 652px;
-  left: 110px;
-  top: 0px;
-  border-radius: 15px;
+  height: 100%;
+  width: 100%;
 }
-
-.annual-revenue1,
-.annual-revenue2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #fffafa;
-  border: 0.2px solid none;
+.button3 {
+  padding: 24px 48px;
+  width: 30%;
   border-radius: 5px;
-  padding: 10px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: #007e99;
 }
-.annual-revenue1 .currency,
-.annual-revenue2 .currency {
-  color: white;
-  background-color: #00191f;
-  border-radius: 50%;
-  padding: 1px 6px;
-  font-size: small;
-}
-.annual-revenue1 :nth-child(2),
-.annual-revenue2 :nth-child(2) {
-  font-size: 9px;
-}
-.annual-revenue1 {
-  position: absolute;
-  top: 40px;
-  left: 540px;
-}
-.annual-revenue2 {
-  position: absolute;
-  top: 180px;
-  left: 540px;
-}
-.our-mission {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.loan-defualt {
-  color: #000000;
-  font-size: 13px;
-  width: 400px;
-}
-
 .card2_container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-column-gap: 32px;
   row-gap: 0;
   margin: 0;
-  padding: 0;
+  width: 90%;
   text-align: center;
 }
 .card2_content {
   background-color: #ffffff;
   border: 1px solid #aab2b4;
-  margin: 10px auto;
-  padding: 20px 70px;
+  margin: 15px 0;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   align-items: center;
   color: rgb(25, 25, 25);
 }
 .card2_image {
-  width: 100px;
-  height: 100px;
+  width: 122px;
+  height: 122px;
 }
 .card2_container p {
   color: #55666a;

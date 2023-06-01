@@ -1,5 +1,4 @@
 import React from "react";
-// import Card1 from "../../components/Card1";
 import Card2 from "../../components/Card2";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
@@ -11,7 +10,6 @@ import WireframeE from "../../assets/WireframeE.svg";
 import WireframeF from "../../assets/WireframeF.svg";
 import AboutUs from "../../assets/About Us.svg";
 import Table from "../../assets/Table.svg";
-// import Button1 from "../../components/Button1";
 import LoanOverview from "../../assets/Special Feature.svg";
 
 const About = () => {
@@ -35,10 +33,10 @@ const About = () => {
         <div className="about_us_img_container">
           <img className="about_us_img" src={AboutUs} alt="avatar" />
         </div>
-        <div className="our-vision">
-          <div>
-            <h2>Our vision</h2>
-            <p className="loan-defualt">
+        <div className="our-vision-container">
+          <div className="our-vision-text">
+            <h2>Our Vision</h2>
+            <p>
               Our vision at Loan Default Prediction App is to revolutionize the
               lending industry by providing financial institutions with
               innovative and data-driven solutions that streamline the lending
@@ -49,31 +47,19 @@ const About = () => {
               institutions with the tools they need to make more informed
               lending decisions and improve the overall customer experience.{" "}
             </p>
-            <button className="button2">Get Started</button>
+            <button className="button3">Get Started</button>
           </div>
-          <div>
+          <div className="our-vision-img">
             <img className="loan-analysis" src={Table} alt="avatar" />
-            <div className="annual-revenue1">
-              <span className="currency">€</span>
-              <span>
-                <main>Annual Revenue</main>
-                <main>$6,003,034,335:00</main>
-              </span>
-            </div>
-            <div className="annual-revenue2">
-              <span className="currency">€</span>
-              <div>
-                <main>Annual Revenue</main>
-                <main>$6,003,034,335:00</main>
-              </div>
-            </div>
           </div>
         </div>
-        <div className="our-mission">
-          <img className="loan-analysis" src={LoanOverview} alt="avatar" />
-          <div>
+        <div className="our-mision-container">
+          <div className="our-mision-img">
+            <img className="loan-analysis" src={LoanOverview} alt="avatar" />
+          </div>
+          <div className="our-mision-text">
             <h2>Our Mission</h2>
-            <p className="loan-defualt">
+            <p>
               Our mission at Loan Default Prediction App is to revolutionize the
               lending industry by providing an innovative solution that
               simplifies and streamlines the loan application process while
@@ -83,7 +69,7 @@ const About = () => {
               data-driven insights to help our clients make more informed
               lending decisions and minimize risk exposure.
             </p>
-            <button className="button2">Get Started</button>
+            <button className="button3">Get Started</button>
           </div>
         </div>
       </div>
@@ -137,7 +123,7 @@ const About = () => {
           />
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

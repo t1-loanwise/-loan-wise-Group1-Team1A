@@ -3,15 +3,8 @@ import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import TextHeader from "../../components/TextHeader";
 import PriceCard from "../../components/PriceCard";
-import OptionCard from "../../components/OptionCard";
 import Faqs from "../../components/Faqs";
 import UseLoanWise from "../../components/UseLoanwise"
-import hand from "../../assets/icons/handWithCurrency.png";
-import bank from "../../assets/icons/bank.png";
-import lender from "../../assets/icons/lender.png";
-import underwriters from "../../assets/icons/underwriters.png";
-import business from "../../assets/icons/business.png";
-import notes from "../../assets/icons/notes.png";
 import Newsletter from "../../components/Newsletter";
 
 const Pricing = () => {

@@ -10,6 +10,8 @@ import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import SettingAndPrivacy from "./components/SettingAndPrivacy";
+import Test from "./components/Test";
 
 const App = () => {
   return (
@@ -24,7 +26,8 @@ const App = () => {
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />}/>
-        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>        
+        <Route path="/test" element={<Test />}/>
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../components/Logo";
 import "../../styles/Successfulpage.css";
-import wave from "../../assets/Group 8038.svg";
+import wave from "../../assets/Screenshot.png";
 import eclipse from "../../assets/Ellipse 769.svg";
 import check from "../../assets/checked.svg";
 

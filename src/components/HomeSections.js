@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Imagehero from "../assets/Imagehero.svg";
 import AboutImage from "../assets/AboutImage.svg";
 import Feature from "../assets/FeatureImage.svg";
@@ -27,7 +28,9 @@ const HomeSections = ({ link, text }) => {
     padding: "15px 30px",
     borderRadius: "5px",
     fontSize: "16px",
+    cursor: "pointer",
   };
+
   return (
     <div>
       <div className="homepage_container">
@@ -44,15 +47,19 @@ const HomeSections = ({ link, text }) => {
               }
             />
             <div id="buttons">
-              <Button1 text={"Get Started"} style={buttonStyle} />
-              <button className="learnMore">
-                Learn More
-                <IconContext.Provider value={{ className: "react-icon1" }}>
-                  <div>
-                    <BsArrowRightShort />
-                  </div>
-                </IconContext.Provider>
-              </button>
+              <Link to="/register">
+                <Button1 text={"Get Started"} style={buttonStyle} />
+              </Link>
+              <Link to="/about" className="learnMoreText">
+                <button className="learnMore">
+                  Learn More
+                  <IconContext.Provider value={{ className: "react-icon1" }}>
+                    <div>
+                      <BsArrowRightShort />
+                    </div>
+                  </IconContext.Provider>
+                </button>
+              </Link>
             </div>
           </div>
           <img
@@ -69,11 +76,13 @@ const HomeSections = ({ link, text }) => {
                 "At Loan Default Prediction, we're passionate about revolutionising the lending industry by providing innovative technology that helps financial institutions make more informed lending decisions and minimise the risk of loan defaults."
               }
             />
-            <Button1
-              id="about-button"
-              style={buttonStyle}
-              text={"Get Started"}
-            />
+            <Link to="/register">
+              <Button1
+                id="about-button"
+                style={buttonStyle}
+                text={"Get Started"}
+              />
+            </Link>
           </div>
           <img
             src={AboutImage}
@@ -96,7 +105,10 @@ const HomeSections = ({ link, text }) => {
         </div>
         <div className="feature-section">
           <div className="amazing-features">
-            <span className="amazing-text">Check out <br/>our amazing features.</span>
+            <span className="amazing-text">
+              Check out <br />
+              our amazing features.
+            </span>
             <img src={Arrow2} alt="arrow-img" className="featureArrow-image" />
           </div>
           <div className="featuresCard-container">

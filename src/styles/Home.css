@@ -1,5 +1,5 @@
 #clock {
-  width: 30px;
+  width: 38px;
 }
 #history {
   display: flex;
@@ -7,10 +7,13 @@
   gap: 5px;
 }
 
+#history p {
+  font-size: 18px;
+}
 .checklist-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
 }
 
 #checklist {
@@ -30,6 +33,10 @@
   gap: 0.6em;
 }
 
+.homepage_container {
+  width: 100vw;
+}
+
 .learnMore {
   display: flex;
   gap: 10px;
@@ -42,7 +49,13 @@
   font-size: 16px;
   font-weight: 400;
   background: transparent;
+   cursor: pointer;
 }
+
+.learnMoreText {
+  text-decoration: none;
+}
+
 .learnMore:hover {
   background: #007e99;
   color: #ffffff;
@@ -55,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5% 7%;
+  padding: 5% 6.5%;
 }
 
 .discover-section {
@@ -133,7 +146,7 @@
   display: flex;
   gap: 1em;
   justify-content: space-between;
-  padding: 5% 7%;
+  padding: 5% 6.5%;
 }
 
 .amazing-features {

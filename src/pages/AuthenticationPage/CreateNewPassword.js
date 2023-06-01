@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
 import Onboarding from "../../components/Onboarding";
+import { useNavigate } from "react-router-dom";
 
 function CreateNewPassword() {
   const {
@@ -16,8 +17,9 @@ function CreateNewPassword() {
   const password = useRef({});
   password.current = watch("password", "");
 
+  const navigate = useNavigate();
   const onSubmit = (password, confirmpassword) => {
-    window.location.href = "/success";
+    navigate("/success");
     console.log(password, confirmpassword);
     reset();
   };

@@ -46,6 +46,7 @@
 .our-mision-container {
   gap: 96px;
   text-align: right;
+  margin-top: 72px;
 }
 .our-vision-img,
 .our-mision-img {
@@ -87,11 +88,14 @@
 }
 .button3 {
   padding: 24px 48px;
-  width: 30%;
+  /* width: 30%; */
   border-radius: 5px;
   border: 1px solid #ffffff;
   color: #ffffff;
   background: #007e99;
+}
+.button3:hover {
+  background: #006980;
 }
 .card2_container {
   display: grid;
@@ -112,6 +116,12 @@
   gap: 16px;
   align-items: center;
   color: rgb(25, 25, 25);
+  transition: border 0.25s ease-in-out;
+}
+.card2_content:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: none;
 }
 .card2_image {
   width: 122px;

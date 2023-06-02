@@ -12,6 +12,7 @@ import WireframeF from "../../assets/WireframeF.svg";
 import AboutUs from "../../assets/About Us.svg";
 import Table from "../../assets/Table.svg";
 import LoanOverview from "../../assets/Special Feature.svg";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -48,7 +49,9 @@ const About = () => {
               institutions with the tools they need to make more informed
               lending decisions and improve the overall customer experience.{" "}
             </p>
-            <button className="button3">Get Started</button>
+            <Link to="/register">
+              <button className="button3">Get Started</button>
+            </Link>
           </div>
           <div className="our-vision-img">
             <img className="loan-analysis" src={Table} alt="avatar" />
@@ -70,7 +73,9 @@ const About = () => {
               data-driven insights to help our clients make more informed
               lending decisions and minimize risk exposure.
             </p>
-            <button className="button3">Get Started</button>
+            <Link to="/register">
+              <button className="button3">Get Started</button>
+            </Link>
           </div>
         </div>
       </div>

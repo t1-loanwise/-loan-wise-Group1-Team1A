@@ -297,6 +297,10 @@
   display: flex;
   justify-content: space-between;
 }
+.faq-question:hover {
+  color: #006980;
+}
+
 .faq-answer {
   margin: 0;
   padding: 20px 0;
@@ -307,7 +311,8 @@
   display: flex;
   align-items: center;
 }
-.plus:hover {
+.plus:hover,
+.minus:hover {
   color: #006980;
 }
 .minus {

@@ -290,6 +290,11 @@
 }
 .faq-accordion {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.faq-question {
+  display: flex;
   justify-content: space-between;
 }
 .faq-answer {

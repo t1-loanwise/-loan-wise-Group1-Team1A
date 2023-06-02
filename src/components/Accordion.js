@@ -11,7 +11,7 @@ const Accordion = ({ content, title }) => {
   return (
     <>
       <div className="faq-accordion">
-        <div onClick={handleClick}>
+        <div className="faq-question" onClick={handleClick}>
           {title}
           {isOpen ? (
             <IconContext.Provider value={{ className: "minus" }}>

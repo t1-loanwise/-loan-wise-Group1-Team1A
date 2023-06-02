@@ -118,24 +118,32 @@
   border: 1px solid #aad4dd;
   border-radius: 17.5px;
   padding: 20px;
-  width: 300px;
+  width: 350px;
   height: 600px;
   text-align: center;
 }
 
 .price-card.active {
-  border: 5px solid #006980;
-  border-top: groove 25px #006980;
-  border-radius: 40px;
-  width: 310px;
-  height: 750px;
+  border: 1px solid #006980;
+  background: #006980;
+  /* border-top: groove 25px #006980; */
+  /* border-radius: 12px; */
+  width: 360px;
+  height: 700px;
 }
 .price-card.active ul {
-  background: #e6f2f5;
   padding: 16px 8px;
-  margin: 16px 0;
+  /* margin: 16px 0; */
 }
-
+.premium-price-content.active {
+  background: #e6f2f5;
+  height: 100%;
+  border-radius: 5px;
+}
+.premium-head-content.active {
+  background: #ffffff;
+  padding-bottom: 16px;
+}
 .price-card h3 {
   margin-bottom: 5px;
   font-weight: 900;

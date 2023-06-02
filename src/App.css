@@ -96,13 +96,18 @@
   font-weight: bolder;
   margin-bottom: 10px;
 }
-.row {
+.text-header a {
+  color: #1d79e5;
+  font-weight: 700;
+}
+.pricing-row {
   display: flex;
   justify-content: space-evenly;
 }
 
 .align-center {
   align-items: center;
+  margin-bottom: 96px;
 }
 
 .justify-center {
@@ -114,15 +119,21 @@
   border-radius: 17.5px;
   padding: 20px;
   width: 300px;
-  height: 700px;
+  height: 600px;
   text-align: center;
 }
 
 .price-card.active {
-  border: 10px solid #006980;
-  border-top: 25px solid #006980;
+  border: 5px solid #006980;
+  border-top: groove 25px #006980;
+  border-radius: 40px;
   width: 310px;
   height: 750px;
+}
+.price-card.active ul {
+  background: #e6f2f5;
+  padding: 16px 8px;
+  margin: 16px 0;
 }
 
 .price-card h3 {
@@ -159,18 +170,20 @@
 .price-card .price-discount sup {
   font-size: 1rem;
 }
-.align-center {
-  align-items: center;
+.two_buttons {
+  display: flex;
+  gap: 4px;
 }
 .align-start {
   align-items: start;
 }
 .outline-button {
   background: transparent;
-  border: 1px solid #006980;
+  border: 1px solid #007e99;
+  outline: none;
   padding: 10px 15px;
   border-radius: 5px;
-  color: #006980;
+  color: #007e99;
   width: 100%;
 }
 
@@ -195,9 +208,12 @@
   transition: ease-in-out 0.3s;
 }
 
-ul {
+.pricing_list {
   list-style: none;
   padding: 0;
+}
+.pricing_list li {
+  margin-top: 24px;
 }
 
 .price-card ul {
@@ -256,10 +272,11 @@ ul {
 }
 
 .faq-content h4 {
-  font-size: 3rem;
-  padding-left: 2rem;
+  font-size: 2em;
+  padding: 0;
   color: #1e1e1c;
-  font-weight: 200;
+  font-weight: 400;
+  padding-bottom: 16px;
 }
 
 .faq-content {
@@ -273,8 +290,17 @@ ul {
 }
 .faq-accordion {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+}
+.faq-question:hover {
+  color: #006980;
+}
+
 .faq-answer {
   margin: 0;
   padding: 20px 0;
@@ -284,4 +310,12 @@ ul {
 .price {
   display: flex;
   align-items: center;
+}
+.plus:hover,
+.minus:hover {
+  color: #006980;
+}
+.minus {
+  font-size: 16px;
+  color: #006980;
 }

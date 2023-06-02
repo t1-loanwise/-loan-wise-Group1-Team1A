@@ -3,21 +3,20 @@ import plus from "../assets/icons/plus.png";
 import { IconContext } from "react-icons";
 import { BiMinusCircle } from "react-icons/bi";
 
-const Accordion = (content, title) => {
+const Accordion = ({ content, title }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    // setIsClose(isClose);
   };
   return (
     <>
       <div className="faq-accordion">
-        <div>
-          {title}{" "}
+        <div onClick={handleClick}>
+          {title}
           {isOpen ? (
             <IconContext.Provider value={{ className: "minus" }}>
               <div>
-                <BiMinusCircle onClick={handleClick} />
+                <BiMinusCircle />
               </div>
             </IconContext.Provider>
           ) : (
@@ -28,8 +27,7 @@ const Accordion = (content, title) => {
                 width="20"
                 alt="plus"
                 // className="plus"
-                onClick={handleClick}
-              />{" "}
+              />
             </div>
           )}
         </div>

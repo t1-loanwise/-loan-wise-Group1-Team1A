@@ -7,7 +7,7 @@ const Test = () => {
   return (
     <div>
         <SettingAndPrivacy title='Security & Privacy' subtitle='Protect your account with maximum security' component={<PrivacyForm />} />
-        <SettingAndPrivacy title='econd' subtitle='securityffff' component={<UseLoanwise />} />
+        <SettingAndPrivacy title='Second' subtitle='securityffff' component={<UseLoanwise />} />
     </div>
   )
 }

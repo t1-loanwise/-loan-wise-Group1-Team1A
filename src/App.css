@@ -160,6 +160,7 @@
 .price-card .price {
   margin: 0;
   font-size: 3rem;
+  font-weight: 700;
 }
 
 .price-card .price sup {
@@ -327,5 +328,5 @@
   color: #006980;
 }
 .plus {
-  font-size: 28px;
+  font-size: 20px;
 }

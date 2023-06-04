@@ -5,7 +5,8 @@ import "../styles/AccordianContent.css";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import PopUp from "../components/PopUp";
 import ExitingRule from "./ExitingRule";
-import { faSleigh } from "@fortawesome/free-solid-svg-icons";
+
+import NewRule from "./NewRule";
 
 const PredictiveContent = () => {
   const [buttonPop, setButtonPopup] = useState(false);
@@ -30,9 +31,12 @@ const PredictiveContent = () => {
         <div className="Toggle-btn">
           <ToggleSwitch />
           <div className="edit-btn">
-            <button type="button">
+            <button onClick={() => setButtonPopup(true)}>
               <img src={EditButton} alt="edit" />
             </button>
+            <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
+              <ExitingRule />
+            </PopUp>
           </div>
         </div>
       </div>
@@ -41,9 +45,12 @@ const PredictiveContent = () => {
         <div className="Toggle-btn">
           <ToggleSwitch />
           <div className="edit-btn">
-            <button type="button">
+            <button onClick={() => setButtonPopup(true)}>
               <img src={EditButton} alt="edit" />
             </button>
+            <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
+              <ExitingRule />
+            </PopUp>
           </div>
         </div>
       </div>
@@ -52,17 +59,25 @@ const PredictiveContent = () => {
         <div className="Toggle-btn">
           <ToggleSwitch />
           <div className="edit-btn">
-            <button type="button">
+            <button onClick={() => setButtonPopup(true)}>
               <img src={EditButton} alt="edit" />
             </button>
+            <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
+              <ExitingRule />
+            </PopUp>
           </div>
         </div>
       </div>
       <div className="new-rule">
-        <button className="new-rule-btn" type="submit">
-          <img src={PlusSign} alt="plus" />
-          <p>Set new rule</p>
-        </button>
+        <div className="edit-btn">
+          <button className="new-rule-btn" onClick={() => setButtonPopup(true)}>
+            <img src={PlusSign} alt="plus" />
+            Set new rule
+          </button>
+          <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
+            <NewRule />
+          </PopUp>
+        </div>
       </div>
     </div>
   );

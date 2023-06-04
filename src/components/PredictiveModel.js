@@ -10,6 +10,7 @@ const PredictiveModel = () => {
     <div>
       <SettingsAccordian />
       <ExitingRule />
+      <NewRule />
     </div>
   );
 };

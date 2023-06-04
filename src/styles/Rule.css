@@ -4,6 +4,7 @@
 }
 .select-option select {
   padding: 8px 16px;
+  margin-top: 5px;
 }
 .variable-container,
 .Operator-container,

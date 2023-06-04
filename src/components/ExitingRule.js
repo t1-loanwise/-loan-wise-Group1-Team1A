@@ -18,6 +18,15 @@ const ExitingRule = () => {
           dismissal
         </p>
       </div>
+      <div className="select-option">
+        <label>Model Title</label>
+        <select>
+          <option value="">Select exiting rule</option>
+          <option value="1">Bank Statement Name March</option>
+          <option value="2">Spending Pattern</option>
+          <option value="3">Cash Flow Pattern</option>
+        </select>
+      </div>
 
       <div className="select-option-below">
         <RuleOptions />

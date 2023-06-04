@@ -42,15 +42,16 @@
   width: 100%;
   cursor: pointer;
   gap: 10px;
+  text-align: center;
+  font-size: 1rem;
 }
 .new-rule {
   align-self: flex-end;
   margin-top: 2.5rem;
 }
 .new-rule p {
-  text-align: center;
-  font-size: 1rem;
 }
+
 /*styling the title*/
 .accordion-title {
   display: flex;

@@ -1,9 +1,10 @@
 import React from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../components/AuthenticationMainText2";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
-import AuthCard from "../../components/AuthCard";
+import Onboarding from "../../components/Onboarding";
+import { useNavigate } from "react-router-dom";
 
 const PasswordReset = () => {
   const {
@@ -12,9 +13,9 @@ const PasswordReset = () => {
     formState: { errors },
     reset,
   } = useForm();
-
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    window.location.href = "/verifyEmail";
+    navigate("/verifyEmail");
     console.log(data);
     reset();
   };
@@ -22,7 +23,7 @@ const PasswordReset = () => {
   console.log({ ...register("email") });
   return (
     <div className="verify_container">
-      <AuthCard />
+      <Onboarding />
       <div className="reset_head_content">
         <div className="logo_container">
           <Logo />

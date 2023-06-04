@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
-import plus from '../assets/icons/plus.png'
+import React from 'react'
+import Accordion from './Accordion'
 
 const Faqs = () => {
-    const [isAccordionActive, setIsAccordionActive] = useState(false)
     const faqs = [
         {
             question:"Is the Basic Plan suitable for small financial institutions? ",
@@ -74,16 +73,14 @@ const Faqs = () => {
             suscipit commodi eum enim atque at? Et perspiciatis dolore iure
             voluptatem`
         }
-    ]
-    const faqList = faqs.map(faq => <li>
-        <div className='faq-accordion'>{faq.question} 
-        <img src={plus} height='20' width='20' alt='plus' onClick={() => setIsAccordionActive(!isAccordionActive)}/></div>
-        {isAccordionActive && <div className='faq-answer'>{faq.answer}</div>}
+    ];
+    
+    const faqList = faqs.map((faq, index)=> <li key={index}>
+        <Accordion title={faq.question} content={faq.answer}  />
         </li>)
   return (
-    <div id='faq' className='faq-content'>
-    <h4>Frequently asked <br/>
-    questions</h4>
+    <div className='faq-content'>
+    <h4>Frequently asked <br/>questions</h4>
         <ul className='faqs'>
             {faqList}
         </ul>

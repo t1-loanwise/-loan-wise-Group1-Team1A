@@ -1,0 +1,50 @@
+.select-option {
+  display: flex;
+  flex-direction: column;
+}
+.select-option select {
+  padding: 8px 16px;
+}
+.variable-container,
+.Operator-container,
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.delete {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.875rem;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+.variable-container select,
+.Operator-container select {
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 5px;
+}
+.value input {
+  padding: 8px 16px;
+  width: 100%;
+  background-color: #ebebeb;
+  color: #9d9d9d;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cbcbcb;
+}
+.Operator-container select {
+  background-color: #ebebeb;
+  border-color: #cbcbcb;
+  color: #9d9d9d;
+}
+.variable-container select {
+  border-color: #cbcbcb;
+  color: #9d9d9d;
+}

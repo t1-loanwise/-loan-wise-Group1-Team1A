@@ -1,0 +1,78 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6f2f5;
+  justify-content: center;
+  width: 50%;
+  margin: 2em auto;
+  padding: 1.5em;
+  gap: 10px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Toggle-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.edit-btn button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.model {
+  font-size: 1.125rem;
+  color: #00151a;
+}
+.new-rule-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #007e99;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0.6875rem 1rem;
+  width: 100%;
+  cursor: pointer;
+  gap: 10px;
+}
+.new-rule {
+  align-self: flex-end;
+  margin-top: 2.5rem;
+}
+.new-rule p {
+  text-align: center;
+  font-size: 1rem;
+}
+/*styling the title*/
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 2em auto;
+  padding: 0 1.5em;
+}
+.accordion-text {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 1.5rem;
+  color: #00191f;
+}
+.body {
+  font-size: 1em;
+  color: #55666a;
+}
+.close-open-icon {
+  cursor: pointer;
+}

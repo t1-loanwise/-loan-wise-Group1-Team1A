@@ -1,17 +1,23 @@
 .cardGraphContainer {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 0.7em;
-    row-gap: 0.5em;
-    padding: 3% 3%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  padding: 3% 3%;
 }
 
-.tremorCard {
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.7em;
+}
+
+.dashCard {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
   color: #00151a;
   width: 195px;
+  height: fit-content;
   padding: 15px 10px;
   background: #ffffff;
   border: 1px solid #e6f2f5;
@@ -27,14 +33,36 @@
   border-radius: 10px;
 }
 
-.cardTremorIcon {
+.cardIcon {
   width: 20px;
 }
 
-.cardTremorMetric {
-  font-size: 18px;
+.cardMetric {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.cardTremorText {
+.cardText {
   font-size: 14px;
+}
+
+.line-chart-container {
+  width: 40%;
+  background: #ffffff;
+  border: 1.10609px solid #e6f2f5;
+  box-shadow: 0px 8px 40px #e6f2f5;
+  border-radius: 17.6974px;
+  padding: 10px;
+}
+
+.line-chart-container span {
+  text-align: center;
+  font-size: 14px;
+  color: #050505;
+  align-self: center;
+}
+
+.line-bar-container {
+  display: flex;
+  column-gap: 0.7em;
 }

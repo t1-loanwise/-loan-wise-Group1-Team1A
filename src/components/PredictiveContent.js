@@ -10,6 +10,7 @@ import NewRule from "./NewRule";
 
 const PredictiveContent = () => {
   const [buttonPop, setButtonPopup] = useState(false);
+  const [newRuleButtonPop, setNewRuleButtonpop] = useState(false);
   return (
     <div className="content-container">
       <div className="content">
@@ -70,11 +71,14 @@ const PredictiveContent = () => {
       </div>
       <div className="new-rule">
         <div className="edit-btn">
-          <button className="new-rule-btn" onClick={() => setButtonPopup(true)}>
+          <button
+            className="new-rule-btn"
+            onClick={() => setNewRuleButtonpop(true)}
+          >
             <img src={PlusSign} alt="plus" />
             Set new rule
           </button>
-          <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
+          <PopUp trigger={newRuleButtonPop} setTrigger={setNewRuleButtonpop}>
             <NewRule />
           </PopUp>
         </div>

@@ -8,7 +8,7 @@ const RuleOptions = () => {
       <div className="main-container">
         <div className="variable-container">
           <label>Variable</label>
-          <div>
+          <div className="select">
             <select>
               <option value="">Select</option>
               <option value="1">Bank Statement Name Match</option>
@@ -47,7 +47,7 @@ const RuleOptions = () => {
         </div>
         <div className="Operator-container">
           <label>Operator</label>
-          <div>
+          <div className="select">
             <select>
               <option value="">Select</option>
               <option value="1">Less than</option>
@@ -72,20 +72,24 @@ const RuleOptions = () => {
           <label>Value</label>
           <div>
             <input type="text" placeholder="input" readOnly />
-            <div className="delete">
-              <p>Delete</p>
-              <span>
-                <img src={Delete} alt="Delete" />
-              </span>
+            <div className="delete-btn-container">
+              <div className="delete">
+                <p>Delete</p>
+                <span>
+                  <img src={Delete} alt="Delete" width="18px" height="18px" />
+                </span>
+              </div>
             </div>
           </div>
           <div>
             <input type="text" placeholder="input" readOnly />
-            <div className="delete">
-              <p>Delete</p>
-              <span>
-                <img src={Delete} alt="Delete" />
-              </span>
+            <div className="delete-btn-container">
+              <div className="delete">
+                <p>Delete</p>
+                <span>
+                  <img src={Delete} alt="Delete" width="18px" height="18px" />
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -30,12 +30,11 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
-  padding: 11px 16px;
+  padding: 11px 10px;
   gap: 5px;
 }
 .btn {
   align-self: flex-end;
-  width: 25%;
 }
 .save-btn {
   width: 100%;
@@ -53,4 +52,18 @@
   padding: 8px 16px;
   outline: #007e99;
   margin-top: 5px;
+}
+.conditionsMet {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 1px solid #006980;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+}
+.conditionsMet:checked {
+  border-radius: 50%;
+  background: #006980;
+  border: 3px solid #fff;
 }

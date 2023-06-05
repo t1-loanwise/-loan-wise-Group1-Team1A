@@ -7,7 +7,7 @@ import NewRule from "./NewRule";
 
 const PredictiveModel = () => {
   return (
-    <div>
+    <div className="predictive-model-container">
       <SettingsAccordian />
     </div>
   );

@@ -79,11 +79,8 @@
 .react-icon1 {
   font-size: 32px;
 }
-.pricing {
-  padding: 1rem 4rem;
-}
 .text-header {
-  width: 50%;
+  width: 40%;
   margin: auto;
   text-align: center;
   margin-bottom: 20px;
@@ -96,6 +93,10 @@
   font-weight: bolder;
   margin-bottom: 10px;
 }
+/* .text-header p {
+  width: 80%;
+  text-align: center;
+} */
 .text-header a {
   color: #1d79e5;
   font-weight: 700;
@@ -118,28 +119,39 @@
   border: 1px solid #aad4dd;
   border-radius: 17.5px;
   padding: 20px;
-  width: 300px;
-  height: 600px;
+  width: 350px;
+  height: 620px;
   text-align: center;
 }
 
 .price-card.active {
-  border: 5px solid #006980;
-  border-top: groove 25px #006980;
-  border-radius: 40px;
-  width: 310px;
-  height: 750px;
+  border: 1px solid #006980;
+  background: #006980;
+  padding: 20px 5px 8px;
+  width: 360px;
+  height: 700px;
 }
 .price-card.active ul {
-  background: #e6f2f5;
-  padding: 16px 8px;
-  margin: 16px 0;
+  padding: 16px 24px;
+  /* margin: 16px 0; */
 }
-
+.premium-price-content.active {
+  background: #e6f2f5;
+  height: 100%;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+.premium-head-content.active {
+  background: #ffffff;
+  /* border-radius: 5px; */
+  border-top-left-radius: 5px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
 .price-card h3 {
   margin-bottom: 5px;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 36px;
 }
 .price-card p {
   font-size: 0.8rem;
@@ -148,6 +160,7 @@
 .price-card .price {
   margin: 0;
   font-size: 3rem;
+  font-weight: 700;
 }
 
 .price-card .price sup {
@@ -200,7 +213,7 @@
   padding: 10px 15px;
   border-radius: 5px;
   color: #ffffff;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .fill-button:hover {
@@ -210,7 +223,7 @@
 
 .pricing_list {
   list-style: none;
-  padding: 0;
+  padding-top: 48px;
 }
 .pricing_list li {
   margin-top: 24px;
@@ -305,17 +318,15 @@
   margin: 0;
   padding: 20px 0;
   line-height: 1rem;
-  transition: backgroud-color 0.5s ease-in-out;
 }
 .price {
   display: flex;
   align-items: center;
 }
-.plus:hover,
-.minus:hover {
+.minus {
+  font-size: 24px;
   color: #006980;
 }
-.minus {
-  font-size: 16px;
-  color: #006980;
+.plus {
+  font-size: 20px;
 }

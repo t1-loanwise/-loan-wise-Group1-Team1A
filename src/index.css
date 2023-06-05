@@ -10,6 +10,9 @@ body {
   height: 100%;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.rightContent {
+  width: 83%;
+  justify-self: end;
+  margin-top: 15vh;
+  padding: 3% 3% 0;
+}

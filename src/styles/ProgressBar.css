@@ -1,8 +1,35 @@
 .progress_bar {
-  margin: 0 auto;
+  margin: 24px auto;
   width: 70%;
-  height: 20px;
+  height: 10px;
   border-radius: 50px;
   border: 1px solid #e6f2f5;
   background: #e6f2f5;
+  position: relative;
+}
+.progress_circle1,
+.progress_circle2,
+.progress_circle3 {
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  padding: 15px;
+}
+.progress_circle1 {
+  left: 0;
+  border: 1px solid #007e99;
+  background: #007e99;
+}
+.progress_circle2 {
+  left: 50%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+}
+.progress_circle3 {
+  left: 99%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+}
+.colorFiller {
+  background: #007e99;
 }

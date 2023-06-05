@@ -12,7 +12,10 @@ import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSec
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
-import ProgressBar from "./components/ProgressBar";
+import PersonalDetails from "./pages/NewPortfolio/PersonalDetails";
+import BusinessDetails from "./pages/NewPortfolio/BusinessDetails";
+import PersonalStatementAnalysis from "./pages/NewPortfolio/PersonalStatementAnalysis";
+import BusinessStatementAnalysis from "./pages/NewPortfolio/BusinessStatementAnalysis";
 
 const App = () => {
   return (
@@ -30,7 +33,16 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
-        <Route path="/progress" element={<ProgressBar />} />
+        <Route path="/personalDetails" element={<PersonalDetails />} />
+        <Route path="/businessDetails" element={<BusinessDetails />} />
+        <Route
+          path="/personalStatement"
+          element={<PersonalStatementAnalysis />}
+        />
+        <Route
+          path="/businessStatement"
+          element={<BusinessStatementAnalysis />}
+        />
       </Routes>
     </div>
   );

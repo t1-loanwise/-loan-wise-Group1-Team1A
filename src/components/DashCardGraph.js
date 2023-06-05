@@ -6,57 +6,59 @@ import "../styles/cardGraph.css";
 import Barchart from "./BarChart";
 import Linechart from "./Linechart";
 
-const DashCardGraph = () => {
+const dashCardGraph = () => {
   return (
-    <div>
-      <div className="cardGraphContainer">
-        <div className="tremorCard">
+    <div className="cardGraphContainer">
+      <div className="cardsContainer">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={Arrows} alt="arrows" className="cardTremorIcon" />
+            <img src={Arrows} alt="arrows" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">1200</span>
-          <span className="cardTremorText">Total Number of Loans</span>
+          <span className="cardMetric">1200</span>
+          <span className="cardText">Total Number of Loans</span>
         </div>
-        <div className="tremorCard">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={Cash} alt="money" className="cardTremorIcon" />
+            <img src={Cash} alt="money" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">N30,500,000.00</span>
-          <span className="cardTremorText">Total Amount of Loans</span>
+          <span className="cardMetric">N30,500,000.00</span>
+          <span className="cardText">Total Amount of Loans</span>
         </div>
-        <div className="tremorCard">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={Arrows} alt="arrows" className="cardTremorIcon" />
+            <img src={Arrows} alt="arrows" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">350</span>
-          <span className="cardTremorText">Number of Loans in Default</span>
+          <span className="cardMetric">350</span>
+          <span className="cardText">Number of Loans in Default</span>
         </div>
-        <div className="tremorCard">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={Cash} alt="arrows" className="cardTremorIcon" />
+            <img src={Cash} alt="arrows" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">N12,000,000.00</span>
-          <span className="cardTremorText">Total Recovered Loans</span>
+          <span className="cardMetric">N12,000,000.00</span>
+          <span className="cardText">Total Recovered Loans</span>
         </div>
-        <div className="tremorCard">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={Cash} alt="arrows" className="cardTremorIcon" />
+            <img src={Cash} alt="arrows" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">N8,500,000.00</span>
-          <span className="cardTremorText">Amount of Loans in Default</span>
+          <span className="cardMetric">N8,500,000.00</span>
+          <span className="cardText">Amount of Loans in Default</span>
         </div>
-        <div className="tremorCard">
+      </div>
+      <div className="line-bar-container">
+        <div className="dashCard">
           <div className="iconContainer">
-            <img src={CardIcon} alt="arrows" className="cardTremorIcon" />
+            <img src={CardIcon} alt="arrows" className="cardIcon" />
           </div>
-          <span className="cardTremorMetric">N6,000,000.00</span>
-          <span className="cardTremorText">Interest Earnings</span>
+          <span className="cardMetric">N6,000,000.00</span>
+          <span className="cardText">Interest Earnings</span>
         </div>
-        <Linechart/>
-        <Barchart/>
+        <Linechart />
+        <Barchart />
       </div>
     </div>
   );
 };
 
-export default DashCardGraph;
+export default dashCardGraph;

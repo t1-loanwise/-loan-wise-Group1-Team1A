@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Settings = () => {
-  return (
-    <div>Settings</div>
-  )
+  return <div className="rightContent">Settings</div>;
 }
 
 export default Settings

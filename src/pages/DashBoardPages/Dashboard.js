@@ -3,14 +3,7 @@ import DashCardGraph from '../../components/DashCardGraph'
 
 const Dashboard = () => {
   return (
-    <div
-      style={{
-        width: "83%",
-        justifySelf: "end",
-        marginTop: "15vh",
-        padding: "3% 3% 0",
-      }}
-    >
+    <div className='rightContent'>
       <DashCardGraph />
       <div>Hello!</div>
       <div>Hello!</div>

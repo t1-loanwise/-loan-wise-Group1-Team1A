@@ -5,11 +5,6 @@ const Dashboard = () => {
   return (
     <div className='rightContent'>
       <DashCardGraph />
-      <div>Hello!</div>
-      <div>Hello!</div>
-      <div>Hello!</div>
-      <div>Hello!</div>
-      <DashCardGraph />
     </div>
   );
 }

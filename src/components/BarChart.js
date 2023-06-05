@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, BarChart, Title} from "@tremor/react";
 
 const Barchart = () => {
     const chartdata = [
@@ -53,21 +52,19 @@ const Barchart = () => {
   },
 ];
 
-const dataFormatter = (number) => {
-  return "$ " + Intl.NumberFormat("us").format(number).toString();
-};
   return (
-    <Card>
-      <Title>Loan Default Count Trend</Title>
-      <BarChart
-        className="w-full h-10"
-        data={chartdata}
-        index="name"
-        categories={["Qty"]}
-        valueFormatter={dataFormatter}
-        yAxisWidth={24}
-      />
-    </Card>
+    <div></div>
+    // <Card>
+    //   <Title>Loan Default Count Trend</Title>
+    //   <BarChart
+    //     className="w-full h-10"
+    //     data={chartdata}
+    //     index="name"
+    //     categories={["Qty"]}
+    //     valueFormatter={dataFormatter}
+    //     yAxisWidth={24}
+    //   />
+    // </Card>
   );
 }
 

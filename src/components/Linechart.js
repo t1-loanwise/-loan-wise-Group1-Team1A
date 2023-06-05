@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, Title, LineChart } from "@tremor/react";
 
 const Linechart = () => {
      const chartdata = [
@@ -77,22 +76,20 @@ const Linechart = () => {
        },
      ];
 
-    const dataFormatter = (number) =>
-      `${Intl.NumberFormat("us").format(number).toString()}%`;
-
   return (
-    <Card>
-      <Title>Total loans vs. Approved vs. Declined</Title>
-      <LineChart
-        // className="mt-6 h-200"
-        data={chartdata}
-        index="month"
-        categories={["Total loans", "Approved", "Declined"]}
-        colors={["emerald", "gray"]}
-        valueFormatter={dataFormatter}
-        yAxisWidth={48}
-      />
-    </Card>
+    <div></div>
+    // <Card>
+    //   <Title>Total loans vs. Approved vs. Declined</Title>
+    //   <LineChart
+    //     // className="mt-6 h-200"
+    //     data={chartdata}
+    //     index="month"
+    //     categories={["Total loans", "Approved", "Declined"]}
+    //     colors={["emerald", "gray"]}
+    //     valueFormatter={dataFormatter}
+    //     yAxisWidth={48}
+    //   />
+    // </Card>
   );
 }
 

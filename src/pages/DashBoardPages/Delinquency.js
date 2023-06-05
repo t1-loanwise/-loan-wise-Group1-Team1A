@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Delinquency = () => {
-  return (
-    <div>Delinquency</div>
-  )
+  return <div className="rightContent">Delinquency</div>;
 }
 
 export default Delinquency

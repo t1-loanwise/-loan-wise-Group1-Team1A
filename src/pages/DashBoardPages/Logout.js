@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Logout = () => {
-  return (
-    <div>Logout</div>
-  )
+  return <div className="rightContent">Logout</div>;
 }
 
 export default Logout

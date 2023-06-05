@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Notification = () => {
-  return (
-    <div>Notification</div>
-  )
+  return <div className="rightContent">Notification</div>;
 }
 
 export default Notification

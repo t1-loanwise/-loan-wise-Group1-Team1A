@@ -10,3 +10,5 @@ const Settings = () => {
 };
 
 export default Settings;
+  return <div className="rightContent">Settings</div>;
+}

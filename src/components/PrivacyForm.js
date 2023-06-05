@@ -1,4 +1,6 @@
 import React from "react";
+import Button1 from "./Button1";
+import FillButton from "./FillButton";
 
 const PrivacyForm = () => {
   return (
@@ -54,6 +56,11 @@ const PrivacyForm = () => {
             <input type="checkbox" />
             <span className="slider round"></span>
           </label>
+        </div>
+      </div>
+      <div className="setting-form justify-left">
+        <div>
+          <FillButton label='Save Changes' />
         </div>
       </div>
     </form>

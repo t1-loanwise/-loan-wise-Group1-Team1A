@@ -11,7 +11,7 @@ import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import SettingAndPrivacy from "./components/SettingAndPrivacy";
-import Test from "./components/Test";
+import Test from "./pages/Test";
 
 const App = () => {
   return (

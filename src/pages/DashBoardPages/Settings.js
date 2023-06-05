@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import PredictiveModel from "../../components/PredictiveModel";
 
 const Settings = () => {
   return (
-    <div>Settings</div>
-  )
-}
+    <div>
+      <PredictiveModel />
+    </div>
+  );
+};
 
-export default Settings
+export default Settings;

@@ -5,10 +5,10 @@ const Dashboard = () => {
   return (
     <div
       style={{
-        width: "80%",
+        width: "83%",
         justifySelf: "end",
         marginTop: "15vh",
-        padding: "3% 3% 0 0",
+        padding: "3% 3% 0",
       }}
     >
       <DashCardGraph />

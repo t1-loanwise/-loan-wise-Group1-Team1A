@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   row-gap: 0.5em;
-  padding: 3% 3%;
+  padding: 3% 3% 0 0;
+  margin-top: 15vh;
 }
 
 .cardsContainer {
@@ -16,9 +17,9 @@
   flex-direction: column;
   gap: 0.7em;
   color: #00151a;
-  width: 195px;
+  width: 200px;
   height: fit-content;
-  padding: 15px 10px;
+  padding: 15px 15px;
   background: #ffffff;
   border: 1px solid #e6f2f5;
   box-shadow: 0px 8px 40px #e6f2f5;

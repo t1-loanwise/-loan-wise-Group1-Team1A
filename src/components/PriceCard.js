@@ -14,45 +14,49 @@ const PriceCard = (props) => {
 
   return (
     <div className={`price-card ${props.active ? "active" : ""}`}>
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-      <div className="pricing-row justify-center align-start">
-        {props.oldPrice != null && (
-          <div className="price-discount">
-            <sup>$</sup>
+      <div className={`premium-price-content ${props.active ? "active" : ""}`}>
+        <div className={`premium-head-content ${props.active ? "active" : ""}`}>
+          <h3>{props.title}</h3>
+          <p>{props.description}</p>
+          <div className="pricing-row justify-center align-start">
+            {props.oldPrice != null && (
+              <div className="price-discount">
+                <sup>$</sup>
+              </div>
+            )}
+            {props.oldPrice != null && (
+              <div className="price-discount">{props.oldPrice}</div>
+            )}
+            <div>
+              <sup>$</sup>
+            </div>
+            <div className="price">{props.price}</div>
+            <div className="price-label">
+              <div>{props.priceLabel}</div>
+              <div>{props.priceLabel2}</div>
+            </div>
           </div>
-        )}
-        {props.oldPrice != null && (
-          <div className="price-discount">{props.oldPrice}</div>
-        )}
-        <div>
-          <sup>$</sup>
+          {hasTwoButton === true && (
+            <div className="pricing-row two_buttons">
+              <div>
+                <FillButton label={props.firstButtonLabel} />
+              </div>
+              <div>
+                <OutlineButton label={props.lastButtonLabel} />
+              </div>
+            </div>
+          )}
+          <div className="pricing-row">
+            {props.outlineButtonLabel != null && (
+              <OutlineButton label={props.outlineButtonLabel} />
+            )}
+            {props.fillButtonLabel != null && (
+              <FillButton label={props.fillButtonLabel} />
+            )}
+          </div>
         </div>
-        <div className="price">{props.price}</div>
-        <div className="price-label">
-          <div>{props.priceLabel}</div>
-          <div>{props.priceLabel2}</div>
-        </div>
+        <ul className="pricing_list">{points}</ul>
       </div>
-      {hasTwoButton === true && (
-        <div className="pricing-row two_buttons">
-          <div>
-            <FillButton label={props.firstButtonLabel} />
-          </div>
-          <div>
-            <OutlineButton label={props.lastButtonLabel} />
-          </div>
-        </div>
-      )}
-      <div className="pricing-row">
-        {props.outlineButtonLabel != null && (
-          <OutlineButton label={props.outlineButtonLabel} />
-        )}
-        {props.fillButtonLabel != null && (
-          <FillButton label={props.fillButtonLabel} />
-        )}
-      </div>
-      <ul className="pricing_list">{points}</ul>
     </div>
   );
 };

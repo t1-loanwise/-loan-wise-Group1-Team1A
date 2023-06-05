@@ -77,6 +77,13 @@ const options = {
         size: 9.5,
       },
     },
+    tooltip: {
+      callbacks: {
+        label: function (context) {
+          return context.parsed.y.toString(); // Display the data value as the tooltip label
+        },
+      },
+    },
   },
   scales: {
     x: {
@@ -91,9 +98,9 @@ const options = {
       },
       title: {
         display: true,
-        text: "Period", // Add the title for the x-axis
-      },
+        text: "Period",
     },
+},
     y: {
       ticks: {
         font: {

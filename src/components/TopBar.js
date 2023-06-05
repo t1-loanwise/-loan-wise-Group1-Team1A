@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logoWhite.svg";
 import bell from "../assets/bell.svg";
 import profile from "../assets/profile.svg";
-import "../styles/dashboard.css";
+import "../styles/dashNavigation.css";
 
-const DashboardTopNav = () => {
+const TopBar = () => {
   return (
     <nav className="top-nav-bar">
       <Link className="logo-loanwise-container">
         <img src={Logo} alt="logo" />
       </Link>
       <div className="user-notif-profile">
-        <Link className="notification-bell">
+        <Link to="/general/notification" className="notification-bell">
           <img src={bell} alt="notification" />
         </Link>
         <Link className="user-picture">
@@ -27,4 +27,4 @@ const DashboardTopNav = () => {
   );
 }
 
-export default DashboardTopNav
+export default TopBar

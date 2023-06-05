@@ -1,21 +1,18 @@
-.dash-nav-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.dash-nav-container a {
+.side-bar-nav a {
   text-decoration: none;
 }
 
-.dash-nav-container button {
+.side-bar-nav button {
     background: transparent;
     padding: 10px;
     border: 0;
     color: white;
+    width: 100%;
+    font-size: 1em;
 }
 
-.dash-nav-container a:active {
+.side-bar-nav1 li .active button,
+.side-bar-nav2 li .active button {
     background-color: #003F4D;
     border-radius: 3px;
 }
@@ -51,7 +48,7 @@
 }
 
 .user-profession {
-    font-size: small;
+    font-size: 14px;
 }
 
 .logo-loanwise-container img {
@@ -59,18 +56,20 @@
 }
 
 .side-bar-nav {
-  padding: 15px 15px;
-  /* align-self: flex-start; */
-  width: 20%;
+  padding: 15px 10px;
+  /* width: 20%; */
   height: 85vh;
-  position: fixed;
   background-color: #007e99;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.side-bar-nav1,
+.side-bar-nav ul {
+  list-style-type: none;
+}
+
+.side-bar-nav1 ,
 .side-bar-nav2 {
   display: flex;
   flex-direction: column;
@@ -95,10 +94,38 @@
 
 .user-details a {
     color: white;
+    text-decoration: none;
 }
 
 .overview {
-    width: 80%;
-    padding: 10px 22% 0;
+display: grid;
+grid-template-columns: 20% 80%;
+}
 
+.dropdown-menu li .active button {
+  background-color: #55A9BB;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+}
+
+.dropdown.show-dropdown .dropdown-menu {
+  display: block;
+}
+
+.dropdown.show-dropdown .general .active button {
+  background-color: #003F4D;
+    border-radius: 3px;
+}
+
+.dropdown-menu {
+  padding-top: 10px;
+}
+
+.dropdown-nav {
+  text-align: left;
+  font-weight: 900;
 }

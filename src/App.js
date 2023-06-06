@@ -26,6 +26,7 @@ import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
 import DashCardGraph from "./components/DashCardGraph";
 import PredictiveModel from "./components/PredictiveModel";
+import NotificationsMain from "./components/NotificationsMain";
 
 const App = () => {
   return (
@@ -49,6 +50,10 @@ const App = () => {
             <Route
               path="settings/PredictiveModel"
               element={<PredictiveModel />}
+            />
+            <Route
+              path="settings/NotificationsMain"
+              element={<NotificationsMain />}
             />
           </Route>
           <Route path="portfolio" element={<Portfolio />} />

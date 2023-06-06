@@ -44,24 +44,23 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
         <Route element={<Layout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="settings" element={<Settings />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/settings" element={<Settings />}>
             <Route
               path="settings/PredictiveModel"
               element={<PredictiveModel />}
             />
           </Route>
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="repayment" element={<Repayment />} />
-          <Route path="recovery" element={<Recovery />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/repayment" element={<Repayment />} />
+          <Route path="/recovery" element={<Recovery />} />
           <Route path="/general/notification" element={<Notification />} />
           <Route path="/general/messages" element={<Messages />} />
           <Route path="/general/profile" element={<Profile />} />
           <Route path="delinquency" element={<Delinquency />} />
-          <Route path="logout" element={<Logout />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="cardGraph" element={<DashCardGraph />} />
       </Routes>
     </div>
   );

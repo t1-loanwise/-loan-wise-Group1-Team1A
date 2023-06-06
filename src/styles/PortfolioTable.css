@@ -1,0 +1,105 @@
+.tableFooter {
+    background-color: #f1f1f1;
+    padding: 8px 0px;
+    width: 100%;
+    font-weight: 500;
+    text-align: left;
+    font-size: 16px;
+    color: #2c3e50;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .DownloadBtn {
+    padding: 10px 48px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #007e99;
+  }
+
+  .table {
+    border-collapse: collapse;
+    border: none;
+    width: 0 35%;
+    align-items: flex-end;
+  }
+  
+  .tableRowHeader {
+    background-color: rgb(233, 247, 249);
+    border: 1px solid none;
+    transition: all 0.25s ease;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .tableHeader {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 10px;
+    color: #2c3e50;
+  }
+  
+  .Approved {
+    border: 1px solid none;
+    border-radius: 10px;
+    color: green;
+  }
+  .Declined {
+    border: 1px solid none;
+    border-radius: 10px;
+    color: green;
+  }
+  
+  .tableRowItems {
+    cursor: pointer;
+  }
+  
+  .tableCell {
+    padding: 12px;
+    font-size: 14px;
+    color: grey;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-size: 20px;
+  } 
+  .wrapper {
+    width: 550px;
+  }
+
+  .OverviewContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    margin: 30px 0px;
+  }
+  .overviewHeader{
+    font-size: 35px;
+  }
+  .overviewBtn{
+    font-size: 20px;
+    outline: none;
+    padding: 10 50px;
+    color: white;
+    background-color: aquamarine;
+  }
+  .PortfolioHistory{
+    text-decoration: none;
+    color: rgb(164, 217, 250);
+  }
+  .tableLinks{
+    text-decoration: none;
+    color: black;
+  }

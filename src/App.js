@@ -12,6 +12,7 @@ import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSec
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
+import PortfolioOverviewTable from './pages/Dashboard/PortfolioOverviewTable'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
+        <Route path="/portfolioOverviewTable" element={<PortfolioOverviewTable/>}/>
       </Routes>
     </div>
   );

@@ -1,26 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Form } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 
 function DetailsForm(props) {
   const {
     register,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      full_name: props.user.full_name,
-      address: props.user.address,
-      email: props.user.email,
-      phone_number: props.user.phone_number,
-      d_o_b: props.user.d_o_b,
-      number: props.user.number,
-      name: props.user.name,
-    },
-  });
+  } = useForm();
 
   return (
     <>
-      <div className="form_container">
+      <div>
         <h2>{props.Title}</h2>
         <Form.Group controlId="full_name">
           <Form.Label>{props.text}</Form.Label>
@@ -81,8 +71,8 @@ function DetailsForm(props) {
           />
           {errors.email && <p className="errorMsg">{errors.email.message}</p>}
         </Form.Group>
-        <Form.Group controlId="phone">
-          <div>
+        <Row>
+          <Form.Group controlId="phone" className="col col-sm-6">
             <Form.Label>Phone number</Form.Label>
             <Form.Control
               type="phone"
@@ -92,7 +82,8 @@ function DetailsForm(props) {
               {...register("phone_number", {
                 required: "Phone number is required.",
                 pattern: {
-                  value: /^[a-zA-Z]+$/,
+                  value:
+                    /"^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"/,
                   message: "Invalid phone number",
                 },
               })}
@@ -101,8 +92,8 @@ function DetailsForm(props) {
             {errors.phone_number && (
               <p className="errorMsg">{errors.phone_number.message}</p>
             )}
-          </div>
-          <div>
+          </Form.Group>
+          <Form.Group controlId="phone" className="col col-sm-6">
             <Form.Label>Alternative Phone number</Form.Label>
             <Form.Control
               type="phone"
@@ -110,7 +101,8 @@ function DetailsForm(props) {
               autoComplete="off"
               {...register("phone_number", {
                 pattern: {
-                  value: /^[a-zA-Z]+$/,
+                  value:
+                    /"^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"/,
                   message: "Invalid phone number",
                 },
               })}
@@ -119,44 +111,49 @@ function DetailsForm(props) {
             {errors.phone_number && (
               <p className="errorMsg">{errors.phone_number.message}</p>
             )}
-          </div>
-        </Form.Group>
-        <Form.Group controlId="D.O.B">
-          <Form.Label>{props.date}</Form.Label>
-          <Form.Control
-            type="date"
-            name="d.o.b"
-            placeholder="DD/MM/YY"
-            autoComplete="off"
-            {...register("d_o_b", {
-              required: "Date is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Please enter a valid date",
-              },
-            })}
-            className={`${errors.d_o_b ? "input-error" : ""}`}
-          />
-          {errors.d_o_b && <p className="errorMsg">{errors.d_o_b.message}</p>}
-        </Form.Group>
-        <Form.Group controlId="number">
-          <Form.Label>{props.number}</Form.Label>
-          <Form.Control
-            type="number"
-            name="number"
-            placeholder="Enter NIN"
-            autoComplete="off"
-            {...register("number", {
-              required: "Number is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Please enter a valid number",
-              },
-            })}
-            className={`${errors.number ? "input-error" : ""}`}
-          />
-          {errors.number && <p className="errorMsg">{errors.number.message}</p>}
-        </Form.Group>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group controlId="D.O.B" className="col col-sm-6">
+            <Form.Label>{props.date}</Form.Label>
+            <Form.Control
+              type="date"
+              name="d.o.b"
+              autoComplete="off"
+              {...register("d_o_b", {
+                required: "Date is required.",
+                pattern: {
+                  value: /^[a-zA-Z]+$/,
+                  message: "Please enter a valid date",
+                },
+              })}
+              className={`${
+                errors.d_o_b ? "input-error" : ""
+              } portfolio_calendar`}
+            />
+            {errors.d_o_b && <p className="errorMsg">{errors.d_o_b.message}</p>}
+          </Form.Group>
+          <Form.Group controlId="number" className="col col-sm-6">
+            <Form.Label>{props.number}</Form.Label>
+            <Form.Control
+              type="number"
+              name="number"
+              placeholder="Enter NIN"
+              autoComplete="off"
+              {...register("number", {
+                required: "Number is required.",
+                pattern: {
+                  value: /^(0|[1-9]\d*)$/,
+                  message: "Please enter a valid number",
+                },
+              })}
+              className={`${errors.number ? "input-error" : ""}`}
+            />
+            {errors.number && (
+              <p className="errorMsg">{errors.number.message}</p>
+            )}
+          </Form.Group>
+        </Row>
         <Form.Group controlId="name">
           <Form.Label>{props.subject}</Form.Label>
           <Form.Control

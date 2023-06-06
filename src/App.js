@@ -16,6 +16,13 @@ import PersonalDetails from "./pages/NewPortfolio/PersonalDetails";
 import BusinessDetails from "./pages/NewPortfolio/BusinessDetails";
 import PersonalStatementAnalysis from "./pages/NewPortfolio/PersonalStatementAnalysis";
 import BusinessStatementAnalysis from "./pages/NewPortfolio/BusinessStatementAnalysis";
+import AnalysisResult from "./pages/NewPortfolio/AnalysisResult";
+import Behavioral from "./pages/NewPortfolio/Behavioral";
+import Spend from "./pages/NewPortfolio/Spend";
+import Income from "./pages/NewPortfolio/Income";
+import TransactionPattern from "./pages/NewPortfolio/TransactionPattern";
+import Overview from "./pages/NewPortfolio/Overview";
+import CashFlow from "./pages/NewPortfolio/CashFlow";
 
 const App = () => {
   return (
@@ -43,6 +50,18 @@ const App = () => {
           path="/businessStatement"
           element={<BusinessStatementAnalysis />}
         />
+        <Route path="/businessDetails" element={<BusinessDetails />} />
+        <Route path="/analysisResult" element={<AnalysisResult />}>
+          <Route path="/analysisResult/overview" element={<Overview />} />
+          <Route path="/analysisResult/cashFlow" element={<CashFlow />} />
+          <Route path="/analysisResult/income" element={<Income />} />
+          <Route path="/analysisResult/spend" element={<Spend />} />
+          <Route path="/analysisResult/behavioral" element={<Behavioral />} />
+          <Route
+            path="/analysisResult/transactionPattern"
+            element={<TransactionPattern />}
+          />
+        </Route>
       </Routes>
     </div>
   );

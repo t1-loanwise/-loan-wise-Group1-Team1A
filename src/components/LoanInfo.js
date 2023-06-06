@@ -1,23 +1,9 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
-import Select from "react-select";
-import { Form } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { Form, Row } from "react-bootstrap";
 
 function LoanInfo() {
-  const category = [
-    { value: "Personal", label: "Personal" },
-    { value: "Business", label: "Business" },
-    { value: "Mortgage", label: "Mortgage" },
-    { value: "Student", label: "Student" },
-  ];
-  const period = [
-    { value: "3 Months", label: "3 Months" },
-    { value: "6 Months", label: "6 Months" },
-    { value: "1 Year", label: "1 Year" },
-    { value: ">1 Year", label: ">1 Year" },
-  ];
   const {
-    control,
     register,
     formState: { errors },
   } = useForm();
@@ -43,69 +29,81 @@ function LoanInfo() {
           <p className="errorMsg">{errors.full_name.message}</p>
         )}
       </Form.Group>
-      <div className="form-control">
-        <label>Loan Category</label>
-        <Controller
-          name="category"
-          control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Select {...field} isMulti options={category} />
+      <Row>
+        <Form.Group controlId="formGridCategory" className="col col-sm-6">
+          <Form.Label>Loan Category</Form.Label>
+          <Form.Select
+            defaultValue="Choose..."
+            className="form-control"
+            name="category"
+            value="{form.category}"
+            onChange="{handleChange}"
+          >
+            <option value="Choose answer">Choose answer</option>
+            <option value="Personal">Personal</option>
+            <option value="Business">Business</option>
+            <option value="Mortgage">Mortgage</option>
+            <option value="Student">Student</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group controlId="amount" className="col col-sm-6">
+          <Form.Label>Amount</Form.Label>
+          <Form.Control
+            type="number"
+            name="amount"
+            placeholder="$0.00"
+            autoComplete="off"
+            {...register("amount", {
+              required: "Amount is required.",
+              pattern: {
+                value: /^(0|[1-9]\d*)$/,
+                message: "Amount should contain only characters.",
+              },
+            })}
+            className={`${errors.full_name ? "input-error" : ""}`}
+          />
+          {errors.full_name && (
+            <p className="errorMsg">{errors.full_name.message}</p>
           )}
-        />
-        {errors.category && (
-          <p className="errorMsg">This is a required field.</p>
-        )}
-      </div>
-      <Form.Group controlId="amount">
-        <Form.Label>Amount</Form.Label>
-        <Form.Control
-          type="number"
-          name="amount"
-          placeholder="$0.00"
-          autoComplete="off"
-          {...register("amount", {
-            required: "Amount is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Amount should contain only characters.",
-            },
-          })}
-          className={`${errors.full_name ? "input-error" : ""}`}
-        />
-        {errors.full_name && (
-          <p className="errorMsg">{errors.full_name.message}</p>
-        )}
-      </Form.Group>
-      <div className="form-control">
-        <label>Validity Period</label>
-        <Controller
-          name="period"
-          control={control}
-          rules={{ required: true }}
-          render={({ field }) => <Select {...field} isMulti options={period} />}
-        />
-        {errors.period && <p className="errorMsg">This is a required field.</p>}
-      </div>
-      <Form.Group controlId="interest_rate">
-        <Form.Label>Interest Rate</Form.Label>
-        <Form.Control
-          type="number"
-          name="interest_rate"
-          autoComplete="off"
-          {...register("interest_rate", {
-            required: "Rate is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Rate should contain only characters.",
-            },
-          })}
-          className={`${errors.full_name ? "input-error" : ""}`}
-        />
-        {errors.full_name && (
-          <p className="errorMsg">{errors.full_name.message}</p>
-        )}
-      </Form.Group>
+        </Form.Group>
+      </Row>
+      <Row>
+        <Form.Group controlId="formGridValidityPeriod" className="col col-sm-6">
+          <Form.Label>Validity Period</Form.Label>
+          <Form.Select
+            defaultValue="Choose..."
+            className="form-control"
+            name="validity_period"
+            value="{form.validity_period}"
+            onChange="{handleChange}"
+          >
+            <option value="Choose answer">Choose answer</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+            <option value=">1 Year"> above 1 Year</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group controlId="interest_rate" className="col col-sm-6">
+          <Form.Label>Interest Rate</Form.Label>
+          <Form.Control
+            type="number"
+            name="interest_rate"
+            autoComplete="off"
+            {...register("interest_rate", {
+              required: "Rate is required.",
+              pattern: {
+                value: /^(0|[1-9]\d*)$/,
+                message: "Rate should contain only characters.",
+              },
+            })}
+            className={`${errors.full_name ? "input-error" : ""}`}
+          />
+          {errors.full_name && (
+            <p className="errorMsg">{errors.full_name.message}</p>
+          )}
+        </Form.Group>
+      </Row>
     </>
   );
 }

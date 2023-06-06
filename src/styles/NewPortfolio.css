@@ -1,3 +1,78 @@
 .input-form {
-  background: yellow;
+  width: 60%;
+  margin: 64px auto;
+  background: #e6f2f5;
+}
+.auto_fill {
+  color: #007e99;
+  text-align: right;
+}
+.form_container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.portfolio_calendar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.progress_bar {
+  margin: 24px auto;
+  width: 70%;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+  position: relative;
+}
+.filler {
+  /* margin: 24px auto; */
+  width: 0;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid #e6f2f5;
+  background: #007e99;
+  position: absolute;
+  &.active1 {
+    width: 51%;
+    border: 1px solid #007e99;
+  }
+  &.active2 {
+    width: 100%;
+    border: 1px solid #007e99;
+  }
+}
+.progress_circle1,
+.progress_circle2,
+.progress_circle3 {
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  padding: 15px;
+}
+.progress_circle1 {
+  left: 0;
+  border: 1px solid #007e99;
+  background: #007e99;
+}
+.progress_circle2 {
+  left: 50%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+
+  &.active {
+    background: #007e99;
+    border: 1px solid #007e99;
+  }
+}
+.progress_circle3 {
+  left: 99%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+
+  &.active {
+    background: #007e99;
+    border: 1px solid #007e99;
+  }
 }

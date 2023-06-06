@@ -5,6 +5,7 @@ import BankDetails from "../../components/BankDetails";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../../styles/NewPortfolio.css";
 
 function BusinessStatementAnalysis() {
   const { handleSubmit } = useForm();
@@ -22,11 +23,13 @@ function BusinessStatementAnalysis() {
     <>
       <ProgressBar />
       <Form className="input-form" onSubmit={handleSubmit(onSubmit)}>
-        <BankDetails
-          user={user}
-          text1={"Upload Company’s Account Statement"}
-          text2={"e.g CAC Registration, Business Permits etc"}
-        />
+        <div className="form_container">
+          <BankDetails
+            user={user}
+            text1={"Upload Company’s Account Statement"}
+            text2={"e.g CAC Registration, Business Permits etc"}
+          />
+        </div>
       </Form>
     </>
   );

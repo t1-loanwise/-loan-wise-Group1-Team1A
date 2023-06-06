@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 function BankDetails(props) {
@@ -56,42 +56,44 @@ function BankDetails(props) {
         />
         {errors.name && <p className="errorMsg">{errors.name.message}</p>}
       </Form.Group>
-      <Form.Group controlId="from">
-        <Form.Label>From</Form.Label>
-        <Form.Control
-          type="date"
-          name="from"
-          placeholder="select date"
-          autoComplete="off"
-          {...register("from", {
-            required: "Date is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Please enter a valid date",
-            },
-          })}
-          className={`${errors.from ? "input-error" : ""}`}
-        />
-        {errors.from && <p className="errorMsg">{errors.from.message}</p>}
-      </Form.Group>
-      <Form.Group controlId="to">
-        <Form.Label>To</Form.Label>
-        <Form.Control
-          type="date"
-          name="to"
-          placeholder="select date"
-          autoComplete="off"
-          {...register("to", {
-            required: "Date is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Please enter a valid date",
-            },
-          })}
-          className={`${errors.to ? "input-error" : ""}`}
-        />
-        {errors.to && <p className="errorMsg">{errors.to.message}</p>}
-      </Form.Group>
+      <Row>
+        <Form.Group controlId="from" className="col col-sm-6">
+          <Form.Label>From</Form.Label>
+          <Form.Control
+            type="date"
+            name="from"
+            placeholder="select date"
+            autoComplete="off"
+            {...register("from", {
+              required: "Date is required.",
+              pattern: {
+                value: /^[a-zA-Z]+$/,
+                message: "Please enter a valid date",
+              },
+            })}
+            className={`${errors.from ? "input-error" : ""} portfolio_calendar`}
+          />
+          {errors.from && <p className="errorMsg">{errors.from.message}</p>}
+        </Form.Group>
+        <Form.Group controlId="to" className="col col-sm-6">
+          <Form.Label>To</Form.Label>
+          <Form.Control
+            type="date"
+            name="to"
+            placeholder="select date"
+            autoComplete="off"
+            {...register("to", {
+              required: "Date is required.",
+              pattern: {
+                value: /^[a-zA-Z]+$/,
+                message: "Please enter a valid date",
+              },
+            })}
+            className={`${errors.to ? "input-error" : ""} portfolio_calendar`}
+          />
+          {errors.to && <p className="errorMsg">{errors.to.message}</p>}
+        </Form.Group>
+      </Row>
       <Form.Group controlId="file">
         <Form.Label>Upload Bank Statement</Form.Label>
         <Form.Control
@@ -131,9 +133,6 @@ function BankDetails(props) {
       </Form.Group>
       <p>{props.text2}</p>
       <p>+</p>
-      <Button variant="primary" type="submit">
-        Analyze
-      </Button>
     </>
   );
 }

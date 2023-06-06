@@ -23,6 +23,20 @@ import Income from "./pages/NewPortfolio/Income";
 import TransactionPattern from "./pages/NewPortfolio/TransactionPattern";
 import Overview from "./pages/NewPortfolio/Overview";
 import CashFlow from "./pages/NewPortfolio/CashFlow";
+import Settings from "./pages/DashBoardPages/Settings";
+import Delinquency from "./pages/DashBoardPages/Delinquency";
+import Messages from "./pages/DashBoardPages/Messages";
+import Logout from "./pages/DashBoardPages/Logout";
+import Portfolio from "./pages/DashBoardPages/Portfolio";
+import Recovery from "./pages/DashBoardPages/Recovery";
+import Repayment from "./pages/DashBoardPages/Repayment";
+import Layout from "./pages/DashBoardPages/Layout";
+import Dashboard from "./pages/DashBoardPages/Dashboard";
+import NotFound from "./pages/DashBoardPages/NotFound";
+import Profile from "./pages/DashBoardPages/Profile";
+import Notification from "./pages/DashBoardPages/Notification";
+import DashCardGraph from "./components/DashCardGraph";
+import PredictiveModel from "./components/PredictiveModel";
 
 const App = () => {
   return (
@@ -40,27 +54,46 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
-        <Route path="/personalDetails" element={<PersonalDetails />} />
-        <Route path="/businessDetails" element={<BusinessDetails />} />
-        <Route
-          path="/personalStatement"
-          element={<PersonalStatementAnalysis />}
-        />
-        <Route
-          path="/businessStatement"
-          element={<BusinessStatementAnalysis />}
-        />
-        <Route path="/businessDetails" element={<BusinessDetails />} />
-        <Route path="/analysisResult" element={<AnalysisResult />}>
-          <Route path="/analysisResult/overview" element={<Overview />} />
-          <Route path="/analysisResult/cashFlow" element={<CashFlow />} />
-          <Route path="/analysisResult/income" element={<Income />} />
-          <Route path="/analysisResult/spend" element={<Spend />} />
-          <Route path="/analysisResult/behavioral" element={<Behavioral />} />
-          <Route
-            path="/analysisResult/transactionPattern"
-            element={<TransactionPattern />}
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/settings" element={<Settings />}>
+            <Route
+              path="settings/PredictiveModel"
+              element={<PredictiveModel />}
+            />
+          </Route>
+          <Route path="/portfolio" element={<Portfolio />} >
+            <Route path="portfolio/personalDetails" element={<PersonalDetails />} />
+            <Route path="portfolio/businessDetails" element={<BusinessDetails />} />
+            <Route
+            path="portfolio/personalStatement"
+            element={<PersonalStatementAnalysis />}
           />
+            <Route
+            path="portfolio/businessStatement"
+            element={<BusinessStatementAnalysis />}
+          />
+            <Route path="portfolio/businessDetails" element={<BusinessDetails />} />
+            <Route path="portfolio/analysisResult" element={<AnalysisResult />}>
+              <Route path="portfolio/analysisResult/overview" element={<Overview />} />
+              <Route path="portfolio/analysisResult/cashFlow" element={<CashFlow />} />
+              <Route path="portfolio/analysisResult/income" element={<Income />} />
+              <Route path="portfolio/analysisResult/spend" element={<Spend />} />
+              <Route path="portfolio/analysisResult/behavioral" element={<Behavioral />} />
+              <Route
+                path="portfolio/analysisResult/transactionPattern"
+                element={<TransactionPattern />}
+              />
+            </Route>
+          </Route>
+          <Route path="/repayment" element={<Repayment />} />
+          <Route path="/recovery" element={<Recovery />} />
+          <Route path="/general/notification" element={<Notification />} />
+          <Route path="/general/messages" element={<Messages />} />
+          <Route path="/general/profile" element={<Profile />} />
+          <Route path="delinquency" element={<Delinquency />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>

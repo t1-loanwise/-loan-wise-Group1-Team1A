@@ -3,10 +3,11 @@ import PredictiveModel from "../../components/PredictiveModel";
 
 const Settings = () => {
   return (
-    <div className="rightContent">
+    <div className="rightContent>
       <PredictiveModel />
     </div>
   );
 };
+
 
 export default Settings;

@@ -330,3 +330,66 @@
 .plus {
   font-size: 20px;
 }
+
+/* User Preference Styling */
+.preference_container{
+  border: 1px solid #000000;
+}
+
+.appearance_settings{
+  margin: 24px;
+  padding:12px;
+  font-weight: 600;
+}
+.para_toggle{border: 1px solid black;}
+
+.frame_one{
+  margin: 24px ;
+}
+.frame_two{
+  margin: 24px ;
+}
+#frame_two_text{}
+#frame_three{
+  margin: 24px ;
+}
+#frame_three_notif{
+  margin-top: 3.9rem;
+  border: 1px solid #000000;
+}
+.frame_three_contents{
+  padding: 18px;
+}
+.headings p{
+  font-size: 18px;
+  
+}
+.toggle-button{
+  margin: 6px 3px;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+#frame_three_input{
+  margin: 24px;
+  padding: 12px;
+  border: 1px solid #000000;
+}
+#frame_input_heading{
+  padding-top: 16px;
+  padding-bottom: 22px;
+}
+#frame_input_heading h4{
+font-weight: 600;
+padding-bottom: 4px;
+}
+#frame_input_heading p{
+  color: #00191F;
+  margin-bottom: 12px;
+}
+#frame_input h5{
+ padding: 8px;
+}
+

@@ -31,7 +31,7 @@ const ExitingRule = () => {
       <div className="select-option-below">
         <RuleOptions />
         <div className="btn">
-          <button className="condition-button">
+          <button type="submit" className="condition-button">
             <img src={PlusSign} alt="plus" width="14px" />{" "}
             <span>New Condition</span>
           </button>

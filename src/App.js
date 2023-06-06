@@ -24,7 +24,8 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import DashCardGraph from "./components/DashCardGraph"
+import DashCardGraph from "./components/DashCardGraph";
+import PredictiveModel from "./components/PredictiveModel";
 
 const App = () => {
   return (
@@ -44,18 +45,23 @@ const App = () => {
         <Route path="/success" element={<Successfulpage />} />
         <Route element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="settings" element={<Settings />}>
+            <Route
+              path="settings/PredictiveModel"
+              element={<PredictiveModel />}
+            />
+          </Route>
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="repayment" element={<Repayment />} />
           <Route path="recovery" element={<Recovery />} />
-          <Route path="/general/notification" element={<Notification/>} />
-          <Route path="/general/messages" element={<Messages/>} />
-          <Route path="/general/profile" element={<Profile/>} />
+          <Route path="/general/notification" element={<Notification />} />
+          <Route path="/general/messages" element={<Messages />} />
+          <Route path="/general/profile" element={<Profile />} />
           <Route path="delinquency" element={<Delinquency />} />
           <Route path="logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="cardGraph" element={<DashCardGraph/>} />
+        <Route path="cardGraph" element={<DashCardGraph />} />
       </Routes>
     </div>
   );

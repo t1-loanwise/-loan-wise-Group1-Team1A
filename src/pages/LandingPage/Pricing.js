@@ -20,7 +20,7 @@ const Pricing = () => {
         <div className="pricing-row align-center">
           <PriceCard
             title="Free"
-            description="Basics for Individual and Organisations"
+            description="The basics for individuals and organisations"
             price="0"
             priceLabel="per year"
             priceLabel2="forever"
@@ -42,7 +42,7 @@ const Pricing = () => {
             oldPrice="15"
             active={true}
             priceLabel="per year forever"
-            priceLabel2="or the first 12months"
+            priceLabel2="or the first 12months*"
             fillButtonLabel="Get Started Premium"
             points={[
               "Basic Plan benefits plus fraud detection and financial behavioral analysis.",
@@ -56,11 +56,11 @@ const Pricing = () => {
           />
           <PriceCard
             title="Enterprise"
-            description="Security, compliance \n and flexible deployment"
+            description="Security, compliance and flexible deployment"
             oldPrice="252"
             price="231"
             priceLabel="per year forever"
-            priceLabel2="for the first 12months"
+            priceLabel2="for the first 12months*"
             fillButtonLabelLabel="Join for free"
             hasTwoButton={true}
             firstButtonLabel="Start a free trial"

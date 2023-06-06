@@ -28,12 +28,10 @@ const PasswordReset = () => {
         <div className="logo_container">
           <Logo />
         </div>
-        <div className="auth_text">
           <AuthenticationMainText
             Title={"Forgot Password?"}
             Body={"We’ve got you, please enter your registered email address"}
           />
-        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <label className="form-label" htmlFor="email">

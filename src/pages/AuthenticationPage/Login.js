@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../components/Logo";
 import "../../styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Onboarding from "../../components/Onboarding";
 import show from "../../assets/show.png";
@@ -14,6 +14,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate()
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
@@ -21,7 +22,7 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    navigate("/dashboard")
   };
 
   return (
@@ -107,12 +108,10 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <div className="sign-up">
-            <Link to="/register" className="forgotpass-btn">
-              Don’t have an account? Sign Up
-            </Link>
-          </div>
         </div>
+          <Link to="/register" className="forgotpass-btn">
+            Don’t have an account? Sign Up
+          </Link>
       </div>
     </div>
   );

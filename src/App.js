@@ -24,7 +24,6 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import DashCardGraph from "./components/DashCardGraph";
 import PredictiveModel from "./components/PredictiveModel";
 
 const App = () => {

@@ -1,0 +1,114 @@
+.not-button {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 126, 153, 0.1);
+
+ }
+ p {
+    font-size: 20px;
+    margin-top: 20px;
+ }
+ .not-button:hover {
+    background-color: white;
+ }
+ 
+ .not-button:focus {
+    outline: none;
+ }
+ @media screen and (max-width: 500px) {
+    p {
+       font-size: 16px;
+    }
+ }
+ .customer td, .customer th {
+padding: 8px;
+ }
+ .customer th{
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+ }
+
+ .customer{
+    width: 50%;
+    background-color: #E6F2F5;
+ }
+ .first-th{
+    width: 70%;
+ }
+
+ .toggle-switch {
+    position: relative;
+    width: 50px;
+    display: inline-block;
+    text-align: left;
+    
+    }
+    .checkbox {
+    display: none;
+    }
+    .label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid #bbb;
+    border-radius: 20px;
+    }
+    .inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+    }
+    .inner:before,
+    .inner:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    }
+    .inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #007e99;
+    color: #fff;
+    }
+    .inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #bbb;
+    color: #fff;
+    text-align: right;
+    }
+    .switch {
+    display: block;
+    width: 20px;
+    margin: 5px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    border: 0 solid #bbb;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+    }
+    .checkbox:checked + .label .inner {
+    margin-left: 0;
+    }
+    .checkbox:checked + .label .switch {
+    right: 0px;
+    }
+    

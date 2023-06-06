@@ -4,7 +4,16 @@ import NavBar from "../../components/NavBar";
 import "../../styles/blog.css"
 import image from "../../assets/embed.svg"
 import background from "../../assets/Ellipse 36.svg"
+import Notification from "../../components/Notification";
+const items = [
+  {
+   title: "Notification",
+   content: "" 
+  }
+  
+]
 const Blog = () => {
+
   return (
     <>
       <div className="background-one">
@@ -39,7 +48,9 @@ const Blog = () => {
         </div>
       </div>
       <Footer />
+      <Notification items={items} />
     </>
+    
   );
 };
 

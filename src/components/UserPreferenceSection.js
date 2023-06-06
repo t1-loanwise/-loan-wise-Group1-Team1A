@@ -1,7 +1,7 @@
 import React from 'react'
 import "../App.css";
-
-function UserPreference() {
+import ToggleSwitch from './ToggleSwitch';
+const UserPreference = () => {
   return (
     <div className='preference_container'>
       <div className='appearance_settings'>

@@ -7,42 +7,49 @@
   padding: 5vh 2.5%;
 }
 .verify_head_content,
-.reset_head_content,
-.new_password_head_content {
+.reset_head_content {
   display: flex;
   flex-direction: column;
   width: 60%;
+  justify-content: space-between;
 }
+
+.new_password_head_content {
+   display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-bottom: 2%;
+}
+
 .reset_head_content {
   justify-content: space-between;
   margin-bottom: 12%;
 }
-.new_password_head_content {
-  justify-content: space-between;
-  margin-bottom: 2%;
+
+.reset_head_content form {
+  width: 90%;
 }
+
 .logo_container {
   align-self: flex-end;
   width: 25%;
 }
 .verify_body_content {
-  align-self: center;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 100%;
+  width: 90%;
+  gap: 1.5em;
 }
 .verify_btn {
-  background: #007e99;
+  background-color: #007e99;
   border: 0;
-  color: white;
-  font-size: 1em;
-  padding: 18px 32px;
+  height: 50px;
+  width: 100%;
   border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.35em;
+  margin-top: 40px;
   text-decoration: none;
-  width: 90%;
-  font-size: 16px;
-  margin-top: 32px;
   transition: all 0.5s ease-out;
 }
 .verify_btn:hover {
@@ -53,12 +60,23 @@
   box-shadow: 0 0 40px #b7b7b7;
   background-color: #b7b7b7;
 }
+
+.code-error-container {
+display: flex;
+flex-direction: column;
+gap: 0.3em
+}
+
+.code-digit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .code-digit {
-  margin: 16px 30px 5px 0;
-  height: 20vh;
-  width: 10vw;
+  height: 160px;
+  width: 21%;
   border: 1px solid #aab2b4;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 40px;
   text-align: center;
 }
@@ -77,15 +95,15 @@
   margin-top: 32px;
 }
 .no_code {
-  align-self: center;
-  font-size: 19px;
+  text-align: center;
+  text-decoration: none;
   color: #55666a;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 19px;
+  width: 90%;
 }
-.verify_btn_container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -98,19 +116,22 @@
 }
 .email-box,
 .password-field {
-  padding: 11px 16px;
-  border-radius: 5px;
+  padding: 0px 10px;
+  border-radius: 4px;
+  height: 35px;
   border: 1px solid #aab2b4;
-  width: 90%;
+  width: 100%;
   font-size: 16px;
 }
 .email-box:focus,
 .password-field:focus {
   outline: none;
-  background-color: #aab2b4;
 }
+.email-box::placeholder,
 .password-field::placeholder {
   font-size: 14px;
+  opacity: 0.4;
+  font-style: italic;
 }
 .form_control_container {
   display: flex;

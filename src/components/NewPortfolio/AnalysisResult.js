@@ -1,12 +1,15 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
+import Calendar from "../calendar";
 
 function AnalysisResult() {
   return (
     <>
       <ProgressBar />
-      AnalysisResult
+      <div>
+        <Calendar />
+      </div>
       <nav>
         <NavLink to="/analysisResult/overview">Overview</NavLink>
         <NavLink to="/analysisResult/cashFlow">Cash Flow</NavLink>

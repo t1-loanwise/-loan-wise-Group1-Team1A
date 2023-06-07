@@ -12,7 +12,6 @@ import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSec
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
-import Subzdash from "./pages/Dashboarddd/Subzdash";
 import Settings from "./pages/DashBoardPages/Settings";
 import Delinquency from "./pages/DashBoardPages/Delinquency";
 import Messages from "./pages/DashBoardPages/Messages";
@@ -44,7 +43,6 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
-        <Route path="/subdashboard" element={<Subzdash />} />
 
         <Route element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />

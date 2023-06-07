@@ -4,13 +4,14 @@
     font-family: 'Urbanist', sans-serif;
 }
 
+.explore {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
 .uppsDash {
-    padding: 2rem;
-    /* margin: 1rem; */
     display: flex;
     flex-direction: column;
-    /* justify-content: ; */
-    align-items: flex-start;
     height: fit-content;
-    /* width: 0%; */
+    width: 100%;
 }

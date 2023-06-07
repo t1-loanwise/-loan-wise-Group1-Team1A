@@ -1,24 +1,16 @@
 .searchFilterDate {
+    margin-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    /* margin: 0 0 0 auto; */
-    align-self: center;
+    /* justify-content: space-between; */
     height: fit-content;
     gap: 1rem
 }
 
 .searchFilter {
     display: flex;
+    height: fit-content;
+    width: fit-content;
+    /* flex-direction: 50%; */
+    flex: 1;
     gap: 1.5rem;
-}
-
-.searchArea {
-    /* width: 25%; */
-}
-.filterArea {
-    /* width: 25%; */
-}
-.dateArea {
-    /* width: 25%; */
 }

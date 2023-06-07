@@ -35,6 +35,8 @@ const NewRule = () => {
       <div>
         <div className="select-option-below">
           <RuleOptions />
+          {active && <NewConditionBtn />}
+
           <div className="btn">
             <button className="condition-button" onClick={newCondition}>
               <img src={PlusSign} alt="plus" width="14px" />{" "}
@@ -42,7 +44,6 @@ const NewRule = () => {
             </button>
           </div>
         </div>
-        {active && <NewConditionBtn />}
       </div>
 
       <div className="conditions-container">

@@ -57,8 +57,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  box-shadow: 0 0 20px 0px #007d995a;
+  box-shadow: 0 0 12px 0px #007d995a;
   padding: 0.5em 1.5em;
+  margin-bottom: 15px;
 }
 .accordion-text {
   display: flex;

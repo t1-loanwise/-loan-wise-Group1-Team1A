@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RuleOptions from "./RuleOptions";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import NewConditionBtn from "./NewConditionBtn";
+import { useForm } from "react-hook-form";
 
 const NewRule = () => {
   const [active, setActive] = useState(false);
@@ -12,6 +13,7 @@ const NewRule = () => {
       setActive(true);
     }
   };
+
   return (
     <div className="exitingRule-container">
       <div className="edit-text">
@@ -25,6 +27,7 @@ const NewRule = () => {
           dismissal
         </p>
       </div>
+
       <div className="select-option">
         <label>Model Title</label>
         <input id="title" name="title" type="text" />
@@ -62,9 +65,7 @@ const NewRule = () => {
           Any of the conditions can be met
         </div>
       </div>
-      <button className="save-btn" type="submit">
-        Save
-      </button>
+      <button className="save-btn">Save</button>
     </div>
   );
 };

@@ -11,10 +11,8 @@
 .createAccountContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-  height: fit-content;
+  justify-content: space-between;
   width: 60%;
-  /* padding: 0 70px; */
 }
 
 .onboardingImg {
@@ -57,11 +55,14 @@
   width: 25%;
 }
 
-.formInputContainer {
+.formInputContainer,
+.passwd,
+.confirmPswd {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
 }
+
 .formInputContainerVerify {
   display: flex;
   flex-direction: column;
@@ -75,19 +76,18 @@
 
 .verifyInput {
   display: flex;
-  gap: 1.8em;
+  justify-content: space-between;
   margin-bottom: 40px;
 }
 
 .verifyInput input {
-  height: 20vh;
-  width: 10vw;
+  height: 160px;
+  width: 21%;
   border-radius: 4px;
   border: 1px solid #cbcbcb;
   background: transparent;
   font-size: 40px;
   text-align: center;
-
 }
 
 .verifyInput input:focus {
@@ -103,7 +103,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .createAccount_form {
@@ -124,10 +124,15 @@
   width: 100%;
 }
 
+/* .createAccount_form .inputDiv:focus {
+  outline: 1.5px solid #007e99;
+} */
+
 .createAccount_form input::placeholder,
 .createAccount_form .QuestionAnswer select .selectedOption {
   opacity: 0.4;
   font-style: italic;
+  font-size: 14px;
 }
 
 .createAccount_form input:not(.radio-btn) {
@@ -200,7 +205,7 @@
   border-radius: 5px;
   color: #ffffff;
   font-size: 1.35em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .createAccountBtn:hover {
@@ -208,13 +213,12 @@
 }
 
 .toLoginPageBtn {
-  text-align: center;
+ text-align: center;
   text-decoration: none;
-  color: #00151a;
-  font-weight: 600;
+  color: #55666A;
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 10px;
-  font-size: 1.2em;
+  font-size: 19px;
 }
 
 .createAccount_form .QuestionAnswer-Container {
@@ -243,9 +247,9 @@
 .no_OTP {
   text-align: center;
   text-decoration: none;
-  color: #00151a;
+  color: #55666A;
   font-weight: 500;
   cursor: pointer;
-margin-top: 15px;
   font-size: 19px;
+  width: 90%;
 }

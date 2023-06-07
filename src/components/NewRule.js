@@ -1,10 +1,17 @@
-import React from "react";
-import Delete from "../assets/icons/trash.svg";
-import ExitingRule from "./ExitingRule";
+import React, { useState } from "react";
 import RuleOptions from "./RuleOptions";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
+import NewConditionBtn from "./NewConditionBtn";
 
 const NewRule = () => {
+  const [active, setActive] = useState(false);
+  const newCondition = () => {
+    if (active == true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  };
   return (
     <div className="exitingRule-container">
       <div className="edit-text">
@@ -20,24 +27,38 @@ const NewRule = () => {
       </div>
       <div className="select-option">
         <label>Model Title</label>
-        <input type="text" />
+        <input id="title" name="title" type="text" />
       </div>
-      <div className="select-option-below">
-        <RuleOptions />
-        <div className="btn">
-          <button className="condition-button">
-            <img src={PlusSign} alt="plus" width="14px" />{" "}
-            <span>New Condition</span>
-          </button>
+      <div>
+        <div className="select-option-below">
+          <RuleOptions />
+          <div className="btn">
+            <button className="condition-button" onClick={newCondition}>
+              <img src={PlusSign} alt="plus" width="14px" />{" "}
+              <span>New Condition</span>
+            </button>
+          </div>
         </div>
+        {active && <NewConditionBtn />}
       </div>
+
       <div className="conditions-container">
         <div>
-          <input className="conditionsMet" type="radio" name="conditionsMet" />
+          <input
+            className="conditionsMet"
+            type="radio"
+            name="condition"
+            id="condition"
+          />
           All conditions must be met
         </div>
         <div>
-          <input className="conditionsMet" type="radio" name="conditionsMet" />
+          <input
+            className="conditionsMet"
+            type="radio"
+            name="condition"
+            id="condition"
+          />
           Any of the conditions can be met
         </div>
       </div>

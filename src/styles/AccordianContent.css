@@ -49,8 +49,6 @@
   align-self: flex-end;
   margin-top: 2.5rem;
 }
-.new-rule p {
-}
 
 /*styling the title*/
 .accordion-title {
@@ -59,8 +57,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  padding: 0 1.5em;
+  box-shadow: 0 0 20px 0px #007d995a;
+  padding: 0.5em 1.5em;
 }
 .accordion-text {
   display: flex;
@@ -76,7 +74,4 @@
 }
 .close-open-icon {
   cursor: pointer;
-}
-.predictive-model-container {
-  padding: 3% 3%;
 }

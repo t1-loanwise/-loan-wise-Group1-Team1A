@@ -13,7 +13,7 @@ import logout from "../assets/logout.svg";
 import "../styles/dashNavigation.css";
 
 const SideBar = () => {
-  const [dropMenu, setDropMenu] = useState(false);
+  const [dropMenu, setDropMenu ] = useState(false);
 
   const toggleDropMenu = () => {
     setDropMenu((prevState) => !prevState);

@@ -1,0 +1,25 @@
+.logout-btn{
+  background: #007e99;
+  padding: 10px 0;
+  width: 20%;
+  border: 0;
+  font-size: 1em;
+  border-radius: 5px;
+  color: #ffffff;
+  &:hover {
+    background-color: #006980;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+.emoji-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+.emoji-div h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}

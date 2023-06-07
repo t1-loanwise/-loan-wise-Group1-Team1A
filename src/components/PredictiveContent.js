@@ -11,6 +11,7 @@ import NewRule from "./NewRule";
 const PredictiveContent = () => {
   const [buttonPop, setButtonPopup] = useState(false);
   const [newRuleButtonPop, setNewRuleButtonpop] = useState(false);
+
   return (
     <div className="content-container">
       <div className="content">

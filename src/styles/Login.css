@@ -20,18 +20,22 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+  justify-content: space-between;
 }
+
 .login-message {
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 1.5em;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  margin-top: 1.5em;
-  gap: 10px;
-  width: 90%;
+   gap: 0.7em;
 }
+
 .login-form-control {
   display: flex;
   flex-direction: column;
@@ -44,14 +48,18 @@
 }
 .login-form-control input {
   border-radius: 5px;
-  padding: 10.5px 16px;
+  padding: 0px 10px;
   border: 1.1px solid #cbcbcb;
   background-color: #ffffff;
+  height: 35px;
+  font-size: 1em;
   outline: none;
 }
+
 .login-form-control input::placeholder {
   font-style: italic;
-  font-size: 0.875rem;
+  font-size: 14px;
+  opacity: 0.4;
 }
 .stay-login-container {
   display: flex;
@@ -96,29 +104,28 @@ div .login-Btn {
 .login-Btn:hover {
   background-color: #006980;
 }
-.sign-up {
-  margin-top: 2em;
-  text-align: center;
-}
 
 .login-form-control .errorMsg {
   color: red;
   font-size: 0.875rem;
 }
-label {
+.login-message label {
   font-size: 1.1rem;
   font-weight: 700;
   color: #00191f;
 }
-label span {
+
+.login-message label span {
   color: #55666a;
   font-size: 1.25rem;
 }
 .forgotpass-btn {
-  color: #55666a;
+   text-align: center;
   text-decoration: none;
+  color: #55666A;
   font-weight: 500;
-  font-size: 1.25rem;
+  cursor: pointer;
+  font-size: 19px;
 }
 .passwordToggle {
   display: flex;
@@ -134,7 +141,7 @@ label span {
 }
 .password-input-container {
   border: 1.1px solid #cbcbcb;
-  padding: 5px 16px;
+  padding: 3.5px 16px;
   border-radius: 5px;
 }
 .login-form-control2 input {

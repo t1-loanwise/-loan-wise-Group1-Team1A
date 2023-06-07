@@ -14,8 +14,8 @@ const SettingAndPrivacy = ({title, subtitle, component}) => {
                     <h4>{subtitle}</h4>
                 </div>
                 <div onClick={() => setIsOpen(!isOpen)} className='arrow'>
-                    {isOpen ? <img src={DownChevron} alt='chevron' className="arrow" height='10' width='10' />  
-                    : <img src={RightChevron} alt='chevron' className="arrow" height='10' width='10' /> }</div>
+                    {isOpen ? <img src={DownChevron} alt='chevron' className="arrow"  />  
+                    : <img src={RightChevron} alt='chevron' className="arrow" /> }</div>
             </div>
             {
                isOpen && 

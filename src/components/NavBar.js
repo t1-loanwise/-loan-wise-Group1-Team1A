@@ -7,7 +7,7 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 5%;
+  padding: 24px 5.5%;
   font-size: 16px;
   font-family: "Urbanist";
 `;
@@ -108,7 +108,7 @@ const NavBar = () => {
         </LogoNavContainer>
         <ButtonsContainer>
           <Register to="/register">Register</Register>
-          <Login>Login</Login>
+          <Login to="/login">Login</Login>
         </ButtonsContainer>
       </Navbar>
     </>

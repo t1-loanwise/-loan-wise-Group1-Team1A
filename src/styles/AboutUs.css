@@ -1,0 +1,134 @@
+.about_us_container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* gap: 64px; */
+}
+.about_header_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+.about-header {
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+  width: 40%;
+  color: #000000;
+}
+.about_header_text {
+  width: 70%;
+  text-align: center;
+}
+.about_us_img {
+  width: 95%;
+  margin: 0;
+}
+.about_us_img_container {
+  margin: 0;
+  padding: 0;
+  margin-top: 64px;
+}
+
+.our-vision-container,
+.our-mision-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 64px;
+}
+.our-mision-container {
+  gap: 96px;
+  text-align: right;
+  margin-top: 72px;
+}
+.our-vision-img,
+.our-mision-img {
+  width: 50%;
+}
+
+.our-vision-text,
+.our-mision-text {
+  width: 50%;
+}
+.our-mision-text {
+  align-items: flex-end;
+}
+.our-vision-text,
+.our-mision-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.our-vision-text P {
+  margin: 0;
+  width: 95%;
+}
+.our-mision-text P {
+  margin: 0;
+  width: 95%;
+  text-align: end;
+}
+.our-vision-text h2,
+.our-mision-text h2 {
+  margin: 0;
+  width: 100%;
+  font-weight: 900px;
+  font-size: 40px;
+}
+.loan-analysis {
+  height: 100%;
+  width: 100%;
+}
+.button3 {
+  padding: 24px 48px;
+  /* width: 30%; */
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: #007e99;
+}
+.button3:hover {
+  background: #006980;
+}
+.card2_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-column-gap: 32px;
+  row-gap: 0;
+  margin: 0;
+  width: 90%;
+  text-align: center;
+}
+.card2_content {
+  background-color: #ffffff;
+  border: 1px solid #aab2b4;
+  margin: 15px 0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  color: rgb(25, 25, 25);
+  transition: border 0.25s ease-in-out;
+}
+.card2_content:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: none;
+}
+.card2_image {
+  width: 122px;
+  height: 122px;
+}
+.card2_container p {
+  color: #55666a;
+  margin: 0;
+  margin-bottom: 32px;
+}

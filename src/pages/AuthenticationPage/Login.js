@@ -1,0 +1,121 @@
+import React, { useState } from "react";
+import Logo from "../../components/Logo";
+import "../../styles/Login.css";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import Onboarding from "../../components/Onboarding";
+import show from "../../assets/show.png";
+import hide from "../../assets/hide.png";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
+
+const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [showPswd, setShowPswd] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPswd(showPswd ? false : true);
+  };
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <div className="loginParent-container">
+      <Onboarding />
+      <div className="login-text-container">
+        <div className="logo-container2">
+          <Logo />
+        </div>
+        <div className="login-message">
+          <AuthenticationMainText
+            Title="Welcome Back!"
+            Body="Enter your details to sign in"
+          />
+          <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+            <div className="login-form-control">
+              <label>Email address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter email address"
+                {...register("email", { required: true })}
+              />
+              {errors.email && errors.email.type === "required" && (
+                <p className="errorMsg">Email is required</p>
+              )}
+            </div>
+            <div className="login-form-control2">
+              <label>Password</label>
+              <div className="password-input-container">
+                <div className="passwordToggle">
+                  <input
+                    className="pass-input"
+                    type={showPswd ? "text" : "password"}
+                    name="password"
+                    {...register("password", {
+                      required: true,
+                      minLength: {
+                        pattern:
+                          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{6,20}$/,
+                        value: 6,
+                      },
+                    })}
+                  />
+                  <img
+                    src={showPswd ? hide : show}
+                    onClick={togglePasswordVisibility}
+                    alt="show or hide password"
+                  />
+                </div>
+              </div>
+
+              {errors.password && errors.password.type === "required" && (
+                <p className="errorMsg">Password is required</p>
+              )}
+              {errors.password && errors.password.type === "minLength" && (
+                <p className="errorMsg">
+                  Password should be at-least 6 characters
+                </p>
+              )}
+            </div>
+            <div className="stay-login-container">
+              <div className="check-btn-container">
+                <input
+                  type="checkbox"
+                  name="password"
+                  {...register("checkbox")}
+                  className="check-btn"
+                />
+                <label>
+                  <span>Keep me signed in</span>
+                </label>
+              </div>
+              <div>
+                <Link className="forgotpass-btn" to="/reset">
+                  Forgot Password?
+                </Link>
+              </div>
+            </div>
+            <div>
+              <button type="submit" className="login-Btn">
+                Sign In
+              </button>
+            </div>
+          </form>
+          <div className="sign-up">
+            <Link to="/register" className="forgotpass-btn">
+              Don’t have an account? Sign Up
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

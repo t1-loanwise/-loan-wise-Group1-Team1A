@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Logo from "../../../components/Logo";
 import AuthenticationMainText from "../../../components/AuthenticationMainText";
-import AuthenticationImage from "../../../components/AuthenticationImage";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
+import Onboarding from "../../../components/Onboarding";
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
@@ -43,14 +43,13 @@ const SignUp = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/securityQuestions");
+    navigate("/verifyRegistration");
   };
 
   return (
     <div className="createAccount_parentContainer">
-      <div className="onboardingImg">
-        <AuthenticationImage />
-      </div>
+      <Onboarding />
+
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
           <Logo />
@@ -147,7 +146,7 @@ const SignUp = () => {
               Create Account
             </button>
           </form>
-          <Link className="toLoginPageBtn">
+          <Link className="toLoginPageBtn" to="/login">
             Already have an account? Sign in
           </Link>
         </div>

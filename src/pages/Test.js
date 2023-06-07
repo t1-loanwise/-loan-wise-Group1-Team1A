@@ -1,7 +1,6 @@
 import React from 'react'
 import SettingAndPrivacy from '../components/SettingAndPrivacy'
 import PrivacyForm from '../components/PrivacyForm'
-import UseLoanwise from '../components/UseLoanwise'
 
 const Test = () => {
   return (

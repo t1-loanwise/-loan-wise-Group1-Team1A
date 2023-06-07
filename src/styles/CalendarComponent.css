@@ -1,0 +1,18 @@
+.dateArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 22px;
+    gap: 10px;
+    background: #E6F2F5;
+    border-radius: 5px;
+    border: 1px solid #E6F2F5;
+}
+
+.calendarInput {
+    border: none;
+    margin-left: 0.3rem;
+    background-color: transparent;
+    color: #007E99;
+    font-weight: 600;
+}

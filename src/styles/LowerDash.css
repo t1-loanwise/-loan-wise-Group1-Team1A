@@ -1,0 +1,15 @@
+.lowerDash {
+    width: 100%;
+}
+
+hr {
+    height: 0.1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.lowerlastdash {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}

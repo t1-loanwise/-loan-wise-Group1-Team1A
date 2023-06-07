@@ -1,0 +1,19 @@
+.pagiNumbs {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+}
+
+p {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.pagiNumbs p:nth-child(1):focus{
+    background-color: #007E99;
+    padding: 1rem;
+    border-radius: 50%;
+}

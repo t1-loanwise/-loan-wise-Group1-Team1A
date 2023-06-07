@@ -1,0 +1,9 @@
+.filterArea {
+    display: flex;
+    color: #007E99;
+    align-items: center;
+    gap: 0.2rem;
+    border: 2px solid #CCE5EB;
+    padding: 0 2rem;
+    font-weight: 600;
+}

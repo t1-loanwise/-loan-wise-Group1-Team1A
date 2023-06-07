@@ -11,7 +11,6 @@ body {
 }
 
 .rightContent {
-  justify-self: end;
   margin-top: 15vh;
   margin-left: 250px;
   padding: 40px 50px  0px;

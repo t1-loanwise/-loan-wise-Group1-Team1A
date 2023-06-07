@@ -1,7 +1,6 @@
 import React from "react";
 import ProgressBar from "../../components/ProgressBar";
 import BankDetails from "../../components/BankDetails";
-import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -37,7 +36,7 @@ function PersonalStatementAnalysis() {
         circleFiller1={circleFiller1}
         circleFiller2={circleFiller2}
       />
-      <Form className="input-form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="input-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form_container">
           <BankDetails
             user={user}
@@ -46,11 +45,11 @@ function PersonalStatementAnalysis() {
               "e.g NIN slip, driver’s license or any other form of identification"
             }
           />
-          <Button variant="primary" type="submit" onClick={handleClick2}>
+          <button className="form_btn" onClick={handleClick2}>
             Analyze
-          </Button>
+          </button>
         </div>
-      </Form>
+      </form>
     </>
   );
 }

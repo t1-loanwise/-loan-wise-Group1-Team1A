@@ -3,14 +3,37 @@
   margin: 64px auto;
   background: #e6f2f5;
 }
+.input_title {
+  padding: 8px;
+}
 .auto_fill {
   color: #007e99;
   text-align: right;
+  font-size: 12px;
+  padding-top: 8px;
 }
 .form_container {
   width: 90%;
   margin: 0 auto;
   padding: 16px 0;
+}
+.form_btn {
+  padding: 8px 24px;
+  background: #007e99;
+  border: 1px solid #007e99;
+}
+.form_btn2 {
+  padding: 4px 16px;
+  background: #007e99;
+  border: 1px solid #007e99;
+  margin-bottom: 16px;
+}
+.input_field {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #e6f2f5;
+  margin-top: 8px;
 }
 .portfolio_calendar {
   display: flex;

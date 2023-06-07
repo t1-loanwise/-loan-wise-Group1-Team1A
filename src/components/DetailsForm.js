@@ -1,177 +1,140 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Form, Row } from "react-bootstrap";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 function DetailsForm(props) {
+  const validationSchema = Yup.object().shape({
+    fullName: Yup.string().required(true),
+    email: Yup.string().email().required("Enter a valid email address"),
+    phoneNumber: Yup.string()
+      .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+      )
+      .required("Phone is required"),
+    dob: Yup.date().required("Required"),
+    number: Yup.string()
+      .min(11, "Must be more than 11 characters")
+      .required("This field is required"),
+  });
+  const formOptions = { resolver: yupResolver(validationSchema) };
   const {
     register,
-    formState: { errors },
-  } = useForm();
-
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm(formOptions);
   return (
     <>
       <div>
         <h2>{props.Title}</h2>
-        <Form.Group controlId="full_name">
-          <Form.Label>{props.text}</Form.Label>
-          <Form.Control
-            type="text"
-            name="full_name"
-            placeholder="Enter your full name"
-            autoComplete="off"
-            {...register("full_name", {
-              required: "Full name is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Full name should contain only characters.",
-              },
-            })}
-            className={`${errors.full_name ? "input-error" : ""}`}
-          />
-          {errors.full_name && (
-            <p className="errorMsg">{errors.full_name.message}</p>
-          )}
-        </Form.Group>
-        <Form.Group controlId="address">
-          <Form.Label>{props.address}</Form.Label>
-          <Form.Control
-            type="text"
-            name="address"
-            placeholder="Enter address"
-            autoComplete="off"
-            {...register("address", {
-              required: "Address is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Address should contain only characters.",
-              },
-            })}
-            className={`${errors.address ? "input-error" : ""}`}
-          />
-          <Form.Control type="text" name="address" />
-          {errors.address && (
-            <p className="errorMsg">{errors.address.message}</p>
-          )}
-        </Form.Group>
-        <Form.Group controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            placeholder="Enter email address"
-            autoComplete="off"
-            {...register("email", {
-              required: "Email address is required.",
-              pattern: {
-                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                message: "Please enter a valid email.",
-              },
-            })}
-            className={`${errors.email ? "input-error" : ""}`}
-          />
-          {errors.email && <p className="errorMsg">{errors.email.message}</p>}
-        </Form.Group>
-        <Row>
-          <Form.Group controlId="phone" className="col col-sm-6">
-            <Form.Label>Phone number</Form.Label>
-            <Form.Control
-              type="phone"
-              name="phone"
-              placeholder="Enter phone number"
-              autoComplete="off"
-              {...register("phone_number", {
-                required: "Phone number is required.",
-                pattern: {
-                  value:
-                    /"^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"/,
-                  message: "Invalid phone number",
-                },
-              })}
-              className={`${errors.phone_number ? "input-error" : ""}`}
+        <div>
+          <label className="input_title">{props.text}</label>
+          <div>
+            <input
+              name="fullName"
+              type="text"
+              placeholder="Enter full name"
+              {...register("fullName")}
+              className="input_field"
             />
-            {errors.phone_number && (
-              <p className="errorMsg">{errors.phone_number.message}</p>
-            )}
-          </Form.Group>
-          <Form.Group controlId="phone" className="col col-sm-6">
-            <Form.Label>Alternative Phone number</Form.Label>
-            <Form.Control
-              type="phone"
-              name="phone"
-              autoComplete="off"
-              {...register("phone_number", {
-                pattern: {
-                  value:
-                    /"^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"/,
-                  message: "Invalid phone number",
-                },
-              })}
-              className={`${errors.phone_number ? "input-error" : ""}`}
+          </div>
+          <div className="ErrorMsg">{errors.fullName?.message}</div>
+        </div>
+        <div>
+          <label className="input_title">{props.address}</label>
+          <div>
+            <input
+              name="address"
+              type="text"
+              placeholder="Enter address"
+              {...register("address")}
+              className="input_field"
             />
-            {errors.phone_number && (
-              <p className="errorMsg">{errors.phone_number.message}</p>
-            )}
-          </Form.Group>
-        </Row>
-        <Row>
-          <Form.Group controlId="D.O.B" className="col col-sm-6">
-            <Form.Label>{props.date}</Form.Label>
-            <Form.Control
-              type="date"
-              name="d.o.b"
-              autoComplete="off"
-              {...register("d_o_b", {
-                required: "Date is required.",
-                pattern: {
-                  value: /^[a-zA-Z]+$/,
-                  message: "Please enter a valid date",
-                },
-              })}
-              className={`${
-                errors.d_o_b ? "input-error" : ""
-              } portfolio_calendar`}
+          </div>
+          <div className="ErrorMsg">{errors.address?.message}</div>
+        </div>
+        <div>
+          <label className="input_title">Email Address</label>
+          <div>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter email address"
+              {...register("email")}
+              className="input_field"
             />
-            {errors.d_o_b && <p className="errorMsg">{errors.d_o_b.message}</p>}
-          </Form.Group>
-          <Form.Group controlId="number" className="col col-sm-6">
-            <Form.Label>{props.number}</Form.Label>
-            <Form.Control
-              type="number"
-              name="number"
-              placeholder="Enter NIN"
-              autoComplete="off"
-              {...register("number", {
-                required: "Number is required.",
-                pattern: {
-                  value: /^(0|[1-9]\d*)$/,
-                  message: "Please enter a valid number",
-                },
-              })}
-              className={`${errors.number ? "input-error" : ""}`}
+          </div>
+          <div className="ErrorMsg">{errors.email?.message}</div>
+        </div>
+        <div>
+          <div>
+            <label className="input_title">Phone Number</label>
+            <div>
+              <input
+                name="phone"
+                type="phone"
+                placeholder="Enter number"
+                {...register("phoneNumber")}
+                className="input_field"
+              />
+            </div>
+            <div className="ErrorMsg">{errors.phoneNumber?.message}</div>
+          </div>
+          <div>
+            <label className="input_title">Alternative Phone Number</label>
+            <div>
+              <input
+                name="phone"
+                type="phone"
+                placeholder="Enter number"
+                {...register("phoneNumber")}
+                className="input_field"
+              />
+            </div>
+            <div className="ErrorMsg">{errors.PhoneNumber?.message}</div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label className="input_title">{props.date}</label>
+            <div>
+              <input
+                name="dob"
+                type="date"
+                placeholder="Enter number"
+                {...register("dob")}
+                className="input_field"
+              />
+            </div>
+            <div className="ErrorMsg">{errors.dob?.message}</div>
+          </div>
+          <div>
+            <label className="input_title">{props.number}</label>
+            <div>
+              <input
+                name="number"
+                type="number"
+                placeholder="Enter number"
+                {...register("number")}
+                className="input_field"
+              />
+            </div>
+            <div className="ErrorMsg">{errors.number?.message}</div>
+          </div>
+        </div>
+        <div>
+          <label className="input_title">{props.subject}</label>
+          <div>
+            <input
+              name="fullName"
+              type="text"
+              placeholder="Enter full name"
+              {...register("fullName")}
+              className="input_field"
             />
-            {errors.number && (
-              <p className="errorMsg">{errors.number.message}</p>
-            )}
-          </Form.Group>
-        </Row>
-        <Form.Group controlId="name">
-          <Form.Label>{props.subject}</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Enter Full name"
-            autoComplete="off"
-            {...register("name", {
-              required: "Date is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Please enter full name",
-              },
-            })}
-            className={`${errors.name ? "input-error" : ""}`}
-          />
-          {errors.name && <p className="errorMsg">{errors.name.message}</p>}
-        </Form.Group>
+          </div>
+          <div className="ErrorMsg">{errors.fullName?.message}</div>
+        </div>
       </div>
     </>
   );

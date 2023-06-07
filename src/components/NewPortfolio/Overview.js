@@ -1,7 +1,7 @@
 import React from "react";
 
 function overview() {
-  return <div>overview</div>;
+  return <div>This is overview</div>;
 }
 
 export default overview;

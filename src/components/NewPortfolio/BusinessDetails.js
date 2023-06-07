@@ -1,8 +1,6 @@
 import React from "react";
 import ProgressBar from "../../components/ProgressBar";
 import DetailsForm from "../../components/DetailsForm";
-import { Form, Button } from "react-bootstrap";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoanInfo from "../../components/LoanInfo";
@@ -24,7 +22,7 @@ function BusinessDetails() {
   return (
     <>
       <ProgressBar />
-      <Form className="input-form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="input-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form_container">
           <DetailsForm
             user={user}
@@ -38,11 +36,9 @@ function BusinessDetails() {
           <p className="auto_fill">Auto-fill from loan applications</p>
           <LoanInfo />
           <p className="auto_fill">Auto-fill from loan applications</p>
-          <Button variant="primary" type="submit">
-            Proceed
-          </Button>
+          <button className="form_btn">Proceed</button>
         </div>
-      </Form>
+      </form>
     </>
   );
 }

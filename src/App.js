@@ -12,17 +12,17 @@ import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSec
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
-import PersonalDetails from "./pages/NewPortfolio/PersonalDetails";
-import BusinessDetails from "./pages/NewPortfolio/BusinessDetails";
-import PersonalStatementAnalysis from "./pages/NewPortfolio/PersonalStatementAnalysis";
-import BusinessStatementAnalysis from "./pages/NewPortfolio/BusinessStatementAnalysis";
-import AnalysisResult from "./pages/NewPortfolio/AnalysisResult";
-import Behavioral from "./pages/NewPortfolio/Behavioral";
-import Spend from "./pages/NewPortfolio/Spend";
-import Income from "./pages/NewPortfolio/Income";
-import TransactionPattern from "./pages/NewPortfolio/TransactionPattern";
-import Overview from "./pages/NewPortfolio/Overview";
-import CashFlow from "./pages/NewPortfolio/CashFlow";
+import PersonalDetails from "./components/NewPortfolio/PersonalDetails";
+import BusinessDetails from "./components/NewPortfolio/BusinessDetails";
+import PersonalStatementAnalysis from "./components/NewPortfolio/PersonalStatementAnalysis";
+import BusinessStatementAnalysis from "./components/NewPortfolio/BusinessStatementAnalysis";
+import AnalysisResult from "./components/NewPortfolio/AnalysisResult";
+import Behavioral from "./components/NewPortfolio/Behavioral";
+import Spend from "./components/NewPortfolio/Spend";
+import Income from "./components/NewPortfolio/Income";
+import TransactionPattern from "./components/NewPortfolio/TransactionPattern";
+import Overview from "./components/NewPortfolio/Overview";
+import CashFlow from "./components/NewPortfolio/CashFlow";
 import Settings from "./pages/DashBoardPages/Settings";
 import Delinquency from "./pages/DashBoardPages/Delinquency";
 import Messages from "./pages/DashBoardPages/Messages";
@@ -62,24 +62,48 @@ const App = () => {
               element={<PredictiveModel />}
             />
           </Route>
-          <Route path="/portfolio" element={<Portfolio />} >
-            <Route path="portfolio/personalDetails" element={<PersonalDetails />} />
-            <Route path="portfolio/businessDetails" element={<BusinessDetails />} />
+          <Route path="/portfolio" element={<Portfolio />}>
             <Route
-            path="portfolio/personalStatement"
-            element={<PersonalStatementAnalysis />}
-          />
+              path="portfolio/personalDetails"
+              element={<PersonalDetails />}
+            />
             <Route
-            path="portfolio/businessStatement"
-            element={<BusinessStatementAnalysis />}
-          />
-            <Route path="portfolio/businessDetails" element={<BusinessDetails />} />
+              path="portfolio/businessDetails"
+              element={<BusinessDetails />}
+            />
+            <Route
+              path="portfolio/personalStatement"
+              element={<PersonalStatementAnalysis />}
+            />
+            <Route
+              path="portfolio/businessStatement"
+              element={<BusinessStatementAnalysis />}
+            />
+            <Route
+              path="portfolio/businessDetails"
+              element={<BusinessDetails />}
+            />
             <Route path="portfolio/analysisResult" element={<AnalysisResult />}>
-              <Route path="portfolio/analysisResult/overview" element={<Overview />} />
-              <Route path="portfolio/analysisResult/cashFlow" element={<CashFlow />} />
-              <Route path="portfolio/analysisResult/income" element={<Income />} />
-              <Route path="portfolio/analysisResult/spend" element={<Spend />} />
-              <Route path="portfolio/analysisResult/behavioral" element={<Behavioral />} />
+              <Route
+                path="portfolio/analysisResult/overview"
+                element={<Overview />}
+              />
+              <Route
+                path="portfolio/analysisResult/cashFlow"
+                element={<CashFlow />}
+              />
+              <Route
+                path="portfolio/analysisResult/income"
+                element={<Income />}
+              />
+              <Route
+                path="portfolio/analysisResult/spend"
+                element={<Spend />}
+              />
+              <Route
+                path="portfolio/analysisResult/behavioral"
+                element={<Behavioral />}
+              />
               <Route
                 path="portfolio/analysisResult/transactionPattern"
                 element={<TransactionPattern />}

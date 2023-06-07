@@ -1,138 +1,145 @@
-import React from "react";
-import { Form, Row } from "react-bootstrap";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 function BankDetails(props) {
+  const [inputFields, setInputFields] = useState([
+    {
+      document: "",
+    },
+  ]);
+
+  // handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputFields];
+    list[index][name] = value;
+    setInputFields(list);
+  };
+
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const list = [...inputFields];
+    list.splice(index, 1);
+    setInputFields(list);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    setInputFields([...inputFields, { document: "" }]);
+  };
+
+  const validationSchema = Yup.object().shape({
+    fullName: Yup.string().required(true),
+    date: Yup.date().required("Required"),
+    document: Yup.mixed()
+      .test("required", "You need to provide a file", (value) => {
+        return value && value.length;
+      })
+      .test("fileSize", "The file is too large", (value, context) => {
+        return value && value[0] && value[0].size <= 200000;
+        // 200KB
+      })
+      .test("type", "We only support pdf", function (value) {
+        return value && value[0] && value[0].type === "document/pdf";
+      }),
+  });
+  const formOptions = { resolver: yupResolver(validationSchema) };
   const {
     register,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      full_name: props.user.full_name,
-      from: props.user.from,
-      to: props.user.to,
-      file: props.user.file,
-      name: props.user.name,
-    },
-  });
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm(formOptions);
   return (
     <>
       <h3>Bank Statement Details</h3>
-      <Form.Group controlId="full_name">
-        <Form.Label>Bank Statement Name</Form.Label>
-        <Form.Control
-          type="text"
-          name="full_name"
-          placeholder="Enter full name"
-          autoComplete="off"
-          {...register("full_name", {
-            required: "Full name is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Full name should contain only characters.",
-            },
-          })}
-          className={`${errors.full_name ? "input-error" : ""}`}
-        />
-        {errors.full_name && (
-          <p className="errorMsg">{errors.full_name.message}</p>
-        )}
-      </Form.Group>
-      <Form.Group controlId="full_name">
-        <Form.Label>Bank Name</Form.Label>
-        <Form.Control
-          type="text"
-          name="name"
-          placeholder="Enter name"
-          autoComplete="off"
-          {...register("name", {
-            required: "Name is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Name should contain only characters.",
-            },
-          })}
-          className={`${errors.name ? "input-error" : ""}`}
-        />
-        {errors.name && <p className="errorMsg">{errors.name.message}</p>}
-      </Form.Group>
-      <Row>
-        <Form.Group controlId="from" className="col col-sm-6">
-          <Form.Label>From</Form.Label>
-          <Form.Control
-            type="date"
-            name="from"
-            placeholder="select date"
-            autoComplete="off"
-            {...register("from", {
-              required: "Date is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Please enter a valid date",
-              },
-            })}
-            className={`${errors.from ? "input-error" : ""} portfolio_calendar`}
+      <div onSubmit={handleSubmit}>
+        <label className="input_title">Bank Statement Name</label>
+        <div>
+          <input
+            name="fullName"
+            type="text"
+            placeholder="Enter full name"
+            {...register("fullName")}
+            className="input_field"
           />
-          {errors.from && <p className="errorMsg">{errors.from.message}</p>}
-        </Form.Group>
-        <Form.Group controlId="to" className="col col-sm-6">
-          <Form.Label>To</Form.Label>
-          <Form.Control
-            type="date"
-            name="to"
-            placeholder="select date"
-            autoComplete="off"
-            {...register("to", {
-              required: "Date is required.",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Please enter a valid date",
-              },
-            })}
-            className={`${errors.to ? "input-error" : ""} portfolio_calendar`}
+        </div>
+        <div className="ErrorMsg">{errors.fullName?.message}</div>
+      </div>
+      <div>
+        <label className="input_title">Bank Name</label>
+        <div>
+          <input
+            name="fullName"
+            type="text"
+            placeholder="Enter full name"
+            className="input_field"
+            {...register("fullName")}
           />
-          {errors.to && <p className="errorMsg">{errors.to.message}</p>}
-        </Form.Group>
-      </Row>
-      <Form.Group controlId="file">
-        <Form.Label>Upload Bank Statement</Form.Label>
-        <Form.Control
-          type="file"
-          name="file"
-          placeholder="choose file"
-          autoComplete="off"
-          {...register("from", {
-            required: "File is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Please upload a pdf file",
-            },
-          })}
-          className={`${errors.file ? "input-error" : ""}`}
-        />
-        {errors.file && <p className="errorMsg">{errors.file.message}</p>}
-      </Form.Group>
-      <p>{props.text1}</p>
-      <Form.Group controlId="file">
-        <Form.Label>Other Supporting Documents</Form.Label>
-        <Form.Control
-          type="file"
-          name="file"
-          placeholder="choose file"
-          autoComplete="off"
-          {...register("from", {
-            required: "File is required.",
-            pattern: {
-              value: /^[a-zA-Z]+$/,
-              message: "Please upload a pdf file",
-            },
-          })}
-          className={`${errors.file ? "input-error" : ""}`}
-        />
-        {errors.file && <p className="errorMsg">{errors.file.message}</p>}
-      </Form.Group>
-      <p>{props.text2}</p>
-      <p>+</p>
+        </div>
+        <div className="ErrorMsg">{errors.fullName?.message}</div>
+      </div>
+      <div>
+        <div>
+          <label className="input_title">From</label>
+          <div>
+            <input
+              name="date"
+              type="date"
+              placeholder="Enter number"
+              className="input_field"
+              {...register("date")}
+            />
+          </div>
+          <div className="ErrorMsg">{errors.dob?.message}</div>
+        </div>
+        <div>
+          <label className="input_title">To</label>
+          <div>
+            <input
+              name="date"
+              type="date"
+              placeholder="Enter number"
+              {...register("date")}
+              className="input_field"
+            />
+          </div>
+          <div className="ErrorMsg">{errors.dob?.message}</div>
+        </div>
+      </div>
+      <div>
+        <label className="input_title">Upload Bank Statement</label>
+        <div>
+          <input
+            name="document"
+            type="file"
+            placeholder="Upload"
+            {...register("document")}
+            className="input_field"
+          />
+        </div>
+        <div className="ErrorMsg">{errors.document?.message}</div>
+      </div>
+      <p className="auto_fill">{props.text1}</p>
+      <div>
+        <label className="input_title">Other Supporting Documents</label>
+        <div>
+          <input
+            name="document"
+            type="file"
+            placeholder="Upload"
+            className="input_field"
+          />
+        </div>
+        <div className="ErrorMsg">{errors.document?.message}</div>
+      </div>
+      <div>
+        <p className="auto_fill">{props.text2}</p>
+        <button className="form_btn2" onClick={handleAddClick}>
+          +
+        </button>
+      </div>
     </>
   );
 }

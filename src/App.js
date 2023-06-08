@@ -87,29 +87,17 @@ const App = () => {
               path="portfolio/businessDetails"
               element={<BusinessDetails />}
             />
-            <Route path="portfolio/analysisResult" element={<AnalysisResult />}>
+            <Route element={<AnalysisResult />}>
+              <Route path="analysisResult/overview" element={<Overview />} />
+              <Route path="analysisResult/cashFlow" element={<CashFlow />} />
+              <Route path="analysisResult/income" element={<Income />} />
+              <Route path="analysisResult/spend" element={<Spend />} />
               <Route
-                path="portfolio/analysisResult/overview"
-                element={<Overview />}
-              />
-              <Route
-                path="portfolio/analysisResult/cashFlow"
-                element={<CashFlow />}
-              />
-              <Route
-                path="portfolio/analysisResult/income"
-                element={<Income />}
-              />
-              <Route
-                path="portfolio/analysisResult/spend"
-                element={<Spend />}
-              />
-              <Route
-                path="portfolio/analysisResult/behavioral"
+                path="analysisResult/behavioral"
                 element={<Behavioral />}
               />
               <Route
-                path="portfolio/analysisResult/transactionPattern"
+                path="analysisResult/transactionPattern"
                 element={<TransactionPattern />}
               />
             </Route>

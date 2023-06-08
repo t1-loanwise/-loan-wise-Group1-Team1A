@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-date-picker";
 
 function Calendar() {
+  const [dateValue, onDateChange] = useState(new Date());
+
   return (
     <>
-      <input type="date" />
+      <DatePicker
+        onChange={onDateChange}
+        value={dateValue}
+        autoFocus={true}
+        className="date-picker"
+        closeCalendar={false}
+      />
     </>
   );
 }

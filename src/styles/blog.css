@@ -1,3 +1,10 @@
+.background-one {
+  background-image: url("../assets/Ellipse\ 36.svg");
+  background-position: 100% top;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
 .form-wrapper {
   display: flex;
   align-items: center;
@@ -15,7 +22,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0% 6.5% 0%;
-  position: relative;
 }
 
 .p-one {
@@ -36,25 +42,9 @@
   color: #00191f;
 }
 
-.my-image {
-  position: relative;
-  width: 60%;
-  overflow-x: hidden;
-  height: fit-content;
-   overflow-y: hidden;
-}
-
-.my-image img:nth-of-type(2) {
-  width: 90%;
-  position: absolute;
-  top: 15%;
-  left: 20%;
-}
-.my-image img:nth-of-type(1) {
-  width: 140%;
-  position: relative;
-  top: -10%;
-  left: -30%;
+.my-image  {
+  width: 50%;
+  margin-top: 10%;
 }
 
 .child-div {

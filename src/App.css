@@ -415,4 +415,8 @@ padding-bottom: 4px;
 #frame_input h5{
  padding: 8px;
 }
-
+/* User Preference Link */
+#user-p-link{
+  color: #000000;
+  text-decoration: none;
+}

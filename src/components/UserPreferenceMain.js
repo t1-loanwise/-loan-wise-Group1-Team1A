@@ -9,8 +9,12 @@ const UserPreferenceMain = () => {
     <div>
       <TopBar/>
       <SideBar/>
+      <div>
       <UserPreferenceSection/>
       </div>
+
+    </div>
+      
   );
 };
 

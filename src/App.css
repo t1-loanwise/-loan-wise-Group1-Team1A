@@ -416,9 +416,29 @@ padding-bottom: 4px;
  padding: 8px;
 }
 /* User Preference Link */
-#user-p-box{
-
+.user-p-box{
+  width: 100%;
+  box-shadow: 0 0 12px 0px #007d995a;
+  padding: 0.5em 1.5em;
+  margin-bottom: 15px;
 }
 #user-p-link{
   font-weight: lighter;
+}
+#back-btn img{
+height: 35px;
 } 
+#back-btn img:hover{
+  box-shadow: whitesmoke;
+}
+#back-btn p{
+  margin: 0;
+  font-size: 20px;
+}
+#back-btn{
+  background-color: transparent;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

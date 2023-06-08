@@ -332,16 +332,17 @@
 }
 
 /* User Preference Styling */
-.preference_container{
-  border: 1px solid #000000;
-}
-
 .appearance_settings{
   margin: 24px;
   padding:12px;
   font-weight: 600;
 }
-.para_toggle{border: 1px solid black;}
+
+.para_toggle{
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
 .frame_one{
   margin: 24px ;
@@ -349,32 +350,54 @@
 .frame_two{
   margin: 24px ;
 }
-#frame_two_text{}
+
 #frame_three{
-  margin: 24px ;
+  margin: 12px ;
 }
 #frame_three_notif{
   margin-top: 3.9rem;
   border: 1px solid #000000;
 }
 .frame_three_contents{
-  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: 18px;
+  padding: 1.5rem;
+}
+.headings{
+  margin-top: 0.9rem;
+  padding: 16px 8px;
 }
 .headings p{
-  font-size: 18px;
-  
+  font-size: 18px; 
+}
+.toggle-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3px;
 }
 .toggle-button{
-  margin: 6px 3px;
-  padding-top: 8px;
+  /* margin: 6px 3px; */
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.toggle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.toggle p{
+  margin-left: 16px;
+  font-weight: 900;
 }
 #frame_three_input{
-  margin: 24px;
-  padding: 12px;
+  margin-top: 20px;
+  padding: 16px;
   border: 1px solid #000000;
 }
 #frame_input_heading{

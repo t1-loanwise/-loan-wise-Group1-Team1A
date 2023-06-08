@@ -416,7 +416,9 @@ padding-bottom: 4px;
  padding: 8px;
 }
 /* User Preference Link */
-#user-p-link{
-  color: #000000;
-  text-decoration: none;
+#user-p-box{
+
 }
+#user-p-link{
+  font-weight: lighter;
+} 

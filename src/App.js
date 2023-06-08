@@ -24,9 +24,7 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import DashCardGraph from "./components/DashCardGraph";
 import PredictiveModel from "./components/PredictiveModel";
-import UserPreference from "./components/UserPreferenceMain";
 
 const App = () => {
   return (
@@ -44,16 +42,13 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
+
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/settings" element={<Settings />}>
             <Route
               path="settings/PredictiveModel"
               element={<PredictiveModel />}
-            />
-            <Route
-              path="settings/UserPreference"
-              element={<UserPreference />}
             />
           </Route>
           <Route path="/portfolio" element={<Portfolio />} />

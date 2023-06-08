@@ -39,6 +39,7 @@ const ExitingRule = () => {
       <div>
         <div className="select-option-below">
           <RuleOptions />
+          {active && <NewConditionBtn />}
           <div className="btn">
             <button
               type="submit"
@@ -49,7 +50,6 @@ const ExitingRule = () => {
               <span>New Condition</span>
             </button>
           </div>
-          {active && <NewConditionBtn />}
         </div>
       </div>
       <div className="conditions-container">

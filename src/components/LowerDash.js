@@ -2,8 +2,6 @@ import React from 'react'
 import LoanTableHeading from './LoanTableHeading'
 import LoanTabble from './LoanTabble'
 import "../styles/LowerDash.css"
-import LoanHiistory from './LoanHiistory'
-import LoanTablePaginatiion from './LoanTablePaginatiion'
 
 const LowerDash = () => {
   return (
@@ -11,10 +9,6 @@ const LowerDash = () => {
         <LoanTableHeading />
         <hr />
         <LoanTabble />
-        <div className='lowerlastdash'>
-          <LoanHiistory />
-          <LoanTablePaginatiion />
-        </div>
     </div>
   )
 }

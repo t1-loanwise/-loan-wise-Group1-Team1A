@@ -1,20 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import RuleOptions from "./RuleOptions";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import NewConditionBtn from "./NewConditionBtn";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
+import { useNavigate } from "react-router";
 
 const NewRule = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [inputValue, setInputValue] = useState("");
+  const [inputError, setInputError] = useState(null);
 
-  const onSubmit = (data) => {
-    localStorage.setItem("title", { id: nanoid(), ...data });
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+
+    if (value.length < 5) {
+      setInputError("This field is required");
+    } else {
+      setInputError(null);
+    }
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.length >= 5) {
+    } else {
+      setInputError("This field is required");
+    }
+    localStorage.setItem("model title", inputValue);
+  };
+  const modelId = useId();
 
   const [active, setActive] = useState(false);
   const newCondition = () => {
@@ -27,7 +41,7 @@ const NewRule = () => {
 
   return (
     <div className="exitingRule-container">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit}>
         <div className="edit-text">
           <div className="rule-header">
             <div>
@@ -43,14 +57,17 @@ const NewRule = () => {
         <div className="select-option">
           <label>Model Title</label>
           <input
-            id="title"
+            id={modelId}
             name="title"
             type="text"
-            {...register("title", { required: true })}
+            value={inputValue}
+            onChange={handleInputChange}
+            //   {...register("title", { required: true })}
           />
-          {errors.title && (
+          {/* {errors.title && (
             <p className="errorMsg">Kindly input a model title</p>
-          )}
+          )} */}
+          {inputError && <p className="errorMsg">{inputError}</p>}
         </div>
         <div>
           <div className="select-option-below">
@@ -73,7 +90,7 @@ const NewRule = () => {
               type="radio"
               name="condition"
               id="condition"
-              {...register("condition", { required: true })}
+              // {...register("condition", { required: true })}
             />
             All conditions must be met
           </div>
@@ -83,7 +100,7 @@ const NewRule = () => {
               type="radio"
               name="condition"
               id="condition"
-              {...register("condition", { required: true })}
+              // {...register("condition", { required: true })}
             />
             Any of the conditions can be met
           </div>

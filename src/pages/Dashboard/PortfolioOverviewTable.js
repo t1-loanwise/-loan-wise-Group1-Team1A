@@ -44,7 +44,6 @@ const PortfolioOverviewTable  = () => {
       <div className={styles.wrapper}>
         <Table data={PortfolioOverview} rowsPerPage={6} />
       </div>
-      <NavLink className="PortfolioHistory">View all Portfolio history</NavLink>
     </div>
   );
 }

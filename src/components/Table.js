@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../styles/PortfolioTable.css';
-import leftarrow from "../..assets/paginationleftarrow.svg";
-import rightarrow from "./assets/paginationrightarrow.svg";
+import leftarrow from "../assets/p-leftarrow.svg";
+import rightarrow from "../assets/p-rightarrow.svg";
 import persons from "../components/Portfolio/Data";
 
 const Table = () => {
@@ -29,7 +29,7 @@ const Table = () => {
               .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
               .map((data, index) => (
                 <tr key={index}>
-                  <td>{data.ID}</td>
+                  <td>{data.id}</td>
                   <td>{data.Name}</td>
                   <td>{data.Category}</td>
                   <td>{data.Amount}</td>

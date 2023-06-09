@@ -19,11 +19,11 @@ const ExitingRule = ({ model }) => {
       <div className="edit-text">
         <div className="rule-header">
           <div>
-            <h2>Edit Exiting Rule</h2>
+            <h2>Edit Existing Rule</h2>
           </div>
         </div>
         <p>
-          Edit exiting rules that loan application must meet for approval or
+          Edit existing rules that loan application must meet for approval or
           dismissal
         </p>
       </div>

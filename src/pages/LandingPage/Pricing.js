@@ -4,7 +4,6 @@ import NavBar from "../../components/NavBar";
 import TextHeader from "../../components/TextHeader";
 import PriceCard from "../../components/PriceCard";
 import Faqs from "../../components/Faqs";
-import UseLoanWise from "../../components/UseLoanwise"
 import UseLoanWise from "../../components/UseLoanwise";
 import Newsletter from "../../components/Newsletter";
 

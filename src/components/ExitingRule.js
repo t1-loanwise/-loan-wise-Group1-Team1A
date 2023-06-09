@@ -4,7 +4,8 @@ import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import "../styles/ExitingRules.css";
 import NewConditionBtn from "./NewConditionBtn";
 
-const ExitingRule = () => {
+const ExitingRule = ({ model }) => {
+  console.log(model);
   const [active, setActive] = useState(false);
   const newCondition = () => {
     if (active == true) {
@@ -18,27 +19,29 @@ const ExitingRule = () => {
       <div className="edit-text">
         <div className="rule-header">
           <div>
-            <h2>Edit Exiting Rule</h2>
+            <h2>Edit Existing Rule</h2>
           </div>
         </div>
         <p>
-          Edit exiting rules that loan application must meet for approval or
+          Edit existing rules that loan application must meet for approval or
           dismissal
         </p>
       </div>
       <div className="select-option">
         <label>Model Title</label>
-        <select>
+        <input type="text" value={model.name} />
+        {/* <select>
           <option value="">Select exiting rule</option>
           <option value="1">Bank Statement Name March</option>
           <option value="2">Spending Pattern</option>
           <option value="3">Cash Flow Pattern</option>
-        </select>
+        </select> */}
       </div>
 
       <div>
         <div className="select-option-below">
           <RuleOptions />
+          {active && <NewConditionBtn />}
           <div className="btn">
             <button
               type="submit"
@@ -49,7 +52,6 @@ const ExitingRule = () => {
               <span>New Condition</span>
             </button>
           </div>
-          {active && <NewConditionBtn />}
         </div>
       </div>
       <div className="conditions-container">

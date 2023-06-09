@@ -4,7 +4,8 @@ import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import "../styles/ExitingRules.css";
 import NewConditionBtn from "./NewConditionBtn";
 
-const ExitingRule = () => {
+const ExitingRule = ({ model }) => {
+  console.log(model);
   const [active, setActive] = useState(false);
   const newCondition = () => {
     if (active == true) {
@@ -28,12 +29,13 @@ const ExitingRule = () => {
       </div>
       <div className="select-option">
         <label>Model Title</label>
-        <select>
+        <input type="text" value={model.name} />
+        {/* <select>
           <option value="">Select exiting rule</option>
           <option value="1">Bank Statement Name March</option>
           <option value="2">Spending Pattern</option>
           <option value="3">Cash Flow Pattern</option>
-        </select>
+        </select> */}
       </div>
 
       <div>

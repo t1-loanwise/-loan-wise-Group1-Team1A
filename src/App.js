@@ -10,6 +10,7 @@ import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import SettingAndPrivacy from "./components/SettingAndPrivacy";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
 import Settings from "./pages/DashBoardPages/Settings";
@@ -40,6 +41,9 @@ const App = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/verifyEmail" element={<VerifyCode />} />
         <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/newpassword" element={<CreateNewPassword />} />
+        <Route path="/securityQuestions" element={<SetSecurityQuestion />}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>        
         <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
@@ -60,6 +64,7 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+
       </Routes>
     </div>
   );

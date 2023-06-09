@@ -21,7 +21,7 @@ export default [
       Category: "Business",
       Amount: "N60000",
       DueDate: "12th Aug. 2023",
-      Status: "Delined",
+      Status: "Declined",
     },
     {
       id: 4,
@@ -132,7 +132,7 @@ export default [
       Category: "Personal",
       Amount: "N60000",
       DueDate: "12th Aug. 2023",
-      Status: "Delined",
+      Status: "Declined",
     },
     {
       id: 18,

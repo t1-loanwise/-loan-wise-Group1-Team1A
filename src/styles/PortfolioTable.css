@@ -1,17 +1,44 @@
-.tableFooter {
-    background-color: #f1f1f1;
-    padding: 8px 0px;
-    width: 100%;
-    font-weight: 500;
-    text-align: left;
-    font-size: 16px;
-    color: #2c3e50;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.btn {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+.portfolio-button {
+  font-size: 0.75rem;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: #007e99;
+}
+.cardGraphContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  margin: 10px 30px;
+}
+
+
+
+.line-chart-container {
+  width: 40%;
+  background: #ffffff;
+  border: 1.10609px solid #e6f2f5;
+  box-shadow: 0px 8px 40px #e6f2f5;
+  border-radius: 17.6974px;
+  padding: 10px;
+}
+
+.line-chart-container span {
+  text-align: center;
+  font-size: 14px;
+  color: #050505;
+  align-self: center;
+}
+
+.line-bar-container {
+  display: flex;
+  column-gap: 0.7em;
+}
   
   .DownloadBtn {
     padding: 10px 48px;
@@ -21,80 +48,78 @@
     background: #007e99;
   }
 
-  .table {
-    border-collapse: collapse;
+  .chart{
+    display: flex;
+    gap: 20px;
+  }
+  .customerSort{
+    display: flex;
+    gap: 120px;
+    align-items: center;
+  }
+  .customerID{
+    display: flex;
+    gap: 180px;
+    align-items: center;
+    border: 1px solid grey;
+    padding: 5px;
+    
+  }
+
+  .select-option {
+    display: flex;
+    flex-direction: column;
+  }
+  .select-option select {
+    padding: 8px 16px;
+    margin-top: 5px;
+  }
+
+  .Approved button {
+    border-radius: 16px;
+    color: white;
+    background-color: green;
+    padding: 4px 8px;
     border: none;
-    width: 0 35%;
-    align-items: flex-end;
   }
-  
-  .tableRowHeader {
-    background-color: rgb(233, 247, 249);
-    border: 1px solid none;
-    transition: all 0.25s ease;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  
-  .tableHeader {
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-weight: 500;
-    text-align: left;
-    font-size: 10px;
-    color: #2c3e50;
-  }
-  
-  .Approved {
-    border: 1px solid none;
-    border-radius: 10px;
-    color: green;
-  }
-  .Declined {
-    border: 1px solid none;
-    border-radius: 10px;
-    color: green;
+  .Declined button {
+    border-radius: 16px;
+    color: white;
+    background-color: red;
+    padding: 4px 8px;
+    border: none;
   }
   
   .tableRowItems {
     cursor: pointer;
   }
-  
-  .tableCell {
+   .tableCell {
     padding: 12px;
     font-size: 14px;
     color: grey;
   }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    font-size: 20px;
-  } 
-  .wrapper {
-    width: 550px;
+  table{
+    width: 100%;
+    border-collapse: collapse;
   }
-
-  .OverviewContainer{
+  th{
+    text-align: left;
+    background-color: #E6F2F5;
+    padding: 16px 10px;
+  }
+  
+.OverviewContainer{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 80px;
+    align-items: center;
+    gap: 480px;
     margin: 30px 0px;
-  }
+  } 
   .overviewHeader{
-    font-size: 35px;
+    font-size: 25px;
+
   }
-  .overviewBtn{
-    font-size: 20px;
-    outline: none;
-    padding: 10 50px;
-    color: white;
-    background-color: aquamarine;
-  }
+  
   .PortfolioHistory{
     text-decoration: none;
     color: rgb(164, 217, 250);
@@ -102,4 +127,11 @@
   .tableLinks{
     text-decoration: none;
     color: black;
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: end;
+    width: min-content;
+    height: min-content;
   }

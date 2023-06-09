@@ -13,8 +13,8 @@ const FooterTable = ({ range, setPage, page, slice }) => {
           {range.map((el, index) => (
             <button
               key={index}
-              className={`${styles.button} ${
-                page === el ? styles.activeButton : styles.inactiveButton
+              className={`${styles.Approved} ${
+                page === el ? styles.Approved : styles.Declined
               }`}
               onClick={() => setPage(el)}
             >

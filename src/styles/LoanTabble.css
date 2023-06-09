@@ -1,0 +1,76 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+
+    /* width: 12.54rem; */
+    text-align: left;
+    height: 3.5rem;
+    background-color: #E6F2F5;
+    font-weight: 600;
+}
+
+td {
+    height: 3.5rem;
+    font-weight: 500;
+}
+
+tr:focus{
+    cursor: pointer;
+}
+
+td:nth-child(6) button{
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+.Active button {
+    background-color: #17A937;
+    padding: 0.375rem 2.31rem;
+}
+.Completed button {
+    background-color: #FD7123;
+    padding: 0.375rem 1.4rem;
+}
+.Declined button {
+    background-color: #FF2E2E;
+    padding: 0.375rem 1.9rem;
+}
+
+th, td {
+    padding-left: 0.3rem;
+}
+
+.loanhiistory {
+    text-decoration: none;
+    color: #007E99;
+}
+
+.pagiNumbs {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    justify-content: start;
+}
+
+p {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.pagiNumbs button.active {
+    font-weight: bold;
+    background-color: #007E99;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+  }
+.pagiNumbs button {
+    border: none;
+    cursor: pointer;
+  }

@@ -3,39 +3,29 @@ import React from 'react'
 import { Bar } from "react-chartjs-2";
 
 const data = {
-  labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-
-  ],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
 
   datasets: [
     {
       label: "Active",
-      data: [
-        4000, 5500, 4050, 3950, 5600, 4800, 4500, 4000, 4700, 5200, 5800, 6300,
-      ],
+      data: [600, 900, 250, 325, 350, 580, 580],
       backgroundColor: "#99007E",
       borderColor: "#99007E",
-      borderWidth: 2,
-      pointRadius: 0,
-      tension: 0.3,
-      pointStyle: 'circle'
-      
+      borderWidth: 0,
+      barThickness: 15,
+      stack: "Stack 1",
     },
     {
       label: "Active",
-      data: [
-        400, 100, 450, 625, 20, 520, 850, 830, 200, 250, 90, 900,
-      ],
+      data: [1100, 1080, 1450, 1050, 1400, 900, 850, ,],
       backgroundColor: "#009967",
       borderColor: "#009967",
       borderWidth: 0,
+      pointRadius: 0,
+      tension: 0.3,
+      barThickness: 15,
+      borderRadius: 10,
+      stack: "Stack 1",
     },
   ],
 };
@@ -45,10 +35,10 @@ const options = {
   scales: {
     x: {
       beginAtZero: true,
-     
+
       ticks: {
         font: {
-          size: 7,
+          size: 8,
           color: "#343434",
         },
       },
@@ -58,22 +48,23 @@ const options = {
     },
     y: {
       beginAtZero: true,
- 
+
       ticks: {
         font: {
-          size: 7,
+          size: 8,
           color: "#343434",
         },
-        stepSize: 250,
+        stepSize: 500,
       },
       grid: {
-        display: false,
+        display: true,
       },
     },
   },
   plugins: {
     legend: {
       display: false, // Remove the legend
+      borderRadius: 10,
     },
   },
 };
@@ -81,7 +72,7 @@ const options = {
 
 const PortfolioBarChart = () => {
   return (
-    <div className="line-chart-container">
+    <div className="line-chart-container2">
       <Bar data={data} options={options} />
     </div>
   );

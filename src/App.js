@@ -27,8 +27,10 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
+import UserPreference from "./pages/DashBoardPages/UserPreference";
 import PredictiveModel from "./components/PredictiveModel";
 import NotificationsMain from "./components/NotificationsMain";
+import UserPreferenceMain from "./components/UserPreferenceMain";
 
 const App = () => {
   return (
@@ -49,22 +51,10 @@ const App = () => {
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
+
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/settings" element={<Settings />}>
-            <Route
-              path="settings/PredictiveModel"
-              element={<PredictiveModel />}
-            />
-            <Route
-              path="security-and-privacy"
-              element={<SettingAndPrivacy />}
-            />
-            <Route
-              path="settings/NotificationsMain"
-              element={<NotificationsMain />}
-            />
-          </Route>
+          <Route path="/settings" element={<Settings />}/>
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/repayment" element={<Repayment />} />
           <Route path="/recovery" element={<Recovery />} />
@@ -72,6 +62,7 @@ const App = () => {
           <Route path="/general/messages" element={<Messages />} />
           <Route path="/general/profile" element={<Profile />} />
           <Route path="delinquency" element={<Delinquency />} />
+          <Route path="/userPreference" element={<UserPreferenceMain/>}/>
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>

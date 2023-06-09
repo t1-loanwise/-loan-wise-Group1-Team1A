@@ -4,7 +4,7 @@ import FillButton from "./FillButton";
 
 const PrivacyForm = () => {
   return (
-    <form>
+    <form className="content-container">
       <div className="setting-form">
         <label>Previous Password</label> <input type="text" />
       </div>
@@ -33,11 +33,11 @@ const PrivacyForm = () => {
         <div className="col-2">
           <div className="setting-form-block full-width mbottom-16">
             <select placeholder="Select Question">
-              <option>Select Question</option>
+              <option disabled selected hidden>Select Question</option>
               <option>Question1</option>
               <option>Question2</option>
             </select>
-            <input type="text" />
+            <input type="text" placeholder="Enter Answer" />
           </div>
           <div className="setting-form-block full-width">
             <select placeholder="Select Question">
@@ -45,7 +45,7 @@ const PrivacyForm = () => {
               <option>Question1</option>
               <option>Question1</option>
             </select>
-            <input type="text" />
+            <input type="text" placeholder="Enter Answer"  />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import UseLoanwise from "../../components/UseLoanwise";
 import HomeSections from "../../components/HomeSections";
 import Newsletter from "../../components/Newsletter";
 
+
 const Home = () => {
   return (
     <>

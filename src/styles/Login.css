@@ -33,7 +33,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-   gap: 0.7em;
+  gap: 0.7em;
 }
 
 .login-form-control {
@@ -96,6 +96,7 @@
   padding: 10px;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 div .login-Btn {
@@ -120,9 +121,9 @@ div .login-Btn {
   font-size: 1.25rem;
 }
 .forgotpass-btn {
-   text-align: center;
+  text-align: center;
   text-decoration: none;
-  color: #55666A;
+  color: #55666a;
   font-weight: 500;
   cursor: pointer;
   font-size: 19px;

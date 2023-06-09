@@ -6,28 +6,26 @@
   gap: 70px;
   padding: 5vh 2.5%;
 }
-.verify_head_content,
-.reset_head_content {
+.verify_head_content {
   display: flex;
   flex-direction: column;
   width: 60%;
   justify-content: space-between;
 }
 
+.reset_head_content,
 .new_password_head_content {
    display: flex;
   flex-direction: column;
   width: 60%;
-  margin-bottom: 2%;
+ gap: 15%;
 }
 
-.reset_head_content {
-  justify-content: space-between;
-  margin-bottom: 12%;
-}
-
-.reset_head_content form {
+.reset_body_content {
+  display: flex;
+  flex-direction: column;
   width: 90%;
+  gap: 1.5em;
 }
 
 .logo_container {

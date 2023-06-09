@@ -14,7 +14,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    navigate("/dashboard")
+    navigate("/dashboard");
   };
 
   return (
@@ -109,9 +109,9 @@ const Login = () => {
             </div>
           </form>
         </div>
-          <Link to="/register" className="forgotpass-btn">
-            Don’t have an account? Sign Up
-          </Link>
+        <Link to="/register" className="forgotpass-btn">
+          Don’t have an account? Sign Up
+        </Link>
       </div>
     </div>
   );

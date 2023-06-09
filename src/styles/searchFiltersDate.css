@@ -1,0 +1,16 @@
+.searchFilterDate {
+    margin-bottom: 2rem;
+    display: flex;
+    /* justify-content: space-between; */
+    height: fit-content;
+    gap: 1rem
+}
+
+.searchFilter {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    /* flex-direction: 50%; */
+    flex: 1;
+    gap: 1.5rem;
+}

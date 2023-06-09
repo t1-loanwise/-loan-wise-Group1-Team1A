@@ -1,10 +1,18 @@
-import React from "react";
-import Close from "../assets/icons/close-circle.svg";
+import React, { useState } from "react";
 import RuleOptions from "./RuleOptions";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import "../styles/ExitingRules.css";
+import NewConditionBtn from "./NewConditionBtn";
 
 const ExitingRule = () => {
+  const [active, setActive] = useState(false);
+  const newCondition = () => {
+    if (active == true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  };
   return (
     <div className="exitingRule-container">
       <div className="edit-text">
@@ -28,13 +36,20 @@ const ExitingRule = () => {
         </select>
       </div>
 
-      <div className="select-option-below">
-        <RuleOptions />
-        <div className="btn">
-          <button className="condition-button">
-            <img src={PlusSign} alt="plus" width="14px" />{" "}
-            <span>New Condition</span>
-          </button>
+      <div>
+        <div className="select-option-below">
+          <RuleOptions />
+          <div className="btn">
+            <button
+              type="submit"
+              className="condition-button"
+              onClick={newCondition}
+            >
+              <img src={PlusSign} alt="plus" width="14px" />{" "}
+              <span>New Condition</span>
+            </button>
+          </div>
+          {active && <NewConditionBtn />}
         </div>
       </div>
       <div className="conditions-container">

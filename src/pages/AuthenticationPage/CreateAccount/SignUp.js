@@ -146,10 +146,10 @@ const SignUp = () => {
               Create Account
             </button>
           </form>
-          <Link className="toLoginPageBtn" to="/login">
-            Already have an account? Sign in
-          </Link>
         </div>
+        <Link className="toLoginPageBtn" to="/login">
+          Already have an account? Sign in
+        </Link>
       </div>
     </div>
   );

@@ -100,7 +100,7 @@ const VerifyRegistration = () => {
             <button className="createAccountBtn">Verify</button>
           </form>
         </div>
-        {/* <span className="no_OTP">Didn't get an OTP? Resend in 60s</span> */}
+       
         <span className="no_OTP">
           Didn't get an OTP?
           {countdownFinished ? (

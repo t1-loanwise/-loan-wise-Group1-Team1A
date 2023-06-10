@@ -10,7 +10,7 @@ import PortfolioLineChart from "../../components/Portfolio/PortfolioLineChart";
 const PortfolioOverviewTable  = () => {
   const [PortfolioOverview] = useState([...PortfolioOviewData]);
   return (
-    <div className="cardGraphContainer">
+    <div className="cardGraphContainer2">
       <div className="btn">
           <button className="portfolio-button">
             <span>+   New Portfolio</span>
@@ -33,7 +33,7 @@ const PortfolioOverviewTable  = () => {
             <option value="3">Morgage</option>
           </select>
         </div>
-      
+
       </div>
       <div className="OverviewContainer">
         <p className="overviewHeader">Portfolio Overview</p>

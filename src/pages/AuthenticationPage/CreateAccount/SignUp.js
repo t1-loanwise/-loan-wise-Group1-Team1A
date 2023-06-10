@@ -8,6 +8,7 @@ import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../../components/Onboarding";
+import axios from "axios";
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
@@ -34,6 +35,13 @@ const SignUp = () => {
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
+  const [data, setData] = useState(null)
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] =useState('')
+  const [password, setPassword] = useState('')
+
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
@@ -41,10 +49,25 @@ const SignUp = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPswd(showConfirmPswd ? false : true);
   };
-  const onSubmit = (data) => {
-    console.log(data);
-    navigate("/verifyRegistration");
+  const onSubmit = async() => {
+    console.log("data");
+    await axios
+      .post(`https://staging.api.zoropay.com/beauty/v1`
+      //  {
+      //   name: name,
+      //   email: email,
+      //   password: password,
+      // }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
+
+    // navigate("/verifyRegistration");
   };
+
+  console.log(name + email + password);
 
   return (
     <div className="createAccount_parentContainer">
@@ -70,6 +93,7 @@ const SignUp = () => {
                   placeholder="Enter full name"
                   {...register("fullName")}
                   className="name-email-input"
+                  onChange={(e)=> setName(e.target.value)}
                 />
               </div>
               <div className="signUpErrorMsg">{errors.fullName?.message}</div>
@@ -86,6 +110,7 @@ const SignUp = () => {
                   className={` name-email-input ${
                     errors.email ? "is-invalid" : ""
                   }`}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="signUpErrorMsg">{errors.email?.message}</div>
@@ -99,6 +124,7 @@ const SignUp = () => {
                     type={showPswd ? "text" : "password"}
                     {...register("password")}
                     className={` ${errors.password ? "is-invalid" : ""}`}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <img
                     src={showPswd ? hide : show}

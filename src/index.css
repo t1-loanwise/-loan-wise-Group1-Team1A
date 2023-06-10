@@ -11,8 +11,7 @@ body {
 }
 
 .rightContent {
-  width: 83%;
-  justify-self: end;
-  margin-top: 15vh;
-  padding: 3% 3% 0;
+  margin-top: 100px;
+  padding: 40px 50px 40px 320px;
+  width: 100vw;
 }

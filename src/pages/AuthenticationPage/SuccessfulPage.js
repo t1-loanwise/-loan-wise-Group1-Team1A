@@ -4,6 +4,7 @@ import "../../styles/Successfulpage.css";
 import wave from "../../assets/Group 8038.svg";
 import eclipse from "../../assets/Ellipse 769.svg";
 import check from "../../assets/checked.svg";
+import { Link } from "react-router-dom";
 
 const SuccessfulPage = () => {
   return (
@@ -26,7 +27,9 @@ const SuccessfulPage = () => {
         </p>
       </div>
       <div className="Success-btn-container">
-        <button className="successful-btn">Continue</button>
+        <Link to="/dashboard">
+          <button className="successful-btn">Continue</button>
+        </Link>
       </div>
       <div className="bottom-image">
         <img className="wave" src={wave} alt="wave" />

@@ -14,30 +14,30 @@ const data = {
   ],
 
   datasets: [
-    
+
     {
       label: "Active",
       data: [
-        4000, 5500, 4050, 3950, 5600, 4800, 4500, 4000, 4700, 5200, 5800, 6300,
+        500, 1400, 1000, 1250, 950, 1600, 1700,
       ],
       backgroundColor: "#009967",
       borderColor: "#009967",
-      borderWidth: 2,
+      borderWidth: 4,
       pointRadius: 0,
-      tension: 0.3,
+      tension: 0,
       pointStyle: 'circle'
-      
+
     },
     {
       label: "Closed",
       data: [
-        6000, 7500, 6050, 5950, 7600, 6800, 6500, 6000, 6700, 7200, 7800, 7300,
+        1300, 750, 1150, 950, 1100, 1300, 1400,
       ],
       backgroundColor: "#99007E",
       borderColor: "#99007E",
-      borderWidth: 2,
+      borderWidth: 4,
       pointRadius: 0,
-      tension: 0.3,
+      tension: 0,
       pointStyle: 'circle'
     },
   ],
@@ -67,18 +67,19 @@ const options = {
     x: {
       ticks: {
         font: {
-          size: 7,
+          size: 8,
           color: "#343434",
         },
       },
       grid: {
         display: false,
       },
-},
+    },
     y: {
+      beginAtZero: true,
       ticks: {
         font: {
-          size: 7,
+          size: 8,
           color: "#343434",
         },
         maxTicksLimit: 5,
@@ -90,7 +91,7 @@ const options = {
 
 const PortfolioLineChart = () => {
     return (
-        <div className="line-chart-container">
+        <div className="line-chart-container2">
           <Line data={data} options={options} />
         </div>
       );

@@ -1,0 +1,22 @@
+.loanTableHeadding{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+
+.loanTableHeadding p {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.loanTableHeadding button {
+    color: white;
+    background-color: #007E99;
+    border: none;
+    padding: 1.125rem 4rem;
+}
+
+.downloadButtoon {
+    border-radius: 55px;
+}

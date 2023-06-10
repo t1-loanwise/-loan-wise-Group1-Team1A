@@ -1,40 +1,57 @@
-import React from "react";
-import Close from "../assets/icons/close-circle.svg";
+import React, { useState } from "react";
 import RuleOptions from "./RuleOptions";
 import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import "../styles/ExitingRules.css";
+import NewConditionBtn from "./NewConditionBtn";
 
-const ExitingRule = () => {
+const ExitingRule = ({ model }) => {
+  console.log(model);
+  const [active, setActive] = useState(false);
+  const newCondition = () => {
+    if (active == true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  };
   return (
     <div className="exitingRule-container">
       <div className="edit-text">
         <div className="rule-header">
           <div>
-            <h2>Edit Exiting Rule</h2>
+            <h2>Edit Existing Rule</h2>
           </div>
         </div>
         <p>
-          Edit exiting rules that loan application must meet for approval or
+          Edit existing rules that loan application must meet for approval or
           dismissal
         </p>
       </div>
       <div className="select-option">
         <label>Model Title</label>
-        <select>
+        <input type="text" value={model.name} />
+        {/* <select>
           <option value="">Select exiting rule</option>
           <option value="1">Bank Statement Name March</option>
           <option value="2">Spending Pattern</option>
           <option value="3">Cash Flow Pattern</option>
-        </select>
+        </select> */}
       </div>
 
-      <div className="select-option-below">
-        <RuleOptions />
-        <div className="btn">
-          <button className="condition-button">
-            <img src={PlusSign} alt="plus" width="14px" />{" "}
-            <span>New Condition</span>
-          </button>
+      <div>
+        <div className="select-option-below">
+          <RuleOptions />
+          {active && <NewConditionBtn />}
+          <div className="btn">
+            <button
+              type="submit"
+              className="condition-button"
+              onClick={newCondition}
+            >
+              <img src={PlusSign} alt="plus" width="14px" />{" "}
+              <span>New Condition</span>
+            </button>
+          </div>
         </div>
       </div>
       <div className="conditions-container">

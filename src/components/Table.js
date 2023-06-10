@@ -58,7 +58,7 @@ const Table = () => {
                   return (
                     <button
                       key={i}
-                      // className={currentPage === i + 1 ? "active" : ""}
+                      className={currentPage === i + 1 ? "active" : ""}
                       onClick={() => handlePageChange(i + 1)}
                     >
                       {i + 1}

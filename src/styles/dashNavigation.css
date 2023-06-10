@@ -22,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #007e99;
-  height: 15vh;
+  height: 100px;
   padding: 0 20px;
   position: fixed;
   z-index: 1;
@@ -60,10 +60,11 @@
 
 .side-bar-nav {
   padding: 15px 10px;
-  width: fit-content;
-  margin-top: 15vh;
+  width: 270px;
+  margin-top: 100px;
   height: 85vh;
   background-color: #007e99;
+  border-top: 1px solid #a3e2f06c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

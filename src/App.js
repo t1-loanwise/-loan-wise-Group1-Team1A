@@ -10,6 +10,7 @@ import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import SettingAndPrivacy from "./components/SettingAndPrivacy";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
 import Settings from "./pages/DashBoardPages/Settings";
@@ -24,8 +25,10 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import DashCardGraph from "./components/DashCardGraph";
+import UserPreference from "./pages/DashBoardPages/UserPreference";
 import PredictiveModel from "./components/PredictiveModel";
+import NotificationsMain from "./components/NotificationsMain";
+import UserPreferenceMain from "./components/UserPreferenceMain";
 
 const App = () => {
   return (
@@ -38,6 +41,9 @@ const App = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/verifyEmail" element={<VerifyCode />} />
         <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/newpassword" element={<CreateNewPassword />} />
+        <Route path="/securityQuestions" element={<SetSecurityQuestion />}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>        
         <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
@@ -45,24 +51,20 @@ const App = () => {
         <Route path="/success" element={<Successfulpage />} />
 
         <Route element={<Layout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="settings" element={<Settings />}>
-            <Route
-              path="settings/PredictiveModel"
-              element={<PredictiveModel />}
-            />
-          </Route>
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="repayment" element={<Repayment />} />
-          <Route path="recovery" element={<Recovery />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/settings" element={<Settings />}/>
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/repayment" element={<Repayment />} />
+          <Route path="/recovery" element={<Recovery />} />
           <Route path="/general/notification" element={<Notification />} />
           <Route path="/general/messages" element={<Messages />} />
           <Route path="/general/profile" element={<Profile />} />
           <Route path="delinquency" element={<Delinquency />} />
-          <Route path="logout" element={<Logout />} />
+          <Route path="/userPreference" element={<UserPreferenceMain/>}/>
+          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="cardGraph" element={<DashCardGraph />} />
+
       </Routes>
     </div>
   );

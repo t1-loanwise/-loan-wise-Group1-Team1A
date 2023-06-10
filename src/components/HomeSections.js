@@ -142,10 +142,8 @@ const HomeSections = ({ link, text }) => {
           </div>
         </div>
         <div className="special-one">
-          <div className="specialFeature-image">
-            <img src={SpecialFeaturesOne} alt="special features one image" />
-          </div>
-          <div className="home-right">
+            <img src={SpecialFeaturesOne} alt="special features one image" className="specialFeature-image" />
+        <div className="home-right">
             <HomeHeader
               header={"Improve teamwork with our in-app messaging feature."}
               text={

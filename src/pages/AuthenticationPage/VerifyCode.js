@@ -47,41 +47,39 @@ const VerifyCode = () => {
             <Logo />
           </div>
           <div className="verify_body_content">
-            <div className="auth_text">
               <AuthenticationMainText
                 Title={"Verify Email Address"}
                 Body={
                   "Please enter the verification code we sent to your registered email address @johndoe@gmail.com"
                 }
               />
-            </div>
-            <div>
-              {inputStates.map((state, ii) => {
-                return (
-                  <input
-                    type="number"
-                    value={state.digit}
-                    className={inputClass}
-                    onChange={(e) => handleChange(e, ii)}
-                    onKeyDown={handleKeyDown}
-                  />
-                );
-              })}
+            <div className="code-error-container">
+              <div className="code-digit-container">
+                {inputStates.map((state, ii) => {
+                  return (
+                    <input
+                      type="number"
+                      value={state.digit}
+                      className={inputClass}
+                      onChange={(e) => handleChange(e, ii)}
+                      onKeyDown={handleKeyDown}
+                    />
+                  );
+                })}
+              </div>
               {errorMessage && <p className="errorMsg">{errorMessage}</p>}
             </div>
-            <div className="verify_btn_container">
-              <button onClick={routeHandler} className="verify_btn">
-                Verify
-              </button>
-              <p className="no_code">
-                Didn’t get OTP?{" "}
-                <button className="resend_btn" onClick={resendCode}>
-                  Resend
-                </button>{" "}
-                in {seconds}s
-              </p>
-            </div>
+            <button onClick={routeHandler} className="verify_btn">
+              Verify
+            </button>
           </div>
+          <p className="no_code">
+            Didn’t get OTP?{" "}
+            <button className="resend_btn" onClick={resendCode}>
+              Resend
+            </button>{" "}
+            in {seconds}s
+          </p>
         </div>
       </div>
     </>

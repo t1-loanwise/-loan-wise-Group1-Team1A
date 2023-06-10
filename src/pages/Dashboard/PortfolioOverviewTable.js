@@ -5,12 +5,13 @@ import Table from "../../components/Table";
 import { NavLink, Link } from "react-router-dom";
 import PortfolioBarChart from "../../components/Portfolio/PortfolioBarChart";
 import PortfolioLineChart from "../../components/Portfolio/PortfolioLineChart";
+import Icon from "../../assets/searchIcon.png";
 
 
 const PortfolioOverviewTable  = () => {
   const [PortfolioOverview] = useState([...PortfolioOviewData]);
   return (
-    <div className="cardGraphContainer">
+    <div className="cardGraphContainer1">
       <div className="btn">
           <button className="portfolio-button">
             <span>+   New Portfolio</span>
@@ -22,8 +23,8 @@ const PortfolioOverviewTable  = () => {
       </div>
       <div  className="customerSort">
         <div className="customerID">
-          <span>Search Customer ID</span>
-          <span><img/></span>
+          <span >Search Customer ID</span>
+          <span><img className="searchIcon" src={Icon} alt="searchIcon"/></span>
         </div>
         <div className="select-option">
           <select>
@@ -35,14 +36,16 @@ const PortfolioOverviewTable  = () => {
         </div>
       
       </div>
-      <div className="OverviewContainer">
-        <p className="overviewHeader">Portfolio Overview</p>
-        <Link to="#">
-              <button className="DownloadBtn">Download</button>
-            </Link>
-      </div>
-      <div className={styles.wrapper}>
-        <Table data={PortfolioOverview} rowsPerPage={6} />
+      <div className="card">
+        <div className="OverviewContainer">
+          <p className="overviewHeader">Portfolio Overview</p>
+          <Link to="#">
+                <button className="DownloadBtn">Download</button>
+              </Link>
+        </div><hr/>
+        <div className={styles.wrapper}>
+          <Table data={PortfolioOverview} rowsPerPage={6} />
+        </div>
       </div>
     </div>
   );

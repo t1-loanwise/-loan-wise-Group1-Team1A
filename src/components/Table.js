@@ -6,7 +6,7 @@ import persons from "../components/Portfolio/Data";
 
 const Table = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Number of items to display per page
+  const itemsPerPage = 6;
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -43,7 +43,6 @@ const Table = () => {
         </table>
   
         <div className="lowerlastdash">
-          <a className="loanhiistory" href="">View all loan history</a>
           <div className="pagiNumbs">
             <img src={leftarrow}
               onClick={() => handlePageChange(currentPage - 1)}
@@ -59,7 +58,7 @@ const Table = () => {
                   return (
                     <button
                       key={i}
-                      className={currentPage === i + 1 ? "active" : ""}
+                      // className={currentPage === i + 1 ? "active" : ""}
                       onClick={() => handlePageChange(i + 1)}
                     >
                       {i + 1}

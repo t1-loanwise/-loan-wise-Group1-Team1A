@@ -1,5 +1,5 @@
 import React from "react";
-import AnalysisHeader from "../AnalysisHeader";
+import AnalysisHeader from "./AnalysisHeader";
 import DollarIncome from "../../assets/DollarIncome.svg";
 import DollarSpend from "../../assets/DollarSpend.svg";
 import Activity from "../../assets/Activity.svg";

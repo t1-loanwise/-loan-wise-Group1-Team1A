@@ -1,9 +1,6 @@
 import React from "react";
-import ProgressBar from "../../components/ProgressBar";
-import DetailsForm from "../../components/DetailsForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoanInfo from "../../components/LoanInfo";
 import { useForm } from "react-hook-form";
 import "../../styles/NewPortfolio.css";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,17 +10,31 @@ function BusinessDetails() {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required(true),
-    email: Yup.string().email().required("Enter a valid email address"),
+    fullName: Yup.string().required("Enter your business name"),
+    busAddress: Yup.string()
+      .required("Enter your business address")
+      .min(11, "Must be more than 11 characters"),
+    email: Yup.string()
+      .email()
+      .required("Enter a valid email address")
+      .matches(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      ),
     phoneNumber: Yup.string()
+      .required("Phone number is required")
       .matches(
         /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-      )
-      .required("Phone is required"),
-    dob: Yup.date().required("Required"),
+      ),
+    altPhoneNumber: Yup.string()
+      .required("Phone number is required")
+      .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+      ),
+    dor: Yup.date().required("This field is is required"),
     number: Yup.string()
       .min(11, "Must be more than 11 characters")
       .required("This field is required"),
+    busOwner: Yup.string().required("Enter full name"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
   const {
@@ -36,11 +47,10 @@ function BusinessDetails() {
   };
   const onSubmit = (data) => {
     updateUser(data);
-    navigate("/businessStatement");
+    navigate("/portfolio/businessStatement");
   };
   return (
     <>
-      <ProgressBar />
       <form className="input-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form_container">
           <div>
@@ -56,20 +66,20 @@ function BusinessDetails() {
                   className="input_field"
                 />
               </div>
-              <div className="ErrorMsg">{errors.fullName?.message}</div>
+              <div className="errorMsg">{errors.fullName?.message}</div>
             </div>
             <div>
               <label className="input_title">Business address</label>
               <div>
                 <input
-                  name="resAddress"
+                  name="busAddress"
                   type="text"
                   placeholder="Enter address"
-                  {...register("resAddress")}
+                  {...register("busAddress")}
                   className="input_field"
                 />
               </div>
-              <div className="ErrorMsg">{errors.address?.message}</div>
+              <div className="errorMsg">{errors.busAddress?.message}</div>
             </div>
             <div>
               <label className="input_title">Email Address</label>
@@ -82,34 +92,34 @@ function BusinessDetails() {
                   className="input_field"
                 />
               </div>
-              <div className="ErrorMsg">{errors.email?.message}</div>
+              <div className="errorMsg">{errors.email?.message}</div>
             </div>
             <div>
               <div>
                 <label className="input_title">Phone Number</label>
                 <div>
                   <input
-                    name="phone"
+                    name="phoneNumber"
                     type="phone"
                     placeholder="Enter number"
                     {...register("phoneNumber")}
                     className="input_field"
                   />
                 </div>
-                <div className="ErrorMsg">{errors.phoneNumber?.message}</div>
+                <div className="errorMsg">{errors.phoneNumber?.message}</div>
               </div>
               <div>
                 <label className="input_title">Alternative Phone Number</label>
                 <div>
                   <input
-                    name="phone"
+                    name="altPhoneNumber"
                     type="phone"
                     placeholder="Enter number"
-                    {...register("phoneNumber")}
+                    {...register("altPhoneNumber")}
                     className="input_field"
                   />
                 </div>
-                <div className="ErrorMsg">{errors.PhoneNumber?.message}</div>
+                <div className="errorMsg">{errors.altPhoneNumber?.message}</div>
               </div>
             </div>
             <div>
@@ -117,14 +127,14 @@ function BusinessDetails() {
                 <label className="input_title">Date of Registration</label>
                 <div>
                   <input
-                    name="dob"
+                    name="dor"
                     type="date"
                     placeholder="Enter number"
-                    {...register("dob")}
+                    {...register("dor")}
                     className="input_field"
                   />
                 </div>
-                <div className="ErrorMsg">{errors.dob?.message}</div>
+                <div className="errorMsg">{errors.dor?.message}</div>
               </div>
               <div>
                 <label className="input_title">CAC Reg. No</label>
@@ -137,34 +147,23 @@ function BusinessDetails() {
                     className="input_field"
                   />
                 </div>
-                <div className="ErrorMsg">{errors.number?.message}</div>
+                <div className="errorMsg">{errors.number?.message}</div>
               </div>
             </div>
             <div>
               <label className="input_title">Business Owner</label>
               <div>
                 <input
-                  name="fullName"
+                  name="busOwner"
                   type="text"
                   placeholder="Enter full name"
-                  {...register("fullName")}
+                  {...register("busOwner")}
                   className="input_field"
                 />
               </div>
-              <div className="ErrorMsg">{errors.fullName?.message}</div>
+              <div className="errorMsg">{errors.busOwner?.message}</div>
             </div>
           </div>
-          <DetailsForm
-            user={user}
-            Title={"Business Information"}
-            text={"Business Name"}
-            address={"Business address"}
-            date={"Date of Registration"}
-            number={"CAC Reg. No"}
-            subject={"Business Owner"}
-          />
-          <p className="auto_fill">Auto-fill from loan applications</p>
-          <LoanInfo />
           <p className="auto_fill">Auto-fill from loan applications</p>
           <button className="form_btn">Proceed</button>
         </div>

@@ -47,7 +47,7 @@ function PersonalStatementAnalysis() {
   };
   const onSubmit = (data) => {
     updateUser(data);
-    navigate("/analysisResult");
+    navigate("/analysisResult/overview");
   };
 
   return (

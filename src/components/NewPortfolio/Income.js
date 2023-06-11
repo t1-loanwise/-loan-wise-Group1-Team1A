@@ -1,5 +1,5 @@
 import React from "react";
-import AnalysisHeader from "../AnalysisHeader";
+import AnalysisHeader from "./AnalysisHeader";
 
 function Income() {
   const incomeData = [

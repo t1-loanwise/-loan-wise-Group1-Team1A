@@ -1,0 +1,171 @@
+.btn {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.portfolio-button {
+  font-size: 0.75rem;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: #007e99;
+}
+.cardGraphContainer1 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  margin: 10px 30px;
+}
+
+.line-chart-container2 {
+  width: 50%;
+  background: #ffffff;
+  border: 1.10609px solid #e6f2f5;
+  box-shadow: 0px 8px 40px #e6f2f5;
+  border-radius: 17.6974px;
+  padding: 10px;
+}
+
+.line-chart-container2 span {
+  text-align: center;
+  font-size: 14px;
+  color: #050505;
+  align-self: center;
+}
+
+.line-bar-container2 {
+  display: flex;
+  column-gap: 0.7em;
+}
+
+  .DownloadBtn {
+    padding: 10px 48px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #007e99;
+  }
+
+  .chart{
+    display: flex;
+    gap: 20px;
+  }
+  .customerSort{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+  }
+  .customerID{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 4px;
+    color: grey;
+    padding: 5px;
+    width: 50%;
+
+  }
+  .searchIcon{
+    width: 15px;
+    height: 15px;
+    margin-left: 240px;
+  }
+
+  .select-option {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 4px;
+    width: 50%;
+  }
+  .select-option select {
+    color: grey;
+    padding: 8px 16px;
+    margin-top: 5px;
+  }
+
+  .Approved button {
+    border-radius: 16px;
+    color: white;
+    background-color: green;
+    padding: 5px 22px;
+    border: none;
+  }
+  .Declined button {
+    border-radius: 16px;
+    color: white;
+    background-color: red;
+    padding: 4px 8px;
+    border: none;
+  }
+
+  .tableRowItems {
+    cursor: pointer;
+  }
+   .tableCell {
+    padding: 12px;
+    font-size: 14px;
+    color: grey;
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th{
+    text-align: left;
+    background-color: #E6F2F5;
+    padding: 16px 10px;
+  }
+
+.OverviewContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 480px;
+    margin: 10px 0px;
+  }
+  .overviewHeader{
+    font-size: 20px;
+  }
+
+  .tableLinks{
+    text-decoration: none;
+    color: black;
+  }
+
+.pagiNumbs {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  justify-content: start;
+  margin-left: 35rem;
+}
+
+p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pagiNumbs button.active {
+  font-weight: bold;
+  background-color: #007E99;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+.pagiNumbs button {
+  border: none;
+  cursor: pointer;
+}
+
+.card{
+  border: 0.2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 3px rgb(147, 205, 147, 0.2);
+  margin-bottom: 20px;
+  padding: 5px 20px 20px;
+}

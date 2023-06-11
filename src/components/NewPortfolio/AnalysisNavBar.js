@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function AnalysisNavBar() {
   return (
@@ -36,6 +36,7 @@ function AnalysisNavBar() {
           </li>
         </ul>
       </nav>
+      <Outlet />
     </>
   );
 }

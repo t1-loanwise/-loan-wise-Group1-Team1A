@@ -323,10 +323,267 @@
   display: flex;
   align-items: center;
 }
+
+
+.setting-accordion .accordion-title {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+
+
+.setting-form {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+}
+.setting-form label, .setting-form input, .setting-form select  {
+  padding-top: 0.6rem;
+  width: 50%;
+  font-size: 1rem;
+}
+
+.setting-form input, .setting-form select  {
+  padding: 0.7rem;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.setting-form label > span {
+  display: block;
+  font-size: 0.8rem;
+}
+
+
+.accordion-body > form input, .accordion-body > form select {
+  border: 1px solid #8b8a8b;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.security-question div {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.security-question input, .security-question select {
+  margin-bottom: 5px;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.security-question > div {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.setting-form-block input, .setting-form-block select {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.mbottom-16 {
+  margin-bottom: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px !important;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc ;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  transform: translateX(5px);
+}
+
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.justify-left {
+  justify-content: end;
+}
+
+/* .arrow{
+  width: 30px;
+  height: 30px;
+
+} */
+
 .minus {
   font-size: 24px;
   color: #006980;
 }
 .plus {
   font-size: 20px;
+}
+
+/* User Preference Styling */
+.appearance_settings{
+  margin: 24px;
+  padding:12px;
+  font-weight: 600;
+}
+
+.para_toggle{
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.frame_one{
+  margin: 24px ;
+}
+.frame_two{
+  margin: 24px ;
+}
+
+#frame_three{
+  margin: 12px ;
+}
+#frame_three_notif{
+  margin-top: 3.9rem;
+  border: 1px solid #000000;
+}
+.frame_three_contents{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: 18px;
+  padding: 1.5rem;
+}
+.headings{
+  margin-top: 0.9rem;
+  padding: 16px 8px;
+}
+.headings p{
+  font-size: 18px; 
+}
+.toggle-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3px;
+}
+.toggle-button{
+  margin: 6px 3px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.toggle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.toggle p{
+  margin-left: 16px;
+  font-weight: 900;
+}
+#frame_three_input{
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #000000;
+}
+#frame_input_heading{
+  padding-top: 16px;
+  padding-bottom: 22px;
+}
+#frame_input_heading h4{
+font-weight: 600;
+padding-bottom: 4px;
+}
+#frame_input_heading p{
+  color: #00191F;
+  margin-bottom: 12px;
+}
+#frame_input h5{
+ padding: 8px;
+}
+/* User Preference Link */
+.user-p-box{
+  width: 100%;
+  box-shadow: 0 0 12px 0px #007d995a;
+  padding: 0.5em 1.5em;
+  margin-bottom: 15px;
+}
+#user-p-link{
+  font-weight: lighter;
+}
+#back-btn img{
+height: 35px;
+} 
+#back-btn img:hover{
+  box-shadow: whitesmoke;
+}
+#back-btn p{
+  margin: 0;
+  font-size: 20px;
+}
+#back-btn{
+  background-color: transparent;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }

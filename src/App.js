@@ -10,13 +10,13 @@ import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import SettingAndPrivacy from "./components/SettingAndPrivacy";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
 import PersonalDetails from "./components/NewPortfolio/PersonalDetails";
 import BusinessDetails from "./components/NewPortfolio/BusinessDetails";
 import PersonalStatementAnalysis from "./components/NewPortfolio/PersonalStatementAnalysis";
 import BusinessStatementAnalysis from "./components/NewPortfolio/BusinessStatementAnalysis";
-import AnalysisResult from "./components/NewPortfolio/AnalysisResult";
 import Behavioral from "./components/NewPortfolio/Behavioral";
 import Spend from "./components/NewPortfolio/Spend";
 import Income from "./components/NewPortfolio/Income";
@@ -35,8 +35,11 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
+import UserPreference from "./pages/DashBoardPages/UserPreference";
 import PredictiveModel from "./components/PredictiveModel";
 import NotificationsMain from "./components/NotificationsMain";
+import UserPreferenceMain from "./components/UserPreferenceMain";
+import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 
 const App = () => {
   return (
@@ -49,6 +52,9 @@ const App = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/verifyEmail" element={<VerifyCode />} />
         <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/newpassword" element={<CreateNewPassword />} />
+        <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
+        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
@@ -57,38 +63,8 @@ const App = () => {
 
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/settings" element={<Settings />}>
-            <Route
-              path="settings/PredictiveModel"
-              element={<PredictiveModel />}
-            />
-            <Route
-              path="settings/NotificationsMain"
-              element={<NotificationsMain />}
-            />
-          </Route>
           <Route path="/portfolio" element={<Portfolio />}>
-            <Route
-              path="portfolio/personalDetails"
-              element={<PersonalDetails />}
-            />
-            <Route
-              path="portfolio/businessDetails"
-              element={<BusinessDetails />}
-            />
-            <Route
-              path="portfolio/personalStatement"
-              element={<PersonalStatementAnalysis />}
-            />
-            <Route
-              path="portfolio/businessStatement"
-              element={<BusinessStatementAnalysis />}
-            />
-            <Route
-              path="portfolio/businessDetails"
-              element={<BusinessDetails />}
-            />
-            <Route element={<AnalysisResult />}>
+            <Route element={<NewPortfolioPages />}>
               <Route path="analysisResult/overview" element={<Overview />} />
               <Route path="analysisResult/cashFlow" element={<CashFlow />} />
               <Route path="analysisResult/income" element={<Income />} />
@@ -103,12 +79,30 @@ const App = () => {
               />
             </Route>
           </Route>
+          <Route
+            path="/portfolio/personalDetails"
+            element={<PersonalDetails />}
+          />
+          <Route
+            path="/portfolio/businessDetails"
+            element={<BusinessDetails />}
+          />
+          <Route
+            path="/portfolio/personalStatement"
+            element={<PersonalStatementAnalysis />}
+          />
+          <Route
+            path="/portfolio/businessStatement"
+            element={<BusinessStatementAnalysis />}
+          />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/repayment" element={<Repayment />} />
           <Route path="/recovery" element={<Recovery />} />
           <Route path="/general/notification" element={<Notification />} />
           <Route path="/general/messages" element={<Messages />} />
           <Route path="/general/profile" element={<Profile />} />
           <Route path="delinquency" element={<Delinquency />} />
+          <Route path="/userPreference" element={<UserPreferenceMain />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Route>

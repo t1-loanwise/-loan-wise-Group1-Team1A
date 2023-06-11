@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -8,9 +9,6 @@ import * as Yup from "yup";
 function PersonalDetails() {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
-  const updateUser = (data) => {
-    setUser((prevUser) => ({ ...prevUser, ...data }));
-  };
   const validationSchema = Yup.object().shape({
     fullName: Yup.string().required("Enter your full name"),
     resAddress: Yup.string()
@@ -44,7 +42,7 @@ function PersonalDetails() {
     loanCategory: Yup.string()
       .required("This field is required")
       .oneOf(["Personal", "Business", "Mortgage", "Student"])
-      .label("Validity Period"),
+      .label("Loan Category"),
     date: Yup.date().required("This field is required"),
     amount: Yup.string().required("This field is required"),
     validityPeriod: Yup.string()
@@ -59,9 +57,12 @@ function PersonalDetails() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm(formOptions);
+  const updateUser = (data) => {
+    setUser((prevUser) => ({ ...prevUser, ...data }));
+  };
   const onSubmit = (data) => {
     updateUser(data);
-    navigate("/personalStatement");
+    navigate("/portfolio/personalStatement");
   };
 
   return (
@@ -217,7 +218,7 @@ function PersonalDetails() {
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.jobTitle?.message}</div>
+              <div className="errorMsg">{errors.currentSalary?.message}</div>
             </div>
           </div>
           <p className="auto_fill">Auto-fill from loan applications</p>
@@ -253,14 +254,14 @@ function PersonalDetails() {
               <label className="input_title">Amount</label>
               <div>
                 <input
-                  name="loanPurpose"
+                  name="amount"
                   type="number"
                   placeholder="$0.00"
                   {...register("amount")}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.loanPurpose?.message}</div>
+              <div className="errorMsg">{errors.amount?.message}</div>
             </div>
           </div>
           <div>

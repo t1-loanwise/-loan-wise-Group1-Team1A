@@ -16,3 +16,7 @@
     border: none;
     padding: 1.125rem 4rem;
 }
+
+.downloadButtoon {
+    border-radius: 55px;
+}

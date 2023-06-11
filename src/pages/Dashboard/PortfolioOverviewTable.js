@@ -32,7 +32,7 @@ const PortfolioOverviewTable  = () => {
             <option value="">Business</option>
             <option value="1">Personal</option>
             <option value="2">Student</option>
-            <option value="3">Morgage</option>
+            <option value="3">Mortgage</option>
           </select>
         </div>
       

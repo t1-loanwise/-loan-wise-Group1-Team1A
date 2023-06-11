@@ -28,6 +28,7 @@ const PortfolioOverviewTable  = () => {
         </div>
         <div className="select-option">
           <select>
+            <option disabled selected value="">Sort by category</option>
             <option value="">Business</option>
             <option value="1">Personal</option>
             <option value="2">Student</option>

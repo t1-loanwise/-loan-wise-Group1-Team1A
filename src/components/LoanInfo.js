@@ -4,31 +4,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 function LoanInfo() {
-  const validationSchema = Yup.object().shape({
-    loanPurpose: Yup.string().required(true),
-    date: Yup.date().required("Required"),
-    document: Yup.mixed()
-      .test("required", "You need to provide a file", (value) => {
-        return value && value.length;
-      })
-      .test("fileSize", "The file is too large", (value, context) => {
-        return value && value[0] && value[0].size <= 200000;
-        // 200KB
-      })
-      .test("type", "We only support pdf", function (value) {
-        return value && value[0] && value[0].type === "document/pdf";
-      }),
-    select: Yup.string().required(),
-    amount: Yup.string().required(),
-    validityPeriod: Yup.string().required(),
-    intersestRate: Yup.string().required(),
-  });
-  const formOptions = { resolver: yupResolver(validationSchema) };
   const {
     register,
-    handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm(formOptions);
+  } = useForm();
   return (
     <>
       <h3>Loan Information</h3>

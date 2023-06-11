@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
-function DetailsForm(props) {
+function DetailsForm({ Title, text, address, date, number, subject }) {
   const validationSchema = Yup.object().shape({
     fullName: Yup.string().required(true),
     email: Yup.string().email().required("Enter a valid email address"),
@@ -26,9 +26,9 @@ function DetailsForm(props) {
   return (
     <>
       <div>
-        <h2>{props.Title}</h2>
+        <h2>{Title}</h2>
         <div>
-          <label className="input_title">{props.text}</label>
+          <label className="input_title">{text}</label>
           <div>
             <input
               name="fullName"
@@ -41,13 +41,13 @@ function DetailsForm(props) {
           <div className="ErrorMsg">{errors.fullName?.message}</div>
         </div>
         <div>
-          <label className="input_title">{props.address}</label>
+          <label className="input_title">{address}</label>
           <div>
             <input
-              name="address"
+              name="resAddress"
               type="text"
               placeholder="Enter address"
-              {...register("address")}
+              {...register("resAddress")}
               className="input_field"
             />
           </div>
@@ -96,7 +96,7 @@ function DetailsForm(props) {
         </div>
         <div>
           <div>
-            <label className="input_title">{props.date}</label>
+            <label className="input_title">{date}</label>
             <div>
               <input
                 name="dob"
@@ -109,7 +109,7 @@ function DetailsForm(props) {
             <div className="ErrorMsg">{errors.dob?.message}</div>
           </div>
           <div>
-            <label className="input_title">{props.number}</label>
+            <label className="input_title">{number}</label>
             <div>
               <input
                 name="number"
@@ -123,7 +123,7 @@ function DetailsForm(props) {
           </div>
         </div>
         <div>
-          <label className="input_title">{props.subject}</label>
+          <label className="input_title">{subject}</label>
           <div>
             <input
               name="fullName"

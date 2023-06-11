@@ -1,47 +1,51 @@
 import React from "react";
 import AnalysisHeader from "../AnalysisHeader";
+import DollarIncome from "../../assets/DollarIncome.svg";
+import DollarSpend from "../../assets/DollarSpend.svg";
+import Activity from "../../assets/Activity.svg";
+import Cash from "../../assets/moneys.svg";
 
 function CashFlow() {
   const cashflowData = [
     {
       id: 1,
-      Icon: "Passed",
+      Icon: { DollarIncome },
       Value: "N 520,000.00",
       Title: "Total Credit Turnover",
     },
     {
       id: 2,
-      Icon: "Passed",
+      Icon: { DollarSpend },
       Value: "N 350,000.00",
       Title: "Total debit Turnover",
     },
     {
       id: 3,
-      Icon: "Passed",
+      Icon: { Activity },
       Value: "81.98%",
       Title: "Account Activity",
     },
     {
       id: 4,
-      Icon: "Passed",
+      Icon: { Cash },
       Value: "N 210,000.00",
       Title: "Average balance ",
     },
     {
       id: 5,
-      Icon: "Passed",
+      Icon: { Cash },
       Value: "N 170,000.00",
       Title: "Current closing balance",
     },
     {
       id: 6,
-      Icon: "Passed",
+      Icon: { DollarIncome },
       Value: "N 1,005,000.00",
       Title: "Average Credit",
     },
     {
       id: 7,
-      Icon: "Passed",
+      Icon: { DollarIncome },
       Value: "N 980,000.00",
       Title: "Average Credit",
     },

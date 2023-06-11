@@ -1,6 +1,20 @@
+import { useState } from "react";
 import "../styles/NewPortfolio.css";
+import PersonalDetails from "./NewPortfolio/PersonalDetails";
+import PersonalStatementAnalysis from "./NewPortfolio/PersonalStatementAnalysis";
+import AnalysisResult from "./NewPortfolio/AnalysisResult";
 
-function ProgressBar({ barFiller, isFull, circleFiller1, circleFiller2 }) {
+function ProgressBar() {
+  const [barFiller, setBarFiller] = useState(false);
+  const [isFull, setIsFull] = useState(false);
+  const [circleFiller1, setCircleFiller1] = useState(false);
+  const [circleFiller2, setCircleFiller2] = useState(false);
+  const handleClick2 = () => {
+    setBarFiller(true);
+    setIsFull(false);
+    setCircleFiller1(true);
+    setCircleFiller2(true);
+  };
   return (
     <>
       <div className="progress_bar">
@@ -25,6 +39,9 @@ function ProgressBar({ barFiller, isFull, circleFiller1, circleFiller2 }) {
           }`}
         ></div>
       </div>
+      <PersonalDetails />
+      <PersonalStatementAnalysis />
+      <AnalysisResult />
     </>
   );
 }

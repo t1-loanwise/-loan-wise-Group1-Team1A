@@ -1,5 +1,4 @@
 import React from "react";
-// import AnalysisResult from "../../components/NewPortfolio/AnalysisResult";
 import PersonalDetails from "../../components/NewPortfolio/PersonalDetails";
 import BusinessDetails from "../../components/NewPortfolio/BusinessDetails";
 import BusinessStatementAnalysis from "../../components/NewPortfolio/BusinessStatementAnalysis";
@@ -13,15 +12,8 @@ const Portfolio = () => {
   return (
     <div className="rightContent">
       <ProgressBar />
-      <div className="analysis_header">
-        <h3>Customer’s ID: Loan 12341</h3>
-        <div className="analysis_header_content">
-          <button className="analysis_header_btn">View Statement</button>
-          <button className="analysis_header_btn">Download</button>
-          <Calendar className="analysis_header_end" />
-        </div>
-      </div>
-      <AnalysisNavBar />
+      <PersonalDetails />
+      <PersonalStatementAnalysis />
       <AnalysisResult />
     </div>
   );

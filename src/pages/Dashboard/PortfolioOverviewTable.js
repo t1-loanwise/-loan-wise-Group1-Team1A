@@ -1,29 +1,51 @@
 import React, { useState } from "react";
-import PortfolioOviewData from '../../components/Portfolio/Data'
-import styles from '../../styles/PortfolioTable.css';
+import PortfolioOviewData from "../../components/Portfolio/Data";
+import styles from "../../styles/PortfolioTable.css";
 import Table from "../../components/Table";
 import { NavLink, Link } from "react-router-dom";
 import PortfolioBarChart from "../../components/Portfolio/PortfolioBarChart";
 import PortfolioLineChart from "../../components/Portfolio/PortfolioLineChart";
+import Icon from "../../assets/searchIcon.png";
 
-
-const PortfolioOverviewTable  = () => {
+const PortfolioOverviewTable = () => {
   const [PortfolioOverview] = useState([...PortfolioOviewData]);
+  const [dropMenu, setDropMenu] = useState(false);
+
+  const toggleDropMenu = () => {
+    setDropMenu((prevState) => !prevState);
+  };
+
   return (
-    <div className="cardGraphContainer">
+    <div className="cardGraphContainer1">
       <div className="btn">
-          <button className="portfolio-button">
-            <span>+   New Portfolio</span>
+        <div className={`dropdown ${dropMenu ? "show-dropdown" : ""}`}>
+          <button className="portfolio-button" onClick={toggleDropMenu}>
+            <span>+ New Portfolio</span>
           </button>
+          <ul className={`dropdown-menu ${dropMenu ? "show-dropdown" : ""}`}>
+            <li>
+              <NavLink activeClassName="active" to="/portfolio/personalDetails">
+                <p className="dropdown-nav">Personal</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/portfolio/businessDetails">
+                <p className="dropdown-nav">Business</p>
+              </NavLink>
+            </li>
+          </ul>
         </div>
-      <div className="chart">
-        <PortfolioBarChart/>
-        <PortfolioLineChart/>
       </div>
-      <div  className="customerSort">
+      <div className="chart">
+        <PortfolioBarChart />
+        <PortfolioLineChart />
+      </div>
+      <div className="customerSort">
         <div className="customerID">
           <span>Search Customer ID</span>
-          <span><img/></span>
+          <span>
+            <img className="searchIcon" src={Icon} alt="searchIcon" />
+          </span>
         </div>
         <div className="select-option">
           <select>
@@ -33,20 +55,21 @@ const PortfolioOverviewTable  = () => {
             <option value="3">Morgage</option>
           </select>
         </div>
-      
       </div>
-      <div className="OverviewContainer">
-        <p className="overviewHeader">Portfolio Overview</p>
-        <Link to="#">
-              <button className="DownloadBtn">Download</button>
-            </Link>
+      <div className="card">
+        <div className="OverviewContainer">
+          <p className="overviewHeader">Portfolio Overview</p>
+          <Link to="#">
+            <button className="DownloadBtn">Download</button>
+          </Link>
+        </div>
+        <hr />
+        <div className={styles.wrapper}>
+          <Table data={PortfolioOverview} rowsPerPage={6} />
+        </div>
       </div>
-      <div className={styles.wrapper}>
-        <Table data={PortfolioOverview} rowsPerPage={6} />
-      </div>
-      <NavLink className="PortfolioHistory">View all Portfolio history</NavLink>
     </div>
   );
-}
+};
 
-export default PortfolioOverviewTable
+export default PortfolioOverviewTable;

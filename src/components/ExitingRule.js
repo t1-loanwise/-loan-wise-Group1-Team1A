@@ -4,9 +4,12 @@ import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
 import "../styles/ExitingRules.css";
 import NewConditionBtn from "./NewConditionBtn";
 
-const ExitingRule = ({ model }) => {
-  console.log(model);
+const ExitingRule = ({ model, onUpdate }) => {
   const [active, setActive] = useState(false);
+  const [editedModel, setEditedModel] = useState(model.name);
+  const handleUpdate = () => {
+    onUpdate(model.id, editedModel);
+  };
   const newCondition = () => {
     if (active == true) {
       setActive(false);
@@ -29,7 +32,11 @@ const ExitingRule = ({ model }) => {
       </div>
       <div className="select-option">
         <label>Model Title</label>
-        <input type="text" value={model.name} />
+        <input
+          type="text"
+          value={editedModel}
+          onChange={(e) => setEditedModel(e.target.value)}
+        />
         {/* <select>
           <option value="">Select exiting rule</option>
           <option value="1">Bank Statement Name March</option>
@@ -64,7 +71,7 @@ const ExitingRule = ({ model }) => {
           Any of the conditions can be met
         </div>
       </div>
-      <button className="save-btn" type="submit">
+      <button className="save-btn" onClick={handleUpdate}>
         Save
       </button>
     </div>

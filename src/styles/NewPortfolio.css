@@ -1,0 +1,134 @@
+.input-form {
+  width: 60%;
+  margin: 64px auto;
+  background: #e6f2f5;
+}
+.input_title {
+  padding: 8px;
+}
+.auto_fill {
+  color: #007e99;
+  text-align: right;
+  font-size: 12px;
+  padding-top: 8px;
+}
+.form_container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.form_btn {
+  padding: 8px 24px;
+  background: #007e99;
+  border: 1px solid #007e99;
+}
+.form_btn2 {
+  padding: 4px 16px;
+  background: #007e99;
+  border: 1px solid #007e99;
+  margin-bottom: 16px;
+}
+.input_field {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #e6f2f5;
+  margin-top: 8px;
+}
+.portfolio_calendar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.progress_bar {
+  margin: 24px auto;
+  width: 70%;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+  position: relative;
+}
+.filler {
+  /* margin: 24px auto; */
+  width: 0;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid #e6f2f5;
+  background: #007e99;
+  position: absolute;
+  &.active1 {
+    width: 51%;
+    border: 1px solid #007e99;
+  }
+  &.active2 {
+    width: 100%;
+    border: 1px solid #007e99;
+  }
+}
+.progress_circle1,
+.progress_circle2,
+.progress_circle3 {
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  padding: 15px;
+}
+.progress_circle1 {
+  left: 0;
+  border: 1px solid #007e99;
+  background: #007e99;
+}
+.progress_circle2 {
+  left: 50%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+
+  &.active {
+    background: #007e99;
+    border: 1px solid #007e99;
+  }
+}
+.progress_circle3 {
+  left: 99%;
+  border: 1px solid #e6f2f5;
+  background: #e6f2f5;
+
+  &.active {
+    background: #007e99;
+    border: 1px solid #007e99;
+  }
+}
+.analysis_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px auto;
+  width: 90%;
+}
+.analysis_header_content {
+  display: flex;
+  gap: 20px;
+}
+.analysis_header_btn {
+  padding: 8px 24px;
+  background: #007e99;
+  border: 1px solid #007e99;
+  color: #e6f2f5;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.analysis_header_end {
+  padding: 8px;
+  border: 1px solid #007e99;
+}
+.new_portfolio_nav_bar {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 24px auto;
+  border-bottom: 2px solid #e6f2f5;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: #00151a;
+}

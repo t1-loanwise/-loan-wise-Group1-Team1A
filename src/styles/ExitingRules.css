@@ -50,6 +50,11 @@
 .condition-button {
   font-size: 0.75rem;
 }
+.save-btn:hover,
+.condition-button:hover,
+.new-rule-btn:hover {
+  background-color: #006980;
+}
 .select-option input {
   padding: 8px 16px;
   outline: #007e99;

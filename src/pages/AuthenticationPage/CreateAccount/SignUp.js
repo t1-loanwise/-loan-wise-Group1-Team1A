@@ -52,12 +52,13 @@ const SignUp = () => {
   const onSubmit = async() => {
     console.log("data");
     await axios
-      .post(`https://staging.api.zoropay.com/beauty/v1`
-      //  {
-      //   name: name,
-      //   email: email,
-      //   password: password,
-      // }
+      .post(
+        `https://loanwise.render.com/api/signup`,
+        {
+          name: name,
+          email: email,
+          password: password,
+        }
       )
       .then((response) => {
         console.log(response);
@@ -67,7 +68,7 @@ const SignUp = () => {
     // navigate("/verifyRegistration");
   };
 
-  console.log(name + email + password);
+  // console.log(name + email + password);
 
   return (
     <div className="createAccount_parentContainer">

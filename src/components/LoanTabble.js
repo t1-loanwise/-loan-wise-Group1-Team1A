@@ -3,6 +3,7 @@ import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import userss from "./TableDaata";
+import { Link } from "react-router-dom";
 
 const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,28 +28,28 @@ const LoanTabble = ({searchTerm}) => {
 
   return (
     <>
-      <table>
+      <table className="taable">
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Due Date</th>
-            <th>Status</th>
+          <tr className="trs">
+            <th className="ths">ID</th>
+            <th className="ths">Name</th>
+            <th className="ths">Category</th>
+            <th className="ths">Amount</th>
+            <th className="ths">Due Date</th>
+            <th className="ths">Status</th>
           </tr>
         </thead>
 
         <tbody>
           {displayedData.map((data, index) => (
             <Link>
-              <tr key={index}>
-              <td>{data.ID}</td>
-              <td>{data.Name}</td>
-              <td>{data.Category}</td>
-              <td>{data.Amount}</td>
-              <td>{data.DueDate}</td>
-              <td className={data.Status}>
+              <tr key={index} className="trs">
+              <td className="tds">{data.ID}</td>
+              <td className="tds">{data.Name}</td>
+              <td className="tds">{data.Category}</td>
+              <td className="tds">{data.Amount}</td>
+              <td className="tds">{data.DueDate}</td>
+              <td className= {data.Status}>
                 <button>{data.Status}</button>
               </td>
             </tr>

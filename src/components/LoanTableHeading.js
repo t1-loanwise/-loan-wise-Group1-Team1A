@@ -4,7 +4,7 @@ import "../styles/LoanTableHeading.css"
 const LoanTableHeading = () => {
   return (
     <>
-        <p>Loan Performance Table</p>
+        <p className='loan-p'>Loan Performance Table</p>
     </>
   )
 }

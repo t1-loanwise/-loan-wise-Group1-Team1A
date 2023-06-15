@@ -64,7 +64,7 @@ const SideBar = () => {
         </li>
         <li className={`dropdown ${dropMenu ? "show-dropdown" : ""}`}>
           <NavLink
-            exact
+            exact="true"
             to="/general/messages"
             activeClassName="active"
           >

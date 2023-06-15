@@ -41,7 +41,8 @@ const LoanTabble = ({searchTerm}) => {
 
         <tbody>
           {displayedData.map((data, index) => (
-            <tr key={index}>
+            <Link>
+              <tr key={index}>
               <td>{data.ID}</td>
               <td>{data.Name}</td>
               <td>{data.Category}</td>
@@ -51,6 +52,7 @@ const LoanTabble = ({searchTerm}) => {
                 <button>{data.Status}</button>
               </td>
             </tr>
+            </Link>
           ))}
         </tbody>
       </table>

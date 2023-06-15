@@ -104,13 +104,13 @@ transform: scale(1.05);
   width: 100%;
 }
 .button3 {
-  padding: 24px 48px;
-  /* width: 30%; */
+  padding: 15px 30px;
   border-radius: 5px;
   border: 1px solid #ffffff;
   color: #ffffff;
   background: #007e99;
 }
+
 .button3:hover {
   background: #006980;
 }

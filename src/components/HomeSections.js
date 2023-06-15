@@ -20,20 +20,6 @@ import icon3 from "../assets/Iconfeature3.svg";
 import icon4 from "../assets/Iconfeature4.svg";
 
 const HomeSections = ({ link, text }) => {
-  const buttonStyle = {
-    backgroundColor: "#007E99",
-    border: "2px solid #007E99",
-    color: "white",
-    width: "fit-content",
-    padding: "15px 30px",
-    borderRadius: "5px",
-    fontSize: "16px",
-    cursor: "pointer",
-    "&:hover" : {
-      backgroundColor: "#006980",
-    }
-  };
-
   return (
     <div>
       <div className="homepage_container">
@@ -51,7 +37,7 @@ const HomeSections = ({ link, text }) => {
             />
             <div id="buttons">
               <Link to="/register">
-                <Button1 text={"Get Started"} style={buttonStyle} />
+                <Button1 text={"Get Started"} />
               </Link>
               <Link to="/about" className="learnMoreText">
                 <button className="learnMore">
@@ -82,7 +68,6 @@ const HomeSections = ({ link, text }) => {
             <Link to="/register">
               <Button1
                 id="about-button"
-                style={buttonStyle}
                 text={"Get Started"}
               />
             </Link>
@@ -116,25 +101,33 @@ const HomeSections = ({ link, text }) => {
           </div>
           <div className="featuresCard-container">
             <div className="featureCard-container">
-              <LazyLoadImage src={icon1} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon1} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Predictive analytics for accurate risk assessment
               </span>
             </div>
             <div className="featureCard-container">
-              <LazyLoadImage src={icon2} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon2} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Compliance management for regulatory adherence
               </span>
             </div>
             <div className="featureCard-container">
-              <LazyLoadImage src={icon3} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon3} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Historical loan performance analysis for future defaults
               </span>
             </div>
             <div className="featureCard-container">
-              <LazyLoadImage src={icon4} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon4} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Data integration for comprehensive financial history.
               </span>

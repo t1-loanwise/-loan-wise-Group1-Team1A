@@ -40,12 +40,14 @@ transform: scale(1.05);
   width: 800px;
   color: #000000;
 }
+
 .about_header_text {
   width: 950px;
   text-align: center;
   font-size: 16px;
    color: #343753;
 }
+
 .about_us_img {
   width: 100%;
   margin: 0;
@@ -57,9 +59,11 @@ transform: scale(1.05);
   justify-content: space-between;
   align-items: center;
 }
+
 .our-mision-container {
   gap: 96px;
   text-align: right;
+  padding: 10% 0 0;
 }
 .our-vision-img,
 .our-mision-img {

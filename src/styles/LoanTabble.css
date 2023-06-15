@@ -1,11 +1,13 @@
 table {
+    margin: 0;
+    padding: 0;
     border-collapse: collapse;
-    width: 100%;
+    /* width: 100%; */
 }
 
 th {
 
-    /* width: 12.54rem; */
+    width: 12.54rem;
     text-align: left;
     height: 3.5rem;
     background-color: #E6F2F5;
@@ -17,7 +19,7 @@ td {
     font-weight: 500;
 }
 
-tr:focus{
+tr{
     cursor: pointer;
 }
 
@@ -44,33 +46,31 @@ th, td {
     padding-left: 0.3rem;
 }
 
-.loanhiistory {
-    text-decoration: none;
-    color: #007E99;
-}
-
-.pagiNumbs {
+.pagination-container {
+    margin-top: 10px;
     display: flex;
-    gap: 1.5rem;
+    justify-content: flex-end;
+  }
+  
+  .pagiNumbs {
+    display: flex;
     align-items: center;
-    height: fit-content;
-    width: fit-content;
-    justify-content: start;
-}
-
-p {
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.pagiNumbs button.active {
+    gap: 20px;
+  }
+  
+  .pagiNumbs button,
+  .pagiNumbs p {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .pagiNumbs button.active {    
     font-weight: bold;
     background-color: #007E99;
     color: white;
-    padding: 5px;
+    padding: 3px 8px;
     border-radius: 50%;
   }
-.pagiNumbs button {
-    border: none;
-    cursor: pointer;
-  }
+  

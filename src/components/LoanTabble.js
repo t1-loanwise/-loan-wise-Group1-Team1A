@@ -42,18 +42,26 @@ const LoanTabble = ({searchTerm}) => {
 
         <tbody>
           {displayedData.map((data, index) => (
-            <Link>
-              <tr key={index} className="trs">
-              <td className="tds">{data.ID}</td>
-              <td className="tds">{data.Name}</td>
-              <td className="tds">{data.Category}</td>
-              <td className="tds">{data.Amount}</td>
-              <td className="tds">{data.DueDate}</td>
-              <td className= {data.Status}>
+            <tr key={index} className="trs">
+              <td className="tds">
+                <Link className="table-link">{data.ID}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Name}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Category}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Amount}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.DueDate}</Link>
+              </td>
+              <td className={data.Status}>
                 <button>{data.Status}</button>
               </td>
             </tr>
-            </Link>
           ))}
         </tbody>
       </table>
@@ -81,7 +89,7 @@ const LoanTabble = ({searchTerm}) => {
                     className={currentPage === i + 1 ? "active" : ""}
                     onClick={() => handlePageChange(i + 1)}
                   >
-                    {i + 1}
+                    {i + 1}{" "}
                   </button>
                 );
               }

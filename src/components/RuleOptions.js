@@ -71,7 +71,7 @@ const RuleOptions = () => {
         <div className="value">
           <label>Value</label>
           <div>
-            <input type="text" placeholder="input" readOnly />
+            <input type="text" placeholder="input" />
             <div className="delete-btn-container">
               <div className="delete">
                 <p>Delete</p>
@@ -82,7 +82,7 @@ const RuleOptions = () => {
             </div>
           </div>
           <div>
-            <input type="text" placeholder="input" readOnly />
+            <input type="text" placeholder="input" />
             <div className="delete-btn-container">
               <div className="delete">
                 <p>Delete</p>

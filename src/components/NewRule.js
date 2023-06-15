@@ -14,12 +14,17 @@ const NewRule = (props) => {
 
   const handleInputChange = (e) => {
     const value = e.target.value;
-    console.log(value);
     setInputValue(value);
+    if (inputValue.length < 5) {
+      setInputError("This field is required");
+    } else {
+      setInputError("");
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.length === "") {
+    if (inputValue.length >= 5) {
+      setInputError("This field is required");
     } else {
       setInputError("This field is required");
     }
@@ -29,6 +34,10 @@ const NewRule = (props) => {
     props.handleClick(inputValue);
     setInputValue("");
     setShowPopup(false);
+    // if (inputValue.length >= 5) {
+    // } else {
+    //   setInputError("This field is required");
+    // }
   };
 
   const [active, setActive] = useState(false);
@@ -52,7 +61,7 @@ const NewRule = (props) => {
                   <h2>New Rule</h2>
                 </div>
               </div>
-              <p>
+              <p id="para">
                 Create rules that loan applications must meet for approval or
                 dismissal
               </p>
@@ -61,6 +70,7 @@ const NewRule = (props) => {
             <div className="select-option">
               <label>Model Title</label>
               <input
+                id="main-input"
                 className="model-input"
                 name="title"
                 type="text"
@@ -185,7 +195,7 @@ const NewRule = (props) => {
                     </div>
                   </div>
                 </div>
-                {/* {active && <NewConditionBtn />} */}
+                {active && <NewConditionBtn />}
 
                 <div className="btn">
                   <button className="condition-button" onClick={newCondition}>

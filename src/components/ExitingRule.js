@@ -11,8 +11,8 @@ const ExitingRule = ({ model, onUpdate }) => {
     onUpdate(model.id, editedModel);
   };
   const newCondition = () => {
-    if (active == true) {
-      setActive(false);
+    if (active == false) {
+      setActive(true);
     } else {
       setActive(true);
     }
@@ -25,7 +25,7 @@ const ExitingRule = ({ model, onUpdate }) => {
             <h2>Edit Existing Rule</h2>
           </div>
         </div>
-        <p>
+        <p id="para">
           Edit existing rules that loan application must meet for approval or
           dismissal
         </p>
@@ -33,6 +33,7 @@ const ExitingRule = ({ model, onUpdate }) => {
       <div className="select-option">
         <label>Model Title</label>
         <input
+          id="main-input"
           type="text"
           value={editedModel}
           onChange={(e) => setEditedModel(e.target.value)}

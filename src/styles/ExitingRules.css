@@ -14,12 +14,16 @@
   padding: 0 2em 2em;
   text-align: center;
 }
-.rule-header p {
+.rule-header div {
+}
+.edit-text #para {
   text-align: center;
-  font-size: 50px;
+  font-size: 1.125rem;
+  color: #55666a;
+  font-weight: 600;
 }
 .edit-text {
-  padding-bottom: 1.5em;
+  padding-bottom: 0.625em;
 }
 .select-option-below {
   display: flex;
@@ -59,10 +63,11 @@
 .new-rule-btn:hover {
   background-color: #006980;
 }
-.select-option input {
+.select-option #main-input {
   padding: 8px 16px;
   outline: #007e99;
   margin-top: 5px;
+  width: 200%;
 }
 .conditionsMet {
   appearance: none;
@@ -81,7 +86,4 @@
 .conditions-container div {
   font-size: 0.875rem;
   margin-bottom: 10px;
-}
-.select-option .model-input {
-  width: 100%;
 }

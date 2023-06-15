@@ -61,6 +61,7 @@ const NewRule = (props) => {
             <div className="select-option">
               <label>Model Title</label>
               <input
+                className="model-input"
                 name="title"
                 type="text"
                 value={inputValue}
@@ -184,7 +185,7 @@ const NewRule = (props) => {
                     </div>
                   </div>
                 </div>
-                {active && <NewConditionBtn />}
+                {/* {active && <NewConditionBtn />} */}
 
                 <div className="btn">
                   <button className="condition-button" onClick={newCondition}>

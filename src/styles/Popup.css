@@ -24,6 +24,7 @@
   top: 50px;
   right: 350px;
   background-color: white;
+  border: none;
 }
 ::-webkit-scrollbar {
   width: 0.5;

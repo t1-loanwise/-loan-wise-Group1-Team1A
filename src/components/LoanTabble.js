@@ -4,50 +4,66 @@ import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import userss from "./TableDaata";
 
-const LoanTabble = () => {
+const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of items to display per page
+  const [showAllData, setShowAllData] = useState(false);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  const filteredData = userss.filter((data) => {
+    const searchData = Object.values(data).join(" ").toLowerCase();
+    return searchData.includes(searchTerm.toLowerCase());
+  });
+
+  const displayedData = showAllData
+    ? filteredData
+    : filteredData.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+      );
+
   return (
     <>
       <table>
         <thead>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Due Date</th>
-          <th>Status</th>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
         </thead>
 
         <tbody>
-          {userss
-            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-            .map((data, index) => (
-              <tr key={index}>
-                <td>{data.ID}</td>
-                <td>{data.Name}</td>
-                <td>{data.Category}</td>
-                <td>{data.Amount}</td>
-                <td>{data.DueDate}</td>
-                <td className={data.Status}>
-                  <button>{data.Status}</button>
-                </td>
-              </tr>
-            ))}
+          {displayedData.map((data, index) => (
+            <tr key={index}>
+              <td>{data.ID}</td>
+              <td>{data.Name}</td>
+              <td>{data.Category}</td>
+              <td>{data.Amount}</td>
+              <td>{data.DueDate}</td>
+              <td className={data.Status}>
+                <button>{data.Status}</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
-      <div className="lowerlastdash">
-        <a className="loanhiistory" href="">View all loan history</a>
+      <div className="pagination-container">
         <div className="pagiNumbs">
-          <img src={leftarrow}
+          <button
             onClick={() => handlePageChange(currentPage - 1)}
-          />
+            style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
+            disabled={currentPage === 1}
+          >
+            <img src={leftarrow} alt="Left Arrow" />
+          </button>
 
           {currentPage > 5 && <p>...</p>}
 
@@ -75,22 +91,20 @@ const LoanTabble = () => {
           )}
 
           <button
-            className={
-              currentPage === Math.ceil(userss.length / itemsPerPage)
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              handlePageChange(Math.ceil(userss.length / itemsPerPage))
-            }
-          >
-            {Math.ceil(userss.length / itemsPerPage)}
-          </button>
-
-          <img
-            src={rightarrow}
             onClick={() => handlePageChange(currentPage + 1)}
-          />
+            disabled={currentPage === Math.ceil(userss.length / itemsPerPage)}
+          >
+            <img
+              style={{
+                opacity:
+                  currentPage === Math.ceil(userss.length / itemsPerPage)
+                    ? 0.5
+                    : 1,
+              }}
+              src={rightarrow}
+              alt="Right Arrow"
+            />
+          </button>
         </div>
       </div>
     </>

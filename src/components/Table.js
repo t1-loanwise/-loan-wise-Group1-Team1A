@@ -3,6 +3,7 @@ import '../styles/PortfolioTable.css';
 import leftarrow from "../assets/p-leftarrow.svg";
 import rightarrow from "../assets/p-rightarrow.svg";
 import persons from "../components/Portfolio/Data";
+import { Link } from "react-router-dom";
 
 const Table = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,17 +24,30 @@ const Table = () => {
             <th>Due Date</th>
             <th>Status</th>
           </thead>
-  
+
           <tbody>
             {persons
-              .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
               .map((data, index) => (
-                <tr key={index}>
-                  <td>{data.id}</td>
-                  <td>{data.Name}</td>
-                  <td>{data.Category}</td>
-                  <td>{data.Amount}</td>
-                  <td>{data.DueDate}</td>
+                <tr key={index} className="trs">
+                  <td className="tds">
+                    <Link className="table-link">{data.id}</Link>
+                  </td>
+                  <td className="tds">
+                    <Link className="table-link">{data.Name}</Link>
+                  </td>
+                  <td className="tds">
+                    <Link className="table-link">{data.Category}</Link>
+                  </td>
+                  <td className="tds">
+                    <Link className="table-link">{data.Amount}</Link>
+                  </td>
+                  <td className="tds">
+                    <Link className="table-link">{data.DueDate}</Link>
+                  </td>
                   <td className={data.Status}>
                     <button>{data.Status}</button>
                   </td>
@@ -41,15 +55,16 @@ const Table = () => {
               ))}
           </tbody>
         </table>
-  
+
         <div className="lowerlastdash">
           <div className="pagiNumbs">
-            <img src={leftarrow}
+            <img
+              src={leftarrow}
               onClick={() => handlePageChange(currentPage - 1)}
             />
-  
+
             {currentPage > 6 && <p>...</p>}
-  
+
             {Array.from(
               { length: Math.ceil(persons.length / itemsPerPage) },
               (_, i) => {
@@ -68,11 +83,11 @@ const Table = () => {
                 return null;
               }
             )}
-  
+
             {currentPage < Math.ceil(persons.length / itemsPerPage) - 4 && (
               <p>...</p>
             )}
-  
+
             <button
               className={
                 currentPage === Math.ceil(persons.length / itemsPerPage)
@@ -85,7 +100,7 @@ const Table = () => {
             >
               {Math.ceil(persons.length / itemsPerPage)}
             </button>
-  
+
             <img
               src={rightarrow}
               onClick={() => handlePageChange(currentPage + 1)}

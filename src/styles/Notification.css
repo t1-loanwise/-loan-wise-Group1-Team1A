@@ -1,7 +1,7 @@
+.tab-data {
+    height: 2.5rem;
+}
 
- .customer td, .customer th {
-padding: 5px;
- }
  .customer .sec-th{
 padding-top: 12px;
 padding-bottom: 12px;
@@ -13,7 +13,8 @@ border-bottom: 1px solid rgba(176, 215, 223, 0.5);
  .customer{
     width: 100%;
     background-color: #E6F2F5;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
+    
  }
 
  .first-th{

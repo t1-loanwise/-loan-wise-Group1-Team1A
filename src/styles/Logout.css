@@ -12,6 +12,12 @@
   }
 }
 
+.logout-btn a{
+text-decoration: none;
+color: #ffffff;
+
+}
+
 .emoji-div{
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Imagehero from "../assets/Imagehero.svg";
 import AboutImage from "../assets/AboutImage.svg";
-import Feature from "../assets/FeatureImage.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import SpecialFeaturesOne from "../assets/SpecialFeature.svg";
 import SpecialFeature2 from "../assets/SpecialFeature2.svg";
 import Checklist from "./Checklist";
@@ -20,27 +20,13 @@ import icon3 from "../assets/Iconfeature3.svg";
 import icon4 from "../assets/Iconfeature4.svg";
 
 const HomeSections = ({ link, text }) => {
-  const buttonStyle = {
-    backgroundColor: "#007E99",
-    border: "2px solid #007E99",
-    color: "white",
-    width: "fit-content",
-    padding: "15px 30px",
-    borderRadius: "5px",
-    fontSize: "16px",
-    cursor: "pointer",
-    "&:hover" : {
-      backgroundColor: "#006980",
-    }
-  };
-
   return (
     <div>
       <div className="homepage_container">
         <div className="hero-section">
           <div className="hero-text">
             <div id="history">
-              <img id="clock" src={Clock} />
+              <LazyLoadImage id="clock" src={Clock} />
               <p>Watch Our History</p>
             </div>
             <HomeHeader
@@ -51,7 +37,7 @@ const HomeSections = ({ link, text }) => {
             />
             <div id="buttons">
               <Link to="/register">
-                <Button1 text={"Get Started"} style={buttonStyle} />
+                <Button1 text={"Get Started"} />
               </Link>
               <Link to="/about" className="learnMoreText">
                 <button className="learnMore">
@@ -65,7 +51,7 @@ const HomeSections = ({ link, text }) => {
               </Link>
             </div>
           </div>
-          <img
+          <LazyLoadImage
             src={Imagehero}
             alt="hero section image"
             className="home-image"
@@ -82,12 +68,11 @@ const HomeSections = ({ link, text }) => {
             <Link to="/register">
               <Button1
                 id="about-button"
-                style={buttonStyle}
                 text={"Get Started"}
               />
             </Link>
           </div>
-          <img
+          <LazyLoadImage
             src={AboutImage}
             alt="about us section image"
             className="section-image"
@@ -104,7 +89,7 @@ const HomeSections = ({ link, text }) => {
               }
             />
           </div>
-          <img src={Arrow} alt="arrow" className="arrow-image" />
+          <LazyLoadImage src={Arrow} alt="arrow" className="arrow-image" />
         </div>
         <div className="feature-section">
           <div className="amazing-features">
@@ -112,29 +97,37 @@ const HomeSections = ({ link, text }) => {
               Check out <br />
               our amazing features.
             </span>
-            <img src={Arrow2} alt="arrow-img" className="featureArrow-image" />
+            <LazyLoadImage src={Arrow2} alt="arrow-img" className="featureArrow-image" />
           </div>
           <div className="featuresCard-container">
             <div className="featureCard-container">
-              <img src={icon1} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon1} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Predictive analytics for accurate risk assessment
               </span>
             </div>
             <div className="featureCard-container">
-              <img src={icon2} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon2} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Compliance management for regulatory adherence
               </span>
             </div>
             <div className="featureCard-container">
-              <img src={icon3} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon3} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Historical loan performance analysis for future defaults
               </span>
             </div>
             <div className="featureCard-container">
-              <img src={icon4} alt="featuresIcon" className="featureIcon" />
+              <div className="featureIcon">
+                <img src={icon4} alt="featuresIcon" className="featureIconImg" />
+              </div>
               <span className="featureText">
                 Data integration for comprehensive financial history.
               </span>
@@ -142,7 +135,7 @@ const HomeSections = ({ link, text }) => {
           </div>
         </div>
         <div className="special-one">
-            <img src={SpecialFeaturesOne} alt="special features one image" className="specialFeature-image" />
+            <LazyLoadImage src={SpecialFeaturesOne} alt="special features one image" className="specialFeature-image" />
         <div className="home-right">
             <HomeHeader
               header={"Improve teamwork with our in-app messaging feature."}
@@ -171,7 +164,7 @@ const HomeSections = ({ link, text }) => {
               <Checklist text={"Streamline lending decisions."} />
             </div>
           </div>
-          <img
+          <LazyLoadImage
             src={SpecialFeature2}
             alt="special features two image"
             className="loanDefault-image"

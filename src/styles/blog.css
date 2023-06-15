@@ -4,6 +4,25 @@
   background-size: 80%;
   background-repeat: no-repeat;
 }
+.main-div img:hover {
+transform: scale(1.05);
+  transition: 1s ease-in-out;
+}
+
+.main-div img {
+   animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .form-wrapper {
   display: flex;
@@ -71,6 +90,8 @@
 .form-wrapper form {
   width: 70%;
 }
+
+
 .my-email {
   width: 100%;
   height: 45px;
@@ -78,7 +99,8 @@
   border: 1px solid #cbcbcb;
   border-radius: 5px;
   font-size: 1em;
-  &:focus {
+}
+
+.my-email:focus {
     outline: 1px solid #007e99;
-  }
 }

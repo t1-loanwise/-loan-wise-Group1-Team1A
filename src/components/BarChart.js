@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from "recharts"
-// import Chart from "chart.js/auto";
+import {BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label} from "recharts"
+
 // import { Bar } from "react-chartjs-2";
 
 // const data = {
@@ -131,13 +131,38 @@ const Barchart = () => {
 
   return (
     <div className="line-chart-container">
-      <ResponsiveContainer>
-        <BarChart>
-          <XAxis dataKey="month"/>
-          <YAxis />
-          <Tooltip/>
-          <Legend/>
-          <Bar dataKey="Qty" fill='#99007E'/>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={data}
+          fontSize={8.5}
+          margin={{
+            top: 10,
+            right: 10,
+            left: -10,
+            bottom: 10,
+          }}
+        >
+          <XAxis dataKey="month">
+            <Label
+              value="Period"
+              position="insideBottom"
+              offset={-5}
+              fontSize={14}
+              fontWeight="bold"
+            />
+          </XAxis>
+          <YAxis>
+            <Label
+              value="Qty"
+              position="insideLeft"
+              angle={-90}
+              offset={20}
+              fontSize={14}
+              fontWeight="bold"
+            />
+          </YAxis>
+          <Tooltip cursor={false}/>
+          <Bar dataKey="Qty" fill="#99007E" />
         </BarChart>
       </ResponsiveContainer>
     </div>

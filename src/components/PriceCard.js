@@ -18,26 +18,32 @@ const PriceCard = (props) => {
         <div className={`premium-head-content ${props.active ? "active" : ""}`}>
           <h3>{props.title}</h3>
           <p>{props.description}</p>
-          <div className="pricing-row justify-center align-start">
-            {props.oldPrice != null && (
-              <div className="price-discount">
+          <div className="justify-center align-start">
+            <div className="old-priice">
+              {props.oldPrice != null && (
+                <div className="price-discount">
+                  <sup>$</sup>
+                </div>
+              )}
+              {props.oldPrice != null && (
+                <div className="price-discount">
+                  <span>{props.oldPrice}</span>
+                </div>
+              )}
+            </div>
+            <div className="new-priice">
+              <div className="sup2">
                 <sup>$</sup>
               </div>
-            )}
-            {props.oldPrice != null && (
-              <div className="price-discount">{props.oldPrice}</div>
-            )}
-            <div>
-              <sup>$</sup>
-            </div>
-            <div className="price">{props.price}</div>
-            <div className="price-label">
-              <div>{props.priceLabel}</div>
-              <div>{props.priceLabel2}</div>
+              <div className="price">{props.price}</div>
+              <div className="price-label">
+                <div>{props.priceLabel}</div>
+                <div>{props.priceLabel2}</div>
+              </div>
             </div>
           </div>
           {hasTwoButton === true && (
-            <div className="pricing-row two_buttons">
+            <div className="two_buttons">
               <div>
                 <FillButton label={props.firstButtonLabel} />
               </div>
@@ -46,7 +52,7 @@ const PriceCard = (props) => {
               </div>
             </div>
           )}
-          <div className="pricing-row">
+          <div className="">
             {props.outlineButtonLabel != null && (
               <OutlineButton label={props.outlineButtonLabel} />
             )}

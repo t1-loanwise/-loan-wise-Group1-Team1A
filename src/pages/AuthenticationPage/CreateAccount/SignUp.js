@@ -9,10 +9,12 @@ import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../../components/Onboarding";
 import axios from "axios";
+import { nanoid } from "nanoid";
+
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required(true),
+    name: Yup.string().required(),
     email: Yup.string().email().required("Enter a valid email address"),
     password: Yup.string()
       .required(true)
@@ -32,15 +34,15 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    getValues
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
-  const [data, setData] = useState(null)
+  const [formData, setFormData] = useState(null)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [name, setName] = useState('')
-  const [email, setEmail] =useState('')
-  const [password, setPassword] = useState('')
+  const id = nanoid()
+
 
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
@@ -50,25 +52,28 @@ const SignUp = () => {
     setShowConfirmPswd(showConfirmPswd ? false : true);
   };
   const onSubmit = async() => {
-    console.log("data");
-    await axios
-      .post(
-        `https://loanwise.render.com/api/signup`,
-        {
-          name: name,
-          email: email,
-          password: password,
-        }
-      )
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
-
-    // navigate("/verifyRegistration");
+   try {
+    setLoading(true);
+    const response = await axios.post(
+      "https://loanwise.onrender.com/api/signup",
+      {
+        name: getValues("name"),
+        email: getValues("email"),
+        password: getValues("password"),
+        id: id,
+      }
+    );
+    console.log(response.data);
+    setFormData(response.data);
+    setError(false);
+    setLoading(false);
+    navigate("/verifyRegistration");
+   } catch (error) {
+    console.log(error);
+    setError(true);
+    setLoading(false);
+   }
   };
-
-  // console.log(name + email + password);
 
   return (
     <div className="createAccount_parentContainer">
@@ -89,15 +94,14 @@ const SignUp = () => {
               <label>Full name</label>
               <div className="inputDiv">
                 <input
-                  name="fullName"
+                  name="name"
                   type="text"
                   placeholder="Enter full name"
-                  {...register("fullName")}
+                  {...register("name")}
                   className="name-email-input"
-                  onChange={(e)=> setName(e.target.value)}
                 />
               </div>
-              <div className="signUpErrorMsg">{errors.fullName?.message}</div>
+              <div className="signUpErrorMsg">{errors.name?.message}</div>
             </div>
 
             <div className="formInputContainer">
@@ -111,7 +115,6 @@ const SignUp = () => {
                   className={` name-email-input ${
                     errors.email ? "is-invalid" : ""
                   }`}
-                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="signUpErrorMsg">{errors.email?.message}</div>
@@ -125,7 +128,7 @@ const SignUp = () => {
                     type={showPswd ? "text" : "password"}
                     {...register("password")}
                     className={` ${errors.password ? "is-invalid" : ""}`}
-                    onChange={(e) => setPassword(e.target.value)}
+                    /*  */
                   />
                   <img
                     src={showPswd ? hide : show}
@@ -169,8 +172,16 @@ const SignUp = () => {
             </div>
             <div className="">{errors.radioBtn?.message}</div>
 
-            <button type="submit" className="createAccountBtn">
-              Create Account
+            <button
+              type="submit"
+              className="createAccountBtn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <i className="fa fa-circle-o-notch fa-spin"></i>
+              ) : (
+                "Create Account"
+              )}
             </button>
           </form>
         </div>

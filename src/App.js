@@ -57,7 +57,6 @@ const App = () => {
         <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
-        <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
 

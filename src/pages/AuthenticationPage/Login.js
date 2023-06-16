@@ -14,12 +14,12 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { error },
+    formState: { errors },
     getValues,
   } = useForm();
   const navigate = useNavigate();
   const [getData, setGetData] = useState(null);
-  const [errors, setErrors] = useState(false);
+  const [error, setError] = useState(false);
   const [Submitting, setSubmitting] = useState(false);
 
   const [showPswd, setShowPswd] = useState(false);
@@ -39,7 +39,7 @@ const Login = () => {
       navigate("/dashboard");
     } catch (errors) {
       console.log(errors);
-      setErrors(true);
+      setError(true);
       setSubmitting(false);
     }
   };

@@ -177,10 +177,10 @@ const Footer = () => {
               <Resources>RESOURCES</Resources>
               <ResourcesList>
                 <li>
-                  <List>Blog</List>
+                  <List to="/blog">Blog</List>
                 </li>
                 <li>
-                  <List>FAQ</List>
+                  <List to="/pricing">FAQ</List>
                 </li>
                 <li>
                   <List>Help center</List>
@@ -194,7 +194,7 @@ const Footer = () => {
               <Company>COMPANY</Company>
               <CompanyList>
                 <li>
-                  <List>About Us</List>
+                  <List to="/about">About Us</List>
                 </li>
                 <li>
                   <List>Careers</List>
@@ -211,7 +211,7 @@ const Footer = () => {
               <Company>COMPANY</Company>
               <CompanyList>
                 <li>
-                  <List>About Us</List>
+                  <List to="/about">About Us</List>
                 </li>
                 <li>
                   <List>Careers</List>

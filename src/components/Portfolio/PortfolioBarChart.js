@@ -1,90 +1,91 @@
-import React from 'react'
-// import Chart from "chart.js/auto";
-import { Bar } from "react-chartjs-2";
+import React, { PureComponent } from "react";
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-const data = {
-  labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-
-  ],
-
-  datasets: [
-    {
-      label: "Active",
-      data: [
-        4000, 5500, 4050, 3950, 5600, 4800, 4500, 4000, 4700, 5200, 5800, 6300,
-      ],
-      backgroundColor: "#99007E",
-      borderColor: "#99007E",
-      borderWidth: 2,
-      pointRadius: 0,
-      tension: 0.3,
-      pointStyle: 'circle'
-      
-    },
-    {
-      label: "Active",
-      data: [
-        400, 100, 450, 625, 20, 520, 850, 830, 200, 250, 90, 900,
-      ],
-      backgroundColor: "#009967",
-      borderColor: "#009967",
-      borderWidth: 0,
-    },
-  ],
-};
-
-const options = {
-  indexAxis: "x", // Set the index axis to 'y' for a vertical bar chart
-  scales: {
-    x: {
-      beginAtZero: true,
-     
-      ticks: {
-        font: {
-          size: 7,
-          color: "#343434",
-        },
-      },
-      grid: {
-        display: false,
-      },
-    },
-    y: {
-      beginAtZero: true,
- 
-      ticks: {
-        font: {
-          size: 7,
-          color: "#343434",
-        },
-        stepSize: 250,
-      },
-      grid: {
-        display: false,
-      },
-    },
+const data = [
+  {
+    month: "Jan",
+    Active: 600,
+    Closed: 1100,
   },
-  plugins: {
-    legend: {
-      display: false, // Remove the legend
-    },
+  {
+    month: "Feb",
+    Active: 900,
+    Closed: 1080,
   },
-};
-
+  {
+    month: "Mar",
+    Active: 250,
+    Closed: 1450,
+  },
+  {
+    month: "Apr",
+    Active: 325,
+    Closed: 1050,
+  },
+  {
+    month: "May",
+    Active: 350,
+    Closed: 1400,
+  },
+  {
+    month: "Jun",
+    Active: 580,
+    Closed: 900,
+  },
+  {
+    month: "Jul",
+    Active: 580,
+    Closed: 850,
+  },
+];
 
 const PortfolioBarChart = () => {
   return (
-    <div className="line-chart-container">
-      <Bar data={data} options={options} />
+    <div className="line-chart-container2">
+      <ResponsiveContainer>
+        <BarChart
+          data={data}
+          fontSize={8.5}
+          margin={{
+            top: 0,
+            right: 10,
+            left: -20,
+            bottom: 0,
+          }}
+        >
+          <XAxis dataKey="month" tickLine={false} strokeWidth={1} />
+          <YAxis />
+          <Tooltip cursor={false}/>
+          <Legend
+            verticalAlign="top"
+            fontSize={7.5}
+            align="right"
+            iconType="circle"
+            iconSize={7}
+          />
+          <CartesianGrid strokeDasharray="3 0" vertical={false} />
+          <Bar dataKey="Active" fill="#99007E" stackId="a" barSize={14} />
+          <Bar
+            dataKey="Closed"
+            fill="#009967"
+            stackId="a"
+            barSize={14}
+            radius={[20, 20, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
-}
+};
 
-export default PortfolioBarChart
+export default PortfolioBarChart;

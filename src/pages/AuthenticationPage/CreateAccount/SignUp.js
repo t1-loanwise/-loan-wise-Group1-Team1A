@@ -8,10 +8,13 @@ import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../../components/Onboarding";
+import axios from "axios";
+import { nanoid } from "nanoid";
+
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required(true),
+    name: Yup.string().required(),
     email: Yup.string().email().required("Enter a valid email address"),
     password: Yup.string()
       .required(true)
@@ -31,9 +34,16 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    getValues
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
+  const [formData, setFormData] = useState(null)
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const id = nanoid()
+
+
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
@@ -41,9 +51,28 @@ const SignUp = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPswd(showConfirmPswd ? false : true);
   };
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async() => {
+   try {
+    setLoading(true);
+    const response = await axios.post(
+      "https://loanwise.onrender.com/api/signup",
+      {
+        name: getValues("name"),
+        email: getValues("email"),
+        password: getValues("password"),
+        id: id,
+      }
+    );
+    console.log(response.data);
+    setFormData(response.data);
+    setError(false);
+    setLoading(false);
     navigate("/verifyRegistration");
+   } catch (error) {
+    console.log(error);
+    setError(true);
+    setLoading(false);
+   }
   };
 
   return (
@@ -65,14 +94,14 @@ const SignUp = () => {
               <label>Full name</label>
               <div className="inputDiv">
                 <input
-                  name="fullName"
+                  name="name"
                   type="text"
                   placeholder="Enter full name"
-                  {...register("fullName")}
+                  {...register("name")}
                   className="name-email-input"
                 />
               </div>
-              <div className="signUpErrorMsg">{errors.fullName?.message}</div>
+              <div className="signUpErrorMsg">{errors.name?.message}</div>
             </div>
 
             <div className="formInputContainer">
@@ -99,6 +128,7 @@ const SignUp = () => {
                     type={showPswd ? "text" : "password"}
                     {...register("password")}
                     className={` ${errors.password ? "is-invalid" : ""}`}
+                    /*  */
                   />
                   <img
                     src={showPswd ? hide : show}
@@ -142,8 +172,16 @@ const SignUp = () => {
             </div>
             <div className="">{errors.radioBtn?.message}</div>
 
-            <button type="submit" className="createAccountBtn">
-              Create Account
+            <button
+              type="submit"
+              className="createAccountBtn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <i className="fa fa-circle-o-notch fa-spin"></i>
+              ) : (
+                "Create Account"
+              )}
             </button>
           </form>
         </div>

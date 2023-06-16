@@ -1,5 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion'
+import TextHeader from "./TextHeader";
 
 const Faqs = () => {
     const faqs = [
@@ -74,18 +75,23 @@ const Faqs = () => {
             voluptatem`
         }
     ];
-    
+
     const faqList = faqs.map((faq, index)=> <li key={index}>
         <Accordion title={faq.question} content={faq.answer}  />
         </li>)
   return (
-    <div className='faq-content'>
-    <h4>Frequently asked <br/>questions</h4>
-        <ul className='faqs'>
-            {faqList}
-        </ul>
+    <div className="faq-content" id="faqs">
+      <TextHeader
+        title="Frequently asked questions"
+        description="Choose the pricing plan that works best for you, whether you’re looking for casual transactions or flexible customisations "
+      />
+      <h4>
+        Frequently asked <br />
+        questions
+      </h4>
+      <ul className="faqs">{faqList}</ul>
     </div>
-  )
+  );
 }
 
 export default Faqs

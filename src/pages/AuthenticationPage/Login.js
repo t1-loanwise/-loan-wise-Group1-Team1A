@@ -19,7 +19,7 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
   const [getData, setGetData] = useState(null);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [Submitting, setSubmitting] = useState(false);
 
   const [showPswd, setShowPswd] = useState(false);

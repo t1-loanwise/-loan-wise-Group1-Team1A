@@ -1,19 +1,26 @@
-.customer td,
-.customer th {
-  padding: 5px;
+.tab-data {
+    /* height: 2.5rem; */
+    padding-bottom: 5px;
+    padding-top: 10px;
 }
-.customer .sec-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: right;
-  padding-right: 20px;
-  border-bottom: 1px solid rgba(176, 215, 223, 0.5);
-}
+
+ .customer .sec-th{
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: right;
+padding-right: 20px;
+border-bottom: 1px solid rgba(176, 215, 223, 0.5);
+ }
+
+ .pad-bottom{
+  padding-bottom: 25px;
+ }
+
 
 .customer {
   width: 100%;
   background-color: #e6f2f5;
-  padding-bottom: 15px;
+  margin-bottom: 20px;
   margin-top: -10px;
 }
 

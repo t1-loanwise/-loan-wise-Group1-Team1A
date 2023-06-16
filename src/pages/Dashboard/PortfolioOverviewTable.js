@@ -55,6 +55,7 @@ const PortfolioOverviewTable = () => {
             <option value="3">Morgage</option>
           </select>
         </div>
+
       </div>
       <div className="card">
         <div className="OverviewContainer">

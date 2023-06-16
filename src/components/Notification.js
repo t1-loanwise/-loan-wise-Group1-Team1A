@@ -23,28 +23,28 @@ const Notification = ({ items }) => {
                 <tbody>
                     <tr>
                         <td className='tab-data'>New Applications</td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
                     </tr>
                     <tr>
                         <td className='tab-data'>Loan repayment</td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
                     </tr>
                     <tr>
-                        <td className='tab-data'>Loan due dates</td>
-                        <td className='ts-style'>
+                        <td className='tab-data pad-bottom'>Loan due dates</td>
+                        <td className='ts-style tab-data pad-bottom'>
                             <ToggleSwitch />
                         </td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data pad-bottom'>
                             <ToggleSwitch />
                         </td>
                     </tr>

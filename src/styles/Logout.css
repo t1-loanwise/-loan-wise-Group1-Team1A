@@ -9,6 +9,7 @@
   &:hover {
     background-color: #006980;
     transition: ease-in-out 0.3s;
+    cursor: pointer;
   }
 }
 

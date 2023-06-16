@@ -7,23 +7,35 @@ import Onboarding from "../../components/Onboarding";
 import show from "../../assets/show.png";
 import hide from "../../assets/hide.png";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
+import axios from "axios";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { error },
   } = useForm();
   const navigate = useNavigate();
+
+  const [errors, setError] = useState(false);
+  const [Submitting, setSubmitting] = useState(false);
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
   };
 
-  const onSubmit = (data) => {
-    navigate("/dashboard");
-  };
+  // const onSubmit = async() => {
+  //   try{
+  //     setSubmitting(true);
+  //     const response = await axios.post(
+  //       ""
+
+  //     )
+
+  //   }
+
+  // };
 
   return (
     <div className="loginParent-container">

@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #B7B7B7;
+  background-color: #b7b7b7;
   border-radius: 25px;
 }
 .slider::before {
@@ -37,5 +37,5 @@ Input:checked + .slider {
   background-color: #007e99;
 }
 input:checked + .slider::before {
-  transform: translate(24px);
+  transform: translate(15px);
 }

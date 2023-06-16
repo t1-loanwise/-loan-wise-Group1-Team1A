@@ -3,6 +3,7 @@ import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import userss from "./TableDaata";
+import { Link } from "react-router-dom";
 
 const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,26 +28,36 @@ const LoanTabble = ({searchTerm}) => {
 
   return (
     <>
-      <table>
+      <table className="taable">
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Due Date</th>
-            <th>Status</th>
+          <tr className="trs">
+            <th className="ths">ID</th>
+            <th className="ths">Name</th>
+            <th className="ths">Category</th>
+            <th className="ths">Amount</th>
+            <th className="ths">Due Date</th>
+            <th className="ths">Status</th>
           </tr>
         </thead>
 
         <tbody>
           {displayedData.map((data, index) => (
-            <tr key={index}>
-              <td>{data.ID}</td>
-              <td>{data.Name}</td>
-              <td>{data.Category}</td>
-              <td>{data.Amount}</td>
-              <td>{data.DueDate}</td>
+            <tr key={index} className="trs">
+              <td className="tds">
+                <Link className="table-link">{data.ID}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Name}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Category}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Amount}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.DueDate}</Link>
+              </td>
               <td className={data.Status}>
                 <button>{data.Status}</button>
               </td>
@@ -78,7 +89,7 @@ const LoanTabble = ({searchTerm}) => {
                     className={currentPage === i + 1 ? "active" : ""}
                     onClick={() => handlePageChange(i + 1)}
                   >
-                    {i + 1}
+                    {i + 1}{" "}
                   </button>
                 );
               }

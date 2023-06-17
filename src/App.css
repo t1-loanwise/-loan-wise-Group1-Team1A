@@ -544,8 +544,8 @@ input:checked + .slider:before {
 
 /* User Preference Styling */
 .appearance_settings {
-  margin: 24px;
-  padding: 12px;
+  margin: 24px 0;
+  /* padding: 12px; */
   font-weight: 600;
 }
 
@@ -556,17 +556,17 @@ input:checked + .slider:before {
 }
 
 .frame_one {
-  margin: 24px;
+  margin: 24px 0;
 }
 .frame_two {
-  margin: 24px;
+  margin: 24px 0 0;
 }
 
 #frame_three {
-  margin: 12px;
+  margin: 12px 0;
 }
 #frame_three_notif {
-  margin-top: 3.9rem;
+  margin-top: 1.5rem;
   border: 1px solid #000000;
 }
 .frame_three_contents {

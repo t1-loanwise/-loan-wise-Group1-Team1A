@@ -15,7 +15,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 0.5em;
-  margin: 10px 30px;
 }
 
 .line-chart-container2 {
@@ -30,7 +29,7 @@
 
 .line-chart-container2 span {
   text-align: center;
-  font-size: 14px;
+  font-size: 1em;
   color: #050505;
   align-self: center;
 }

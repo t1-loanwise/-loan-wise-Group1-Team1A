@@ -9,7 +9,6 @@ import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../../components/Onboarding";
 import axios from "axios";
-import { nanoid } from "nanoid";
 
 
 const SignUp = () => {
@@ -34,14 +33,14 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    getValues
+    getValues,
+    reset,
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
   const [formData, setFormData] = useState(null)
   const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const id = nanoid()
+
 
 
   const navigate = useNavigate();
@@ -53,25 +52,23 @@ const SignUp = () => {
   };
   const onSubmit = async() => {
    try {
-    setLoading(true);
     const response = await axios.post(
       "https://loanwise.onrender.com/api/signup",
       {
         name: getValues("name"),
         email: getValues("email"),
         password: getValues("password"),
-        id: id,
       }
     );
     console.log(response.data);
     setFormData(response.data);
     setError(false);
-    setLoading(false);
+    localStorage.setItem("email", getValues("email"));
     navigate("/verifyRegistration");
    } catch (error) {
     console.log(error);
     setError(true);
-    setLoading(false);
+    reset()
    }
   };
 
@@ -90,8 +87,13 @@ const SignUp = () => {
             autoComplete={"off"}
             className="createAccount_form"
           >
+            {error && (
+              <span className="registered-user">
+                User already registered. Please <Link to="/login">sign in</Link>.
+              </span>
+            )}
             <div className="formInputContainer">
-              <label>Full name</label>
+              <label htmlFor="name">Full name</label>
               <div className="inputDiv">
                 <input
                   name="name"
@@ -105,7 +107,7 @@ const SignUp = () => {
             </div>
 
             <div className="formInputContainer">
-              <label>Email Address</label>
+              <label htmlFor="email">Email Address</label>
               <div className="inputDiv">
                 <input
                   name="email"
@@ -121,7 +123,7 @@ const SignUp = () => {
             </div>
             <div className="passwordContainer">
               <div className="passwd">
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <div className="passwordToggle inputDiv">
                   <input
                     name="password"
@@ -131,7 +133,7 @@ const SignUp = () => {
                     /*  */
                   />
                   <img
-                    src={showPswd ? hide : show}
+                    src={showPswd ? show : hide}
                     onClick={togglePasswordVisibility}
                     alt="show or hide password"
                   />
@@ -139,7 +141,7 @@ const SignUp = () => {
               </div>
 
               <div className="confirmPswd">
-                <label>Confirm Password</label>
+                <label htmlFor="confirmPassword">Confirm Password</label>
                 <div className="passwordToggle inputDiv">
                   <input
                     name="confirmPassword"
@@ -148,7 +150,7 @@ const SignUp = () => {
                     className={` ${errors.confirmPassword ? "is-invalid" : ""}`}
                   />
                   <img
-                    src={showConfirmPswd ? hide : show}
+                    src={showConfirmPswd ? show : hide}
                     onClick={toggleConfirmPasswordVisibility}
                     alt="show or hide password"
                   />

@@ -117,7 +117,6 @@ const Linechart = () => {
           <CartesianGrid strokeDasharray="3 0" vertical={false} />
           <Legend
             verticalAlign="top"
-            fontSize={8}
             align="right"
             iconType="circle"
             iconSize={7}

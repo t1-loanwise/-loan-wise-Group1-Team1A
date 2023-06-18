@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // Number of items to display per page
+  const itemsPerPage = 5;
   const [showAllData, setShowAllData] = useState(false);
 
   const handlePageChange = (pageNumber) => {

@@ -3,51 +3,78 @@ import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import userss from "./TableDaata";
+import { Link } from "react-router-dom";
 
-const LoanTabble = () => {
+const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of items to display per page
+  const [showAllData, setShowAllData] = useState(false);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  const filteredData = userss.filter((data) => {
+    const searchData = Object.values(data).join(" ").toLowerCase();
+    return searchData.includes(searchTerm.toLowerCase());
+  });
+
+  const displayedData = showAllData
+    ? filteredData
+    : filteredData.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+      );
+
   return (
     <>
-      <table>
+      <table className="taable">
         <thead>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Due Date</th>
-          <th>Status</th>
+          <tr className="trs">
+            <th className="ths">ID</th>
+            <th className="ths">Name</th>
+            <th className="ths">Category</th>
+            <th className="ths">Amount</th>
+            <th className="ths">Due Date</th>
+            <th className="ths">Status</th>
+          </tr>
         </thead>
 
         <tbody>
-          {userss
-            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-            .map((data, index) => (
-              <tr key={index}>
-                <td>{data.ID}</td>
-                <td>{data.Name}</td>
-                <td>{data.Category}</td>
-                <td>{data.Amount}</td>
-                <td>{data.DueDate}</td>
-                <td className={data.Status}>
-                  <button>{data.Status}</button>
-                </td>
-              </tr>
-            ))}
+          {displayedData.map((data, index) => (
+            <tr key={index} className="trs">
+              <td className="tds">
+                <Link className="table-link">{data.ID}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Name}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Category}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.Amount}</Link>
+              </td>
+              <td className="tds">
+                <Link className="table-link">{data.DueDate}</Link>
+              </td>
+              <td className={data.Status}>
+                <button>{data.Status}</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
-      <div className="lowerlastdash">
-        <a className="loanhiistory" href="">View all loan history</a>
+      <div className="pagination-container">
         <div className="pagiNumbs">
-          <img src={leftarrow}
+          <button
             onClick={() => handlePageChange(currentPage - 1)}
-          />
+            style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
+            disabled={currentPage === 1}
+          >
+            <img src={leftarrow} alt="Left Arrow" />
+          </button>
 
           {currentPage > 5 && <p>...</p>}
 
@@ -62,7 +89,7 @@ const LoanTabble = () => {
                     className={currentPage === i + 1 ? "active" : ""}
                     onClick={() => handlePageChange(i + 1)}
                   >
-                    {i + 1}
+                    {i + 1}{" "}
                   </button>
                 );
               }
@@ -75,22 +102,20 @@ const LoanTabble = () => {
           )}
 
           <button
-            className={
-              currentPage === Math.ceil(userss.length / itemsPerPage)
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              handlePageChange(Math.ceil(userss.length / itemsPerPage))
-            }
-          >
-            {Math.ceil(userss.length / itemsPerPage)}
-          </button>
-
-          <img
-            src={rightarrow}
             onClick={() => handlePageChange(currentPage + 1)}
-          />
+            disabled={currentPage === Math.ceil(userss.length / itemsPerPage)}
+          >
+            <img
+              style={{
+                opacity:
+                  currentPage === Math.ceil(userss.length / itemsPerPage)
+                    ? 0.5
+                    : 1,
+              }}
+              src={rightarrow}
+              alt="Right Arrow"
+            />
+          </button>
         </div>
       </div>
     </>

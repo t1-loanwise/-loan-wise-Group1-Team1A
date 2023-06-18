@@ -8,10 +8,12 @@ import show from "../../../assets/show.png";
 import hide from "../../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../../components/Onboarding";
+import axios from "axios";
+
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required(true),
+    name: Yup.string().required(),
     email: Yup.string().email().required("Enter a valid email address"),
     password: Yup.string()
       .required(true)
@@ -31,9 +33,16 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    getValues,
+    reset,
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
+  const [formData, setFormData] = useState(null)
+  const [error, setError] = useState(false)
+
+
+
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
@@ -41,9 +50,26 @@ const SignUp = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPswd(showConfirmPswd ? false : true);
   };
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async() => {
+   try {
+    const response = await axios.post(
+      "https://loanwise.onrender.com/api/signup",
+      {
+        name: getValues("name"),
+        email: getValues("email"),
+        password: getValues("password"),
+      }
+    );
+    console.log(response.data);
+    setFormData(response.data);
+    setError(false);
+    localStorage.setItem("email", getValues("email"));
     navigate("/verifyRegistration");
+   } catch (error) {
+    console.log(error);
+    setError(true);
+    reset()
+   }
   };
 
   return (
@@ -61,22 +87,27 @@ const SignUp = () => {
             autoComplete={"off"}
             className="createAccount_form"
           >
+            {error && (
+              <span className="registered-user">
+                User already registered. Please <Link to="/login">sign in</Link>.
+              </span>
+            )}
             <div className="formInputContainer">
-              <label>Full name</label>
+              <label htmlFor="name">Full name</label>
               <div className="inputDiv">
                 <input
-                  name="fullName"
+                  name="name"
                   type="text"
                   placeholder="Enter full name"
-                  {...register("fullName")}
+                  {...register("name")}
                   className="name-email-input"
                 />
               </div>
-              <div className="signUpErrorMsg">{errors.fullName?.message}</div>
+              <div className="signUpErrorMsg">{errors.name?.message}</div>
             </div>
 
             <div className="formInputContainer">
-              <label>Email Address</label>
+              <label htmlFor="email">Email Address</label>
               <div className="inputDiv">
                 <input
                   name="email"
@@ -92,16 +123,17 @@ const SignUp = () => {
             </div>
             <div className="passwordContainer">
               <div className="passwd">
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <div className="passwordToggle inputDiv">
                   <input
                     name="password"
                     type={showPswd ? "text" : "password"}
                     {...register("password")}
                     className={` ${errors.password ? "is-invalid" : ""}`}
+                    /*  */
                   />
                   <img
-                    src={showPswd ? hide : show}
+                    src={showPswd ? show : hide}
                     onClick={togglePasswordVisibility}
                     alt="show or hide password"
                   />
@@ -109,7 +141,7 @@ const SignUp = () => {
               </div>
 
               <div className="confirmPswd">
-                <label>Confirm Password</label>
+                <label htmlFor="confirmPassword">Confirm Password</label>
                 <div className="passwordToggle inputDiv">
                   <input
                     name="confirmPassword"
@@ -118,7 +150,7 @@ const SignUp = () => {
                     className={` ${errors.confirmPassword ? "is-invalid" : ""}`}
                   />
                   <img
-                    src={showConfirmPswd ? hide : show}
+                    src={showConfirmPswd ? show : hide}
                     onClick={toggleConfirmPasswordVisibility}
                     alt="show or hide password"
                   />
@@ -142,8 +174,16 @@ const SignUp = () => {
             </div>
             <div className="">{errors.radioBtn?.message}</div>
 
-            <button type="submit" className="createAccountBtn">
-              Create Account
+            <button
+              type="submit"
+              className="createAccountBtn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <i className="fa fa-circle-o-notch fa-spin"></i>
+              ) : (
+                "Create Account"
+              )}
             </button>
           </form>
         </div>

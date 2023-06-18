@@ -27,7 +27,7 @@ const SuccessfulPage = () => {
         </p>
       </div>
       <div className="Success-btn-container">
-        <Link to="/dashboard">
+        <Link to="/login">
           <button className="successful-btn">Continue</button>
         </Link>
       </div>

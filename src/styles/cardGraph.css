@@ -7,7 +7,7 @@
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 0.7em;
+  column-gap: 1%;
 }
 
 .dashCard {
@@ -15,7 +15,7 @@
   flex-direction: column;
   gap: 0.7em;
   color: #00151a;
-  width: 19%;
+  width: 19.2%;
   height: fit-content;
   padding: 15px 10px;
   background: #ffffff;
@@ -42,11 +42,11 @@
 }
 
 .cardText {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .line-chart-container {
-  width: 40%;
+  width: 39.4%;
   height: 200px;
   background: #ffffff;
   border: 1.10609px solid #e6f2f5;
@@ -56,18 +56,17 @@
 }
 
 .recharts-legend-item {
-  font-size: 0.6rem;
+  font-size: 0.7em;
   margin-bottom: 10px;
 }
-/*
-.line-chart-container span {
-  text-align: center;
-  font-size: 14px;
-  color: #050505;
-  align-self: center;
-} */
+
+.recharts-surface {
+   display: inline-block !important;
+  margin-right: 6px !important;
+  vertical-align: baseline !important;
+}
 
 .line-bar-container {
   display: flex;
-  column-gap: 0.7em;
+  column-gap: 1%;
 }

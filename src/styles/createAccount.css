@@ -32,6 +32,21 @@
   width: 80%;
 }
 
+.onboardingGraph {
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .onboardingTextContainer {
   display: flex;
   flex-direction: column;
@@ -70,14 +85,16 @@
   width: 90%;
 }
 
-.verifyInputContainer {
-  margin-bottom: 50px;
+.input-error-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 40px;
 }
 
 .verifyInput {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
 }
 
 .verifyInput input {
@@ -92,6 +109,18 @@
 
 .verifyInput input:focus {
   outline: 1.5px solid #007e99;
+}
+
+.invalid-token,
+.registered-user {
+  font-size: 18px;
+  color: red;
+}
+
+.registered-user a {
+font-size: 18px;
+  color: red;
+  font-weight: bold;
 }
 
 .resend_OTP {
@@ -213,9 +242,9 @@
 }
 
 .toLoginPageBtn {
- text-align: center;
+  text-align: center;
   text-decoration: none;
-  color: #55666A;
+  color: #55666a;
   font-weight: 500;
   cursor: pointer;
   font-size: 19px;
@@ -247,7 +276,7 @@
 .no_OTP {
   text-align: center;
   text-decoration: none;
-  color: #55666A;
+  color: #55666a;
   font-weight: 500;
   cursor: pointer;
   font-size: 19px;

@@ -16,35 +16,35 @@ const Notification = ({ items }) => {
                 <thead>
                     <tr>
                         <td className='first-th'></td>
-                        <td className='sec-th'>in-app Notification</td>
+                        <td className='sec-th'>In-app Notification</td>
                         <td className='sec-th'>Email Notification</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>New Applications</td>
-                        <td className='ts-style'>
+                        <td className='tab-data'>New Applications</td>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
-                        <td className='ts-style'>
-                            <ToggleSwitch />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Loan repayment</td>
-                        <td className='ts-style'>
-                            <ToggleSwitch />
-                        </td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
                     </tr>
                     <tr>
-                        <td>Loan due dates</td>
-                        <td className='ts-style'>
+                        <td className='tab-data'>Loan repayment</td>
+                        <td className='ts-style tab-data'>
                             <ToggleSwitch />
                         </td>
-                        <td className='ts-style'>
+                        <td className='ts-style tab-data'>
+                            <ToggleSwitch />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className='tab-data pad-bottom'>Loan due dates</td>
+                        <td className='ts-style tab-data pad-bottom'>
+                            <ToggleSwitch />
+                        </td>
+                        <td className='ts-style tab-data pad-bottom'>
                             <ToggleSwitch />
                         </td>
                     </tr>

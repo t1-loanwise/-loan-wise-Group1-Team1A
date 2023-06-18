@@ -47,7 +47,7 @@ const SetSecurityQuestion = () => {
                     type="text"
                     name="question1"
                     placeholder="Enter answer"
-                    {...register("answer1", { required: true })}
+                    {...register("answer1", { required: "true" })}
                   />
                 </div>
               </div>
@@ -65,7 +65,7 @@ const SetSecurityQuestion = () => {
                     type="text"
                     name="question2"
                     placeholder="Enter answer"
-                    {...register("answer2", { required: true })}
+                    {...register("answer2", { required: "true" })}
                   />
                 </div>
               </div>

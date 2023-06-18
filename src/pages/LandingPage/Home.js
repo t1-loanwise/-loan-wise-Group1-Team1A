@@ -10,9 +10,11 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <HomeSections/>
-       <UseLoanwise/>
-      <Newsletter/>
+      <div className="home_container">
+        <HomeSections />
+        <UseLoanwise />
+      </div>
+      <Newsletter />
       <Footer />
     </>
   );

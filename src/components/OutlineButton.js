@@ -1,9 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const OutlineButton = (props) => {
   return (
-    <button className='outline-button'>{props.label} {props.icon}</button>
-  )
+    <Link to="/register">
+      <button className="outline-button">
+        {props.label} {props.icon}
+      </button>
+    </Link>
+  );
 }
 
 export default OutlineButton

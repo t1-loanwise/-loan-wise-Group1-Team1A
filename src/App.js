@@ -9,7 +9,6 @@ import VerifyCode from "./pages/AuthenticationPage/VerifyCode";
 import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
 import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
-import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import SettingAndPrivacy from "./components/SettingAndPrivacy";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
@@ -40,6 +39,7 @@ import PredictiveModel from "./components/PredictiveModel";
 import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
+import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 
 const App = () => {
   return (
@@ -54,10 +54,8 @@ const App = () => {
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
+        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>
         <Route path="/newPassword" element={<CreateNewPassword />} />
-        <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
 

@@ -43,14 +43,17 @@ const LoanTabble = ({searchTerm}) => {
 
         
           {displayedData.map((data, index) => (
-            <div key={index} className="trs">
-              <div className="tds">{data.customer_id}</div>
-              <div className="tds">{data.name}</div>
-              <div className="tds">{data.Category}</div>
-              <div className="tds"> N{data.Requested}</div>
-              <div className="tds">{data["Due date"]}</div>
-              <div className={data["Loan status"]}><button>{data["Loan status"]}</button></div>
-            </div>
+              <Link className="table-link" to="/details">            
+                <div key={index} className="trs">
+                <div className="tds">{data.customer_id}</div>
+                <div className="tds">{data.name}</div>
+                <div className="tds">{data.Category}</div>
+                <div className="tds"> N{data.Requested}</div>
+                <div className="tds">{data["Due date"]}</div>
+                <div className={data["Loan status"]}><button>{data["Loan status"]}</button></div>
+              </div>
+            </Link>
+
           ))}
       
       </div>

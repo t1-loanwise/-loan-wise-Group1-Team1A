@@ -29,10 +29,13 @@ const Login = () => {
   const onSubmit = async () => {
     try {
       setSubmitting(true);
-      const response = await axios.post("localhost:4000/api/user", {
-        email: getValues("email"),
-        password: getValues("password"),
-      });
+      const response = await axios.post(
+        "https://loanwise.onrender.com/api/login",
+        {
+          email: getValues("email"),
+          password: getValues("password"),
+        }
+      );
       console.log(response.data);
       setGetData(response.data);
       setError(null);

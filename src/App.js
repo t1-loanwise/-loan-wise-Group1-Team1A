@@ -40,6 +40,8 @@ import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
+import LoanDetails from "./components/LoanDetails";
 
 const App = () => {
   return (
@@ -54,13 +56,16 @@ const App = () => {
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
 
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/borrower" element={<BorrowersDetails />} >
+            <Route path="/borrower/loanDetails" element={<LoanDetails/>}/>
+          </Route>
           <Route path="/portfolio" element={<Portfolio />}>
             <Route element={<NewPortfolioPages />}>
               <Route path="analysisResult/overview" element={<Overview />} />

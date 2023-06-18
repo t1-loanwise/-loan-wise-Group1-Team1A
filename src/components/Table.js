@@ -34,21 +34,31 @@ const Table = () => {
               .map((data, index) => (
                 <tr key={index} className="trs">
                   <td className="tds">
-                    <Link className="table-link">{data.id}</Link>
+                    <Link to="details" className="table-link">
+                      {data.id}
+                    </Link>
                   </td>
                   <td className="tds">
-                    <Link className="table-link">{data.Name}</Link>
+                    <Link to="details" className="table-link">
+                      {data.Name}
+                    </Link>
                   </td>
                   <td className="tds">
-                    <Link className="table-link">{data.Category}</Link>
+                    <Link to="details" className="table-link">
+                      {data.Category}
+                    </Link>
                   </td>
                   <td className="tds">
-                    <Link className="table-link">{data.Amount}</Link>
+                    <Link to="details" className="table-link">
+                      {data.Amount}
+                    </Link>
                   </td>
                   <td className="tds">
-                    <Link className="table-link">{data.DueDate}</Link>
+                    <Link to="details" className="table-link">
+                      {data.DueDate}
+                    </Link>
                   </td>
-                  <td className={data.Status}>
+                  <td to="details" className={data.Status}>
                     <button>{data.Status}</button>
                   </td>
                 </tr>

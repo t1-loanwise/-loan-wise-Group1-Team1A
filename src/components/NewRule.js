@@ -10,6 +10,10 @@ const NewRule = (props) => {
   const [showPopup, setShowPopup] = useState(true);
 
   const [inputValue, setInputValue] = useState("");
+  const [variable, setVariable] = useState("");
+  const [operator, setOperator] = useState("");
+  const [value2, setValue2] = useState("");
+  // const [checked, setChecked] = useState("");
   const [inputError, setInputError] = useState(null);
 
   const handleInputChange = (e) => {
@@ -23,21 +27,25 @@ const NewRule = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.length >= 5) {
+    if (inputValue.length < 5) {
       setInputError("This field is required");
     } else {
-      setInputError("This field is required");
+      setInputError("");
     }
   };
   const handleClick = () => {
     // console.log(`The new task is ${newTask}`)
-    props.handleClick(inputValue);
+    props.handleClick(inputValue, variable, operator, value2);
     setInputValue("");
+    setOperator("");
+    setVariable("");
+    setValue2("");
     setShowPopup(false);
-    // if (inputValue.length >= 5) {
-    // } else {
-    //   setInputError("This field is required");
-    // }
+    if (inputValue.length < 5) {
+      setInputError("This field is required");
+    } else {
+      setInputError("");
+    }
   };
 
   const [active, setActive] = useState(false);
@@ -68,7 +76,7 @@ const NewRule = (props) => {
             </div>
 
             <div className="select-option">
-              <label>Model Title</label>
+              <label htmlFor="main-input">Model Title</label>
               <input
                 id="main-input"
                 className="model-input"
@@ -77,7 +85,6 @@ const NewRule = (props) => {
                 value={inputValue}
                 onChange={handleInputChange}
               />
-
               {inputError && <p className="errorMsg">{inputError}</p>}
             </div>
             <div>
@@ -85,9 +92,13 @@ const NewRule = (props) => {
                 <div className="rule-options">
                   <div className="main-container">
                     <div className="variable-container">
-                      <label>Variable</label>
+                      <label htmlFor="variable">Variable</label>
                       <div className="select">
-                        <select>
+                        <select
+                          id="variable"
+                          value={variable}
+                          onChange={(e) => setVariable(e.target.value)}
+                        >
                           <option value="">Select</option>
                           <option value="1">Bank Statement Name Match</option>
                           <option value="2">Average balance</option>
@@ -111,7 +122,7 @@ const NewRule = (props) => {
                         </select>
                       </div>
                       <div>
-                        <select>
+                        <select name="variable">
                           <option value="">Select</option>
                           <option value="1">Bank Statement name match</option>
                           <option value="2">Average balance</option>
@@ -136,9 +147,13 @@ const NewRule = (props) => {
                       </div>
                     </div>
                     <div className="Operator-container">
-                      <label>Operator</label>
+                      <label htmlFor="operator">Operator</label>
                       <div className="select">
-                        <select>
+                        <select
+                          id="operator"
+                          value={operator}
+                          onChange={(e) => setOperator(e.target.value)}
+                        >
                           <option value="">Select</option>
                           <option value="1">Less than</option>
                           <option value="2">Less than or equal to</option>
@@ -159,9 +174,16 @@ const NewRule = (props) => {
                       </select>
                     </div>
                     <div className="value">
-                      <label>Value</label>
+                      <label htmlFor="value2">Value</label>
                       <div>
-                        <input type="text" placeholder="input" />
+                        <input
+                          type="text"
+                          placeholder="input"
+                          id="value2"
+                          name="value2"
+                          value={value2}
+                          onChange={(e) => setValue2(e.target.value)}
+                        />
                         <div className="delete-btn-container">
                           <div className="delete">
                             <p>Delete</p>
@@ -177,7 +199,7 @@ const NewRule = (props) => {
                         </div>
                       </div>
                       <div>
-                        <input type="text" placeholder="input" />
+                        <input type="text" placeholder="input" name="value" />
                         <div className="delete-btn-container">
                           <div className="delete">
                             <p>Delete</p>
@@ -212,7 +234,7 @@ const NewRule = (props) => {
                   className="conditionsMet"
                   type="radio"
                   name="condition"
-                  id="condition"
+                  id="condition1"
                 />
                 All conditions must be met
               </div>
@@ -221,7 +243,7 @@ const NewRule = (props) => {
                   className="conditionsMet"
                   type="radio"
                   name="condition"
-                  id="condition"
+                  id="condition2"
                 />
                 Any of the conditions can be met
               </div>

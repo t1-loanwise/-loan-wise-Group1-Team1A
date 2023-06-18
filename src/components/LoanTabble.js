@@ -4,6 +4,7 @@ import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import userss from "./TableDaata";
 import { Link } from "react-router-dom";
+import LoanWiseData from "./loanWiseData.json"
 
 const LoanTabble = ({searchTerm}) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +15,7 @@ const LoanTabble = ({searchTerm}) => {
     setCurrentPage(pageNumber);
   };
 
-  const filteredData = userss.filter((data) => {
+  const filteredData = LoanWiseData.filter((data) => {
     const searchData = Object.values(data).join(" ").toLowerCase();
     return searchData.includes(searchTerm.toLowerCase());
   });
@@ -28,43 +29,31 @@ const LoanTabble = ({searchTerm}) => {
 
   return (
     <>
-      <table className="taable">
-        <thead>
-          <tr className="trs">
-            <th className="ths">ID</th>
-            <th className="ths">Name</th>
-            <th className="ths">Category</th>
-            <th className="ths">Amount</th>
-            <th className="ths">Due Date</th>
-            <th className="ths">Status</th>
-          </tr>
-        </thead>
+      <div className="taable">
 
-        <tbody>
+          <div className="trs trs1">
+            <div className="ths">ID</div>
+            <div className="ths">Name</div>
+            <div className="ths">Category</div>
+            <div className="ths">Amount</div>
+            <div className="ths">Due Date</div>
+            <div className="ths">Status</div>
+          </div>
+        
+
+        
           {displayedData.map((data, index) => (
-            <tr key={index} className="trs">
-              <td className="tds">
-                <Link className="table-link">{data.ID}</Link>
-              </td>
-              <td className="tds">
-                <Link className="table-link">{data.Name}</Link>
-              </td>
-              <td className="tds">
-                <Link className="table-link">{data.Category}</Link>
-              </td>
-              <td className="tds">
-                <Link className="table-link">{data.Amount}</Link>
-              </td>
-              <td className="tds">
-                <Link className="table-link">{data.DueDate}</Link>
-              </td>
-              <td className={data.Status}>
-                <button>{data.Status}</button>
-              </td>
-            </tr>
+            <div key={index} className="trs">
+              <div className="tds">{data.customer_id}</div>
+              <div className="tds">{data.name}</div>
+              <div className="tds">{data.Category}</div>
+              <div className="tds"> N{data.Requested}</div>
+              <div className="tds">{data["Due date"]}</div>
+              <div className={data["Loan status"]}><button>{data["Loan status"]}</button></div>
+            </div>
           ))}
-        </tbody>
-      </table>
+      
+      </div>
 
       <div className="pagination-container">
         <div className="pagiNumbs">
@@ -79,7 +68,7 @@ const LoanTabble = ({searchTerm}) => {
           {currentPage > 5 && <p>...</p>}
 
           {Array.from(
-            { length: Math.ceil(userss.length / itemsPerPage) },
+            { length: Math.ceil(LoanWiseData.length / itemsPerPage) },
             (_, i) => {
               if (i + 1 > currentPage + 2) return null;
               if (i + 1 >= currentPage - 2) {
@@ -97,18 +86,18 @@ const LoanTabble = ({searchTerm}) => {
             }
           )}
 
-          {currentPage < Math.ceil(userss.length / itemsPerPage) - 4 && (
+          {currentPage < Math.ceil(LoanWiseData.length / itemsPerPage) - 4 && (
             <p>...</p>
           )}
 
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === Math.ceil(userss.length / itemsPerPage)}
+            disabled={currentPage === Math.ceil(LoanWiseData.length / itemsPerPage)}
           >
             <img
               style={{
                 opacity:
-                  currentPage === Math.ceil(userss.length / itemsPerPage)
+                  currentPage === Math.ceil(LoanWiseData.length / itemsPerPage)
                     ? 0.5
                     : 1,
               }}

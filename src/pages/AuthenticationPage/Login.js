@@ -8,35 +8,41 @@ import show from "../../assets/show.png";
 import hide from "../../assets/hide.png";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import axios from "axios";
+import { async } from "q";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { error },
+    formState: { errors },
+    getValues,
   } = useForm();
   const navigate = useNavigate();
-
-  const [errors, setError] = useState(false);
+  const [getData, setGetData] = useState(null);
+  const [error, setError] = useState(null);
   const [Submitting, setSubmitting] = useState(false);
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
   };
-
-  // const onSubmit = async() => {
-  //   try{
-  //     setSubmitting(true);
-  //     const response = await axios.post(
-  //       ""
-
-  //     )
-
-  //   }
-
-  // };
-
+  const onSubmit = async () => {
+    try {
+      setSubmitting(true);
+      const response = await axios.post("localhost:4000/api/user", {
+        email: getValues("email"),
+        password: getValues("password"),
+      });
+      console.log(response.data);
+      setGetData(response.data);
+      setError(null);
+      navigate("/dashboard");
+    } catch (errors) {
+      console.log(errors);
+      setError(true);
+      setSubmitting(false);
+    }
+  };
   return (
     <div className="loginParent-container">
       <Onboarding />

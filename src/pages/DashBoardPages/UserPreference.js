@@ -5,7 +5,7 @@ function UserPreference() {
   return (
     <div className="user-p-box">
       <Link className='title' to="/userPreference">
-        <h3 id="user-p-link">User Preference</h3>
+        <h3 id="user-p-link">User Preferences</h3>
       </Link>
     </div>
   );

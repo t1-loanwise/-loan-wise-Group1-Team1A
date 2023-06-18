@@ -647,8 +647,8 @@ input:checked + .slider:before {
   font-size: 20px;
 }
 #back-btn {
+  border: transparent;
   background-color: transparent;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   cursor: pointer;

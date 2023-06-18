@@ -24,7 +24,7 @@ const PortfolioOverviewTable = () => {
           </button>
           <ul className={`dropdown-menu ${dropMenu ? "show-dropdown" : ""}`}>
             <li>
-              <NavLink activeClassName="active" to="/portfolio/personalDetails">
+              <NavLink activeClassName="active" to="/portfolio/newPortfolio">
                 <p className="dropdown-nav">Personal</p>
               </NavLink>
             </li>

@@ -1,7 +1,16 @@
 .input-form {
-  width: 60%;
-  margin: 160px auto;
+  width: 50%;
+  margin: 40px auto;
   background: #e6f2f5;
+}
+.new_portfolio_btn {
+  width: 25%;
+  margin: 20px 40px 20px;
+  color: #e6f2f5;
+  background: #007e99;
+  border: #007e99;
+  padding: 8px;
+  font-size: 16px;
 }
 .input_title {
   padding: 8px;
@@ -16,6 +25,10 @@
   width: 90%;
   margin: 0 auto;
   padding: 16px 0;
+}
+.report_container {
+  width: 50%;
+  margin: 40px auto;
 }
 .form_btn {
   padding: 8px 24px;
@@ -41,8 +54,8 @@
   justify-content: space-between;
 }
 .progress_bar {
-  margin: 24px auto;
-  width: 70%;
+  margin: 150px auto 0;
+  width: 55%;
   height: 10px;
   border-radius: 50px;
   border: 1px solid #e6f2f5;

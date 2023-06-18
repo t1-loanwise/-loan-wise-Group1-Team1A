@@ -66,7 +66,7 @@ const PredictiveContent = () => {
             Set new rule
           </button>
           <PopUp trigger={newRuleButtonPop} setTrigger={setNewRuleButtonpop}>
-            <NewRule />
+            <NewRule newRule={NewRule} />
           </PopUp>
         </div>
       </div>

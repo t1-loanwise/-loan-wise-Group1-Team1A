@@ -7,24 +7,45 @@ import Onboarding from "../../components/Onboarding";
 import show from "../../assets/show.png";
 import hide from "../../assets/hide.png";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
+import axios from "axios";
+import { async } from "q";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
   } = useForm();
   const navigate = useNavigate();
+  const [getData, setGetData] = useState(null);
+  const [error, setError] = useState(null);
+  const [Submitting, setSubmitting] = useState(false);
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPswd(showPswd ? false : true);
   };
-
-  const onSubmit = (data) => {
-    navigate("/dashboard");
+  const onSubmit = async () => {
+    try {
+      setSubmitting(true);
+      const response = await axios.post(
+        "https://loanwise.onrender.com/api/login",
+        {
+          email: getValues("email"),
+          password: getValues("password"),
+        }
+      );
+      console.log(response.data);
+      setGetData(response.data);
+      setError(null);
+      navigate("/dashboard");
+    } catch (errors) {
+      console.log(errors);
+      setError(true);
+      setSubmitting(false);
+    }
   };
-
   return (
     <div className="loginParent-container">
       <Onboarding />

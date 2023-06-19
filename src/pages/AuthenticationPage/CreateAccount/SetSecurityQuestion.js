@@ -17,22 +17,22 @@ const SetSecurityQuestion = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const onSubmit = async () => {
-    const response = await axios.put(
-      `https://loanwise.onrender.com/api/648d4b1d86390176ebdd3f08/security-question`,
-      {
-        securityQuestions: [
-          {
-            question: getValues("question1"),
-            answer: getValues("answer1"),
-          },
-          {
-            question: getValues("question2"),
-            answer: getValues("answer2"),
-          },
-        ],
-      }
-    );
     try {
+      const response = await axios.put(
+        `https://loanwise.onrender.com/api/648d4b1d86390176ebdd3f08/security-question`,
+        {
+          securityQuestions: [
+            {
+              question: getValues("question1"),
+              answer: getValues("answer1"),
+            },
+            {
+              question: getValues("question2"),
+              answer: getValues("answer2"),
+            },
+          ],
+        }
+      );
       setQuestions(response.data);
       setError(false);
       console.log(response.data);

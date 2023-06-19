@@ -1,12 +1,16 @@
 import React from 'react'
 import loanWiseData from "./loanWiseData.json"
+import { useParams } from 'react-router-dom';
 
 const LoanDetails = () => {
+  const {customerName }= useParams();
+
+  const customerLoanDetails = loanWiseData.filter((data) => data.name === customerName);
   return (
     <div>
-        {loanWiseData.map((data)=> {
+        {customerLoanDetails.map((data)=> {
             return (
-                <div>
+                <div key={data.name}>
                   <div>
                     <span>Requested Loan Amount:</span>
                     <span>{data.Requested}</span>

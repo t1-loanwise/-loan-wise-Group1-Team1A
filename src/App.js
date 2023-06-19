@@ -42,6 +42,8 @@ import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
 import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
 import LoanDetails from "./components/LoanDetails";
+import LoanAnalysis from "./components/LoanAnalysis";
+import LoanHistory from "./components/LoanHistory";
 
 const App = () => {
   return (
@@ -63,8 +65,11 @@ const App = () => {
 
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/borrower" element={<BorrowersDetails />} >
-            <Route path="/borrower/loanDetails" element={<LoanDetails/>}/>
+          <Route path="/borrower" element={<BorrowersDetails />}>
+            <Route index element={<LoanDetails />} />
+            <Route path="details/:customerName" element={<LoanDetails />} />
+            <Route path="analysis/:customerName" element={<LoanAnalysis />} />
+            <Route path="history/:customerName" element={<LoanHistory />} />
           </Route>
           <Route path="/portfolio" element={<Portfolio />}>
             <Route element={<NewPortfolioPages />}>

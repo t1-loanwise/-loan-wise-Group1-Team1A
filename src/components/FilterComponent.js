@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import filtericonn from "../assets/filtericon.svg"
 import "../styles/FilterComponent.css"
 
 const FilterComponent = () => {
+
+  const [showOptions, setShowOptions] = useState(false);
+
+  const toggleOptions = () => {
+    setShowOptions(!showOptions)
+  }
   return (
     <>
-      <button className="filterArea">
+      <button className="filterArea" onClick={toggleOptions}>
         <img src={filtericonn} alt="filter icon" />
         <span>Filter</span>
-        {/* <select>
-          <option>Default Loans</option>
-          <option>Active Loans</option>
-          <option>Pending Loans</option>
-          <option>Date</option>
-        </select> */}
       </button>
+
+      {showOptions && (
+        <div className="filter_options">
+          <span>Default Loans</span>
+          <span>Active Loans</span>
+          <span>Pending Loans</span>
+          <span>Date</span>
+        </div>
+      )}
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
-import userss from "./TableDaata";
 import { Link } from "react-router-dom";
 import LoanWiseData from "./loanWiseData.json"
 

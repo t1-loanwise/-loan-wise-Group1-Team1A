@@ -544,7 +544,7 @@ input:checked + .slider:before {
 
 /* User Preference Styling */
 .appearance_settings {
-  margin: 24px 0;
+  margin-bottom: 24px;
   /* padding: 12px; */
   font-weight: 600;
 }

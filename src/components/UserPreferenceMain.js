@@ -11,12 +11,6 @@ const UserPreferenceMain = () => {
  }
   return (
     <div className=" rightContent">
-      <div className='back-btn-container'>
-         <button id="back-btn" onClick={handleBackClick}>
-        <img src={back} alt='back-button'/>
-        <p>Back</p>
-      </button>
-      </div>
       <UserPreferenceSection />
     </div>
   );

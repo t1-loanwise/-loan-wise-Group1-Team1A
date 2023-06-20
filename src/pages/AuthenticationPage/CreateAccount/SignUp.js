@@ -40,7 +40,6 @@ const SignUp = () => {
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
   const [formData, setFormData] = useState(null)
   const [error, setError] = useState(false)
-  const [loading, setLoading] =useState(false)
 
 
 
@@ -53,7 +52,6 @@ const SignUp = () => {
   };
   const onSubmit = async() => {
    try {
-    setLoading(true)
     const response = await axios.post(
       "https://loanwise.onrender.com/api/signup",
       {
@@ -64,14 +62,12 @@ const SignUp = () => {
     );
     console.log(response.data);
     setFormData(response.data);
-    setLoading(false);
     setError(false);
     localStorage.setItem("email", getValues("email"));
     navigate("/verifyRegistration");
    } catch (error) {
     console.log(error);
     setError(true);
-    setLoading(false)
     reset()
    }
   };
@@ -96,7 +92,7 @@ const SignUp = () => {
                 User already registered. Please <Link to="/login">sign in</Link>.
               </span>
             )}
-            {loading && <span>Please Try again.</span>}
+
             <div className="formInputContainer">
               <label htmlFor="name">Full name</label>
               <div className="inputDiv">

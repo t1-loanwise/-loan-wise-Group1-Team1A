@@ -34,9 +34,6 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import UserPreference from "./pages/DashBoardPages/UserPreference";
-import PredictiveModel from "./components/PredictiveModel";
-import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
@@ -64,12 +61,12 @@ const App = () => {
         <Route path="/success" element={<Successfulpage />} />
 
         <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/borrower" element={<BorrowersDetails />}>
+          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/customer/:customerName" element={<BorrowersDetails />}>
             <Route index element={<LoanDetails />} />
-            <Route path="details/:customerName" element={<LoanDetails />} />
-            <Route path="analysis/:customerName" element={<LoanAnalysis />} />
-            <Route path="history/:customerName" element={<LoanHistory />} />
+            <Route path="loan-details" element={<LoanDetails />} />
+            <Route path="loan-analysis" element={<LoanAnalysis />} />
+            <Route path="loan-history" element={<LoanHistory />} />
           </Route>
           <Route path="/portfolio" element={<Portfolio />}>
             <Route element={<NewPortfolioPages />}>

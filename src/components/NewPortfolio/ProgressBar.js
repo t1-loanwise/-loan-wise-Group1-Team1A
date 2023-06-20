@@ -2,8 +2,8 @@ import { useState } from "react";
 import "../../styles/NewPortfolio.css";
 
 function ProgressBar({ currentPage, activeStep }) {
-  const totalSteps = 3;
-  const progressBarValue = ((currentPage + 1) / totalSteps) * 100;
+  const totalSteps = 2;
+  const progressBarValue = (currentPage / totalSteps) * 100;
 
   return (
     <>

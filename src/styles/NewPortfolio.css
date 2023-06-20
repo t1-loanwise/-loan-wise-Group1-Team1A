@@ -63,21 +63,12 @@
   position: relative;
 }
 .filler {
-  /* margin: 24px auto; */
   width: 0;
   height: 10px;
   border-radius: 50px;
   border: 1px solid #e6f2f5;
   background: #007e99;
   position: absolute;
-  &.active1 {
-    width: 51%;
-    border: 1px solid #007e99;
-  }
-  &.active2 {
-    width: 100%;
-    border: 1px solid #007e99;
-  }
 }
 .progress_circle1,
 .progress_circle2,
@@ -93,7 +84,7 @@
   background: #007e99;
 }
 .progress_circle2 {
-  left: 50%;
+  left: 48%;
   border: 1px solid #e6f2f5;
   background: #e6f2f5;
 

@@ -7,9 +7,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  position: relative;
 }
 
 .rightContent {
-  margin-top: 100px;
+  margin-top: 15vh;
   padding: 40px 50px 40px 320px;
+  /* position: relative; */
 }

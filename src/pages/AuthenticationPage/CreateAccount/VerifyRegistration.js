@@ -66,7 +66,7 @@ const VerifyRegistration = () => {
     const isOtpFilled = otp.every((digit) => digit !== "");
     if (isOtpFilled) {
       const enteredOtp = otp.join("");
-      const email = localStorage.getItem("email")
+      const email = localStorage.getItem("email");
       try {
         setIsSubmitting(true);
         const response = await axios.post(
@@ -85,7 +85,7 @@ const VerifyRegistration = () => {
       } catch (error) {
         setError(true);
         setIsSubmitting(false);
-       setOtp(["","","",""])
+        setOtp(["", "", "", ""]);
       }
     }
   };

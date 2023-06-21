@@ -61,40 +61,21 @@ const App = () => {
         <Route path="/success" element={<Successfulpage />} />
 
         <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/customer/:customerName" element={<BorrowersDetails />}>
             <Route index element={<LoanDetails />} />
             <Route path="loan-details" element={<LoanDetails />} />
             <Route path="loan-analysis" element={<LoanAnalysis />} />
             <Route path="loan-history" element={<LoanHistory />} />
           </Route>
-          <Route path="/portfolio" element={<Portfolio />}>
-            <Route element={<NewPortfolioPages />}>
-              <Route path="analysisResult/overview" element={<Overview />} />
-              <Route path="analysisResult/cashFlow" element={<CashFlow />} />
-              <Route path="analysisResult/income" element={<Income />} />
-              <Route path="analysisResult/spend" element={<Spend />} />
-              <Route
-                path="analysisResult/behavioral"
-                element={<Behavioral />}
-              />
-              <Route
-                path="analysisResult/transactionPattern"
-                element={<TransactionPattern />}
-              />
-            </Route>
-          </Route>
           <Route
-            path="/portfolio/personalDetails"
-            element={<PersonalDetails />}
+            path="/portfolio/newPortfolio"
+            element={<NewPortfolioPages />}
           />
           <Route
             path="/portfolio/businessDetails"
             element={<BusinessDetails />}
-          />
-          <Route
-            path="/portfolio/personalStatement"
-            element={<PersonalStatementAnalysis />}
           />
           <Route
             path="/portfolio/businessStatement"

@@ -6,21 +6,27 @@
     border: 2px solid #CCE5EB;
     padding: 0 2rem;
     font-weight: 600;
-    position: relative;
+    /* position: relative; */
     width: max-content;
 }
   
 .filter_options {
+    width: max-content;
+    gap: 0.8em;
     position: absolute;
-    top: calc(100% - 57.5rem);
-    right: 30rem;
+    right: 33em;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #E6F2F5;
     border: 1px solid #ccc;
     padding: 10px;
-    z-index: 2;
-    width: max-content;
-    transform: translateX(-50%);
+    /* z-index: 2; */
+    /* transform: translateX(-50%); */
   }
+
+.filter_options span {
+    color: #007E99;
+    font-weight: bold;
+    gap: 0.8em;
+}
   

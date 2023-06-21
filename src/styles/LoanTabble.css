@@ -34,7 +34,9 @@
 
 .Active,
 .Completed,
-.Defaulted {
+.Defaulted,
+.Declined,
+.Approved {
   display: flex;
   align-items: center;
 }

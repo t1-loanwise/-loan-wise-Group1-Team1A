@@ -67,6 +67,10 @@
     width: 50%;
 
   }
+  .customerID input{
+    border: none;
+    outline: none;
+  }
   .searchIcon{
     width: 15px;
     height: 15px;

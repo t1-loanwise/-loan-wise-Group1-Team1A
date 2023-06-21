@@ -1,27 +1,52 @@
-import React, { useState } from "react";
-import filtericonn from "../assets/filtericon.svg"
-import "../styles/FilterComponent.css"
+import React, { useState, useEffect, useRef } from "react";
+import filtericonn from "../assets/filtericon.svg";
+import "../styles/FilterComponent.css";
 
-const FilterComponent = () => {
-
+const FilterComponent = ({onFilterChange}) => {
   const [showOptions, setShowOptions] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Filter")
+  const filterRef = useRef(null);
 
   const toggleOptions = () => {
-    setShowOptions(!showOptions)
-  }
+    setShowOptions(!showOptions);
+  };
+
+  const handleFilterChange = (filterOption) => {
+    if (filterOption === "all") {
+      setSelectedOption("Filter");
+    } else {
+      setSelectedOption(filterOption)
+    }
+    setShowOptions(false);
+    onFilterChange(filterOption);
+  };
+
+  const handleClickOutside = (event) => {
+    if (filterRef.current && !filterRef.current.contains(event.target)) {
+      setShowOptions(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <button className="filterArea" onClick={toggleOptions}>
+      <button className="filterArea" onClick={toggleOptions} ref={filterRef}>
         <img src={filtericonn} alt="filter icon" />
-        <span>Filter</span>
+        <span>{selectedOption}</span>
       </button>
 
       {showOptions && (
         <div className="filter_options">
-          <span>Default Loans</span>
-          <span>Active Loans</span>
-          <span>Pending Loans</span>
-          <span>Date</span>
+          <span className="spann" onClick={() => handleFilterChange("default")}>Default Loans</span>
+          <span className="spann" onClick={() => handleFilterChange("active")}>Active Loans</span>
+          <span className="spann" onClick={() => handleFilterChange("completed")}>Completed Loans</span>
+          <span className="spann" onClick={() => handleFilterChange("all")}>All</span>
         </div>
       )}
     </>

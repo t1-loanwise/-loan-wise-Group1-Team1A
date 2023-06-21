@@ -11,7 +11,13 @@ import LoanTabble from "../../components/LoanTabble";
 
 const Dashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterOption, setFilterOption] = useState(null);
+
   const handleSearch = (searchTerm) => {setSearchTerm(searchTerm)};
+
+  const handleFilterChange = (filterOption) => {
+    setFilterOption(filterOption)
+  }
 
   return (
     <div>
@@ -24,14 +30,14 @@ const Dashboard = () => {
             <div className="searchFilterDate">
               <div className="searchFilter">
                 <SearchComponent onSearch={handleSearch} />
-                <FilterComponent />
+                <FilterComponent onFilterChange={handleFilterChange} />
               </div>
             </div>
           </div>
           <DashCardGraph />
           <LoanTableHeading />
           <hr />
-          <LoanTabble searchTerm={searchTerm} />
+          <LoanTabble searchTerm={searchTerm} filterOption={filterOption} />
         </div>
     </div>
   );

@@ -58,6 +58,7 @@ const SignUp = () => {
         name: getValues("name"),
         email: getValues("email"),
         password: getValues("password"),
+        confirmPassword: getValues("confirmPassword")
       }
     );
     console.log(response.data);

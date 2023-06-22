@@ -60,7 +60,7 @@ function NewBorrowerDetails() {
     <>
       <form>
         <div className="form_container">
-          <div>
+          <div className="details-form">
             <h2>Personal Information</h2>
             <div>
               <label className="input_title">Full Name</label>
@@ -115,19 +115,19 @@ function NewBorrowerDetails() {
                 </div>
                 <div className="errorMsg">{errors.phoneNumber?.message}</div>
               </div>
+            </div>
+            <div>
+              <label className="input_title">Alternative Phone Number</label>
               <div>
-                <label className="input_title">Alternative Phone Number</label>
-                <div>
-                  <input
-                    name="phone"
-                    type="phone"
-                    placeholder="Enter number"
-                    {...register("altPhoneNumber")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">{errors.altPhoneNumber?.message}</div>
+                <input
+                  name="phone"
+                  type="phone"
+                  placeholder="Enter number"
+                  {...register("altPhoneNumber")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.altPhoneNumber?.message}</div>
             </div>
             <div>
               <div>
@@ -143,19 +143,19 @@ function NewBorrowerDetails() {
                 </div>
                 <div className="errorMsg">{errors.dob?.message}</div>
               </div>
+            </div>
+            <div>
+              <label className="input_title">Bank Verification Number</label>
               <div>
-                <label className="input_title">Bank Verification Number</label>
-                <div>
-                  <input
-                    name="number"
-                    type="number"
-                    placeholder="Enter number"
-                    {...register("number")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">{errors.number?.message}</div>
+                <input
+                  name="number"
+                  type="number"
+                  placeholder="Enter number"
+                  {...register("number")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.number?.message}</div>
             </div>
           </div>
         </div>

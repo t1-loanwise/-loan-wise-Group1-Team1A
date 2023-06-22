@@ -7,17 +7,13 @@ const LoanDetails = () => {
 
   const customerLoanDetails = loanWiseData.filter((data) => data.name === customerName);
   return (
-    <div>
+    <div className="loan_container">
         {customerLoanDetails.map((data)=> {
             return (
               <div key={data.name} className="details-minus-image">
                 <div>
                   <span>Requested Loan Amount:</span>
                   <span>{"N" + data.Requested}</span>
-                </div>
-                <div>
-                  <span>Disbursed Loan Amount:</span>
-                  <span>{"N" + data.Disbursed}</span>
                 </div>
                 <div>
                   <span>Loan Term:</span>
@@ -38,18 +34,6 @@ const LoanDetails = () => {
                 <div>
                   <span>Open Credit Lines:</span>
                   <span>{data["No of Open Credit Lines"]}</span>
-                </div>
-                <div>
-                  <span>Loan Status:</span>
-                  <span>{data["Loan Status"]}</span>
-                </div>
-                <div>
-                  <span>Late Fee:</span>
-                  <span>{"N/A" + data["Late fee"]}</span>
-                </div>
-                <div>
-                  <span>Amount Refunded:</span>
-                  <span>{data.Refunded}</span>
                 </div>
               </div>
             );

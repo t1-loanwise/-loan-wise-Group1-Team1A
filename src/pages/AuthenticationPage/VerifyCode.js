@@ -5,6 +5,7 @@ import Logo from "../../components/Logo";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import { useNavigate } from "react-router-dom";
 import Onboarding from "../../components/Onboarding";
+import axios from "axios";
 
 const VerifyCode = () => {
   const [seconds, setSeconds] = useState(60);
@@ -13,6 +14,9 @@ const VerifyCode = () => {
 
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [token, setToken] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,13 +33,32 @@ const VerifyCode = () => {
     setSeconds(60);
   };
 
-  const routeHandler = () => {
+  const routeHandler = async (e) => {
+    e.preventDefault();
     const isAnyInputEmpty = inputStates.some((state) => state.digit === "");
+    const resetToken = inputStates.map((state) => state.digit).join("");
     if (isAnyInputEmpty) {
       setErrorMessage("Please fill all the boxes before proceeding");
       return;
-    } else navigate("/newPassword");
-    setErrorMessage("");
+    } else {
+      try {
+        setIsSubmitting(true)
+        const response = await axios.post(
+          `https://loanwise.onrender.com/api/recovery-account`,
+          {
+            email: localStorage.getItem("resetEmail"),
+            recoveryCode: resetToken,
+          }
+        );
+        setToken(response.data);
+        setIsSubmitting(false);
+        setError(false);
+        localStorage.setItem("resetToken", resetToken);
+        navigate("/newPassword");
+      } catch (error) {
+        setError(true);
+      }
+    }
   };
 
   return (
@@ -47,31 +70,40 @@ const VerifyCode = () => {
             <Logo />
           </div>
           <div className="verify_body_content">
-              <AuthenticationMainText
-                Title={"Verify Email Address"}
-                Body={
-                  "Please enter the verification code we sent to your registered email address @johndoe@gmail.com"
-                }
-              />
-            <div className="code-error-container">
-              <div className="code-digit-container">
-                {inputStates.map((state, ii) => {
-                  return (
-                    <input
-                      type="number"
-                      value={state.digit}
-                      className={inputClass}
-                      onChange={(e) => handleChange(e, ii)}
-                      onKeyDown={handleKeyDown}
-                    />
-                  );
-                })}
+            <AuthenticationMainText
+              Title={"Verify Email Address"}
+              Body={
+                "Please enter the verification code we sent to your registered email address @johndoe@gmail.com"
+              }
+            />
+            <form onSubmit={routeHandler}>
+              <div className="code-error-container">
+                {error && (
+                  <span className="invalid-token">Invalid Token !!!</span>
+                )}
+                <div className="code-digit-container">
+                  {inputStates.map((state, ii) => {
+                    return (
+                      <input
+                        type="number"
+                        value={state.digit}
+                        className={inputClass}
+                        onChange={(e) => handleChange(e, ii)}
+                        onKeyDown={handleKeyDown}
+                      />
+                    );
+                  })}
+                </div>
+                {errorMessage && <p className="errorMsg">{errorMessage}</p>}
               </div>
-              {errorMessage && <p className="errorMsg">{errorMessage}</p>}
-            </div>
-            <button onClick={routeHandler} className="verify_btn">
-              Verify
-            </button>
+              <button className="verify_btn">
+                {isSubmitting ? (
+                  <i className="fa fa-circle-o-notch fa-spin"></i>
+                ) : (
+                  "Verify"
+                )}
+              </button>
+            </form>
           </div>
           <p className="no_code">
             Didn’t get OTP?{" "}

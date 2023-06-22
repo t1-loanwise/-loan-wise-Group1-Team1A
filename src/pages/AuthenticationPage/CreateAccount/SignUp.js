@@ -65,6 +65,7 @@ const SignUp = () => {
     setFormData(response.data);
     setError(false);
     localStorage.setItem("email", getValues("email"));
+    localStorage.setItem("userName", getValues("name"));
     navigate("/verifyRegistration");
    } catch (error) {
     console.log(error);

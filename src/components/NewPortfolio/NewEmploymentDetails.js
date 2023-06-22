@@ -35,7 +35,7 @@ function NewEmploymentDetails() {
     <>
       <form>
         <div className="form_container">
-          <div>
+          <div className="details-form">
             <h2>Employment Information</h2>
             <div>
               <label className="input_title">Current Employer</label>
@@ -77,22 +77,19 @@ function NewEmploymentDetails() {
                 </div>
                 <div className="errorMsg">{errors.currentSalary?.message}</div>
               </div>
-
+            </div>
+            <div>
+              <label className="input_title">Total Years of Employment</label>
               <div>
-                <label className="input_title">Total Years of Employment</label>
-                <div>
-                  <input
-                    name="employmentLength"
-                    type="text"
-                    placeholder="Enter answer"
-                    {...register("employmentLength")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors.employmentLength?.message}
-                </div>
+                <input
+                  name="employmentLength"
+                  type="text"
+                  placeholder="Enter answer"
+                  {...register("employmentLength")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.employmentLength?.message}</div>
             </div>
             <div>
               <div>
@@ -108,22 +105,19 @@ function NewEmploymentDetails() {
                 </div>
                 <div className="errorMsg">{errors.currentSalary?.message}</div>
               </div>
-
+            </div>
+            <div>
+              <label className="input_title">No of Open Credit Lines</label>
               <div>
-                <label className="input_title">No of Open Credit Lines</label>
-                <div>
-                  <input
-                    name="employmentLength"
-                    type="text"
-                    placeholder="Enter answer"
-                    {...register("employmentLength")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors.employmentLength?.message}
-                </div>
+                <input
+                  name="employmentLength"
+                  type="text"
+                  placeholder="Enter answer"
+                  {...register("employmentLength")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.employmentLength?.message}</div>
             </div>
             <div>
               <div>
@@ -139,22 +133,19 @@ function NewEmploymentDetails() {
                 </div>
                 <div className="errorMsg">{errors.currentSalary?.message}</div>
               </div>
-
+            </div>
+            <div>
+              <label className="input_title">No of Mortgage Account</label>
               <div>
-                <label className="input_title">No of Mortgage Account</label>
-                <div>
-                  <input
-                    name="employmentLength"
-                    type="text"
-                    placeholder="Enter answer"
-                    {...register("employmentLength")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors.employmentLength?.message}
-                </div>
+                <input
+                  name="employmentLength"
+                  type="text"
+                  placeholder="Enter answer"
+                  {...register("employmentLength")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.employmentLength?.message}</div>
             </div>
             <h3>Loan Information</h3>
             <div>
@@ -184,19 +175,19 @@ function NewEmploymentDetails() {
                 </div>
                 <div className="errorMsg">{errors.loanPurpose?.message}</div>
               </div>
+            </div>
+            <div>
+              <label className="input_title">Requested Amount</label>
               <div>
-                <label className="input_title">Requested Amount</label>
-                <div>
-                  <input
-                    name="amount"
-                    type="number"
-                    placeholder="$0.00"
-                    {...register("amount")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">{errors.amount?.message}</div>
+                <input
+                  name="amount"
+                  type="number"
+                  placeholder="$0.00"
+                  {...register("amount")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.amount?.message}</div>
             </div>
             <div>
               <div>
@@ -212,19 +203,19 @@ function NewEmploymentDetails() {
                   <p className="errorMsg">{errors.loanCategory.message}</p>
                 )}
               </div>
+            </div>
+            <div>
+              <label className="input_title">Application Type</label>
               <div>
-                <label className="input_title">Application Type</label>
-                <div>
-                  <input
-                    name="interestRate"
-                    type="number"
-                    placeholder="$0.00"
-                    {...register("interestRate")}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">{errors.interestRate?.message}</div>
+                <input
+                  name="interestRate"
+                  type="number"
+                  placeholder="$0.00"
+                  {...register("interestRate")}
+                  className="input_field"
+                />
               </div>
+              <div className="errorMsg">{errors.interestRate?.message}</div>
             </div>
           </div>
         </div>

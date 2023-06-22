@@ -41,6 +41,7 @@ import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
 import LoanDetails from "./components/LoanDetails";
 import LoanAnalysis from "./components/LoanAnalysis";
 import LoanHistory from "./components/LoanHistory";
+import PerformanceAnalysis from "./pages/DashBoardPages/PerformanceAnalysis";
 
 const App = () => {
   return (
@@ -66,7 +67,6 @@ const App = () => {
           <Route path="/customer/:customerName" element={<BorrowersDetails />}>
             <Route index element={<LoanDetails />} />
             <Route path="loan-details" element={<LoanDetails />} />
-            <Route path="loan-analysis" element={<LoanAnalysis />} />
             <Route path="loan-history" element={<LoanHistory />} />
           </Route>
           <Route
@@ -81,6 +81,14 @@ const App = () => {
             path="/portfolio/businessStatement"
             element={<BusinessStatementAnalysis />}
           />
+          <Route
+            path="/prediction/:customerName"
+            element={<PerformanceAnalysis />}
+          >
+            <Route index element={<LoanDetails />} />
+            <Route path="loan-details" element={<LoanDetails />} />
+            <Route path="loan-analysis" element={<LoanAnalysis />} />
+          </Route>
           <Route path="/settings" element={<Settings />} />
           <Route path="/repayment" element={<Repayment />} />
           <Route path="/recovery" element={<Recovery />} />

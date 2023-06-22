@@ -165,7 +165,6 @@
 
 .details-history-analysis {
   background-color: #E6F2F5;
-  padding: 20px 30px 70px ;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -173,9 +172,16 @@
   height: 100%;
 }
 
+.loan_container {
+padding: 0px 30px 70px ;
+}
+
 .dha-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1em;
+  border-bottom: 1px solid #B0D7DF80;
+  padding: 15px 0;
 }
 
 .dha-links a {
@@ -187,8 +193,41 @@
 }
 
 .dha-links .active {
-  border-bottom: 2px solid #007e99;
+  border-bottom: 1.8px solid #007e99;
   color: #007E99;
+}
+
+.analysis-container {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 50px 30px;
+}
+
+.analysis-result {
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  text-align: center;
+}
+
+.analysis-result img {
+  width: 30%;
+}
+
+.analysis-result span {
+  font-size: 20px;
+}
+
+.analysis-result button {
+  width: fit-content;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 5px;
+  background: #007E99;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .history-border {

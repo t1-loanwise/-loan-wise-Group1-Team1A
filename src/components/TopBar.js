@@ -1,8 +1,8 @@
-import React from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import Logo from "../assets/logoWhite.svg";
 import bell from "../assets/bell.svg";
-import profile from "../assets/profile.svg";
+import profile from "../assets/user.png";
 import "../styles/dashNavigation.css";
 import back from "../assets/back arrow.svg";
 
@@ -13,9 +13,20 @@ const TopBar = () => {
     navigate(-1);
   };
 
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const storedUserName = localStorage.getItem("userName");
+    if (storedUserName) {
+      setUserName(storedUserName)
+    }
+  },[])
+
  const shouldDisplayBackLink =
    location.pathname.startsWith("/customer/") ||
-   location.pathname === "/userPreference";
+   location.pathname === "/userPreference" ||
+   location.pathname.startsWith("/prediction") ||
+   location.pathname.startsWith("/portfolio/") 
 
 
   return (
@@ -41,8 +52,8 @@ const TopBar = () => {
           <img src={profile} alt="profile" />
         </Link>
         <div className="user-details">
-          <Link className="user-name">Tosin Adepoju</Link>
-          <Link className="user-profession">Risk Analyst</Link>
+          <Link className="user-name">{userName}</Link>
+          <Link className="user-profession">Analyst</Link>
         </div>
       </div>
     </nav>

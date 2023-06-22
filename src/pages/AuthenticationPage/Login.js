@@ -14,7 +14,7 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     getValues,
   } = useForm();
   const navigate = useNavigate();
@@ -125,7 +125,11 @@ const Login = () => {
             </div>
             <div>
               <button type="submit" className="login-Btn">
-                Sign In
+                {isSubmitting ? (
+                  <i className="fa fa-circle-o-notch fa-spin"></i>
+                ) : (
+                  "Sign in"
+                )}
               </button>
             </div>
           </form>

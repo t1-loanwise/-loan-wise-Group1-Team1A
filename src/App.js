@@ -34,12 +34,13 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import UserPreference from "./pages/DashBoardPages/UserPreference";
-
-import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
+import LoanDetails from "./components/LoanDetails";
+import LoanAnalysis from "./components/LoanAnalysis";
+import LoanHistory from "./components/LoanHistory";
 
 const App = () => {
   return (
@@ -61,33 +62,20 @@ const App = () => {
 
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/portfolio" element={<Portfolio />}>
-            <Route element={<NewPortfolioPages />}>
-              <Route path="analysisResult/overview" element={<Overview />} />
-              <Route path="analysisResult/cashFlow" element={<CashFlow />} />
-              <Route path="analysisResult/income" element={<Income />} />
-              <Route path="analysisResult/spend" element={<Spend />} />
-              <Route
-                path="analysisResult/behavioral"
-                element={<Behavioral />}
-              />
-              <Route
-                path="analysisResult/transactionPattern"
-                element={<TransactionPattern />}
-              />
-            </Route>
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/customer/:customerName" element={<BorrowersDetails />}>
+            <Route index element={<LoanDetails />} />
+            <Route path="loan-details" element={<LoanDetails />} />
+            <Route path="loan-analysis" element={<LoanAnalysis />} />
+            <Route path="loan-history" element={<LoanHistory />} />
           </Route>
           <Route
-            path="/portfolio/personalDetails"
-            element={<PersonalDetails />}
+            path="/portfolio/newPortfolio"
+            element={<NewPortfolioPages />}
           />
           <Route
             path="/portfolio/businessDetails"
             element={<BusinessDetails />}
-          />
-          <Route
-            path="/portfolio/personalStatement"
-            element={<PersonalStatementAnalysis />}
           />
           <Route
             path="/portfolio/businessStatement"

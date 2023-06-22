@@ -33,7 +33,7 @@ function NewEmploymentDetails() {
   } = useForm(formOptions);
   return (
     <>
-      <form>
+      <form className="flex-form">
         <div className="form_container">
           <div className="details-form">
             <h2>Employment Information</h2>

@@ -50,7 +50,7 @@ function BusinessDetails() {
     navigate("/portfolio/businessStatement");
   };
   return (
-    <>
+    <div className="rightContent">
       <form className="input-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form_container">
           <div>
@@ -168,7 +168,7 @@ function BusinessDetails() {
           <button className="form_btn">Proceed</button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

@@ -11,8 +11,10 @@ function NewPortfolioPages() {
   const totalPages = 3; // Total number of pages
 
   function handleSubmit() {
-    setPage(page + 1);
-    setCurrentStep(currentStep + 1);
+    if (page < totalPages - 1) {
+      setPage(page + 1);
+      setCurrentStep(currentStep + 1);
+    }
   }
 
   const ShowNextPage = () => {

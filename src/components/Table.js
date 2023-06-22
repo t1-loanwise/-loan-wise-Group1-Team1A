@@ -86,7 +86,7 @@ const Table = () => {
         {currentItems.map((data) => (
           <Link
             className="table-link"
-            to={`/customer/${data.name}`}
+            to={`/prediction/${data.name}`}
             key={data.name}
           >
             <div className="trs">

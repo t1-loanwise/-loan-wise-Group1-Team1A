@@ -7,7 +7,7 @@ const LoanHistory = () => {
     const customerLoanHistory = loanWiseData.filter((data) => data.name === customerName);
 
   return (
-    <>
+    <div className="loan_container">
       {customerLoanHistory.map((data) => {
         return (
           <div key={data.name} className="details-minus-image loan-history">
@@ -62,7 +62,7 @@ const LoanHistory = () => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

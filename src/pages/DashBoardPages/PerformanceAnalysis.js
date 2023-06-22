@@ -1,23 +1,27 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import loanWiseData from "../../components/loanWiseData.json";
 import face from "../../assets/WireframeB.svg";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 
+const PerformanceAnalysis = () => {
+  const { customerName } = useParams();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === `/customer/${customerName}/loan-details`) {
+      console.log("Index element is active on page load");
+    }
+  }, [location, customerName]);
 
-const BorrowersDetails = () => {
-  const {customerName} = useParams();
-  const location = useLocation()
-   useEffect(() => {
-     if (location.pathname === `/customer/${customerName}/loan-details`) {
-       console.log("Index element is active on page load");
-     }
-   }, [location, customerName]);
+  const customerDetails = loanWiseData.filter(
+    (data) => data.name === customerName
+  );
 
-  const borrowersDetails = loanWiseData.filter((data) => data.name === customerName);
+//   const loanStatus = loanWiseData.filter((data) => data["Loan status 2"] === data["Loan status 2"])
+//   console.log(loanStatus);
   return (
     <div className="rightContent ">
       <div className="borrowers">
-        {borrowersDetails.map((data) => (
+        {customerDetails.map((data) => (
           <div key={data.name} className="borrowersDetailsContainer">
             <div className="borrowersDetails">
               <img src={face} alt="" />
@@ -55,18 +59,20 @@ const BorrowersDetails = () => {
             <div className="details-history-analysis">
               <div className="dha-links">
                 <NavLink
-                  to={`/customer/${data.name}/loan-details`}
+                  to={`/prediction/${data.name}/loan-details`}
                   activeClassName="active"
                   exact
                 >
                   Loan Details
                 </NavLink>
                 <NavLink
-                  to={`/customer/${data.name}/loan-history`}
+                  to={`/prediction/${data.name}/loan-analysis`}
                   activeClassName="active"
+                  exact
                 >
-                  Loan History
+                  Analysis Result
                 </NavLink>
+
               </div>
               <Outlet />
             </div>
@@ -77,4 +83,4 @@ const BorrowersDetails = () => {
   );
 };
 
-export default BorrowersDetails;
+export default PerformanceAnalysis;

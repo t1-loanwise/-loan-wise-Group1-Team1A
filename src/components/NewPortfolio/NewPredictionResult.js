@@ -1,7 +1,7 @@
 import React from "react";
 
 function NewPredictionResult() {
-  return <div>NewPredictionResult</div>;
+  return <div className="result-analysis">NewPredictionResult</div>;
 }
 
 export default NewPredictionResult;

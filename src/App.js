@@ -35,7 +35,7 @@ import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
 import UserPreference from "./pages/DashBoardPages/UserPreference";
-import PredictiveModel from "./components/PredictiveModel";
+
 import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
@@ -54,7 +54,7 @@ const App = () => {
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />

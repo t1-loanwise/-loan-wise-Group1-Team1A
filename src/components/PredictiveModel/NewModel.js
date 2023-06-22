@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ToggleSwitch from "./ToggleSwitch";
-import EditButton from "../assets/icons/edit.svg";
-import PopUp from "../components/PopUp";
+import ToggleSwitch from "../ToggleSwitch";
+import EditButton from "../../assets/icons/edit.svg";
 import ExitingRule from "./ExitingRule";
+import PopUp from "./PopUp";
+import ExitingRuleModal from "./ExitingRuleModal";
 
 const NewModel = (props) => {
   const [buttonPop, setButtonPopup] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
   const renderedModels = props.models.map((model, index) => {
     return (
@@ -17,6 +19,12 @@ const NewModel = (props) => {
             <button onClick={() => setButtonPopup(true)}>
               <img src={EditButton} alt="edit" />
             </button>
+            {/* {openModal && (
+              <ExitingRuleModal
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            )} */}
             <PopUp trigger={buttonPop} setTrigger={setButtonPopup}>
               <ExitingRule model={model} />
             </PopUp>

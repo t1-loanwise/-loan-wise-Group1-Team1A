@@ -7,11 +7,14 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  position: relative;
 }
 
 .rightContent {
   margin-top: 15vh;
   padding: 40px 50px 40px 320px;
-  /* position: relative; */
+}
+
+input[type = "password"] {
+  font: large Verdana;
+  font-weight: bolder;
 }

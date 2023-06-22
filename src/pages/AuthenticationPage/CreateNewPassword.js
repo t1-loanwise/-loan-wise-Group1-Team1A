@@ -1,27 +1,45 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Logo from "../../components/Logo";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
 import Onboarding from "../../components/Onboarding";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function CreateNewPassword() {
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
+    getValues,
   } = useForm();
   const password = useRef({});
   password.current = watch("password", "");
 
   const navigate = useNavigate();
-  const onSubmit = (password, confirmpassword) => {
-    navigate("/success");
-    console.log(password, confirmpassword);
-    reset();
+  const [passwordReset, setPasswordReset] = useState(null);
+  const [error, setError] = useState(false);
+  const onSubmit = async () => {
+    try {
+      const response = await axios.post(
+        `https://loanwise.onrender.com/api/reset-password`,
+        {
+          recoveryCode: localStorage.getItem("resetToken"),
+          newPassword: getValues("password"),
+          confirmPassword: getValues("confirmpassword"),
+        }
+      );
+      console.log(response.data);
+      setPasswordReset(response.data);
+      setError(false);
+      navigate("/success");
+    } catch (error) {
+      setError(true);
+      reset();
+    }
   };
 
   console.log({ ...register("password") });
@@ -33,11 +51,12 @@ function CreateNewPassword() {
           <Logo />
         </div>
         <div className="verify_body_content">
-            <AuthenticationMainText
-              Title={"Create New Password?"}
-              Body={"Please enter a password different from your old password"}
-            />
+          <AuthenticationMainText
+            Title={"Create New Password?"}
+            Body={"Please enter a password different from your old password"}
+          />
           <form onSubmit={handleSubmit(onSubmit)}>
+            {error && <span className="invalid-token">Network Error ! Please try again.</span>}
             <div className="form_control_container">
               <div className="form-control">
                 <label className="form-label" htmlFor="password">
@@ -88,7 +107,13 @@ function CreateNewPassword() {
               </div>
             </div>
 
-            <button className="verify_btn">Submit</button>
+            <button className="verify_btn">
+              {isSubmitting ? (
+                <i className="fa fa-circle-o-notch fa-spin"></i>
+              ) : (
+                "Submit"
+              )}
+            </button>
           </form>
         </div>
       </div>

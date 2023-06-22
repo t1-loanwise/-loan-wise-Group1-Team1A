@@ -35,7 +35,7 @@ const FilterComponent = ({onFilterChange}) => {
   }, []);
 
   return (
-    <>
+    <div className="filterContainer">
       <button className="filterArea" onClick={toggleOptions} ref={filterRef}>
         <img src={filtericonn} alt="filter icon" />
         <span>{selectedOption}</span>
@@ -43,13 +43,13 @@ const FilterComponent = ({onFilterChange}) => {
 
       {showOptions && (
         <div className="filter_options">
-          <span className="spann" onClick={() => handleFilterChange("default")}>Default Loans</span>
+          <span className="spann" onClick={() => handleFilterChange("default")}>Defaulted Loans</span>
           <span className="spann" onClick={() => handleFilterChange("active")}>Active Loans</span>
           <span className="spann" onClick={() => handleFilterChange("completed")}>Completed Loans</span>
           <span className="spann" onClick={() => handleFilterChange("all")}>All</span>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

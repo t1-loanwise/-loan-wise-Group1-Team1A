@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 import RuleOptions from "./RuleOptions";
-import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
-import "../styles/ExitingRules.css";
-import NewConditionBtn from "./NewConditionBtn";
+// import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
+import "../../styles/ExitingRules.css";
 
 const ExitingRule = ({ model, onUpdate }) => {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const [editedModel, setEditedModel] = useState(model.name);
   const handleUpdate = () => {
     onUpdate(model.id, editedModel);
   };
-  const newCondition = () => {
-    if (active == false) {
-      setActive(true);
-    } else {
-      setActive(true);
-    }
-  };
+
   return (
     <div className="exitingRule-container">
       <div className="edit-text">
@@ -38,28 +31,11 @@ const ExitingRule = ({ model, onUpdate }) => {
           value={editedModel}
           onChange={(e) => setEditedModel(e.target.value)}
         />
-        {/* <select>
-          <option value="">Select exiting rule</option>
-          <option value="1">Bank Statement Name March</option>
-          <option value="2">Spending Pattern</option>
-          <option value="3">Cash Flow Pattern</option>
-        </select> */}
       </div>
 
       <div>
         <div className="select-option-below">
           <RuleOptions />
-          {active && <NewConditionBtn />}
-          <div className="btn">
-            <button
-              type="submit"
-              className="condition-button"
-              onClick={newCondition}
-            >
-              <img src={PlusSign} alt="plus" width="14px" />{" "}
-              <span>New Condition</span>
-            </button>
-          </div>
         </div>
       </div>
       <div className="conditions-container">

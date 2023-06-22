@@ -32,6 +32,20 @@
   justify-content: space-between;
   gap: 10px;
 }
+.labels {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 115px;
+}
+.labels .operate {
+  margin-left: 50px;
+}
+.labels .val {
+  margin-right: 136px;
+}
 .variable-container select,
 .Operator-container select {
   padding: 8px 16px;
@@ -71,5 +85,9 @@ select:active {
 .delete-btn-container {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+}
+.rule .btn {
+  display: flex;
   justify-content: flex-end;
 }

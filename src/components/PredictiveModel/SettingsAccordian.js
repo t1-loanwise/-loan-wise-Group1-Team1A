@@ -1,12 +1,12 @@
 import React from "react";
 
-import GreaterThan from "../assets/icons/Vector-accor.svg";
-import PredictiveContent from "./PredictiveContent";
+import GreaterThan from "../../assets/icons/Vector-accor.svg";
+
 import PredictiveM from "./PredictiveM";
 
-import "../styles/AccordianContent.css";
+import "../../styles/AccordianContent.css";
 import { useState } from "react";
-import ArrowDown from "../assets/icons/Vector-accor2.svg";
+import ArrowDown from "../../assets/icons/Vector-accor2.svg";
 
 const SettingsAccordian = () => {
   const accordionData = {

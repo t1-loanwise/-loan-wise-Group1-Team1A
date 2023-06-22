@@ -92,6 +92,7 @@ const SignUp = () => {
                 User already registered. Please <Link to="/login">sign in</Link>.
               </span>
             )}
+
             <div className="formInputContainer">
               <label htmlFor="name">Full name</label>
               <div className="inputDiv">

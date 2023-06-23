@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+
+import ComingSoon from "../../components/ComingSoon";
 
 const Repayment = () => {
-  return <div className="rightContent">Repayment</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Repayment
+export default Repayment;

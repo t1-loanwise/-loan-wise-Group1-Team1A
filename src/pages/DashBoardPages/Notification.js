@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 const Notification = () => {
-  return <div className="rightContent">Notification</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Notification
+export default Notification;

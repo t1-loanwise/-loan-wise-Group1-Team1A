@@ -34,12 +34,14 @@ import Dashboard from "./pages/DashBoardPages/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/Profile";
 import Notification from "./pages/DashBoardPages/Notification";
-import UserPreference from "./pages/DashBoardPages/UserPreference";
-import PredictiveModel from "./components/PredictiveModel";
-import NotificationsMain from "./components/NotificationsMain";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
+import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
+import LoanDetails from "./components/LoanDetails";
+import LoanAnalysis from "./components/LoanAnalysis";
+import LoanHistory from "./components/LoanHistory";
+import PerformanceAnalysis from "./pages/DashBoardPages/PerformanceAnalysis";
 
 const App = () => {
   return (
@@ -54,7 +56,7 @@ const App = () => {
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
         <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration/>}/>
+        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
@@ -62,6 +64,11 @@ const App = () => {
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/customer/:customerName" element={<BorrowersDetails />}>
+            <Route index element={<LoanDetails />} />
+            <Route path="loan-details" element={<LoanDetails />} />
+            <Route path="loan-history" element={<LoanHistory />} />
+          </Route>
           <Route
             path="/portfolio/newPortfolio"
             element={<NewPortfolioPages />}
@@ -74,6 +81,14 @@ const App = () => {
             path="/portfolio/businessStatement"
             element={<BusinessStatementAnalysis />}
           />
+          <Route
+            path="/prediction/:customerName"
+            element={<PerformanceAnalysis />}
+          >
+            <Route index element={<LoanDetails />} />
+            <Route path="loan-details" element={<LoanDetails />} />
+            <Route path="loan-analysis" element={<LoanAnalysis />} />
+          </Route>
           <Route path="/settings" element={<Settings />} />
           <Route path="/repayment" element={<Repayment />} />
           <Route path="/recovery" element={<Recovery />} />

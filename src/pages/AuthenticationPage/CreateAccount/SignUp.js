@@ -58,12 +58,14 @@ const SignUp = () => {
         name: getValues("name"),
         email: getValues("email"),
         password: getValues("password"),
+        confirmPassword: getValues("confirmPassword")
       }
     );
     console.log(response.data);
     setFormData(response.data);
     setError(false);
     localStorage.setItem("email", getValues("email"));
+    localStorage.setItem("userName", getValues("name"));
     navigate("/verifyRegistration");
    } catch (error) {
     console.log(error);
@@ -92,6 +94,7 @@ const SignUp = () => {
                 User already registered. Please <Link to="/login">sign in</Link>.
               </span>
             )}
+
             <div className="formInputContainer">
               <label htmlFor="name">Full name</label>
               <div className="inputDiv">

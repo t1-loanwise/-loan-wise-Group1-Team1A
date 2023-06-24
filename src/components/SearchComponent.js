@@ -6,8 +6,12 @@ const SearchComponent = ({ onSearch }) => {
   const [isButtonClicked, setButtonClicked] = useState(false);
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
+    const value = event.target.value
+    setSearchTerm(value);
     setButtonClicked(false);
+    if (!value){
+      onSearch("")
+    }
   };
 
   const handleSearch = () => {

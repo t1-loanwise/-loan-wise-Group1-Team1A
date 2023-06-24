@@ -10,6 +10,11 @@ body {
 }
 
 .rightContent {
-  margin-top: 100px;
+  margin-top: 15vh;
   padding: 40px 50px 40px 320px;
+}
+
+input[type = "password"] {
+  font: large Verdana;
+  font-weight: bolder;
 }

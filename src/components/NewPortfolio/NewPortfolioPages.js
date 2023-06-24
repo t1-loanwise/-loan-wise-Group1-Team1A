@@ -9,8 +9,10 @@ function NewPortfolioPages() {
   const [page, setPage] = useState(0);
   const [currentStep, setCurrentStep] = useState(1);
   function handleSubmit() {
-    setPage(page + 1);
-    setCurrentStep(currentStep + 1);
+    if (page !== 2) {
+      setPage(page + 1);
+      setCurrentStep(currentStep + 1);
+    }
   }
   const ShowNextPage = () => {
     switch (page) {

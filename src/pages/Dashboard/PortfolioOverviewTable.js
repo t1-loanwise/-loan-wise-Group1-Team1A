@@ -18,23 +18,11 @@ const PortfolioOverviewTable = () => {
   return (
     <div className="cardGraphContainer1">
       <div className="btn">
-        <div className={`dropdown ${dropMenu ? "show-dropdown" : ""}`}>
-          <button className="portfolio-button" onClick={toggleDropMenu}>
+        <NavLink activeClassName="active" to="/portfolio/newPortfolio">
+          <button className="portfolio-button">
             <span>+ New Portfolio</span>
           </button>
-          <ul className={`dropdown-menu ${dropMenu ? "show-dropdown" : ""}`}>
-            <li>
-              <NavLink activeClassName="active" to="/portfolio/newPortfolio">
-                <p className="dropdown-nav">Personal</p>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active" to="/portfolio/businessDetails">
-                <p className="dropdown-nav">Business</p>
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+        </NavLink>
       </div>
       <div className="chart">
         <PortfolioBarChart />
@@ -55,7 +43,6 @@ const PortfolioOverviewTable = () => {
             <option value="3">Morgage</option>
           </select>
         </div>
-
       </div>
       <div className="card">
         <div className="OverviewContainer">

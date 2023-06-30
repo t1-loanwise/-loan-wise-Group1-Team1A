@@ -46,7 +46,7 @@ const PortfolioOverviewTable = () => {
         <PortfolioBarChart />
         <PortfolioLineChart />
       </div>
-      <div className="card">
+      <div>
         <div className={styles.wrapper}>
           <Table Data={PortfolioOverview} rowsPerPage={6} />
         </div>

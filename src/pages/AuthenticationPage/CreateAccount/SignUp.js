@@ -24,7 +24,7 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required(true)
       .oneOf([Yup.ref("password")], "Passwords do not match!"),
-    radioBtn: Yup.string().required(true),
+    radioBtn: Yup.string().required(),
   });
 
   const formOptions = { resolver: yupResolver(validationSchema) };

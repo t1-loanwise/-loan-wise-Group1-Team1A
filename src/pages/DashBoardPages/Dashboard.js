@@ -35,8 +35,6 @@ const Dashboard = () => {
             </div>
           </div>
           <DashCardGraph />
-          <LoanTableHeading />
-          <hr />
           <LoanTabble searchTerm={searchTerm} filterOption={filterOption} />
         </div>
     </div>

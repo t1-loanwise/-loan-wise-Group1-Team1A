@@ -25,6 +25,7 @@
   right: 350px;
   background-color: white;
   border: none;
+  cursor: pointer;
 }
 ::-webkit-scrollbar {
   width: 0.5;

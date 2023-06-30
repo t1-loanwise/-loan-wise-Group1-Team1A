@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 const Messages = () => {
-  return <div className="rightContent">Messages</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Messages
+export default Messages;

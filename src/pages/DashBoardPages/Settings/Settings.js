@@ -8,14 +8,13 @@ import PrivacyForm from "../../../components/PrivacyForm";
 const Settings = () => {
   return (
     <div className="rightContent">
-      <PredictiveModel />
+      <NotificationsMain />
       <SettingAndPrivacy
         title="Security & Privacy"
         subtitle="Protect your account with maximum security"
         component={<PrivacyForm />}
       />
 
-      <NotificationsMain />
       <UserPreference />
     </div>
   );

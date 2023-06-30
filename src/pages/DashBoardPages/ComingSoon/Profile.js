@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 const Profile = () => {
-  return <div className="rightContent">Profile</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Profile
+export default Profile;

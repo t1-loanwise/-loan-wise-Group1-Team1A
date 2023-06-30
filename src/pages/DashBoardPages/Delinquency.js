@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 const Delinquency = () => {
-  return <div className="rightContent">Delinquency</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Delinquency
+export default Delinquency;

@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 const Recovery = () => {
-  return <div className="rightContent">Recovery</div>;
-}
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
+};
 
-export default Recovery
+export default Recovery;

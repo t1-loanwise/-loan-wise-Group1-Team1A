@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "../../styles/UpperDash.css";
-import "../../styles/LowerDash.css";
-import "../../styles/searchFiltersDate.css";
-import DashCardGraph from "../../components/DashCardGraph";
-import SearchComponent from "../../components/SearchComponent";
-import FilterComponent from "../../components/FilterComponent";
-import LoanTableHeading from "../../components/LoanTableHeading";
-import LoanTabble from "../../components/LoanTabble";
+import "../../../styles/UpperDash.css";
+import "../../../styles/LowerDash.css";
+import "../../../styles/searchFiltersDate.css";
+import DashCardGraph from "../../../components/DashCardGraph";
+import SearchComponent from "../../../components/SearchComponent";
+import FilterComponent from "../../../components/FilterComponent";
+import LoanTabble from "../../../components/LoanTabble";
 
 
 const Dashboard = () => {

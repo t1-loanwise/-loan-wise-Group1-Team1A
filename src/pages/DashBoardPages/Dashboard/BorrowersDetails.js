@@ -1,19 +1,20 @@
-import React, {useEffect} from "react";
-import loanWiseData from "../../components/loanWiseData.json";
-import face from "../../assets/WireframeB.svg";
+import React, { useEffect } from "react";
+import loanWiseData from "../../../components/loanWiseData.json";
+import face from "../../../assets/WireframeB.svg";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 
-
 const BorrowersDetails = () => {
-  const {customerName} = useParams();
-  const location = useLocation()
-   useEffect(() => {
-     if (location.pathname === `/customer/${customerName}/loan-details`) {
-       console.log("Index element is active on page load");
-     }
-   }, [location, customerName]);
+  const { customerName } = useParams();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === `/customer/${customerName}/loan-details`) {
+      console.log("Index element is active on page load");
+    }
+  }, [location, customerName]);
 
-  const borrowersDetails = loanWiseData.filter((data) => data.name === customerName);
+  const borrowersDetails = loanWiseData.filter(
+    (data) => data.name === customerName
+  );
   return (
     <div className="rightContent ">
       <div className="borrowers">

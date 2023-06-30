@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import loanWiseData from "../../components/loanWiseData.json";
-import face from "../../assets/WireframeB.svg";
+import loanWiseData from "../../../components/loanWiseData.json";
+import face from "../../../assets/WireframeB.svg";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 
 const PerformanceAnalysis = () => {
@@ -16,8 +16,8 @@ const PerformanceAnalysis = () => {
     (data) => data.name === customerName
   );
 
-//   const loanStatus = loanWiseData.filter((data) => data["Loan status 2"] === data["Loan status 2"])
-//   console.log(loanStatus);
+  //   const loanStatus = loanWiseData.filter((data) => data["Loan status 2"] === data["Loan status 2"])
+  //   console.log(loanStatus);
   return (
     <div className="rightContent ">
       <div className="borrowers">
@@ -72,7 +72,6 @@ const PerformanceAnalysis = () => {
                 >
                   Analysis Result
                 </NavLink>
-
               </div>
               <Outlet />
             </div>

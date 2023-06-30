@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import AuthenticationMainText from "../../../components/AuthenticationMainText";
-import Logo from "../../../components/Logo";
-import Onboarding from "../../../components/Onboarding";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
+import Logo from "../../components/Logo";
+import Onboarding from "../../components/Onboarding";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 

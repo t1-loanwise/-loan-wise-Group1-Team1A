@@ -2,12 +2,14 @@ import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import NewRule from "./NewRule";
 import NewModel from "./NewModel";
-import PlusSign from "../assets/icons/ant-design_plus-outlined.svg";
-import PopUp from "../components/PopUp";
-import ToggleSwitch from "./ToggleSwitch";
-import EditButton from "../assets/icons/edit.svg";
+import PlusSign from "../../assets/icons/ant-design_plus-outlined.svg";
+import PopUp from "./PopUp";
+import ToggleSwitch from "../ToggleSwitch";
+import EditButton from "../../assets/icons/edit.svg";
 
 import ExitingRule from "./ExitingRule";
+import NewRuleModal from "./NewRuleModal";
+import ExitingRuleModal from "./ExitingRuleModal";
 
 const PredictiveM = () => {
   const [newRuleButtonPop, setNewRuleButtonpop] = useState(false);
@@ -28,7 +30,7 @@ const PredictiveM = () => {
       name: model,
     };
     const updatedModels = [modelObject, ...models];
-    console.log({ updatedModels });
+    // console.log({ updatedModels });
     setModels(updatedModels);
     localStorage.setItem("newModel", JSON.stringify(updatedModels));
   };
@@ -52,6 +54,14 @@ const PredictiveM = () => {
 
   return (
     <div className="content-container">
+      {/* {openModal && (
+        <NewRule
+          newRule={NewRuleModal}
+          handleButtonClick={addNewModel}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+        />
+      )} */}
       <PopUp trigger={newRuleButtonPop} setTrigger={setNewRuleButtonpop}>
         <NewRule newRule={NewRule} handleClick={addNewModel} />
       </PopUp>
@@ -75,6 +85,14 @@ const PredictiveM = () => {
       ) : (
         <p>Enter a new model</p>
       )}
+      {/* {openModal && (
+        <ExitingRule
+          model={editModel}
+          onUpdate={handleUpdateModel}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+        />
+      )} */}
       {editModelPopup && (
         <PopUp trigger={editModelPopup} setTrigger={setEditModelPopup}>
           <ExitingRule model={editModel} onUpdate={handleUpdateModel} />
@@ -84,14 +102,16 @@ const PredictiveM = () => {
         <div className="edit-btn">
           <button
             className="new-rule-btn"
-            onClick={() => setNewRuleButtonpop(true)}
+            onClick={() => {
+              setNewRuleButtonpop(true);
+            }}
           >
             <img src={PlusSign} alt="plus" />
             Set new rule
           </button>
-          {/* <PopUp trigger={newRuleButtonPop} setTrigger={setNewRuleButtonpop}>
-            <NewRule newRule={NewRule} />
-          </PopUp> */}
+          {/* {openModal && (
+            <NewRule openModal={openModal} setOpenModal={setOpenModal} />
+          )} */}
         </div>
       </div>
     </div>

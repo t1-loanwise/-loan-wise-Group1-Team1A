@@ -1,6 +1,6 @@
 import React from "react";
-import Close from "../assets/icons/close-circle.svg";
-import "../styles/Popup.css";
+import Close from "../../assets/icons/close-circle.svg";
+import "../../styles/Popup.css";
 
 const PopUp = (props) => {
   return props.trigger ? (

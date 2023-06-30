@@ -6,7 +6,6 @@ import { NavLink, Link } from "react-router-dom";
 import PortfolioBarChart from "../../components/Portfolio/PortfolioBarChart";
 import PortfolioLineChart from "../../components/Portfolio/PortfolioLineChart";
 
-
 const PortfolioOverviewTable = () => {
   const [PortfolioOverview] = useState([...PortfolioOviewData]);
   const [dropMenu, setDropMenu] = useState(false);
@@ -18,29 +17,11 @@ const PortfolioOverviewTable = () => {
   return (
     <div className="cardGraphContainer1">
       <div className="btn">
-        <div className={`dropdown ${dropMenu ? "show-dropdown2" : ""}`}>
-          <button className="portfolio-button" onClick={toggleDropMenu}>
+        <NavLink activeClassName="active" to="/portfolio/newPortfolio">
+          <button className="portfolio-button">
             <span>+ New Portfolio</span>
           </button>
-          <ul className={`dropdown-menu2 ${dropMenu ? "show-dropdown2" : ""}`}>
-            <li>
-              <Link
-                className="dropdown-nav"
-                to="/portfolio/newPortfolio"
-              >
-                Personal
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="dropdown-nav"
-                to="/portfolio/businessDetails"
-              >
-                Business
-              </Link>
-            </li>
-          </ul>
-        </div>
+        </NavLink>
       </div>
       <div className="chart">
         <PortfolioBarChart />

@@ -11,7 +11,7 @@ function NewPortfolioPages() {
   const totalPages = 3; // Total number of pages
 
   function handleSubmit() {
-    if (page < totalPages - 1) {
+    if (page !== 2) {
       setPage(page + 1);
       setCurrentStep(currentStep + 1);
     }

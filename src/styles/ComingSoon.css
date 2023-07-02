@@ -1,0 +1,64 @@
+.comingSoon-page {
+  position: relative;
+  background-image: url("../assets/comingsoon.svg");
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  width: 100%;
+}
+.page-page {
+  background-color: rgba(255, 255, 255, 0.468);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.rightContent2 {
+  margin-top: 15vh;
+  padding: 0 0 0 270px;
+}
+.coming-soon-text {
+  padding-top: 160px;
+}
+.coming-soon-text h3 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.coming-soon-text p {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+.coming-soon-input form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+.coming-soon-input input {
+  height: 45px;
+  width: 50%;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #808c8f;
+  padding: 20px 10px;
+  outline: none;
+}
+.coming-soon-input input::placeholder {
+  font-style: italic;
+}
+.coming-soon-input button {
+  width: 100px;
+  height: 45.5px;
+  border-radius: 0 5px 5px 0;
+  background-color: #007e99;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #006980;
+}

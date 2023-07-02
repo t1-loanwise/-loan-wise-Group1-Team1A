@@ -86,6 +86,7 @@ select:active {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  cursor: pointer;
 }
 .rule .btn {
   display: flex;

@@ -5,32 +5,8 @@ import "../../styles/NewPortfolio.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
-function NewEmploymentDetails() {
-  const navigate = useNavigate();
-  const validationSchema = Yup.object().shape({
-    jobTitle: Yup.string().required("This field is required"),
-    currentEmployer: Yup.string().required("This field is required"),
-    employmentLength: Yup.string().required("This field is required"),
-    currentSalary: Yup.string().required("This field is required"),
-    loanPurpose: Yup.string().required("This field is required"),
-    loanCategory: Yup.string()
-      .required("This field is required")
-      .oneOf(["Personal", "Business", "Mortgage", "Student"])
-      .label("Loan Category"),
-    date: Yup.date().required("This field is required"),
-    amount: Yup.string().required("This field is required"),
-    validityPeriod: Yup.string()
-      .required("This field is required")
-      .oneOf(["3 Months", "6 Months", "1 Year", "above 1 Year"])
-      .label("Validity Period"),
-    interestRate: Yup.string().required("This field is required"),
-  });
-  const formOptions = { resolver: yupResolver(validationSchema) };
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm(formOptions);
+function NewEmploymentDetails({ errors }) {
+  const { register } = useForm();
   return (
     <>
       <form className="flex-form">

@@ -1,60 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../../styles/NewPortfolio.css";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
 
-function NewBorrowerDetails() {
-  const navigate = useNavigate();
-  const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required("Enter your full name"),
-    resAddress: Yup.string()
-      .required("Enter your residential address")
-      .min(11, "Must be more than 11 characters"),
-    email: Yup.string()
-      .email()
-      .required("Enter a valid email address")
-      .matches(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      ),
-    phoneNumber: Yup.string()
-      .required("Phone number is required")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-      ),
-    altPhoneNumber: Yup.string()
-      .required("Phone number is required")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-      ),
-    dob: Yup.date().required("This field is is required"),
-    number: Yup.string()
-      .min(11, "Must be 11 characters")
-      .required("This field is required"),
-    jobTitle: Yup.string().required("This field is required"),
-    currentEmployer: Yup.string().required("This field is required"),
-    employmentLength: Yup.string().required("This field is required"),
-    currentSalary: Yup.string().required("This field is required"),
-    loanPurpose: Yup.string().required("This field is required"),
-    loanCategory: Yup.string()
-      .required("This field is required")
-      .oneOf(["Personal", "Business", "Mortgage", "Student"])
-      .label("Loan Category"),
-    date: Yup.date().required("This field is required"),
-    amount: Yup.string().required("This field is required"),
-    validityPeriod: Yup.string()
-      .required("This field is required")
-      .oneOf(["3 Months", "6 Months", "1 Year", "above 1 Year"])
-      .label("Validity Period"),
-    interestRate: Yup.string().required("This field is required"),
-  });
-  const formOptions = { resolver: yupResolver(validationSchema) };
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm(formOptions);
+const NewBorrowerDetails = ({ errors }) => {
+  const { register } = useForm();
 
   return (
     <>
@@ -73,7 +22,11 @@ function NewBorrowerDetails() {
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.fullName?.message}</div>
+              <div className="errorMsg">
+                {errors && errors.fullName && (
+                  <p>{errors.fullName.message || errors.fullName}</p>
+                )}
+              </div>
             </div>
             <div>
               <label className="input_title">Residential address</label>
@@ -162,6 +115,6 @@ function NewBorrowerDetails() {
       </form>
     </>
   );
-}
+};
 
 export default NewBorrowerDetails;

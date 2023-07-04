@@ -89,7 +89,8 @@ function NewPortfolioPages() {
     }
 
     console.log(data);
-    methods.reset();
+    console.log(methods.formState); 
+    console.log(methods.formState.errors);
   }
 
   const ShowNextPage = () => {

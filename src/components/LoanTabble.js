@@ -3,19 +3,22 @@ import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import { Link } from "react-router-dom";
-import LoanWiseData from "./loanWiseData.json";
+import LoanData from "./loanWiseData.json";
 
-const LoanTabble = ({ searchTerm, filterOption}) => {
+const LoanTabble = ({ searchTerm, filterOption }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
-  const handlePageChange = (pageNumber) => { setCurrentPage(pageNumber)};
-
-  const filteredData = searchTerm ? LoanWiseData.filter((data) => {
-    const searchData = Object.values(data).join(" ").toLowerCase();
-    return searchData.includes(searchTerm.toLowerCase());
-  }) : LoanWiseData;
+  const filteredData = searchTerm
+    ? LoanData.filter((data) => {
+        const searchData = Object.values(data).join(" ").toLowerCase();
+        return searchData.includes(searchTerm.toLowerCase());
+      })
+    : LoanData;
 
   const applyFilter = (data) => {
     switch (filterOption) {
@@ -26,20 +29,21 @@ const LoanTabble = ({ searchTerm, filterOption}) => {
       case "completed":
         return data.filter((item) => item["Loan status"] === "Completed");
       case "all":
-        return data.sort((a, b) => new Date(a["Due date"]) - new Date(b["Due date"]));
+        return data.sort(
+          (a, b) => new Date(a["Due date"]) - new Date(b["Due date"])
+        );
       default:
         return data;
     }
   };
 
   const displayedData = applyFilter(filteredData).slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      );
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <>
-
       <div className="taable">
         <div className="trs trs1">
           <div className="ths">ID</div>
@@ -82,7 +86,9 @@ const LoanTabble = ({ searchTerm, filterOption}) => {
 
           {currentPage > 5 && <p>...</p>}
 
-          {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }, (_, i) => {
+          {Array.from(
+            { length: Math.ceil(filteredData.length / itemsPerPage) },
+            (_, i) => {
               if (i + 1 > currentPage + 2) return null;
               if (i + 1 >= currentPage - 2) {
                 return (

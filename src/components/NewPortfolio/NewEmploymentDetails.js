@@ -9,7 +9,7 @@ function NewEmploymentDetails({ errors }) {
   const { register } = useForm();
   return (
     <>
-      <form className="flex-form">
+      <div className="flex-form">
         <div className="form_container">
           <div className="details-form">
             <h2>Employment Information</h2>
@@ -195,7 +195,7 @@ function NewEmploymentDetails({ errors }) {
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </>
   );
 }

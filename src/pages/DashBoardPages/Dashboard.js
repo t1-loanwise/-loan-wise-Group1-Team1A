@@ -7,16 +7,22 @@ import SearchComponent from "../../components/SearchComponent";
 import FilterComponent from "../../components/FilterComponent";
 import LoanTableHeading from "../../components/LoanTableHeading";
 import LoanTabble from "../../components/LoanTabble";
+import CalendarComponent from "../../components/CalendarComponent";
 
 
 const Dashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterOption, setFilterOption] = useState(null);
+  const [selectedDate, setSelectedDate] = useState("")
 
   const handleSearch = (searchTerm) => {setSearchTerm(searchTerm)};
 
   const handleFilterChange = (filterOption) => {
     setFilterOption(filterOption)
+  }
+
+  const handleDateChange =(date) => {
+    setSelectedDate(date);
   }
 
   return (
@@ -32,12 +38,13 @@ const Dashboard = () => {
                 <SearchComponent onSearch={handleSearch} />
                 <FilterComponent onFilterChange={handleFilterChange} />
               </div>
+              <CalendarComponent onDateChange={handleDateChange}/>
             </div>
           </div>
           <DashCardGraph />
           <LoanTableHeading />
           <hr />
-          <LoanTabble searchTerm={searchTerm} filterOption={filterOption} />
+          <LoanTabble searchTerm={searchTerm} filterOption={filterOption} selectedDate={selectedDate} />
         </div>
     </div>
   );

@@ -10,6 +10,18 @@
     width: max-content;
 }
 
+.filterArea:hover {
+    color: #eee;
+}
+
+.filterArea:hover img {
+    fill: #fff;
+  }
+  
+  .filll {
+    fill: #fff;
+  }
+
 .filter_options {
     width: max-content;
     gap: 0.8em;
@@ -30,6 +42,11 @@
     font-weight: bold;
     gap: 0.8em;
     cursor: pointer;
+}
+
+.filter_options span:hover {
+    color: #22a9ca;
+
 }
 
 .filterContainer {

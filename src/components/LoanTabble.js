@@ -1,45 +1,65 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import { Link } from "react-router-dom";
-import LoanWiseData from "./loanWiseData.json";
 
-const LoanTabble = ({ searchTerm, filterOption}) => {
+const LoanTabble = ({ searchTerm, filterOption }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [loanData, setLoanData] = useState([]);
   const itemsPerPage = 5;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://loanwise.onrender.com/api/loan-table"
+        );
+        setLoanData(response.data);
+      } catch (error) {
+        console.error("Error fetching loan data:", error);
+      }
+    };
 
-  const handlePageChange = (pageNumber) => { setCurrentPage(pageNumber)};
+    fetchData();
+  }, []);
 
-  const filteredData = searchTerm ? LoanWiseData.filter((data) => {
-    const searchData = Object.values(data).join(" ").toLowerCase();
-    return searchData.includes(searchTerm.toLowerCase());
-  }) : LoanWiseData;
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const filteredData = searchTerm
+    ? loanData.filter((data) => {
+        const searchData = Object.values(data).join(" ").toLowerCase();
+        return searchData.includes(searchTerm.toLowerCase());
+      })
+    : loanData;
 
   const applyFilter = (data) => {
     switch (filterOption) {
       case "default":
-        return data.filter((item) => item["Loan status"] === "Defaulted");
+        return data.filter((item) => item["loan_status"] === "Defaulted");
       case "active":
-        return data.filter((item) => item["Loan status"] === "Active");
+        return data.filter((item) => item["loan_status"] === "Active");
       case "completed":
-        return data.filter((item) => item["Loan status"] === "Completed");
+        return data.filter((item) => item["loan_status"] === "Completed");
       case "all":
-        return data.sort((a, b) => new Date(a["Due date"]) - new Date(b["Due date"]));
+        return data.sort(
+          (a, b) => new Date(a["Due date"]) - new Date(b["Due date"])
+        );
       default:
         return data;
     }
   };
 
   const displayedData = applyFilter(filteredData).slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      );
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <>
-
       <div className="taable">
         <div className="trs trs1">
           <div className="ths">ID</div>
@@ -61,9 +81,9 @@ const LoanTabble = ({ searchTerm, filterOption}) => {
               <div className="tds">{data.name}</div>
               <div className="tds">{data.Category}</div>
               <div className="tds"> N{data.Requested}</div>
-              <div className="tds">{data["Due date"]}</div>
-              <div className={data["Loan status"]}>
-                <button>{data["Loan status"]}</button>
+              <div className="tds">{data["due_date"]}</div>
+              <div className={data["loan_status"]}>
+                <button>{data["loan_status"]}</button>
               </div>
             </div>
           </Link>
@@ -82,7 +102,9 @@ const LoanTabble = ({ searchTerm, filterOption}) => {
 
           {currentPage > 5 && <p>...</p>}
 
-          {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }, (_, i) => {
+          {Array.from(
+            { length: Math.ceil(filteredData.length / itemsPerPage) },
+            (_, i) => {
               if (i + 1 > currentPage + 2) return null;
               if (i + 1 >= currentPage - 2) {
                 return (

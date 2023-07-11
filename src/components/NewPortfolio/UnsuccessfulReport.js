@@ -11,6 +11,9 @@ function UnsuccessfulReport() {
           Borrower is likely to default on this loan amount, consider a lesser
           amount
         </p>
+        <button className="new_portfolio_btn" type="submit">
+          Proceed
+        </button>
       </div>
     </>
   );

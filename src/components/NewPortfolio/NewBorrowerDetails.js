@@ -1,17 +1,44 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "../../styles/NewPortfolio.css";
+import { useState } from "react";
+import axios from "axios";
 
 const NewBorrowerDetails = ({ nextStep }) => {
+  const [data, setData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleFormSubmit = (data) => {
-    nextStep();
-    console.log(data);
+  const handleFormSubmit = async (event) => {
+    const user = {
+      fullName: data.fullName,
+      address: data.resAddress,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      dateOfBirth: data.dob,
+      bvn: data.number,
+    };
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "https://loanwise.onrender.com/borrowers-details",
+        user
+      );
+      nextStep();
+      console.log(response);
+      console.log(response.data);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+      console.log(error);
+    }
   };
+
+  //Endpoint - 'https://loanwise.onrender.com/borrowers-details'
 
   return (
     <>
@@ -38,7 +65,6 @@ const NewBorrowerDetails = ({ nextStep }) => {
               </div>
               <div className="errorMsg">
                 {errors.fullName && <p>{errors.fullName.message}</p>}
-                {console.log(errors.fullName)}
               </div>
             </div>
             <div>

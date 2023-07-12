@@ -1,17 +1,52 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "../../styles/NewPortfolio.css";
+import { useState } from "react";
+import axios from "axios";
 
 function NewEmploymentDetails({ nextStep }) {
+  const [data, setData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleFormSubmit = (data) => {
-    nextStep();
-    console.log(data);
+  const handleFormSubmit = async (event) => {
+    const user = {
+      currentEmployer: data.currentEmployer,
+      currentRole: data.currentRole,
+      Annual_Income: data.annualIncome,
+      Total_Years_of_Employment: data.employmentLength,
+      Income_Debit_Ratio: data.idRatio,
+      No_of_Open_Credit_Lines: data.openCredit,
+      Credit_Utilization_Rate: data.cuRate,
+      No_of_Mortgage_Account: data.mortgageAccount,
+      Loan_Purpose: data.loanPurpose,
+      Loan_Term: data.loanTerm,
+      requestedAmount: data.amount,
+      Verification_by_Loan_Company: data.companyVerification,
+      Application_Type: data.appType,
+    };
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "https://loanwise.onrender.com/borrowers-details",
+        user
+      );
+      nextStep();
+      console.log(response);
+      console.log(response.data);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+      console.log(error);
+    }
   };
+
+  //Endpoint - 'https://loanwise.onrender.com/borrowers-details'
+
   return (
     <>
       <form className="input-form" onSubmit={handleSubmit(handleFormSubmit)}>
@@ -260,8 +295,8 @@ function NewEmploymentDetails({ nextStep }) {
                     <option disabled value="">
                       Choose answer...{" "}
                     </option>
-                    <option value="Verified">Yes</option>
-                    <option value="Not verified">No</option>
+                    <option value="Verified">True</option>
+                    <option value="Not verified">False</option>
                   </select>
                   {errors?.companyVerification?.message && (
                     <p className="errorMsg">

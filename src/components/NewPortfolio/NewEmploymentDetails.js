@@ -32,7 +32,7 @@ function NewEmploymentDetails({ nextStep }) {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://loanwise.onrender.com/borrowers-details",
+        "https://loanwise.onrender.com/api/employment-details",
         user
       );
       nextStep();
@@ -45,7 +45,7 @@ function NewEmploymentDetails({ nextStep }) {
     }
   };
 
-  //Endpoint - 'https://loanwise.onrender.com/borrowers-details'
+  //Endpoint - 'https://loanwise.onrender.com/api/employment-details'
 
   return (
     <>

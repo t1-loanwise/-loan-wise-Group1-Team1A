@@ -25,7 +25,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://loanwise.onrender.com/borrowers-details",
+        "https://loanwise.onrender.com/api/borrowers-details",
         user
       );
       nextStep();

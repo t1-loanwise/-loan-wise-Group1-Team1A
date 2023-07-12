@@ -139,18 +139,10 @@ const NewBorrowerDetails = ({ nextStep }) => {
                   name="phone"
                   type="phone"
                   placeholder="Enter number"
-                  {...register("altPhoneNumber", {
-                    required: "Enter a valid phone number",
-                    pattern: {
-                      value:
-                        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-                      message: "Phone number is not valid.",
-                    },
-                  })}
+                  {...register("altPhoneNumber")}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors?.altPhoneNumber?.message}</div>
             </div>
             <div>
               <div>
@@ -161,7 +153,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
                     type="date"
                     placeholder="Enter number"
                     {...register("dob", {
-                      required: "Required",
+                      required: "This field is required",
                     })}
                     className="input_field"
                   />

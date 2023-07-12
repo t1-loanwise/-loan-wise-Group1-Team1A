@@ -293,7 +293,7 @@ function NewEmploymentDetails({ nextStep }) {
                     placeholder="choose answer..."
                   >
                     <option disabled value="">
-                      Choose answer...{" "}
+                      Select option
                     </option>
                     <option value="Verified">True</option>
                     <option value="Not verified">False</option>
@@ -310,9 +310,9 @@ function NewEmploymentDetails({ nextStep }) {
                 <div>
                   <input
                     name="appType"
-                    type="number"
-                    placeholder="$0.00"
-                    {...register("appType")}
+                    type="text"
+                    {...register("appType" , {
+                      required: "This field is required"})}
                     className="input_field"
                   />
                 </div>

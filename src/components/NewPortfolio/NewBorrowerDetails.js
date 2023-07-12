@@ -1,64 +1,48 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../../styles/NewPortfolio.css";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
+import { useState } from "react";
+import axios from "axios";
 
-function NewBorrowerDetails() {
-  const navigate = useNavigate();
-  const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required("Enter your full name"),
-    resAddress: Yup.string()
-      .required("Enter your residential address")
-      .min(11, "Must be more than 11 characters"),
-    email: Yup.string()
-      .email()
-      .required("Enter a valid email address")
-      .matches(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      ),
-    phoneNumber: Yup.string()
-      .required("Phone number is required")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-      ),
-    altPhoneNumber: Yup.string()
-      .required("Phone number is required")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-      ),
-    dob: Yup.date().required("This field is is required"),
-    number: Yup.string()
-      .min(11, "Must be 11 characters")
-      .required("This field is required"),
-    jobTitle: Yup.string().required("This field is required"),
-    currentEmployer: Yup.string().required("This field is required"),
-    employmentLength: Yup.string().required("This field is required"),
-    currentSalary: Yup.string().required("This field is required"),
-    loanPurpose: Yup.string().required("This field is required"),
-    loanCategory: Yup.string()
-      .required("This field is required")
-      .oneOf(["Personal", "Business", "Mortgage", "Student"])
-      .label("Loan Category"),
-    date: Yup.date().required("This field is required"),
-    amount: Yup.string().required("This field is required"),
-    validityPeriod: Yup.string()
-      .required("This field is required")
-      .oneOf(["3 Months", "6 Months", "1 Year", "above 1 Year"])
-      .label("Validity Period"),
-    interestRate: Yup.string().required("This field is required"),
-  });
-  const formOptions = { resolver: yupResolver(validationSchema) };
+const NewBorrowerDetails = ({ nextStep }) => {
+  const [data, setData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm(formOptions);
+    formState: { errors },
+  } = useForm();
+  const handleFormSubmit = async (event) => {
+    const user = {
+      fullName: data.fullName,
+      address: data.resAddress,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      dateOfBirth: data.dob,
+      bvn: data.number,
+    };
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "https://loanwise.onrender.com/api/borrowers-details",
+        user
+      );
+      nextStep();
+      console.log(response);
+      console.log(response.data);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+      console.log(error);
+    }
+  };
+
+  //Endpoint - 'https://loanwise.onrender.com/borrowers-details'
 
   return (
     <>
-      <form>
+      <form className="input-form" onSubmit={handleSubmit(handleFormSubmit)}>
         <div className="form_container">
           <div className="details-form">
             <h2>Personal Information</h2>
@@ -69,11 +53,19 @@ function NewBorrowerDetails() {
                   name="fullName"
                   type="text"
                   placeholder="Enter full name"
-                  {...register("fullName")}
+                  {...register("fullName", {
+                    required: "Enter your full name",
+                    minLength: {
+                      value: 2,
+                      message: "Must be more than 2 characters",
+                    },
+                  })}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.fullName?.message}</div>
+              <div className="errorMsg">
+                {errors.fullName && <p>{errors.fullName.message}</p>}
+              </div>
             </div>
             <div>
               <label className="input_title">Residential address</label>
@@ -82,11 +74,21 @@ function NewBorrowerDetails() {
                   name="resAddress"
                   type="text"
                   placeholder="Enter address"
-                  {...register("resAddress")}
+                  {...register("resAddress", {
+                    required: "Enter your residential address",
+                    minLength: {
+                      value: 11,
+                      message: "Must be more than 11 characters",
+                    },
+                  })}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.resAddress?.message}</div>
+              <div className="errorMsg">
+                {errors.resAddress && (
+                  <p className="errorMsg">{errors.resAddress.message}</p>
+                )}
+              </div>
             </div>
             <div>
               <label className="input_title">Email Address</label>
@@ -95,11 +97,18 @@ function NewBorrowerDetails() {
                   name="email"
                   type="email"
                   placeholder="Enter email address"
-                  {...register("email")}
+                  {...register("email", {
+                    required: "Enter a valid email address",
+                    pattern: {
+                      value:
+                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: "Email is not valid.",
+                    },
+                  })}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.email?.message}</div>
+              <div className="errorMsg">{errors?.email?.message}</div>
             </div>
             <div>
               <div>
@@ -109,11 +118,18 @@ function NewBorrowerDetails() {
                     name="phone"
                     type="phone"
                     placeholder="Enter number"
-                    {...register("phoneNumber")}
+                    {...register("phoneNumber", {
+                      required: "Enter a valid phone number",
+                      pattern: {
+                        value:
+                          /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+                        message: "Phone number is not valid.",
+                      },
+                    })}
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors.phoneNumber?.message}</div>
+                <div className="errorMsg">{errors?.phoneNumber?.message}</div>
               </div>
             </div>
             <div>
@@ -127,7 +143,6 @@ function NewBorrowerDetails() {
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.altPhoneNumber?.message}</div>
             </div>
             <div>
               <div>
@@ -137,11 +152,13 @@ function NewBorrowerDetails() {
                     name="dob"
                     type="date"
                     placeholder="Enter number"
-                    {...register("dob")}
+                    {...register("dob", {
+                      required: "This field is required",
+                    })}
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors.dob?.message}</div>
+                <div className="errorMsg">{errors?.dob?.message}</div>
               </div>
             </div>
             <div>
@@ -151,17 +168,30 @@ function NewBorrowerDetails() {
                   name="number"
                   type="number"
                   placeholder="Enter number"
-                  {...register("number")}
+                  {...register("number", {
+                    required: "This field is required",
+                    minLength: {
+                      value: 11,
+                      message: "Must be 11 numbers",
+                    },
+                    pattern: {
+                      value: /^\d{11}$/,
+                      message: "BVN is not valid.",
+                    },
+                  })}
                   className="input_field"
                 />
               </div>
-              <div className="errorMsg">{errors.number?.message}</div>
+              <div className="errorMsg">{errors?.number?.message}</div>
             </div>
           </div>
         </div>
+        <button className="new_portfolio_btn" type="submit">
+          Proceed
+        </button>
       </form>
     </>
   );
-}
+};
 
 export default NewBorrowerDetails;

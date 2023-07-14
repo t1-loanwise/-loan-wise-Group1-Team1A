@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
-import AuthenticationMainText from "../../../components/AuthenticationMainText";
-import Logo from "../../../components/Logo";
-import Onboarding from "../../../components/Onboarding";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
+import Logo from "../../components/Logo";
+import Onboarding from "../../components/Onboarding";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const VerifyRegistration = () => {
+const VerifyRegistration = ({ tokenData }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const inputRefs = useRef([]);
   const [timer, setTimer] = useState(60);
   const [disabled, setDisabled] = useState(false);
   const [countdownFinished, setCountdownFinished] = useState(false);
   const navigate = useNavigate();
-  const [token, setToken] = useState(null);
+
   const [error, setError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const handleOtpChange = (event, index) => {
@@ -76,12 +76,14 @@ const VerifyRegistration = () => {
             verificationCode: enteredOtp,
           }
         );
-        setToken(response.data);
+        tokenData(response.data.user_id);
         setError(false);
         setIsSubmitting(false);
         navigate("/securityQuestions");
         console.log("Entered OTP:", enteredOtp);
         console.log(response.data);
+        console.log(tokenData);
+        alert(response.data.message);
       } catch (error) {
         setError(true);
         setIsSubmitting(false);
@@ -89,7 +91,6 @@ const VerifyRegistration = () => {
       }
     }
   };
-
   return (
     <div className="createAccount_parentContainer">
       <Onboarding />
@@ -107,6 +108,7 @@ const VerifyRegistration = () => {
               {error && (
                 <span className="invalid-token">Invalid Token !!!</span>
               )}
+
               <div className="verifyInput">
                 {otp.map((digit, index) => (
                   <input

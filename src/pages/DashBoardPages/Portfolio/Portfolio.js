@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioOverviewTable from "../Dashboard/PortfolioOverviewTable";
+import PortfolioOverviewTable from "./PortfolioOverviewTable";
 
 const Portfolio = () => {
   return (

@@ -39,108 +39,113 @@
   column-gap: 0.7em;
 }
 
-  .DownloadBtn {
-    padding: 10px 48px;
-    border-radius: 5px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    background: #007e99;
-  }
+.DownloadBtn {
+  padding: 10px 48px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: #007e99;
+}
 
-  .chart{
-    display: flex;
-    gap: 20px;
-  }
-  .customerSort{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-content: center;
-  }
-  .customerID{
-    display: flex;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 4px;
-    color: grey;
-    padding: 5px;
-    width: 50%;
+.chart {
+  display: flex;
+  gap: 20px;
+}
+.customerSort {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 20px;
+}
 
-  }
-  .customerID input{
-    border: none;
-    outline: none;
-  }
-  .searchIcon{
-    width: 15px;
-    height: 15px;
-    margin-left: 240px;
-  }
+.customerID {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  justify-content: space-between;
+  border-radius: 4px;
+  color: grey;
+  width: 49%;
+  padding: 0 10px;
+}
 
-  .select-option {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    border-radius: 4px;
-    width: 50%;
-  }
-  .select-option select {
-    color: grey;
-    padding: 8px 16px;
-    margin-top: 5px;
-  }
+.customerID input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
 
-  .Approved button {
-    color: white;
-    background-color: green;
-     padding: 0.375rem 0;
-     width: 120px;
-    border-radius: 16px;
-    border: 0;
-  }
+.searchIcon {
+  width: 15px;
+  height: 15px;
+}
 
-  .Declined button {
-    border-radius: 16px;
-    color: white;
-    background-color: red;
-    padding: 0.375rem;
-    width: 120px;
-    border: none;
-  }
+.select-option2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 4px;
+  width: 49%;
+  border: 1px solid grey;
+}
 
-  .tableRowItems {
-    cursor: pointer;
-  }
-   .tableCell {
-    padding: 12px;
-    font-size: 14px;
-    color: grey;
-  }
-  table{
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th{
-    text-align: left;
-    background-color: #E6F2F5;
-    padding: 16px 10px;
-  }
+.select-option2 select {
+  color: grey;
+  padding: 8px 10px;
+  margin-top: 0px;
+  border: 0;
+  background: transparent;
+}
 
-.OverviewContainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 480px;
-    margin: 10px 0px;
-  }
-  .overviewHeader{
-    font-size: 20px;
-  }
+.Approved button {
+  color: white;
+  background-color: green;
+  padding: 0.375rem;
+  width: 120px;
+  border-radius: 16px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-  .tableLinks{
-    text-decoration: none;
-    color: black;
-  }
+.Declined button {
+  background-color: #ff2e2e;
+  padding: 0.375rem;
+  width: 120px;
+  border-radius: 16px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tableRowItems {
+  cursor: pointer;
+}
+.tableCell {
+  padding: 12px;
+  font-size: 14px;
+  color: grey;
+}
+
+.OverviewContainer {
+  display: flex;
+    justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.overviewHeader {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tableLinks {
+  text-decoration: none;
+  color: black;
+}
 
 .pagiNumbs {
   display: flex;
@@ -152,14 +157,14 @@
   margin-left: 35rem;
 }
 
-p {
+/* .OverviewContainer p {
   font-size: 0.875rem;
   font-weight: 500;
-}
+} */
 
 .pagiNumbs button.active {
   font-weight: bold;
-  background-color: #007E99;
+  background-color: #007e99;
   color: white;
   padding: 5px;
   border-radius: 50%;
@@ -169,10 +174,16 @@ p {
   cursor: pointer;
 }
 
-.card{
-  border: 0.2px solid #ccc;
+.card {
   border-radius: 5px;
   box-shadow: 0px 0px 3px 3px rgb(147, 205, 147, 0.2);
   margin-bottom: 20px;
-  padding: 5px 20px 20px;
+  padding: 20px 20px;
+}
+
+.p-t-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 30px;
 }

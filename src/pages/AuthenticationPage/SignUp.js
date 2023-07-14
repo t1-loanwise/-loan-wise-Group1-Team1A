@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Logo from "../../../components/Logo";
-import AuthenticationMainText from "../../../components/AuthenticationMainText";
+import Logo from "../../components/Logo";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import show from "../../../assets/show.png";
-import hide from "../../../assets/hide.png";
+import show from "../../assets/show.png";
+import hide from "../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
-import Onboarding from "../../../components/Onboarding";
+import Onboarding from "../../components/Onboarding";
 import axios from "axios";
-
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
@@ -38,10 +37,8 @@ const SignUp = () => {
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
-  const [formData, setFormData] = useState(null)
-  const [error, setError] = useState(false)
-
-
+  const [formData, setFormData] = useState(null);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
@@ -50,28 +47,28 @@ const SignUp = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPswd(showConfirmPswd ? false : true);
   };
-  const onSubmit = async() => {
-   try {
-    const response = await axios.post(
-      "https://loanwise.onrender.com/api/signup",
-      {
-        name: getValues("name"),
-        email: getValues("email"),
-        password: getValues("password"),
-        confirmPassword: getValues("confirmPassword")
-      }
-    );
-    console.log(response.data);
-    setFormData(response.data);
-    setError(false);
-    localStorage.setItem("email", getValues("email"));
-    localStorage.setItem("userName", getValues("name"));
-    navigate("/verifyRegistration");
-   } catch (error) {
-    console.log(error);
-    setError(true);
-    reset()
-   }
+  const onSubmit = async () => {
+    try {
+      const response = await axios.post(
+        "https://loanwise.onrender.com/api/signup",
+        {
+          name: getValues("name"),
+          email: getValues("email"),
+          password: getValues("password"),
+          confirmPassword: getValues("confirmPassword"),
+        }
+      );
+      console.log(response.data);
+      setFormData(response.data);
+      setError(false);
+      localStorage.setItem("email", getValues("email"));
+      localStorage.setItem("userName", getValues("name"));
+      navigate("/verifyRegistration");
+    } catch (error) {
+      console.log(error);
+      setError(true);
+      reset();
+    }
   };
 
   return (
@@ -91,7 +88,8 @@ const SignUp = () => {
           >
             {error && (
               <span className="registered-user">
-                User already registered. Please <Link to="/login">sign in</Link>.
+                User already registered. Please <Link to="/login">sign in</Link>
+                .
               </span>
             )}
 

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/logoWhite.svg";
 import bell from "../assets/bell.svg";
 import profile from "../assets/user.png";
 import "../styles/dashNavigation.css";
 import back from "../assets/back arrow.svg";
+import axios from "axios";
 
 const TopBar = () => {
   const navigate = useNavigate();
@@ -13,21 +14,39 @@ const TopBar = () => {
     navigate(-1);
   };
 
-  const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState("");
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
-    const storedUserName = localStorage.getItem("userName");
-    if (storedUserName) {
-      setUserName(storedUserName)
-    }
-  },[])
 
- const shouldDisplayBackLink =
-   location.pathname.startsWith("/customer/") ||
-   location.pathname === "/userPreference" ||
-   location.pathname.startsWith("/prediction") ||
-   location.pathname.startsWith("/portfolio/") 
+   useEffect(() => {
+     const fetchUser = async () => {
+       try {
+       const response = await axios.get(
+         `https://loanwise.onrender.com/api/user`,
+         {
+           headers: {
+             Authorization: "Bearer Token",
+           },
+         }
+       );
 
+         console.log(response.data.user);
+         setUserName(response.data.user.name);
+         setError(false);
+       } catch (error) {
+         setError(true);
+       }
+     };
+
+     fetchUser();
+   }, []);
+
+
+  const shouldDisplayBackLink =
+    location.pathname.startsWith("/customer/") ||
+    location.pathname === "/userPreference" ||
+    location.pathname.startsWith("/prediction") ||
+    location.pathname.startsWith("/portfolio/");
 
   return (
     <nav className="top-nav-bar">
@@ -51,10 +70,12 @@ const TopBar = () => {
         <Link className="user-picture">
           <img src={profile} alt="profile" />
         </Link>
-        <div className="user-details">
-          <Link className="user-name">{userName}</Link>
-          <Link className="user-profession">Analyst</Link>
-        </div>
+        {userName && (
+          <div className="user-details">
+            <Link className="user-name">{userName}</Link>
+            <Link className="user-profession">Analyst</Link>
+          </div>
+        )}
       </div>
     </nav>
   );

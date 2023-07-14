@@ -16,6 +16,7 @@ const SetSecurityQuestion = () => {
   const [questions, setQuestions] = useState(null);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  // const {id} = useParams();
   const onSubmit = async () => {
     try {
       const response = await axios.put(

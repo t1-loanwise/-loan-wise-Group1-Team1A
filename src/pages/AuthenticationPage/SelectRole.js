@@ -38,8 +38,6 @@ const SelectRole = () => {
                     Select a role
                   </option>
                   <option>Risk Analyst</option>
-                  <option>Credit Analyst</option>
-                  <option>What school did you attend?</option>
                 </select>
               </div>
             </div>

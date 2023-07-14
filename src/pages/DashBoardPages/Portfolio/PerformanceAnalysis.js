@@ -1,20 +1,33 @@
-import React, { useEffect } from "react";
-import loanWiseData from "../../../components/loanWiseData.json";
+import React, { useEffect, useState } from "react";
+// import loanWiseData from "../../../components/loanWiseData.json";
 import face from "../../../assets/WireframeB.svg";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
+import axios from "axios";
 
 const PerformanceAnalysis = () => {
-  const { customerName } = useParams();
-  const location = useLocation();
-  useEffect(() => {
-    if (location.pathname === `/customer/${customerName}/loan-details`) {
-      console.log("Index element is active on page load");
-    }
-  }, [location, customerName]);
+ const { customerName } = useParams();
+ const location = useLocation();
+ const [details, setDetails] = useState([]);
+ const [error, setError] = useState(false);
 
-  const customerDetails = loanWiseData.filter(
-    (data) => data.name === customerName
-  );
+ useEffect(() => {
+   const loanWiseData = async () => {
+     try {
+       const response = await axios.get(
+         `https://loanwise.onrender.com/api/loan-table`
+       );
+       setDetails(response.data);
+       setError(false);
+     } catch (error) {
+       setError(true);
+     }
+   };
+
+   loanWiseData();
+ }, []);
+
+ const customerDetails = details.filter((data) => data.name === customerName);
+
 
   //   const loanStatus = loanWiseData.filter((data) => data["Loan status 2"] === data["Loan status 2"])
   //   console.log(loanStatus);
@@ -44,15 +57,15 @@ const PerformanceAnalysis = () => {
                 </div>
                 <div>
                   <span>Phone Number:</span>
-                  <span>{"0" + data["Phone number"]}</span>
+                  <span>{"0" + data["phone_number"]}</span>
                 </div>
                 <div>
                   <span>Annual Income</span>
-                  <span>{data["Annual Income"]}</span>
+                  <span>{data["annual_income"]}</span>
                 </div>
                 <div>
                   <span>Years of Employment:</span>
-                  <span>{data["Total Years of Employment"]}</span>
+                  <span>{data["total_years_of_employment"]}</span>
                 </div>
               </div>
             </div>

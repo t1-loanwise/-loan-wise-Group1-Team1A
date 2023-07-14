@@ -1,10 +1,33 @@
-import React from "react";
-import loanWiseData from "../components/loanWiseData.json";
+import React, { useEffect, useState } from "react";
+// import loanWiseData from "../components/loanWiseData.json";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const LoanHistory = () => {
-    const {customerName} = useParams();
-    const customerLoanHistory = loanWiseData.filter((data) => data.name === customerName);
+     const { customerName } = useParams();
+     const [details, setDetails] = useState([]);
+     const [error, setError] = useState(false);
+
+     useEffect(() => {
+       const loanWiseData = async () => {
+         try {
+           const response = await axios.get(
+             `https://loanwise.onrender.com/api/loan-table`
+           );
+           setDetails(response.data);
+           setError(false);
+         } catch (error) {
+           setError(true);
+         }
+       };
+
+       loanWiseData();
+     }, []);
+
+     const customerLoanHistory = details.filter(
+       (data) => data.name === customerName
+     );
+
 
   return (
     <div className="loan_container">
@@ -15,7 +38,7 @@ const LoanHistory = () => {
               <div className="history-date">
                 <span>Loan application received</span>
                 <span className="history-date-span2">
-                  {data["Loan received"]}
+                  {data["Loan_received"]}
                 </span>
               </div>
               <p>pending</p>
@@ -24,7 +47,7 @@ const LoanHistory = () => {
               <div className="history-date">
                 <span>Loan application reviewed</span>
                 <span className="history-date-span2">
-                  {data["loan reviewed"]}
+                  {data["loan_reviewed"]}
                 </span>
               </div>
               <p>Approved</p>
@@ -33,7 +56,7 @@ const LoanHistory = () => {
               <div className="history-date">
                 <span>Loan disbursed</span>
                 <span className="history-date-span2">
-                  {data["loan disbursed"]}
+                  {data["loan_disbursed"]}
                 </span>
               </div>
               <p>{"N" + data["Disbursed"]}</p>
@@ -43,14 +66,14 @@ const LoanHistory = () => {
                 <span>First repayment</span>
                 <span className="history-date-span2">16th July, 2022</span>
               </div>
-              <p>{"N" + data["First repayment"]}</p>
+              <p>{"N" + data["first repayment"]}</p>
             </div>
             <div className="history-border">
               <div className="history-date">
                 <span>Second repayment</span>
                 <span className="history-date-span2">16th August, 2022</span>
               </div>
-              <p>{"N" + data["Second repayment"]}</p>
+              <p>{"N" + data["second_repayment"]}</p>
             </div>
             <div className="history-border">
               <div className="history-date">

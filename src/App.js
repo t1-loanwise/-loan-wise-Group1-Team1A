@@ -4,44 +4,36 @@ import About from "./pages/LandingPage/About";
 import Home from "./pages/LandingPage/Home";
 import Pricing from "./pages/LandingPage/Pricing";
 import Blog from "./pages/LandingPage/Blog";
-import SignUp from "./pages/AuthenticationPage/CreateAccount/SignUp";
+import SignUp from "./pages/AuthenticationPage/SignUp";
 import VerifyCode from "./pages/AuthenticationPage/VerifyCode";
 import PasswordReset from "./pages/AuthenticationPage/PasswordReset";
 import CreateNewPassword from "./pages/AuthenticationPage/CreateNewPassword";
-import SetSecurityQuestion from "./pages/AuthenticationPage/CreateAccount/SetSecurityQuestion";
-import SettingAndPrivacy from "./components/SettingAndPrivacy";
+import SetSecurityQuestion from "./pages/AuthenticationPage/SetSecurityQuestion";
 import Login from "./pages/AuthenticationPage/Login";
 import Successfulpage from "./pages/AuthenticationPage/SuccessfulPage";
-import PersonalDetails from "./components/NewPortfolio/PersonalDetails";
 import BusinessDetails from "./components/NewPortfolio/BusinessDetails";
-import PersonalStatementAnalysis from "./components/NewPortfolio/PersonalStatementAnalysis";
 import BusinessStatementAnalysis from "./components/NewPortfolio/BusinessStatementAnalysis";
-import Behavioral from "./components/NewPortfolio/Behavioral";
-import Spend from "./components/NewPortfolio/Spend";
-import Income from "./components/NewPortfolio/Income";
-import TransactionPattern from "./components/NewPortfolio/TransactionPattern";
-import Overview from "./components/NewPortfolio/Overview";
-import CashFlow from "./components/NewPortfolio/CashFlow";
-import Settings from "./pages/DashBoardPages/Settings";
-import Delinquency from "./pages/DashBoardPages/Delinquency";
-import Messages from "./pages/DashBoardPages/Messages";
+import Settings from "./pages/DashBoardPages/Settings/Settings";
+import Delinquency from "./pages/DashBoardPages/ComingSoon/Delinquency";
+import Messages from "./pages/DashBoardPages/ComingSoon/Messages";
 import Logout from "./pages/DashBoardPages/Logout";
-import Portfolio from "./pages/DashBoardPages/Portfolio";
-import Recovery from "./pages/DashBoardPages/Recovery";
-import Repayment from "./pages/DashBoardPages/Repayment";
+import Portfolio from "./pages/DashBoardPages/Portfolio/Portfolio";
+import Recovery from "./pages/DashBoardPages/ComingSoon/Recovery";
+import Repayment from "./pages/DashBoardPages/ComingSoon/Repayment";
 import Layout from "./pages/DashBoardPages/Layout";
-import Dashboard from "./pages/DashBoardPages/Dashboard";
+import Dashboard from "./pages/DashBoardPages/Dashboard/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
-import Profile from "./pages/DashBoardPages/Profile";
-import Notification from "./pages/DashBoardPages/Notification";
+import Profile from "./pages/DashBoardPages/ComingSoon/Profile";
+import Notification from "./pages/DashBoardPages/ComingSoon/Notification";
 import UserPreferenceMain from "./components/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
-import VerifyRegistration from "./pages/AuthenticationPage/CreateAccount/VerifyRegistration";
-import BorrowersDetails from "./pages/DashBoardPages/BorrowersDetails";
+import VerifyRegistration from "./pages/AuthenticationPage/VerifyRegistration";
+import BorrowersDetails from "./pages/DashBoardPages/Dashboard/BorrowersDetails";
 import LoanDetails from "./components/LoanDetails";
 import LoanAnalysis from "./components/LoanAnalysis";
 import LoanHistory from "./components/LoanHistory";
-import PerformanceAnalysis from "./pages/DashBoardPages/PerformanceAnalysis";
+import PerformanceAnalysis from "./pages/DashBoardPages/Portfolio/PerformanceAnalysis";
+import SelectRole from "./pages/AuthenticationPage/SelectRole";
 
 const App = () => {
   const [token, setToken] = useState(null);
@@ -75,7 +67,7 @@ const App = () => {
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
-
+        <Route path="/selectRole" element={<SelectRole/>}/>
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />

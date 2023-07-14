@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PortfolioOviewData from "../../components/Portfolio/Data";
-import styles from "../../styles/PortfolioTable.css";
-import Table from "../../components/Table";
+import PortfolioOviewData from "../../../components/Portfolio/Data";
+import styles from "../../../styles/PortfolioTable.css";
+import Table from "../../../components/Table";
 import { NavLink, Link } from "react-router-dom";
-import PortfolioBarChart from "../../components/Portfolio/PortfolioBarChart";
-import PortfolioLineChart from "../../components/Portfolio/PortfolioLineChart";
+import PortfolioBarChart from "../../../components/Portfolio/PortfolioBarChart";
+import PortfolioLineChart from "../../../components/Portfolio/PortfolioLineChart";
 
 const PortfolioOverviewTable = () => {
   const [PortfolioOverview] = useState([...PortfolioOviewData]);
@@ -27,7 +27,7 @@ const PortfolioOverviewTable = () => {
         <PortfolioBarChart />
         <PortfolioLineChart />
       </div>
-      <div className="card">
+      <div>
         <div className={styles.wrapper}>
           <Table Data={PortfolioOverview} rowsPerPage={6} />
         </div>

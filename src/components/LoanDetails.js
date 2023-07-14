@@ -1,11 +1,30 @@
-import React from 'react'
-import loanWiseData from "./loanWiseData.json"
-import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useLocation, useParams } from 'react-router-dom';
 
 const LoanDetails = () => {
-  const {customerName }= useParams();
+  const { customerName } = useParams();
+  const [details, setDetails] = useState([]);
+  const [error, setError] = useState(false);
 
-  const customerLoanDetails = loanWiseData.filter((data) => data.name === customerName);
+  useEffect(() => {
+    const loanWiseData = async () => {
+      try {
+        const response = await axios.get(
+          `https://loanwise.onrender.com/api/loan-table`
+        );
+        setDetails(response.data);
+        setError(false);
+      } catch (error) {
+        setError(true);
+      }
+    };
+
+    loanWiseData();
+  }, []);
+
+  const customerLoanDetails = details.filter((data) => data.name === customerName);
+
   return (
     <div className="loan_container">
         {customerLoanDetails.map((data)=> {
@@ -17,23 +36,23 @@ const LoanDetails = () => {
                 </div>
                 <div>
                   <span>Loan Term:</span>
-                  <span>{data["Loan Term"]}</span>
+                  <span>{data["loan_term"]}</span>
                 </div>
                 <div>
                   <span>Credit Utilization Rate:</span>
-                  <span>{data["Credit Utilization Rate"]}</span>
+                  <span>{data["credit_utilization_rate"]}</span>
                 </div>
                 <div>
                   <span>No. of Mortgage Account:</span>
-                  <span>{data["No of Mortgage Account"]}</span>
+                  <span>{data["no_of_mortgageAccount"]}</span>
                 </div>
                 <div>
                   <span>Income-debt Ratio</span>
-                  <span>{data["Income-Debt Ratio"]}</span>
+                  <span>{data["income_debt_ratio"]}</span>
                 </div>
                 <div>
                   <span>Open Credit Lines:</span>
-                  <span>{data["No of Open Credit Lines"]}</span>
+                  <span>{data["no_of_openCreditLine"]}</span>
                 </div>
               </div>
             );

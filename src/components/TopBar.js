@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate} from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/logoWhite.svg";
 import bell from "../assets/bell.svg";
 import profile from "../assets/user.png";
 import "../styles/dashNavigation.css";
 import back from "../assets/back arrow.svg";
+import axios from "axios";
+import { UserContext } from "../pages/AuthenticationPage/lib/UserContext";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const {userName} = useContext(UserContext)
   const goBack = () => {
     navigate(-1);
   };
 
-  const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    const storedUserName = localStorage.getItem("userName");
-    if (storedUserName) {
-      setUserName(storedUserName)
-    }
-  },[])
-
- const shouldDisplayBackLink =
-   location.pathname.startsWith("/customer/") ||
-   location.pathname === "/userPreference" ||
-   location.pathname.startsWith("/prediction") ||
-   location.pathname.startsWith("/portfolio/") 
-
+  const shouldDisplayBackLink =
+    location.pathname.startsWith("/customer/") ||
+    location.pathname === "/userPreference" ||
+    location.pathname.startsWith("/prediction") ||
+    location.pathname.startsWith("/portfolio/");
 
   return (
     <nav className="top-nav-bar">

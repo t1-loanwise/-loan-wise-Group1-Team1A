@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import AuthenticationMainText from "../../../components/AuthenticationMainText";
-import Logo from "../../../components/Logo";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
+import Logo from "../../components/Logo";
 import { useNavigate } from "react-router";
-import Onboarding from "../../../components/Onboarding";
+import Onboarding from "../../components/Onboarding";
 import axios from "axios";
 
 const SetSecurityQuestion = ({ token }) => {

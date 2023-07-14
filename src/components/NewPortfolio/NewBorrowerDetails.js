@@ -38,7 +38,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
     }
   };
 
-  //Endpoint - 'https://loanwise.onrender.com/borrowers-details'
+  //Endpoint - 'https://loanwise.onrender.com/api/borrowers-details'
 
   return (
     <>

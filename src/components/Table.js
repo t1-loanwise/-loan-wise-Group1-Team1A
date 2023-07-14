@@ -147,7 +147,7 @@ const generatePDF = () => {
           >
             <div className="trs">
               <div className="tds">{data.customer_id}</div>
-              <div className="tds">{data.name}</div>
+              <div className="tds">{data.fullName}</div>
               <div className="tds">{data.Category}</div>
               <div className="tds">N{data.Requested}</div>
               <div className="tds">{data["due_date"]}</div>

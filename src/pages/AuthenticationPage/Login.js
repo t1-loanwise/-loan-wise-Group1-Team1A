@@ -107,10 +107,15 @@ const Login = () => {
             </div>
             <div className="stay-login-container">
               <div className="check-btn-container">
+                {errors.checkbox && errors.checkbox.type === "required" && (
+                  <p className="errorMsg">*</p>
+                )}
                 <input
                   type="checkbox"
-                  name="password"
-                  {...register("checkbox")}
+                  name="checkbox"
+                  {...register("checkbox", {
+                    required: true,
+                  })}
                   className="check-btn"
                 />
                 <label>

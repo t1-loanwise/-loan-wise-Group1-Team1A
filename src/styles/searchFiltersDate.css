@@ -3,7 +3,8 @@
     display: flex;
     /* justify-content: space-between; */
     height: fit-content;
-    gap: 1rem
+    gap: 1rem;
+    /* flex-wrap: nowrap; */
 }
 
 .searchFilter {

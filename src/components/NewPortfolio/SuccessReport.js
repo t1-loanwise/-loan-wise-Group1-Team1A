@@ -10,6 +10,9 @@ function SuccessReport() {
         <p>
           Congratulations, borrower is not likely to default on this loan amount
         </p>
+        <button className="new_portfolio_btn" type="submit">
+          Proceed
+        </button>
       </div>
     </>
   );

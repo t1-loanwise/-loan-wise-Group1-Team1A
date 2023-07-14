@@ -7,12 +7,38 @@
     background: #E6F2F5;
     border-radius: 5px;
     border: 1px solid #E6F2F5;
-}
+    cursor: pointer;
+  }
 
-.calendarInput {
+  .arrowIcon {
+    height: 14px;
+  }
+  
+  .calendarInput {
     border: none;
-    margin-left: 0.3rem;
+    font-size: 17px;
+    /* margin-left: 0.3rem; */
     background-color: transparent;
     color: #007E99;
     font-weight: 600;
+    appearance: none; /* Removes default input styles */
+    outline: none; /* Removes the outline that appears on focus */
+    box-shadow: none; /* Removes any box shadow on focus */
+    cursor: pointer; /* Show pointer cursor when hovering over the input */
+  }
+  
+  .calendarInput::-webkit-calendar-picker-indicator {
+    /* display: none; */
+    filter: invert(1); /* Inverts the color of the calendar icon */
+    /* color: transparent; */
+    border: none;
+    outline: none;
+  }
+
+  /* Additional CSS for Firefox */
+.calendarInput[type="date"]::-moz-calendar-picker-indicator {
+  filter: invert(1); /* Inverts the color of the calendar icon */
+  border: none; /* Removes the border around the calendar icon */
+  outline: none !important; /* Removes the outline around the calendar icon */
 }
+  

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/logoWhite.svg";
 import bell from "../assets/bell.svg";
@@ -6,41 +6,15 @@ import profile from "../assets/user.png";
 import "../styles/dashNavigation.css";
 import back from "../assets/back arrow.svg";
 import axios from "axios";
+import { UserContext } from "../pages/AuthenticationPage/lib/UserContext";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const {userName} = useContext(UserContext)
   const goBack = () => {
     navigate(-1);
   };
-
-  const [userName, setUserName] = useState("");
-  const [error, setError] = useState(false);
-
-
-   useEffect(() => {
-     const fetchUser = async () => {
-       try {
-       const response = await axios.get(
-         `https://loanwise.onrender.com/api/user`,
-         {
-           headers: {
-             Authorization: "Bearer Token",
-           },
-         }
-       );
-
-         console.log(response.data.user);
-         setUserName(response.data.user.name);
-         setError(false);
-       } catch (error) {
-         setError(true);
-       }
-     };
-
-     fetchUser();
-   }, []);
-
 
   const shouldDisplayBackLink =
     location.pathname.startsWith("/customer/") ||
@@ -70,12 +44,10 @@ const TopBar = () => {
         <Link className="user-picture">
           <img src={profile} alt="profile" />
         </Link>
-        {userName && (
-          <div className="user-details">
-            <Link className="user-name">{userName}</Link>
-            <Link className="user-profession">Analyst</Link>
-          </div>
-        )}
+        <div className="user-details">
+          <Link className="user-name">{userName}</Link>
+          <Link className="user-profession">Analyst</Link>
+        </div>
       </div>
     </nav>
   );

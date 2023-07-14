@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/LandingPage/About";
 import Home from "./pages/LandingPage/Home";
@@ -44,6 +44,15 @@ import LoanHistory from "./components/LoanHistory";
 import PerformanceAnalysis from "./pages/DashBoardPages/PerformanceAnalysis";
 
 const App = () => {
+  const [token, setToken] = useState(null);
+  const handleTokenData = (data) => {
+    console.log(data);
+    setToken(data);
+  };
+  useEffect(() => {
+    console.log("Token:", token);
+  }, [token]);
+
   return (
     <div>
       <Routes>
@@ -55,8 +64,14 @@ const App = () => {
         <Route path="/verifyEmail" element={<VerifyCode />} />
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/newpassword" element={<CreateNewPassword />} />
-        <Route path="/securityQuestions" element={<SetSecurityQuestion />} />
-        <Route path="/verifyRegistration" element={<VerifyRegistration />} />
+        <Route
+          path="/securityQuestions"
+          element={<SetSecurityQuestion token={token} />}
+        />
+        <Route
+          path="/verifyRegistration"
+          element={<VerifyRegistration tokenData={handleTokenData} />}
+        />
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />

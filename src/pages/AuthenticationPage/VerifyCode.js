@@ -42,7 +42,7 @@ const VerifyCode = () => {
       return;
     } else {
       try {
-        setIsSubmitting(true)
+        setIsSubmitting(true);
         const response = await axios.post(
           `https://loanwise.onrender.com/api/recovery-account`,
           {
@@ -50,6 +50,7 @@ const VerifyCode = () => {
             recoveryCode: resetToken,
           }
         );
+        alert(response.data.message);
         setToken(response.data);
         setIsSubmitting(false);
         setError(false);

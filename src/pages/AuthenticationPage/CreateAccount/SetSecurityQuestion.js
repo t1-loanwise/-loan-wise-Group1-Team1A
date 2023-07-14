@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import Onboarding from "../../../components/Onboarding";
 import axios from "axios";
 
-const SetSecurityQuestion = () => {
+const SetSecurityQuestion = ({ token }) => {
   const {
     register,
     formState: { isSubmitting },
@@ -16,10 +16,11 @@ const SetSecurityQuestion = () => {
   const [questions, setQuestions] = useState(null);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  console.log(token);
   const onSubmit = async () => {
     try {
       const response = await axios.put(
-        `https://loanwise.onrender.com/api/648d4b1d86390176ebdd3f08/security-question`,
+        `https://loanwise.onrender.com/api/${token}/security-question`,
         {
           securityQuestions: [
             {
@@ -38,6 +39,7 @@ const SetSecurityQuestion = () => {
       console.log(response.data);
       navigate("/success");
     } catch (error) {
+      console.log(error);
       setError(true);
     }
   };
@@ -58,9 +60,7 @@ const SetSecurityQuestion = () => {
             className="createAccount_form"
           >
             {error && (
-              <span className="registered-user">
-                Please, try again.
-              </span>
+              <span className="registered-user">Please, try again.</span>
             )}
             <div className="QuestionAnswer-Container">
               <div className="QuestionAnswer">

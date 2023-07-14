@@ -33,6 +33,7 @@ function CreateNewPassword() {
         }
       );
       console.log(response.data);
+      alert(response.data.message);
       setPasswordReset(response.data);
       setError(false);
       navigate("/success");
@@ -56,7 +57,11 @@ function CreateNewPassword() {
             Body={"Please enter a password different from your old password"}
           />
           <form onSubmit={handleSubmit(onSubmit)}>
-            {error && <span className="invalid-token">Network Error ! Please try again.</span>}
+            {error && (
+              <span className="invalid-token">
+                Network Error ! Please try again.
+              </span>
+            )}
             <div className="form_control_container">
               <div className="form-control">
                 <label className="form-label" htmlFor="password">

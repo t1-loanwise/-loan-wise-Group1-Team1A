@@ -27,6 +27,7 @@ const PasswordReset = () => {
         }
       );
       setPasswordReset(response.data);
+      alert(response.data.message);
       setError(false);
       localStorage.setItem("resetEmail", getValues("email"));
       navigate("/verifyEmail");

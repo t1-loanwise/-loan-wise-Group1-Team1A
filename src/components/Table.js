@@ -149,7 +149,7 @@ const generatePDF = () => {
               <div className="tds">{data.customer_id}</div>
               <div className="tds">{data.name}</div>
               <div className="tds">{data.Category}</div>
-              <div className="tds">N{data.Requested}</div>
+              <div className="tds">N{data.Disbursed}</div>
               <div className="tds">{data["due_date"]}</div>
               <div className={data["loan_status_2"]}>
                 <button>{data["loan_status_2"]}</button>

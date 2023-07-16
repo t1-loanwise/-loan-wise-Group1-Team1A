@@ -83,7 +83,7 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
             report.text(data.customer_id, 30, y);
             report.text(data.name, 120, y);
             report.text(data.Category, 220, y);
-            report.text(`N${data.Requested}`, 300, y);
+            report.text(`N${data.Disbursed}`, 300, y);
             report.text(data["Due date"], 400, y);
             report.text(data["Loan status 2"], 500, y);
           });
@@ -123,7 +123,7 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
               <div className="tds">{data.customer_id}</div>
               <div className="tds">{data.fullName}</div>
               <div className="tds">{data.Category}</div>
-              <div className="tds"> N{data.Requested}</div>
+              <div className="tds"> N{data.Disbursed}</div>
               <div className="tds">{data["due_date"]}</div>
               <div className={data["loan_status"]}>
                 <button>{data["loan_status"]}</button>

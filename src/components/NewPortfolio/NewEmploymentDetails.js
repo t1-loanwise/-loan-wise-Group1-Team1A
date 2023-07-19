@@ -126,7 +126,7 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                       {...register("Annual_Income", {
                         required: "This field is required",
                         pattern: {
-                          value: /\b\d{6,}\b/,
+                          value: /\b\d{4,}\b/,
                           message: "Invalid entry.",
                         },
                       })}
@@ -306,7 +306,7 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                     {...register("requestedAmount", {
                       required: "This field is required",
                       pattern: {
-                        value: /\b\d{5,}\b/,
+                        value: /\b\d{4,}\b/,
                         message: "Invalid entry.",
                       },
                     })}

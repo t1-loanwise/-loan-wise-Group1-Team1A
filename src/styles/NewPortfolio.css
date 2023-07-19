@@ -161,3 +161,17 @@
   text-align: center;
   padding-top: 30px;
 }
+.input_flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* justify-content: space-between; */
+  width: 100%;
+}
+.input_field2 {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #e6f2f5;
+  margin-top: 8px;
+}

@@ -1,5 +1,6 @@
 .searchArea {
     width: fit-content;
+    display: flex;
 }
 
 .searchInput {
@@ -20,13 +21,13 @@
     color: white;
     background-color: #007E99;
     border: 2px solid #007E99;
-    border-radius: 3px;
+    border-radius: 0 3px 3px 0;
     box-shadow: none;
     transition: box-shadow 0.3s ease-in-out;
 }
 
 .searchButtton.clicked {
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 0 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .searchButtton:hover {
@@ -37,4 +38,21 @@
     color: #00151A;
     font-weight: 600;font-size: 1.1rem;
 
+}
+
+@media screen and (max-width: 768px) {
+    .searchArea {
+    width: 100%;
+}
+
+    .searchInput {
+  font-size: 0.85em;
+  width: 80%;
+  padding: 0.85em 10px;
+}
+
+.searchButtton {
+    padding: 0.85em 0;
+    width: 20%;
+}
 }

@@ -13,7 +13,7 @@
   .arrowIcon {
     height: 14px;
   }
-  
+
   .calendarInput {
     border: none;
     font-size: 17px;
@@ -26,7 +26,7 @@
     box-shadow: none; /* Removes any box shadow on focus */
     cursor: pointer; /* Show pointer cursor when hovering over the input */
   }
-  
+
   .calendarInput::-webkit-calendar-picker-indicator {
     /* display: none; */
     filter: invert(1); /* Inverts the color of the calendar icon */
@@ -41,4 +41,15 @@
   border: none; /* Removes the border around the calendar icon */
   outline: none !important; /* Removes the outline around the calendar icon */
 }
-  
+
+@media screen and (max-width: 768px) {
+   .dateArea {
+    padding: 0.85em 10px;
+    gap: 5px;
+    font-size: 0.8em;
+  }
+
+  .dateArea img {
+    width: 20px;
+  }
+}

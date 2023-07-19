@@ -7,6 +7,15 @@
     /* flex-wrap: nowrap; */
 }
 
+.searchFilterDate2 {
+    margin-bottom: 2rem;
+    display: flex;
+    /* justify-content: space-between; */
+    height: fit-content;
+    gap: 1rem;
+    /* flex-wrap: nowrap; */
+}
+
 .searchFilter {
     display: flex;
     height: fit-content;
@@ -14,4 +23,27 @@
     /* flex-direction: 50%; */
     flex: 1;
     gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .searchFilterDate {
+        width: 100%;
+        gap: 0.6em;
+    }
+
+    .searchFilterDate2 {
+  gap: 0.4em;
+}
+
+    .searchFilter {
+  width: 100%;
+}
+
+.filterArea {
+    padding: 1em 10px;
+}
+
+.filterArea span {
+    display: none;
+}
 }

@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../components/Onboarding";
 import axios from "axios";
 
+
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required(),

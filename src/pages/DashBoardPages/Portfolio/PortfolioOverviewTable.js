@@ -29,7 +29,9 @@ const PortfolioOverviewTable = () => {
       </div>
       <div>
         <div className={styles.wrapper}>
-          <Table Data={PortfolioOverview} rowsPerPage={6} />
+          <div className="scroll-table">
+            <Table Data={PortfolioOverview} rowsPerPage={6} />
+          </div>
         </div>
       </div>
     </div>

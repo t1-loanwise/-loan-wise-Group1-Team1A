@@ -40,7 +40,7 @@
 
 .home_container img:hover {
   transform: scale(1.02);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 /* .home_container img {
@@ -79,7 +79,7 @@
 }
 
 .learnMore img {
-width: 30px;
+  width: 30px;
 }
 
 .learnMore:hover {
@@ -87,8 +87,8 @@ width: 30px;
   color: #ffffff;
 }
 
-.learnMore:hover .learn-img{
- filter: invert(1) brightness(10);
+.learnMore:hover .learn-img {
+  filter: invert(1) brightness(10);
 }
 
 .hero-section {
@@ -251,11 +251,11 @@ width: 30px;
 }
 
 .featureCard-container:hover .featureIconImg {
-filter: invert(1) brightness(10);
+  filter: invert(1) brightness(10);
 }
 
 .featureCard-container:hover .featureIcon {
-background-color: #003a47;
+  background-color: #003a47;
 }
 
 .featureIconImg {
@@ -303,9 +303,8 @@ background-color: #003a47;
 
   .home-header {
     font-size: 1.5em;
-    text-align: center
+    text-align: center;
   }
-
 
   .learnMore {
     padding: 10px 0.8em;
@@ -325,7 +324,7 @@ background-color: #003a47;
   }
 
   .section-image,
-  .home-image ,
+  .home-image,
   .specialFeature-image,
   .loanDefault-image {
     width: 90%;
@@ -361,22 +360,25 @@ background-color: #003a47;
   }
 
   .featuresCard-container {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    grid-template-columns: repeat(2, 48%);
     gap: 4%;
   }
 
   .featureCard-container {
-    padding: 20px;
+    padding: 20px 20px;
+     flex: 1 48%;
   }
 
   .featureText {
     font-size: 1em;
+    width: 100%
   }
 
-    .home-right,
+  .home-right,
   .home-left {
-    width: 100%
+    width: 100%;
   }
 
   .special-one {

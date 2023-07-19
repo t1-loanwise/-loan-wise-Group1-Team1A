@@ -5,11 +5,11 @@
   background-repeat: no-repeat;
 }
 .main-div img:hover {
-transform: scale(1.05);
-  transition: 1s ease-in-out;
+transform: scale(1.02);
+  transition: .5s ease-in-out;
 }
 
-.main-div img {
+/* .main-div img {
    animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -22,7 +22,7 @@ transform: scale(1.05);
   100% {
     opacity: 1;
   }
-}
+} */
 
 .form-wrapper {
   display: flex;
@@ -40,7 +40,7 @@ transform: scale(1.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0% 6.5% 0%;
+  padding: 150px 6.5% 0%;
 }
 
 .p-one {

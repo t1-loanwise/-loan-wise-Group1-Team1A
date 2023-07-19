@@ -116,8 +116,8 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
         {displayedData.map((data) => (
           <Link
             className="table-link"
-            to={`/customer/${data.name}`}
-            key={data.name}
+            to={`/customer/${data.fullName}`}
+            key={data.fullName}
           >
             <div className="trs">
               <div className="tds">{data.customer_id}</div>

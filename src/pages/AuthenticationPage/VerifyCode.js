@@ -9,6 +9,7 @@ import axios from "axios";
 
 const VerifyCode = () => {
   const [seconds, setSeconds] = useState(60);
+  const [countdownFinished, setCountdownFinished] = useState(false);
   const { inputStates, inputClass, handleChange, handleKeyDown } =
     useVerificationHook(4);
 
@@ -19,18 +20,23 @@ const VerifyCode = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (seconds > 0) {
+    let interValId = null;
+
+    if (seconds === 0) {
+      setCountdownFinished(true);
+      clearInterval(interValId);
+    } else {
+      interValId = setInterval(() => {
         setSeconds(seconds - 1);
-      }
-    }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
+      }, 1000);
+    }
+
+    return () => clearInterval(interValId);
   }, [seconds]);
 
   const resendCode = () => {
     setSeconds(60);
+     setCountdownFinished(false);
   };
 
   const routeHandler = async (e) => {
@@ -107,11 +113,14 @@ const VerifyCode = () => {
             </form>
           </div>
           <p className="no_code">
-            Didn’t get OTP?{" "}
-            <button className="resend_btn" onClick={resendCode}>
+              Didn't get an OTP? {" "}
+          {countdownFinished ? (
+            <span onClick={resendCode} className="resend_OTP">
               Resend
-            </button>{" "}
-            in {seconds}s
+            </span>
+          ) : (
+            <span> Resend in {seconds}s </span>
+          )}
           </p>
         </div>
       </div>

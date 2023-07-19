@@ -32,7 +32,7 @@
   width: 80%;
 }
 
-.onboardingGraph {
+/* .onboardingGraph {
   animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -45,7 +45,7 @@
   100% {
     opacity: 1;
   }
-}
+} */
 
 .onboardingTextContainer {
   display: flex;
@@ -281,4 +281,82 @@ font-size: 18px;
   cursor: pointer;
   font-size: 19px;
   width: 90%;
+}
+
+@media screen and (max-width: 720px) {
+  .onboardingImg {
+    display: none;
+  }
+
+  .createAccount_parentContainer {
+  height: 100vh;
+}
+
+.createAccountContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.createAccount,
+.formInputContainerVerify {
+  width: 100%;
+padding: 0 5%;
+}
+
+.createAccount_form .passwordContainer {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.4em;
+}
+
+.createAccount_form .passwordContainer .passwd,
+.createAccount_form .passwordContainer .confirmPswd {
+  width: 100%;
+}
+
+.input-error-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 40px;
+}
+
+.verifyInput input {
+  height: 100px;
+  font-size: 24px;
+
+}
+
+.createAccountBtn {
+  height: 40px;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.createAccount_form {
+  gap: 0.3em;
+}
+
+.createAccount_form label {
+  font-size: 1em;
+}
+
+.toLoginPageBtn {
+  font-size: 1.1em;
+}
+
+.no_OTP {
+  font-size: 1.1em;
+}
+
+.radioBtnContainer {
+  font-size: 0.9em;
+  font-weight: normal;
+  justify-content: left;
+}
+
+.radio-btn {
+  width: 12px;
+  height: 12px;
+}
 }

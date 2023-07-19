@@ -3,7 +3,6 @@ import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import "../../styles/blog.css"
 import image from "../../assets/embed.svg"
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Blog = () => {
 
@@ -33,7 +32,7 @@ const Blog = () => {
             </div>
             <p className="not-spam">We would not spam you, don't worry.</p>
           </div>
-            <LazyLoadImage src={image} alt="smiling woman" className="my-image"/>
+            <img src={image} alt="smiling woman" className="my-image"/>
         </div>
       </div>
       <Footer />

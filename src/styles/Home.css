@@ -35,15 +35,15 @@
 }
 
 .home_container {
-  padding: 3% 6.5%;
+  padding: 150px 6.5% 3%;
 }
 
 .home_container img:hover {
-  transform: scale(1.05);
-  transition: 1s ease-in-out;
+  transform: scale(1.02);
+  transition: .5s ease-in-out;
 }
 
-.home_container img {
+/* .home_container img {
   animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -56,7 +56,7 @@
   100% {
     opacity: 1;
   }
-}
+} */
 
 .learnMore {
   display: flex;

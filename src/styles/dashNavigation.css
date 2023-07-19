@@ -1,14 +1,26 @@
-.side-bar-nav a {
+.side-bar-nav a,
+.activeSidebar a {
   text-decoration: none;
 }
 
 .side-bar-nav button {
-    background: transparent;
+  background: transparent;
     padding: 10px;
     border: 0;
     color: white;
     width: 100%;
     font-size: 1em;
+     font-weight: bold;
+}
+
+.activeSidebar button {
+    background: transparent;
+    padding: 10px;
+    border: 0;
+    color: white;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
 .side-bar-nav1 li .active button,
@@ -94,17 +106,25 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
-.side-bar-nav ul {
-  list-style-type: none;
+.menu {
+  display: none;
+  border: 0;
 }
+
+.closeMenu {
+   display: none;
+}
+
 
 .side-bar-nav1 ,
 .side-bar-nav2 {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+   list-style-type: none;
 }
 
 .nav-side {
@@ -179,4 +199,97 @@ position: relative;
 .dropdown-menu2 li a {
   text-decoration: none;
   color: #000000;
+}
+
+.profile-block {
+  display: none;
+}
+
+.activeSidebar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .side-bar-nav {
+    display: none;
+  }
+
+.menu,
+.closeMenu {
+  display: flex;
+  gap: 0.5em;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+justify-content: end;
+}
+
+.top-nav-bar {
+  height: 10vh;
+}
+
+.logo-loanwise-container img {
+    width: 100px;
+}
+
+.user-picture img {
+    /* border-radius: 50%; */
+    width: 30px;
+}
+
+.nav-side img {
+    width: 18px;
+}
+
+.user-notif-profile {
+  display: none;
+}
+
+.profile-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.activeSidebar {
+ padding: 25px 10px;
+  width: fit;
+  margin-top: 10vh;
+  height: 90vh;
+  background-color: #007e99;
+  border-top: 1px solid #a3e2f06c;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+   z-index: 1000;
+  top: 0;
+  right: 0;
+  justify-self: self-end;
+}
+
+.menu img,
+.closeMenu img {
+width: 36px;
+height: 100%;
+
+}
+
+.menu2 {
+  background-color: #007e99;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.logo-back-button {
+  width: 70%;
+}
+
+.back-button img {
+  width: 24px;
+}
+
+.back-button {
+  font-size: 0.9em;
+}
+
 }

@@ -135,7 +135,7 @@ const VerifyRegistration = ({ tokenData }) => {
         </div>
 
         <span className="no_OTP">
-          Didn't get an OTP?
+          Didn't get an OTP? {" "}
           {countdownFinished ? (
             <span onClick={handleResend} className="resend_OTP">
               Resend

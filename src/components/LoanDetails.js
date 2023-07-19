@@ -23,36 +23,36 @@ const LoanDetails = () => {
     loanWiseData();
   }, []);
 
-  const customerLoanDetails = details.filter((data) => data.name === customerName);
+  const customerLoanDetails = details.filter((data) => data.fullName === customerName);
 
   return (
     <div className="loan_container">
         {customerLoanDetails.map((data)=> {
             return (
               <div key={data.name} className="details-minus-image">
-                <div>
+                <div className="details-border">
                   <span>Requested Loan Amount:</span>
-                  <span>{"N" + data.Requested}</span>
+                  <span>{"N" + data.EmploymentData.requestedAmount}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Loan Term:</span>
-                  <span>{data["loan_term"]}</span>
+                  <span>{data.EmploymentData["Loan_Term"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Credit Utilization Rate:</span>
-                  <span>{data["credit_utilization_rate"]}</span>
+                  <span>{data.EmploymentData["Credit_Utilization_Rate"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>No. of Mortgage Account:</span>
-                  <span>{data["no_of_mortgageAccount"]}</span>
+                  <span>{data.EmploymentData["No_of_Mortgage_Account"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Income-debt Ratio</span>
-                  <span>{data["income_debt_ratio"]}</span>
+                  <span>{data.EmploymentData["Income_Debt_Ratio"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Open Credit Lines:</span>
-                  <span>{data["no_of_openCreditLine"]}</span>
+                  <span>{data.EmploymentData["No_of_Open_Credit_Lines"]}</span>
                 </div>
               </div>
             );

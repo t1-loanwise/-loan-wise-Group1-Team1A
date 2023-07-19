@@ -109,7 +109,7 @@
   flex-direction: column;
   gap: 5em;
   width: 100%;
-  padding: 2rem 6.5%;
+  padding: 150px 6.5%;
 }
 
 .pricing-card-text-container {
@@ -363,9 +363,15 @@
 }
 
 .Logo-loanwise {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
+
+@media (max-width: 768px) {
+   .Logo-loanwise {
+    width: 80%;
+   }
+  }
 
 .faq-accordion {
   display: flex;

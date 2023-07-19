@@ -14,3 +14,13 @@
   color: #55666a;
   width: 100%;
 }
+
+@media screen and (max-width: 720px) {
+  .mainTextHeader {
+  font-size: 1.7em;
+}
+
+.mainTextBody {
+  font-size: 16px;
+}
+}

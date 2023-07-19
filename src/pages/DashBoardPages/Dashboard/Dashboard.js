@@ -38,9 +38,11 @@ const Dashboard = () => {
           <div className="searchFilterDate">
             <div className="searchFilter">
               <SearchComponent onSearch={handleSearch} />
-              <FilterComponent onFilterChange={handleFilterChange} />
             </div>
-            <CalendarComponent onDateChange={handleDateChange} />
+            <div className="searchFilterDate2">
+              <FilterComponent onFilterChange={handleFilterChange} />
+              <CalendarComponent onDateChange={handleDateChange} />
+            </div>
           </div>
         </div>
         <DashCardGraph />

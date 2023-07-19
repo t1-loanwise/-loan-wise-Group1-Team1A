@@ -103,7 +103,8 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
         </Link>
       </div>
       <hr />
-      <div className="taable">
+      <div className="scroll-table">
+        <div className="taable">
         <div className="trs trs1">
           <div className="ths">ID</div>
           <div className="ths"> Name</div>
@@ -131,6 +132,7 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
             </div>
           </Link>
         ))}
+      </div>
       </div>
 
       <div className="pagination-container">

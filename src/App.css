@@ -717,4 +717,34 @@ input:checked + .slider:before {
   .faq-content h4 {
     display: none;
   }
+
+  .loanwise_card_container {
+  gap: 0.9em;
+}
+
+.loanwise_card_container_heading {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.loanwise_card_container_text {
+  width: 100%;
+  font-size: 0.85em;
+}
+
+.card1_container {
+display: flex;
+ flex-wrap: wrap;
+  width: 100%;
+  gap: 24px;
+}
+
+.card1_content {
+   padding: 32px 15px;
+  flex: 1 48%;
+}
+
+.card1_container p {
+  font-size: 0.9em
+}
 }

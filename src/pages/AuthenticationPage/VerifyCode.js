@@ -76,7 +76,7 @@ const VerifyCode = () => {
           <div className="logo_container">
             <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
           </div>
-          <div className="verify_body_content">
+          <div className="verify_body_content formInputContainerVerify ">
             <AuthenticationMainText
               Title={"Verify Email Address"}
               Body={

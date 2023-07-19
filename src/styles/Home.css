@@ -379,6 +379,7 @@
   .home-right,
   .home-left {
     width: 100%;
+    padding-top: 30px;
   }
 
   .special-one {

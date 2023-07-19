@@ -45,8 +45,6 @@ const dashCardGraph = () => {
           <span className="cardMetric">N8,500,000.00</span>
           <span className="cardText">Amount of Loans in Default</span>
         </div>
-      </div>
-      <div className="line-bar-container">
         <div className="dashCard">
           <div className="iconContainer">
             <img src={CardIcon} alt="arrows" className="cardIcon" />
@@ -57,6 +55,17 @@ const dashCardGraph = () => {
         <Linechart />
         <Barchart />
       </div>
+      {/* <div className="line-bar-container">
+        <div className="dashCard">
+          <div className="iconContainer">
+            <img src={CardIcon} alt="arrows" className="cardIcon" />
+          </div>
+          <span className="cardMetric">N6,000,000.00</span>
+          <span className="cardText">Interest Earnings</span>
+        </div>
+        <Linechart />
+        <Barchart />
+      </div> */}
     </div>
   );
 };

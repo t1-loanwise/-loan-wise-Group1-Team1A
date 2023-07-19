@@ -71,14 +71,16 @@
   border: 0;
   color: white;
   width: fit-content;
-  padding: 15px 30px;
+  height: 50px;
+  padding: 0px 30px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .buttonn1:hover {
-   background-color: #006980;
+  background-color: #006980;
 }
 
 .button2 {
@@ -367,12 +369,6 @@
   height: 70%;
 }
 
-@media (max-width: 768px) {
-   .Logo-loanwise {
-    width: 80%;
-   }
-  }
-
 .faq-accordion {
   display: flex;
   flex-direction: column;
@@ -659,4 +655,66 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Logo-loanwise {
+    width: 55%;
+  }
+  .pricing {
+    padding: 100px 4% 3%;
+  }
+
+  .buttonn1 {
+    font-size: 0.85em;
+  }
+
+  .text-header h3 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .text-header p {
+    width: 100%;
+  }
+
+  .pricing-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .pricing_list {
+    padding: 20px 0 40px;
+    gap: 1em;
+  }
+
+  .price-card {
+    height: fit-content;
+    padding: 15px 15px 0;
+    margin-top: 0px;
+  }
+
+  .price-card .price {
+    font-size: 2.5rem;
+  }
+
+  .price-card.active {
+    margin-top: 0px;
+  }
+  .new-priice {
+    align-items: center;
+  }
+
+  .faq-question {
+    font-size: 0.85em;
+  }
+
+  .faqs li {
+    padding: 10px 4px;
+  }
+
+  .faq-content h4 {
+    display: none;
+  }
 }

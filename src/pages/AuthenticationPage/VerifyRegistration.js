@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import Onboarding from "../../components/Onboarding";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -96,7 +96,7 @@ const VerifyRegistration = ({ tokenData }) => {
       <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-          <Logo />
+          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
         </div>
         <div className="formInputContainerVerify">
           <AuthenticationMainText
@@ -135,7 +135,7 @@ const VerifyRegistration = ({ tokenData }) => {
         </div>
 
         <span className="no_OTP">
-          Didn't get an OTP? {" "}
+          Didn't get an OTP?{" "}
           {countdownFinished ? (
             <span onClick={handleResend} className="resend_OTP">
               Resend

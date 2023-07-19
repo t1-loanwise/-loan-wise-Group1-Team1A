@@ -18,6 +18,7 @@ import icon1 from "../assets/Iconfeature1.svg";
 import icon2 from "../assets/Iconfeature2.svg";
 import icon3 from "../assets/Iconfeature3.svg";
 import icon4 from "../assets/Iconfeature4.svg";
+import arrow from "../assets/icons8-arrow-right-50.png";
 
 const HomeSections = ({ link, text }) => {
   return (
@@ -30,7 +31,9 @@ const HomeSections = ({ link, text }) => {
               <p>Watch Our History</p>
             </div>
             <HomeHeader
-              header={"Transform lending          with accurate risk prediction"}
+              header={
+                "Transform lending          with accurate risk prediction"
+              }
               text={
                 "Our app accurately predicts default risk for borrowers, helping financial institutions make informed lending decisions and minimize the impact of defaults"
               }
@@ -41,12 +44,8 @@ const HomeSections = ({ link, text }) => {
               </Link>
               <Link to="/about" className="learnMoreText">
                 <button className="learnMore">
-                  Learn More
-                  <IconContext.Provider value={{ className: "react-icon1" }}>
-                    <div>
-                      <BsArrowRightShort />
-                    </div>
-                  </IconContext.Provider>
+                  <span>Learn More</span>
+                  <img src={arrow} className="learn-img"/>
                 </button>
               </Link>
             </div>
@@ -66,10 +65,7 @@ const HomeSections = ({ link, text }) => {
               }
             />
             <Link to="/register">
-              <Button1
-                id="about-button"
-                text={"Get Started"}
-              />
+              <Button1 id="about-button" text={"Get Started"} />
             </Link>
           </div>
           <img
@@ -102,7 +98,11 @@ const HomeSections = ({ link, text }) => {
           <div className="featuresCard-container">
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon1} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon1}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Predictive analytics for accurate risk assessment
@@ -110,7 +110,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon2} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon2}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Compliance management for regulatory adherence
@@ -118,7 +122,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon3} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon3}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Historical loan performance analysis for future defaults
@@ -126,7 +134,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon4} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon4}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Data integration for comprehensive financial history.
@@ -135,8 +147,12 @@ const HomeSections = ({ link, text }) => {
           </div>
         </div>
         <div className="special-one">
-            <img src={SpecialFeaturesOne} alt="special features one image" className="specialFeature-image" />
-        <div className="home-right">
+          <img
+            src={SpecialFeaturesOne}
+            alt="special features one image"
+            className="specialFeature-image"
+          />
+          <div className="home-right">
             <HomeHeader
               header={"Improve teamwork with our in-app messaging feature."}
               text={

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import "../../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -54,7 +54,7 @@ const Login = () => {
       <Onboarding />
       <div className="login-text-container">
         <div className="logo-container2">
-          <Logo />
+          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
         </div>
         <div className="login-message">
           <AuthenticationMainText

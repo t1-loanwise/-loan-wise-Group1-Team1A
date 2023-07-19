@@ -63,12 +63,13 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 6px 1em;
+  height: 50px;
+  padding: 0px 0.8em;
   border: 1px solid #006980;
   border-radius: 5px;
   color: #006980;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold;
   background: transparent;
   cursor: pointer;
 }
@@ -77,9 +78,17 @@
   text-decoration: none;
 }
 
+.learnMore img {
+width: 30px;
+}
+
 .learnMore:hover {
   background: #007e99;
   color: #ffffff;
+}
+
+.learnMore:hover .learn-img{
+ filter: invert(1) brightness(10);
 }
 
 .hero-section {
@@ -256,4 +265,126 @@ background-color: #003a47;
 .featureText {
   width: 100%;
   font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .home_container {
+    padding: 100px 4% 3%;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .hero-text {
+    width: 100%;
+    align-items: center;
+  }
+
+  .home-text {
+    text-align: center;
+    width: 100%;
+    font-size: 0.85em;
+  }
+
+  .all_text {
+    align-items: center;
+  }
+
+  #history p {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  #clock {
+    width: 24px;
+  }
+
+  .home-header {
+    font-size: 1.5em;
+    text-align: center
+  }
+
+
+  .learnMore {
+    padding: 10px 0.8em;
+    font-size: 0.85em;
+  }
+
+  .learnMore img {
+    width: 20px;
+  }
+
+  .about-uss,
+  .feature-section,
+  .special-one,
+  .special-two {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .section-image,
+  .home-image ,
+  .specialFeature-image,
+  .loanDefault-image {
+    width: 90%;
+  }
+
+  .feature-section {
+    flex-direction: column;
+  }
+
+  .discover-section,
+  .about-uss {
+    padding: 40px 0;
+  }
+
+  .amazing-features {
+    width: 100%;
+    padding: 20px 5%;
+    gap: 1em;
+  }
+
+  .arrow-image {
+    display: none;
+  }
+
+  .amazing-text {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .featureArrow-image {
+    width: 70px;
+    rotate: 135deg;
+  }
+
+  .featuresCard-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 48%);
+    gap: 4%;
+  }
+
+  .featureCard-container {
+    padding: 20px;
+  }
+
+  .featureText {
+    font-size: 1em;
+  }
+
+    .home-right,
+  .home-left {
+    width: 100%
+  }
+
+  .special-one {
+    flex-direction: column-reverse;
+    padding-top: 30px;
+  }
+
+  .special-two {
+    padding-top: 20px;
+  }
 }

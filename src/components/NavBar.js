@@ -18,7 +18,7 @@ const Navbar = styled.nav`
   z-index: 100;
   background-color: #ffffff;
   @media (max-width: 768px) {
-    padding: 20px 5.5%;
+    padding: 10px 5.5%;
   }
 `;
 
@@ -34,7 +34,7 @@ const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100px;
+  top: 60px;
   left: 0;
   height: 100vh;
   z-index: 1000;
@@ -43,6 +43,7 @@ const Dropdown = styled.div`
   width: 100%;
   font-weight: bold;
   background-color: #007e99;
+  transition: .6s ease-in-out;
 `;
 
 const Nav = styled(NavLink)`
@@ -50,7 +51,7 @@ const Nav = styled(NavLink)`
 `;
 
 const Nav2 = styled(NavLink)`
-  color: #ffffff
+  color: #ffffff;
 `;
 
 const List = styled.ul`
@@ -65,7 +66,8 @@ const List = styled.ul`
 const List2 = styled.ul`
   display: flex;
   list-style-type: none;
-  gap: 1em;
+  gap: 1.5em;
+  font-size: 1.3em;
   flex-direction: column;
   text-align: center;
   width: 100%;
@@ -82,6 +84,7 @@ const ButtonsContainer2 = styled.div`
   display: flex;
   align-items: center;
   padding-top: 50px;
+  gap: 0.2em;
 `;
 
 const Register = styled(Link)`
@@ -111,21 +114,51 @@ const Login = styled(Link)`
   }
 `;
 
+const Register2 = styled(Link)`
+  border: none;
+  background: #006980;
+  color: #ffffff;
+  font-size: 1.1em;
+  border-radius: 10px;
+  text-decoration: none;
+  height: fit-content;
+  padding: 15px 30px;
+  font-weight: bold;
+  &:hover {
+    background-color: #005466;
+    transition: ease-in-out 0.3s;
+  }
+`;
+
+const Login2 = styled(Link)`
+  background: #006980;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 0;
+  font-size: 1.1em;
+  height: fit-content;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    background-color: #005466;
+    transition: ease-in-out 0.3s;
+  }
+`;
+
 const DropDown = () => {
   return (
     <Dropdown>
       <ButtonsContainer2>
-        <Register to="/register">Register</Register>
-        <Login to="/login">Login</Login>
+        <Register2 to="/register">Register</Register2>
+        <Login2 to="/login">Login</Login2>
       </ButtonsContainer2>
       <List2>
         <Nav2
           to="/"
           style={({ isActive }) => ({
-            color: isActive ? "#005466" : "#ffffff",
-            backgroundColor: isActive ? "#ffffff" : "transparent",
+            backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            opacity: isActive ? 0.7 : 1,
             padding: isActive ? "10px" : "0px",
           })}
         >
@@ -134,10 +167,8 @@ const DropDown = () => {
         <Nav2
           to="/about"
           style={({ isActive }) => ({
-            color: isActive ? "#005466" : "#ffffff",
-            backgroundColor: isActive ? "#ffffff" : "transparent",
+            backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            opacity: isActive ? 0.7 : 1,
             padding: isActive ? "10px" : "0px",
           })}
         >
@@ -146,10 +177,8 @@ const DropDown = () => {
         <Nav2
           to="/pricing"
           style={({ isActive }) => ({
-            color: isActive ? "#005466" : "#ffffff",
-            backgroundColor: isActive ? "#ffffff" : "transparent",
+            backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            opacity: isActive ? 0.7 : 1,
             padding: isActive ? "10px" : "0px",
           })}
         >
@@ -158,10 +187,8 @@ const DropDown = () => {
         <Nav2
           to="/blog"
           style={({ isActive }) => ({
-            color: isActive ? "#005466" : "#ffffff",
-            backgroundColor: isActive ? "#ffffff" : "transparent",
+            backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            opacity: isActive ? 0.7 : 1,
             padding: isActive ? "10px" : "0px",
           })}
         >

@@ -70,6 +70,10 @@
   width: 25%;
 }
 
+.Logo-loanwise2 {
+  width: 70%;
+}
+
 .formInputContainer,
 .passwd,
 .confirmPswd {
@@ -287,6 +291,17 @@ font-size: 18px;
   .onboardingImg {
     display: none;
   }
+
+  .loanwiselogo-container {
+    width: 50%;
+    align-self: center;
+  }
+
+  .Logo-loanwise2 {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
 
   .createAccount_parentContainer {
   height: 100vh;

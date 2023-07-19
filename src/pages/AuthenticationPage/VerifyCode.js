@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useVerificationHook from "./lib/useVerificationHook";
 import "../../styles/Auth.css";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import { useNavigate } from "react-router-dom";
 import Onboarding from "../../components/Onboarding";
@@ -74,7 +74,7 @@ const VerifyCode = () => {
         <Onboarding />
         <div className="verify_head_content">
           <div className="logo_container">
-            <Logo />
+            <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
           </div>
           <div className="verify_body_content">
             <AuthenticationMainText
@@ -113,14 +113,14 @@ const VerifyCode = () => {
             </form>
           </div>
           <p className="no_code">
-              Didn't get an OTP? {" "}
-          {countdownFinished ? (
-            <span onClick={resendCode} className="resend_OTP">
-              Resend
-            </span>
-          ) : (
-            <span> Resend in {seconds}s </span>
-          )}
+            Didn't get an OTP?{" "}
+            {countdownFinished ? (
+              <span onClick={resendCode} className="resend_OTP">
+                Resend
+              </span>
+            ) : (
+              <span> Resend in {seconds}s </span>
+            )}
           </p>
         </div>
       </div>

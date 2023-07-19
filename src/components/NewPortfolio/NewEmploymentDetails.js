@@ -20,7 +20,7 @@ const INITIAL_STATE = {
   Verification_by_Loan_Company: "",
   Application_Type: "",
 };
-function NewEmploymentDetails({ nextStep, customer_id }) {
+function NewEmploymentDetails({ nextStep, customer_id, report }) {
   const [data, setData] = useState(INITIAL_STATE);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -50,7 +50,8 @@ function NewEmploymentDetails({ nextStep, customer_id }) {
       );
 
       console.log(response);
-      console.log(response.data);
+      console.log(response.data.message);
+      report(response.data.message);
       setData(INITIAL_STATE);
       setError(null);
       nextStep();

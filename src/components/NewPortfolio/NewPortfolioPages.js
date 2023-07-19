@@ -10,9 +10,14 @@ function NewPortfolioPages() {
   const [currentStep, setCurrentStep] = useState(1);
   const totalPages = 3; // Total number of pages
   const [customerId, setCustomerId] = useState(null);
+  const [report, setReport] = useState(null);
   const handleId = (data) => {
     console.log(data);
     setCustomerId(data);
+  };
+  const handleReport = (data) => {
+    console.log(data);
+    setReport(data);
   };
   useEffect(() => {
     console.log("id:", customerId);
@@ -33,10 +38,14 @@ function NewPortfolioPages() {
         );
       case 1:
         return (
-          <NewEmploymentDetails nextStep={nextStep} customer_id={customerId} />
+          <NewEmploymentDetails
+            nextStep={nextStep}
+            customer_id={customerId}
+            report={handleReport}
+          />
         );
       case 2:
-        return <NewPredictionResult customer_id={customerId} />;
+        return <NewPredictionResult customer_id={customerId} report={report} />;
       default:
         break;
     }

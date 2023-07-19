@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import jsPDF from "jspdf";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import { Link } from "react-router-dom";
@@ -65,8 +66,42 @@ const Table = () => {
     fetchData();
   }, []);
 
+const generatePDF = () => {
+  const report = new jsPDF("portrait", "pt", "a4");
+
+  const fontSize = 10;
+  report.setFontSize(fontSize);
+
+  const headingY = 30;
+  const dataY = 50;
+
+  report.setFont("bold");
+  report.text("ID", 30, headingY);
+  report.text("Name", 120, headingY);
+  report.text("Category", 220, headingY);
+  report.text("Amount", 300, headingY);
+  report.text("Due Date", 400, headingY);
+  report.text("Status", 500, headingY);
+  report.setFont("normal");
+
+  // Iterate over the filteredData array instead of currentItems
+  filteredData.forEach((data, index) => {
+    const y = dataY + index * 20;
+    report.text(data.customer_id, 30, y);
+    report.text(data.name, 120, y);
+    report.text(data.Category, 220, y);
+    report.text(`N${data.Requested}`, 300, y);
+    report.text(data["Due date"], 400, y);
+    report.text(data["Loan status 2"], 500, y);
+  });
+
+  report.save("report.pdf");
+};
+
+
+
   return (
-    <div>
+    <div className="p-t-container">
       <div className="customerSort">
         <div className="customerID">
           <input
@@ -79,29 +114,30 @@ const Table = () => {
             <img className="searchIcon" src={Icon} alt="searchIcon" />
           </span>
         </div>
-        <div className="select-option">
+        <div className="select-option2">
           <select className="sort-bar" value={sortOption} onChange={handleSort}>
             <option value="category">Business</option>
             <option value="">Personal</option>
           </select>
         </div>
       </div>
-      <div className="OverviewContainer">
-        <p className="overviewHeader">Portfolio Overview</p>
-        <Link to="#">
-          <button className="DownloadBtn">Download</button>
-        </Link>
-      </div>
-      <hr />
-      <div className="taable">
-        <div className="trs trs1">
-          <div className="ths">ID</div>
-          <div className="ths">Name</div>
-          <div className="ths">Category</div>
-          <div className="ths">Amount</div>
-          <div className="ths">Due Date</div>
-          <div className="ths">Status</div>
+      <div className="card">
+        <div className="OverviewContainer">
+          <p className="overviewHeader">Portfolio Overview</p>
+          <Link to="#">
+            <button className="DownloadBtn" onClick={generatePDF}>Download</button>
+          </Link>
         </div>
+        <hr />
+        <div className="taable">
+          <div className="trs trs1">
+            <div className="ths">ID</div>
+            <div className="ths">Name</div>
+            <div className="ths">Category</div>
+            <div className="ths">Amount</div>
+            <div className="ths">Due Date</div>
+            <div className="ths">Status</div>
+          </div>
 
         {currentItems.map((data) => (
           <Link
@@ -111,9 +147,9 @@ const Table = () => {
           >
             <div className="trs">
               <div className="tds">{data.customer_id}</div>
-              <div className="tds">{data.name}</div>
+              <div className="tds">{data.fullName}</div>
               <div className="tds">{data.Category}</div>
-              <div className="tds">N{data.Requested}</div>
+              <div className="tds">N{data.Disbursed}</div>
               <div className="tds">{data["due_date"]}</div>
               <div className={data["loan_status_2"]}>
                 <button>{data["loan_status_2"]}</button>
@@ -123,17 +159,17 @@ const Table = () => {
         ))}
       </div>
 
-      <div className="pagination-container">
-        <div className="pagiNumbs">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
-            disabled={currentPage === 1}
-          >
-            <img src={leftarrow} alt="Left Arrow" />
-          </button>
+        <div className="pagination-container">
+          <div className="pagiNumbs">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
+              disabled={currentPage === 1}
+            >
+              <img src={leftarrow} alt="Left Arrow" />
+            </button>
 
-          {currentPage > 5 && <p>...</p>}
+            {currentPage > 5 && <p>...</p>}
 
           {Array.from(
             { length: Math.ceil(loanData.length / itemsPerPage) },
@@ -176,7 +212,8 @@ const Table = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default Table;
+export default Table

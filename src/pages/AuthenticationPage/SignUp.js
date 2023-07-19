@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Logo from "../../../components/Logo";
-import AuthenticationMainText from "../../../components/AuthenticationMainText";
+import Logo from "../../components/Logo";
+import AuthenticationMainText from "../../components/AuthenticationMainText";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import show from "../../../assets/show.png";
-import hide from "../../../assets/hide.png";
+import show from "../../assets/show.png";
+import hide from "../../assets/hide.png";
 import { Link, useNavigate } from "react-router-dom";
-import Onboarding from "../../../components/Onboarding";
+import Onboarding from "../../components/Onboarding";
 import axios from "axios";
 
 const SignUp = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Logo from "../../components/Logo";
 import "../../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import show from "../../assets/show.png";
 import hide from "../../assets/hide.png";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import axios from "axios";
-import { async } from "q";
+import { UserContext } from "./lib/UserContext";
 
 const Login = () => {
   const {
@@ -21,6 +21,7 @@ const Login = () => {
   const [getData, setGetData] = useState(null);
   const [error, setError] = useState(null);
   const [Submitting, setSubmitting] = useState(false);
+  const {setUserName} = useContext(UserContext)
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
@@ -38,6 +39,8 @@ const Login = () => {
       );
       console.log(response.data);
       setGetData(response.data);
+      setUserName(response.data.user.name)
+      console.log(response.data.user.name);
       setError(null);
       navigate("/dashboard");
     } catch (errors) {
@@ -114,7 +117,7 @@ const Login = () => {
                   type="checkbox"
                   name="checkbox"
                   {...register("checkbox", {
-                    required: true,
+                    required: false,
                   })}
                   className="check-btn"
                 />

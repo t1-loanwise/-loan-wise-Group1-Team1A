@@ -244,3 +244,15 @@ padding: 0px 30px 70px ;
 .history-date-span2 {
   font-size: 14px;
 }
+
+.loan-p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: fit-content;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+.table-contain {
+  margin-top: 50px;
+}

@@ -4,6 +4,7 @@ import "../styles/LoanTabble.css";
 import leftarrow from "../assets/paginationleftarrow.svg";
 import rightarrow from "../assets/paginationrightarrow.svg";
 import { Link } from "react-router-dom";
+import jsPDF2 from "jspdf";
 
 const LoanTabble = ({ searchTerm, filterOption }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,12 +55,54 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
   };
 
   const displayedData = applyFilter(filteredData).slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+      );
+
+        const generatePDF2 = () => {
+          const report = new jsPDF2("portrait", "pt", "a4");
+
+          const fontSize = 10;
+          report.setFontSize(fontSize);
+
+          const headingY = 30;
+          const dataY = 50;
+
+          report.setFont("bold");
+          report.text("ID", 30, headingY);
+          report.text("Name", 120, headingY);
+          report.text("Category", 220, headingY);
+          report.text("Amount", 300, headingY);
+          report.text("Due Date", 400, headingY);
+          report.text("Status", 500, headingY);
+          report.setFont("normal");
+
+          // Iterate over the filteredData array instead of currentItems
+          filteredData.forEach((data, index) => {
+            const y = dataY + index * 20;
+            report.text(data.customer_id, 30, y);
+            report.text(data.name, 120, y);
+            report.text(data.Category, 220, y);
+            report.text(`N${data.Disbursed}`, 300, y);
+            report.text(data["Due date"], 400, y);
+            report.text(data["Loan status 2"], 500, y);
+          });
+
+          report.save("report.pdf");
+        };
+
 
   return (
-    <>
+    <div className="table-contain">
+      <div className="OverviewContainer">
+        <p className="overviewHeader">Loan Performance Table</p>
+        <Link to="#">
+          <button className="DownloadBtn" onClick={generatePDF2}>
+            Download
+          </button>
+        </Link>
+      </div>
+      <hr />
       <div className="taable">
         <div className="trs trs1">
           <div className="ths">ID</div>
@@ -78,9 +121,9 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
           >
             <div className="trs">
               <div className="tds">{data.customer_id}</div>
-              <div className="tds">{data.name}</div>
+              <div className="tds">{data.fullName}</div>
               <div className="tds">{data.Category}</div>
-              <div className="tds"> N{data.Requested}</div>
+              <div className="tds"> N{data.Disbursed}</div>
               <div className="tds">{data["due_date"]}</div>
               <div className={data["loan_status"]}>
                 <button>{data["loan_status"]}</button>
@@ -144,7 +187,7 @@ const LoanTabble = ({ searchTerm, filterOption }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

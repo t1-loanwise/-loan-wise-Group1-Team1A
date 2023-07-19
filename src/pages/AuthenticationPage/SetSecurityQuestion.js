@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import { useNavigate } from "react-router";
 import Onboarding from "../../components/Onboarding";
 import axios from "axios";
@@ -48,7 +48,7 @@ const SetSecurityQuestion = ({ token }) => {
       <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-          <Logo />
+          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
         </div>
         <div className="createAccount">
           <AuthenticationMainText

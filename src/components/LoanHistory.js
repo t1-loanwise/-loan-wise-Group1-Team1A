@@ -25,7 +25,7 @@ const LoanHistory = () => {
      }, []);
 
      const customerLoanHistory = details.filter(
-       (data) => data.name === customerName
+       (data) => data.fullName === customerName
      );
 
 
@@ -66,7 +66,7 @@ const LoanHistory = () => {
                 <span>First repayment</span>
                 <span className="history-date-span2">16th July, 2022</span>
               </div>
-              <p>{"N" + data["first repayment"]}</p>
+              <p>{"N" + data["first_repayment"]}</p>
             </div>
             <div className="history-border">
               <div className="history-date">

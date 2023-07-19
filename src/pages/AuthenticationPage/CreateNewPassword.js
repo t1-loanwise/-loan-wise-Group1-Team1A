@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import "../../styles/Auth.css";
@@ -49,7 +49,8 @@ function CreateNewPassword() {
       <Onboarding />
       <div className="new_password_head_content">
         <div className="logo_container">
-          <Logo />
+                    <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+
         </div>
         <div className="verify_body_content">
           <AuthenticationMainText

@@ -11,6 +11,9 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 2.7em;
+  @media (max-width: 768px) {
+    gap: 1.5em;
+  }
 `;
 
 const DivContainers = styled.div`
@@ -20,6 +23,9 @@ const DivContainers = styled.div`
   gap: 2em;
   border-bottom: 1px solid #ccd1d2;
   padding-bottom: 20px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Div1 = styled.div`
@@ -29,11 +35,21 @@ const Div1 = styled.div`
   width: 25%;
   color: #00151a;
   font-size: 1em;
+  @media (max-width: 768px) {
+   width: 90%;
+   justify-content: center;
+  }
 `;
 const Div2 = styled.div`
   display: flex;
   gap: 5em;
   color: #00191f;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    row-gap: 3em;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;
 
 const Div3 = styled.div`
@@ -66,6 +82,9 @@ const Div2D = styled.div`
 
 const LogoImage = styled.img`
   width: 75%;
+  @media (max-width: 768px) {
+    width: 30%;
+  }
 `;
 const LoanText = styled.span`
   font-size: 1em;
@@ -98,16 +117,31 @@ const ContinueBtn = styled.button`
     background-color: #006980;
     transition: ease-in-out 0.3s;
   }
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
 `;
 
 const Resources = styled.span`
   font-size: 1.25em;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+  }
 `;
 const Company = styled.span`
   font-size: 1.25em;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+  }
 `;
 const Contact = styled.span`
   font-size: 1.25em;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+  }
 `;
 
 const ResourcesList = styled.ul`
@@ -116,6 +150,7 @@ const ResourcesList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1.3em;
+
 `;
 const CompanyList = styled.ul`
   list-style-type: none;
@@ -132,7 +167,11 @@ const List = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
+
 
 const PhoneNumbers = styled.span`
   display: flex;
@@ -148,6 +187,9 @@ const SocialsImage = styled.img`
 
 const Copyright = styled.span`
   font-size: 1.25em;
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 
@@ -191,19 +233,19 @@ const Footer = () => {
               </ResourcesList>
             </Div2A>
             <Div2B>
-              <Company>COMPANY</Company>
+              <Company>GENERAL</Company>
               <CompanyList>
                 <li>
-                  <List to="/about">About Us</List>
+                  <List to="/about">Users</List>
                 </li>
                 <li>
-                  <List>Careers</List>
+                  <List>Admin</List>
                 </li>
                 <li>
-                  <List>Privacy Policy</List>
+                  <List>Team</List>
                 </li>
                 <li>
-                  <List>Terms of Use</List>
+                  <List>Lending</List>
                 </li>
               </CompanyList>
             </Div2B>

@@ -135,6 +135,7 @@
     justify-content: space-between;
   align-items: center;
   margin: 0 0 10px;
+  width: 100%;
 }
 
 .overviewHeader {
@@ -186,4 +187,17 @@
   flex-direction: column;
   gap: 2em;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+.chart {
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2%;
+}
+
+.line-chart-container2 {
+  flex: 1 48%;
+  width: 0%;
+}
 }

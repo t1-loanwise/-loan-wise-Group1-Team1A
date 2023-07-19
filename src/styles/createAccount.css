@@ -287,20 +287,20 @@ font-size: 18px;
   width: 90%;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .onboardingImg {
     display: none;
   }
 
   .loanwiselogo-container {
     width: 50%;
-    align-self: center;
+    align-self: self-start;
   }
 
   .Logo-loanwise2 {
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: right;
+  justify-content: left;
 }
 
   .createAccount_parentContainer {
@@ -316,7 +316,14 @@ font-size: 18px;
 .formInputContainerVerify {
   width: 100%;
 padding: 0 5%;
+margin-top: -30%;
 }
+
+.formInputContainerVerify {
+margin-top: -50%;
+}
+
+
 
 .createAccount_form .passwordContainer {
   flex-direction: column;

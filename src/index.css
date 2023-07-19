@@ -19,7 +19,7 @@ input[type = "password"] {
   font-weight: bolder;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .rightContent {
   margin-top: 10vh;
   padding: 5%;

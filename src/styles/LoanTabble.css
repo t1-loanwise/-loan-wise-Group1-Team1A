@@ -1,5 +1,10 @@
 .taable {
   width: 100%;
+
+}
+
+.scroll-table {
+  width: 100%;
 }
 
 .ths {
@@ -260,7 +265,7 @@ padding: 0px 30px 70px ;
   margin-top: 50px;
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 768px){
 .borrowersDetailsContainer {
   display: flex;
   flex-direction: column;
@@ -298,4 +303,30 @@ padding: 0px 30px 70px ;
 .loan_container {
   padding: 0px 20px 50px;
 }
+
+.scroll-table {
+  width: 85vw;
+   overflow-x: scroll;
+}
+
+ .taable {
+  width: 700px;
+  }
+
+  .explore {
+    font-size: 1.2em;
+  }
+
+  .overviewHeader {
+  font-size: 1.2em;
+}
+
+.ths {
+  font-size: 1em;
+}
+
+.tds {
+  font-size: 0.85em;
+}
+
 }

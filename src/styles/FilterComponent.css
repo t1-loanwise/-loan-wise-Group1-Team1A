@@ -17,7 +17,7 @@
 .filterArea:hover img {
     fill: #fff;
   }
-  
+
   .filll {
     fill: #fff;
   }
@@ -51,4 +51,19 @@
 
 .filterContainer {
     position: relative;
+}
+
+@media screen and (max-width: 768px) {
+
+.filterArea {
+    padding: 0.85em 10px;
+}
+
+.filterArea span {
+    display: none;
+}
+
+.filterArea img {
+  width: 20px;
+}
 }

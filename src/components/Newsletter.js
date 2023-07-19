@@ -53,7 +53,7 @@ const SubscribeBtn = styled.button`
 
   @media (max-width: 768px) {
     padding: 10px;
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 `;
 
@@ -71,7 +71,7 @@ const MembershipBtn = styled.button`
   }
   @media (max-width: 768px) {
     padding: 10px;
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 `;
 

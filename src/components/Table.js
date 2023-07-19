@@ -125,39 +125,43 @@ const generatePDF = () => {
         <div className="OverviewContainer">
           <p className="overviewHeader">Portfolio Overview</p>
           <Link to="#">
-            <button className="DownloadBtn" onClick={generatePDF}>Download</button>
+            <button className="DownloadBtn" onClick={generatePDF}>
+              Download
+            </button>
           </Link>
         </div>
         <hr />
-        <div className="taable">
-          <div className="trs trs1">
-            <div className="ths">ID</div>
-            <div className="ths">Name</div>
-            <div className="ths">Category</div>
-            <div className="ths">Amount</div>
-            <div className="ths">Due Date</div>
-            <div className="ths">Status</div>
-          </div>
-
-        {currentItems.map((data) => (
-          <Link
-            className="table-link"
-            to={`/prediction/${data.fullName}`}
-            key={data.name}
-          >
-            <div className="trs">
-              <div className="tds">{data.customer_id}</div>
-              <div className="tds">{data.fullName}</div>
-              <div className="tds">{data.Category}</div>
-              <div className="tds">N{data.Disbursed}</div>
-              <div className="tds">{data["due_date"]}</div>
-              <div className={data["loan_status_2"]}>
-                <button>{data["loan_status_2"]}</button>
-              </div>
+        <div className="scroll-table">
+          <div className="taable">
+            <div className="trs trs1">
+              <div className="ths">ID</div>
+              <div className="ths">Name</div>
+              <div className="ths">Category</div>
+              <div className="ths">Amount</div>
+              <div className="ths">Due Date</div>
+              <div className="ths">Status</div>
             </div>
-          </Link>
-        ))}
-      </div>
+
+            {currentItems.map((data) => (
+              <Link
+                className="table-link"
+                to={`/prediction/${data.fullName}`}
+                key={data.name}
+              >
+                <div className="trs">
+                  <div className="tds">{data.customer_id}</div>
+                  <div className="tds">{data.fullName}</div>
+                  <div className="tds">{data.Category}</div>
+                  <div className="tds">N{data.Disbursed}</div>
+                  <div className="tds">{data["due_date"]}</div>
+                  <div className={data["loan_status_2"]}>
+                    <button>{data["loan_status_2"]}</button>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         <div className="pagination-container">
           <div className="pagiNumbs">
@@ -171,47 +175,49 @@ const generatePDF = () => {
 
             {currentPage > 5 && <p>...</p>}
 
-          {Array.from(
-            { length: Math.ceil(loanData.length / itemsPerPage) },
-            (_, i) => {
-              if (i + 1 > currentPage + 2) return null;
-              if (i + 1 >= currentPage - 2) {
-                return (
-                  <button
-                    key={i}
-                    className={currentPage === i + 1 ? "active" : ""}
-                    onClick={() => handlePageChange(i + 1)}
-                  >
-                    {i + 1}{" "}
-                  </button>
-                );
+            {Array.from(
+              { length: Math.ceil(loanData.length / itemsPerPage) },
+              (_, i) => {
+                if (i + 1 > currentPage + 2) return null;
+                if (i + 1 >= currentPage - 2) {
+                  return (
+                    <button
+                      key={i}
+                      className={currentPage === i + 1 ? "active" : ""}
+                      onClick={() => handlePageChange(i + 1)}
+                    >
+                      {i + 1}{" "}
+                    </button>
+                  );
+                }
+                return null;
               }
-              return null;
-            }
-          )}
+            )}
 
-          {currentPage < Math.ceil(loanData.length / itemsPerPage) - 4 && (
-            <p>...</p>
-          )}
+            {currentPage < Math.ceil(loanData.length / itemsPerPage) - 4 && (
+              <p>...</p>
+            )}
 
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === Math.ceil(loanData.length / itemsPerPage)}
-          >
-            <img
-              style={{
-                opacity:
-                  currentPage === Math.ceil(loanData.length / itemsPerPage)
-                    ? 0.5
-                    : 1,
-              }}
-              src={rightarrow}
-              alt="Right Arrow"
-            />
-          </button>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={
+                currentPage === Math.ceil(loanData.length / itemsPerPage)
+              }
+            >
+              <img
+                style={{
+                  opacity:
+                    currentPage === Math.ceil(loanData.length / itemsPerPage)
+                      ? 0.5
+                      : 1,
+                }}
+                src={rightarrow}
+                alt="Right Arrow"
+              />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -142,7 +142,7 @@ const generatePDF = () => {
         {currentItems.map((data) => (
           <Link
             className="table-link"
-            to={`/prediction/${data.name}`}
+            to={`/prediction/${data.fullName}`}
             key={data.name}
           >
             <div className="trs">

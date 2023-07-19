@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../components/Logo";
+import Logo from "../../assets/Vector.svg";
 import "../../styles/Successfulpage.css";
 import wave from "../../assets/Group 8038.svg";
 import eclipse from "../../assets/Ellipse 769.svg";
@@ -11,7 +11,7 @@ const SuccessfulPage = () => {
     <div className="Successful-page-container">
       <div className="success-logo-container">
         <div className="logo-container">
-          <Logo />
+          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
         </div>
       </div>
 

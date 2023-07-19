@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Imagehero from "../assets/Imagehero.svg";
 import AboutImage from "../assets/AboutImage.svg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { img } from "react-lazy-load-image-component";
 import SpecialFeaturesOne from "../assets/SpecialFeature.svg";
 import SpecialFeature2 from "../assets/SpecialFeature2.svg";
 import Checklist from "./Checklist";
@@ -18,6 +18,7 @@ import icon1 from "../assets/Iconfeature1.svg";
 import icon2 from "../assets/Iconfeature2.svg";
 import icon3 from "../assets/Iconfeature3.svg";
 import icon4 from "../assets/Iconfeature4.svg";
+import arrow from "../assets/icons8-arrow-right-50.png";
 
 const HomeSections = ({ link, text }) => {
   return (
@@ -26,11 +27,13 @@ const HomeSections = ({ link, text }) => {
         <div className="hero-section">
           <div className="hero-text">
             <div id="history">
-              <LazyLoadImage id="clock" src={Clock} />
+              <img id="clock" src={Clock} />
               <p>Watch Our History</p>
             </div>
             <HomeHeader
-              header={"Transform lending          with accurate risk prediction"}
+              header={
+                "Transform lending          with accurate risk prediction"
+              }
               text={
                 "Our app accurately predicts default risk for borrowers, helping financial institutions make informed lending decisions and minimize the impact of defaults"
               }
@@ -41,17 +44,13 @@ const HomeSections = ({ link, text }) => {
               </Link>
               <Link to="/about" className="learnMoreText">
                 <button className="learnMore">
-                  Learn More
-                  <IconContext.Provider value={{ className: "react-icon1" }}>
-                    <div>
-                      <BsArrowRightShort />
-                    </div>
-                  </IconContext.Provider>
+                  <span>Learn More</span>
+                  <img src={arrow} className="learn-img"/>
                 </button>
               </Link>
             </div>
           </div>
-          <LazyLoadImage
+          <img
             src={Imagehero}
             alt="hero section image"
             className="home-image"
@@ -66,13 +65,10 @@ const HomeSections = ({ link, text }) => {
               }
             />
             <Link to="/register">
-              <Button1
-                id="about-button"
-                text={"Get Started"}
-              />
+              <Button1 id="about-button" text={"Get Started"} />
             </Link>
           </div>
-          <LazyLoadImage
+          <img
             src={AboutImage}
             alt="about us section image"
             className="section-image"
@@ -89,7 +85,7 @@ const HomeSections = ({ link, text }) => {
               }
             />
           </div>
-          <LazyLoadImage src={Arrow} alt="arrow" className="arrow-image" />
+          <img src={Arrow} alt="arrow" className="arrow-image" />
         </div>
         <div className="feature-section">
           <div className="amazing-features">
@@ -97,12 +93,16 @@ const HomeSections = ({ link, text }) => {
               Check out <br />
               our amazing features.
             </span>
-            <LazyLoadImage src={Arrow2} alt="arrow-img" className="featureArrow-image" />
+            <img src={Arrow2} alt="arrow-img" className="featureArrow-image" />
           </div>
           <div className="featuresCard-container">
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon1} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon1}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Predictive analytics for accurate risk assessment
@@ -110,7 +110,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon2} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon2}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Compliance management for regulatory adherence
@@ -118,7 +122,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon3} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon3}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Historical loan performance analysis for future defaults
@@ -126,7 +134,11 @@ const HomeSections = ({ link, text }) => {
             </div>
             <div className="featureCard-container">
               <div className="featureIcon">
-                <img src={icon4} alt="featuresIcon" className="featureIconImg" />
+                <img
+                  src={icon4}
+                  alt="featuresIcon"
+                  className="featureIconImg"
+                />
               </div>
               <span className="featureText">
                 Data integration for comprehensive financial history.
@@ -135,8 +147,12 @@ const HomeSections = ({ link, text }) => {
           </div>
         </div>
         <div className="special-one">
-            <LazyLoadImage src={SpecialFeaturesOne} alt="special features one image" className="specialFeature-image" />
-        <div className="home-right">
+          <img
+            src={SpecialFeaturesOne}
+            alt="special features one image"
+            className="specialFeature-image"
+          />
+          <div className="home-right">
             <HomeHeader
               header={"Improve teamwork with our in-app messaging feature."}
               text={
@@ -164,7 +180,7 @@ const HomeSections = ({ link, text }) => {
               <Checklist text={"Streamline lending decisions."} />
             </div>
           </div>
-          <LazyLoadImage
+          <img
             src={SpecialFeature2}
             alt="special features two image"
             className="loanDefault-image"

@@ -145,10 +145,12 @@
   gap: 0.7em;
 }
 
-.details-minus-image div {
+.history-border,
+.details-border {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .details-minus-image div span:nth-of-type(1) {
@@ -231,7 +233,8 @@ padding: 0px 30px 70px ;
 }
 
 .history-border {
-  padding: 7px 15px;
+  padding: 0 15px;
+  height: 70px;
   background-color: #ffffff;
 }
 
@@ -255,4 +258,44 @@ padding: 0px 30px 70px ;
 
 .table-contain {
   margin-top: 50px;
+}
+
+@media screen and (max-width: 720px){
+.borrowersDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.borrowersDetails {
+  padding: 30px 20px 70px;
+}
+
+.borrowersDetails img {
+  width: 140px;
+}
+
+.details-history-analysis {
+  gap: 1em;
+}
+
+.details-minus-image div span:nth-of-type(1) {
+  font-size: 1em;
+}
+
+.details-minus-image div span:nth-of-type(2), .details-minus-image p {
+  font-size: 1em;
+}
+
+.dha-links a {
+  font-size: 1.1em;
+}
+
+.borrowers {
+  margin-top: 0px;
+}
+
+.loan_container {
+  padding: 0px 20px 50px;
+}
 }

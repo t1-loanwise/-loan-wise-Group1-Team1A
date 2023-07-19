@@ -13,7 +13,6 @@ import AboutUs from "../../assets/About Us Hero Section.svg";
 import Table from "../../assets/Table.svg";
 import LoanOverview from "../../assets/Special Feature.svg";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const About = () => {
   return (
@@ -32,7 +31,7 @@ const About = () => {
             financial institutions reduce the risk of loan default and make more
             informed lending decisions.
           </p>
-          <LazyLoadImage className="about_us_img" src={AboutUs} alt="avatar" />
+          <img className="about_us_img" src={AboutUs} alt="avatar" />
         </div>
         <div className="our-vision-container">
           <div className="our-vision-text">
@@ -53,12 +52,12 @@ const About = () => {
             </Link>
           </div>
           <div className="our-vision-img">
-            <LazyLoadImage className="loan-analysis" src={Table} alt="avatar" />
+            <img className="loan-analysis" src={Table} alt="avatar" />
           </div>
         </div>
         <div className="our-mision-container">
           <div className="our-mision-img">
-            <LazyLoadImage className="loan-analysis" src={LoanOverview} alt="avatar" />
+            <img className="loan-analysis" src={LoanOverview} alt="avatar" />
           </div>
           <div className="our-mision-text">
             <h2>Our Mission</h2>

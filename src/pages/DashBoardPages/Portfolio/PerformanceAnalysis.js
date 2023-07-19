@@ -26,7 +26,7 @@ const PerformanceAnalysis = () => {
    loanWiseData();
  }, []);
 
- const customerDetails = details.filter((data) => data.name === customerName);
+ const customerDetails = details.filter((data) => data.fullName === customerName);
 
 
   //   const loanStatus = loanWiseData.filter((data) => data["Loan status 2"] === data["Loan status 2"])
@@ -35,55 +35,56 @@ const PerformanceAnalysis = () => {
     <div className="rightContent ">
       <div className="borrowers">
         {customerDetails.map((data) => (
-          <div key={data.name} className="borrowersDetailsContainer">
+          <div key={data.fullName} className="borrowersDetailsContainer">
             <div className="borrowersDetails">
               <img src={face} alt="" />
               <div className="details-minus-image">
-                <div>
+                <div className="details-border">
                   <span>Customer ID:</span>
                   <span>{data.customer_id}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Name:</span>
-                  <span>{data.name}</span>
+                  <span>{data.fullName}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Address:</span>
-                  <span>{data.Address}</span>
+                  <span>{data.address}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Email Address:</span>
                   <span>{data.email}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Phone Number:</span>
                   <span>{"0" + data["phone_number"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Annual Income</span>
-                  <span>{data["annual_income"]}</span>
+                  <span>{data.EmploymentData["Annual_Income"]}</span>
                 </div>
-                <div>
+                <div className="details-border">
                   <span>Years of Employment:</span>
-                  <span>{data["total_years_of_employment"]}</span>
+                  <span>
+                    {data.EmploymentData["Total_years_of_employment"]}
+                  </span>
                 </div>
               </div>
             </div>
             <div className="details-history-analysis">
               <div className="dha-links">
                 <NavLink
-                  to={`/prediction/${data.name}/loan-details`}
+                  to={`/customer/${data.fullName}/loan-details`}
                   activeClassName="active"
                   exact
                 >
                   Loan Details
                 </NavLink>
                 <NavLink
-                  to={`/prediction/${data.name}/loan-analysis`}
+                  to={`/customer/${data.fullName}/loan-history`}
                   activeClassName="active"
-                  exact
                 >
-                  Analysis Result
+                  Loan History
                 </NavLink>
               </div>
               <Outlet />

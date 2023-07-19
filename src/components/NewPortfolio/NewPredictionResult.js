@@ -16,7 +16,7 @@ function NewPredictionResult({ customer_id, report }) {
     <div className="result-analysis">
       <h3>Customer’s ID:{customer_id}</h3>
       {showReport()}
-      <button className="new_portfolio_btn" type="submit">
+      <button className="new_portfolio_btn2" type="submit">
         Download Report
       </button>
     </div>

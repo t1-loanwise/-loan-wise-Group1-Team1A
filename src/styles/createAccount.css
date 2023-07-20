@@ -275,6 +275,7 @@ font-size: 18px;
   height: 37px;
   font-size: 1em;
   background: transparent;
+  color: #00151a;
 }
 
 .no_OTP {
@@ -310,19 +311,15 @@ font-size: 18px;
 .createAccountContainer {
   width: 100%;
   height: 100%;
+  justify-content: flex-start;
+  gap: 2.5em;
 }
 
 .createAccount,
 .formInputContainerVerify {
   width: 100%;
 padding: 0 5%;
-margin-top: -30%;
 }
-
-.formInputContainerVerify {
-margin-top: -50%;
-}
-
 
 
 .createAccount_form .passwordContainer {

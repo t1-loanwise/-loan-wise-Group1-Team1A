@@ -160,12 +160,13 @@ div .login-Btn {
 @media screen and (max-width: 768px) {
 .login-text-container {
   width: 100%;
+  justify-content: flex-start;
+  gap: 2.5em;
 }
 
 .login-message {
   width: 100%;
   gap: 1.5em;
-    margin-top: -50%;
 }
 
 .login-text-container {

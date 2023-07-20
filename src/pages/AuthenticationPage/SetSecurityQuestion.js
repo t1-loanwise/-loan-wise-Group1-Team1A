@@ -115,7 +115,7 @@ const SetSecurityQuestion = ({ token }) => {
             </button>
           </form>
         </div>
-        <div></div>
+        <div className="empty-div"></div>
       </div>
     </div>
   );

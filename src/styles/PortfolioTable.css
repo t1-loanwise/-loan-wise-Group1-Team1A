@@ -193,11 +193,15 @@
 .chart {
   flex-wrap: wrap;
   width: 100%;
-  gap: 2%;
+  gap: 1em;
 }
 
 .line-chart-container2 {
   flex: 1 48%;
   width: 0%;
+}
+
+.DownloadBtn {
+  display: none;
 }
 }

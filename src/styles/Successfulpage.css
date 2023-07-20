@@ -12,7 +12,7 @@
 
 .logo-container {
   align-self: flex-end;
-  width: 14%;
+  width: 25%;
 }
 
 .Congrats {
@@ -90,4 +90,42 @@
 .wave {
   height: 184px;
   width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo-container {
+     width: 50%;
+      align-self: self-start;
+  }
+
+  .Congrats {
+    font-size: 1.5em;
+  }
+
+  .success-message p {
+  font-size: 1em;
+}
+
+.successful-btn {
+   height: 40px;
+  font-size: 1.2em;
+  padding: 0px 10px;
+}
+
+.Eclipse1 {
+  width: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.checkmark {
+width: 35px;
+left: 0%;
+ transform: translateX(-85%);
+}
+
+.wave {
+ display: none;
+}
 }

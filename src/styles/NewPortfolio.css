@@ -68,8 +68,8 @@
 }
 .progress_bar {
   align-self: center;
-  width: 70%;
-  height: 10px;
+  width: 75%;
+  height: 5px;
   border-radius: 50px;
   border: 1px solid #e6f2f5;
   background: #e6f2f5;
@@ -88,7 +88,7 @@
 .progress_circle3 {
   border-radius: 50%;
   position: absolute;
-  top: -10px;
+  top: -15px;
   padding: 15px;
 }
 .progress_circle1 {
@@ -160,4 +160,70 @@
 .result-analysis {
   text-align: center;
   padding-top: 30px;
+}
+.input_flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* justify-content: space-between; */
+  width: 100%;
+}
+.input_field2 {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #e6f2f5;
+  margin-top: 8px;
+}
+
+.phone-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.phone-container-div {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .input-form {
+    width: 100%;
+  }
+
+  .details-form {
+    gap: 0.5em;
+  }
+
+  .details-form h2 {
+    margin-bottom: 10px;
+  }
+
+  .details-form h2 {
+    font-size: 1.3em;
+  }
+
+  .phone-container {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .phone-container-div {
+    width: 100%;
+  }
+
+  .filler {
+    height: 5px;
+  }
+
+  .progress_bar {
+    width: 90%;
+  }
+
+  .progress_circle1,
+  .progress_circle2,
+  .progress_circle3 {
+    top: -10px;
+    padding: 10px;
+  }
 }

@@ -103,12 +103,6 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                   })}
                   className="input_field"
                 />
-                <input
-                  name="address"
-                  type="text"
-                  onChange={handleChange}
-                  className="input_field"
-                />
               </div>
               <div className="errorMsg">
                 <div className="errorMsg">{errors?.address?.message}</div>
@@ -135,8 +129,8 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
               </div>
               <div className="errorMsg">{errors?.email?.message}</div>
             </div>
-            <div>
-              <div>
+            <div className="phone-container">
+              <div className="phone-container-div">
                 <label className="input_title">Phone Number</label>
                 <div>
                   <input
@@ -157,22 +151,23 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                 </div>
                 <div className="errorMsg">{errors?.phoneNumber?.message}</div>
               </div>
-            </div>
-            <div>
-              <label className="input_title">Alternative Phone Number</label>
-              <div>
-                <input
-                  name="phone"
-                  type="phone"
-                  placeholder="Enter number"
-                  onChange={handleChange}
-                  {...register("altPhoneNumber")}
-                  className="input_field"
-                />
+              <div className="phone-container-div">
+                <label className="input_title">Alternative Phone Number</label>
+                <div>
+                  <input
+                    name="phone"
+                    type="phone"
+                    placeholder="Enter number"
+                    onChange={handleChange}
+                    {...register("altPhoneNumber")}
+                    className="input_field"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <div>
+
+            <div className="phone-container">
+              <div className="phone-container-div">
                 <label className="input_title">Date of Birth</label>
                 <div>
                   <input
@@ -188,30 +183,30 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                 </div>
                 <div className="errorMsg">{errors?.dateOfBirth?.message}</div>
               </div>
-            </div>
-            <div>
-              <label className="input_title">Bank Verification Number</label>
-              <div>
-                <input
-                  name="bvn"
-                  type="number"
-                  placeholder="Enter number"
-                  onChange={handleChange}
-                  {...register("bvn", {
-                    required: "This field is required",
-                    minLength: {
-                      value: 11,
-                      message: "Must be 11 numbers",
-                    },
-                    pattern: {
-                      value: /^\d{11}$/,
-                      message: "BVN is not valid.",
-                    },
-                  })}
-                  className="input_field"
-                />
+              <div className="phone-container-div">
+                <label className="input_title">Bank Verification Number</label>
+                <div>
+                  <input
+                    name="bvn"
+                    type="number"
+                    placeholder="Enter number"
+                    onChange={handleChange}
+                    {...register("bvn", {
+                      required: "This field is required",
+                      minLength: {
+                        value: 11,
+                        message: "Must be 11 numbers",
+                      },
+                      pattern: {
+                        value: /^\d{11}$/,
+                        message: "BVN is not valid.",
+                      },
+                    })}
+                    className="input_field"
+                  />
+                </div>
+                <div className="errorMsg">{errors?.bvn?.message}</div>
               </div>
-              <div className="errorMsg">{errors?.bvn?.message}</div>
             </div>
           </div>
         </div>

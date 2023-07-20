@@ -21,7 +21,7 @@ const Login = () => {
   const [getData, setGetData] = useState(null);
   const [error, setError] = useState(null);
   const [Submitting, setSubmitting] = useState(false);
-  const {setUserName} = useContext(UserContext)
+  // const {setUserName} = useContext(UserContext)
 
   const [showPswd, setShowPswd] = useState(false);
   const togglePasswordVisibility = () => {
@@ -39,7 +39,8 @@ const Login = () => {
       );
       console.log(response.data);
       setGetData(response.data);
-      setUserName(response.data.user.name)
+      // setUserName(response.data.user.name)
+      localStorage.setItem("userName", response.data.user.name)
       console.log(response.data.user.name);
       setError(null);
       navigate("/dashboard");

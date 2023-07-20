@@ -110,7 +110,7 @@ function PersonalDetails() {
               </div>
               <div className="errorMsg">{errors.email?.message}</div>
             </div>
-            <div>
+            <div className="phone-container">
               <div>
                 <label className="input_title">Phone Number</label>
                 <div>

@@ -4,8 +4,24 @@ import "../../styles/NewPortfolio.css";
 import { useState } from "react";
 import axios from "axios";
 
-function NewEmploymentDetails({ nextStep }) {
-  const [data, setData] = useState({});
+const INITIAL_STATE = {
+  customer_id: "",
+  currentEmployer: "",
+  currentRole: "",
+  Annual_Income: "",
+  Total_Years_of_Employment: "",
+  Income_Debt_Ratio: "",
+  No_of_Open_Credit_Lines: "",
+  Credit_Utilization_Rate: "",
+  No_of_Mortgage_Account: "",
+  Loan_Purpose: "",
+  Loan_Term: "",
+  requestedAmount: "",
+  Verification_by_Loan_Company: "",
+  Application_Type: "",
+};
+function NewEmploymentDetails({ nextStep, customer_id, report }) {
+  const [data, setData] = useState(INITIAL_STATE);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const {
@@ -13,33 +29,34 @@ function NewEmploymentDetails({ nextStep }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   const handleFormSubmit = async (event) => {
-    const user = {
-      currentEmployer: data.currentEmployer,
-      currentRole: data.currentRole,
-      Annual_Income: data.annualIncome,
-      Total_Years_of_Employment: data.employmentLength,
-      Income_Debit_Ratio: data.idRatio,
-      No_of_Open_Credit_Lines: data.openCredit,
-      Credit_Utilization_Rate: data.cuRate,
-      No_of_Mortgage_Account: data.mortgageAccount,
-      Loan_Purpose: data.loanPurpose,
-      Loan_Term: data.loanTerm,
-      requestedAmount: data.amount,
-      Verification_by_Loan_Company: data.companyVerification,
-      Application_Type: data.appType,
-    };
+    console.log(event);
+    event.customer_id = customer_id;
+    const user = { ...event };
+    console.log(user);
+
     try {
       setLoading(true);
       const response = await axios.post(
         "https://loanwise.onrender.com/api/employment-details",
         user
       );
-      nextStep();
+
       console.log(response);
-      console.log(response.data);
+      console.log(response.data.message);
+      report(response.data.message);
+      setData(INITIAL_STATE);
+      setError(null);
+      nextStep();
     } catch (error) {
-      setError(error.message);
+      setError(error);
       setLoading(false);
       console.log(error);
     }
@@ -56,11 +73,13 @@ function NewEmploymentDetails({ nextStep }) {
               <h2>Employment Information</h2>
               <div>
                 <label className="input_title">Current Employer</label>
+
                 <div>
                   <input
                     name="currentEmployer"
                     type="text"
                     placeholder="Enter full name"
+                    onChange={handleChange}
                     {...register("currentEmployer", {
                       required: "This field is required",
                       minLength: {
@@ -82,6 +101,7 @@ function NewEmploymentDetails({ nextStep }) {
                     name="currentRole"
                     type="text"
                     placeholder="Enter answer"
+                    onChange={handleChange}
                     {...register("currentRole", {
                       required: "This field is required",
                       minLength: {
@@ -99,13 +119,14 @@ function NewEmploymentDetails({ nextStep }) {
                   <label className="input_title">Annual Income</label>
                   <div>
                     <input
-                      name="annualIncome"
+                      name="Annual_Income"
                       type="text"
                       placeholder="Enter answer"
-                      {...register("annualIncome", {
+                      onChange={handleChange}
+                      {...register("Annual_Income", {
                         required: "This field is required",
                         pattern: {
-                          value: /\b\d{6,}\b/,
+                          value: /\b\d{4,}\b/,
                           message: "Invalid entry.",
                         },
                       })}
@@ -113,7 +134,7 @@ function NewEmploymentDetails({ nextStep }) {
                     />
                   </div>
                   <div className="errorMsg">
-                    {errors?.annualIncome?.message}
+                    {errors?.Annual_Income?.message}
                   </div>
                 </div>
               </div>
@@ -121,10 +142,11 @@ function NewEmploymentDetails({ nextStep }) {
                 <label className="input_title">Total Years of Employment</label>
                 <div>
                   <input
-                    name="employmentLength"
+                    name="Total_Years_of_Employment"
                     type="text"
                     placeholder="Enter answer"
-                    {...register("employmentLength", {
+                    onChange={handleChange}
+                    {...register("Total_Years_of_Employment", {
                       required: "This field is required",
                       pattern: {
                         value: /\b\d{1,}\b/,
@@ -135,7 +157,7 @@ function NewEmploymentDetails({ nextStep }) {
                   />
                 </div>
                 <div className="errorMsg">
-                  {errors?.employmentLength?.message}
+                  {errors?.Total_Years_of_Employment?.message}
                 </div>
               </div>
               <div>
@@ -143,10 +165,11 @@ function NewEmploymentDetails({ nextStep }) {
                   <label className="input_title">Income-Debt Ratio</label>
                   <div>
                     <input
-                      name="idRatio"
+                      name="Income_Debt_Ratio"
                       type="text"
                       placeholder="Enter answer"
-                      {...register("idRatio", {
+                      onChange={handleChange}
+                      {...register("Income_Debt_Ratio", {
                         required: "This field is required",
                         pattern: {
                           value: /^(-?\d+(\.\d+)?)?$/,
@@ -156,57 +179,20 @@ function NewEmploymentDetails({ nextStep }) {
                       className="input_field"
                     />
                   </div>
-                  <div className="errorMsg">{errors?.idRatio?.message}</div>
+                  <div className="errorMsg">
+                    {errors?.Income_Debt_Ratio?.message}
+                  </div>
                 </div>
               </div>
               <div>
                 <label className="input_title">No of Open Credit Lines</label>
                 <div>
                   <input
-                    name="openCredit"
+                    name="No_of_Open_Credit_Lines"
                     type="text"
                     placeholder="Enter answer"
-                    {...register("openCredit", {
-                      required: "This field is required",
-                      pattern: {
-                        value: /\b\d{1,}\b/,
-                        message: "Invalid entry.",
-                      },
-                    })}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">{errors?.openCredit?.message}</div>
-              </div>
-              <div>
-                <div>
-                  <label className="input_title">Credit Utilization Rate</label>
-                  <div>
-                    <input
-                      name="cuRate"
-                      type="text"
-                      placeholder="Enter answer"
-                      {...register("cuRate", {
-                        required: "This field is required",
-                        pattern: {
-                          value: /^(?=.*\d)(?=.*\W).+$/,
-                          message: "Invalid entry.",
-                        },
-                      })}
-                      className="input_field"
-                    />
-                  </div>
-                  <div className="errorMsg">{errors?.cuRate?.message}</div>
-                </div>
-              </div>
-              <div>
-                <label className="input_title">No of Mortgage Account</label>
-                <div>
-                  <input
-                    name="mortgageAccount"
-                    type="text"
-                    placeholder="Enter answer"
-                    {...register("mortgageAccount", {
+                    onChange={handleChange}
+                    {...register("No_of_Open_Credit_Lines", {
                       required: "This field is required",
                       pattern: {
                         value: /\b\d{1,}\b/,
@@ -217,7 +203,53 @@ function NewEmploymentDetails({ nextStep }) {
                   />
                 </div>
                 <div className="errorMsg">
-                  {errors?.mortgageAccount?.message}
+                  {errors?.No_of_Open_Credit_Lines?.message}
+                </div>
+              </div>
+              <div>
+                <div>
+                  <label className="input_title">Credit Utilization Rate</label>
+                  <div>
+                    <input
+                      name="Credit_Utilization_Rate"
+                      type="text"
+                      placeholder="Enter answer"
+                      onChange={handleChange}
+                      {...register("Credit_Utilization_Rate", {
+                        required: "This field is required",
+                        pattern: {
+                          value: /^(?=.*\d)(?=.*\W).+$/,
+                          message: "Invalid entry.",
+                        },
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.Credit_Utilization_Rate?.message}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label className="input_title">No of Mortgage Account</label>
+                <div>
+                  <input
+                    name="No_of_Mortgage_Account"
+                    type="text"
+                    placeholder="Enter answer"
+                    onChange={handleChange}
+                    {...register("No_of_Mortgage_Account", {
+                      required: "This field is required",
+                      pattern: {
+                        value: /\b\d{1,}\b/,
+                        message: "Invalid entry.",
+                      },
+                    })}
+                    className="input_field"
+                  />
+                </div>
+                <div className="errorMsg">
+                  {errors?.No_of_Mortgage_Account?.message}
                 </div>
               </div>
               <h3>Loan Information</h3>
@@ -225,10 +257,11 @@ function NewEmploymentDetails({ nextStep }) {
                 <label className="input_title">Loan Purpose</label>
                 <div>
                   <input
-                    name="loanPurpose"
+                    name="Loan_Purpose"
                     type="text"
                     placeholder="Enter answer"
-                    {...register("loanPurpose", {
+                    onChange={handleChange}
+                    {...register("Loan_Purpose", {
                       required: "This field is required",
                       minLength: {
                         value: 8,
@@ -238,17 +271,18 @@ function NewEmploymentDetails({ nextStep }) {
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors?.loanPurpose?.message}</div>
+                <div className="errorMsg">{errors?.Loan_Purpose?.message}</div>
               </div>
               <div>
                 <div>
                   <label className="input_title">Loan Term</label>
                   <div>
                     <input
-                      name="loanTerm"
+                      name="Loan_Term"
                       type="text"
                       placeholder="Enter answer"
-                      {...register("loanTerm", {
+                      onChange={handleChange}
+                      {...register("Loan_Term", {
                         required: "This field is required",
                         minLength: {
                           value: 2,
@@ -258,27 +292,30 @@ function NewEmploymentDetails({ nextStep }) {
                       className="input_field"
                     />
                   </div>
-                  <div className="errorMsg">{errors?.loanTerm?.message}</div>
+                  <div className="errorMsg">{errors?.Loan_Term?.message}</div>
                 </div>
               </div>
               <div>
                 <label className="input_title">Requested Amount</label>
                 <div>
                   <input
-                    name="amount"
+                    name="requestedAmount"
                     type="number"
                     placeholder="$0.00"
-                    {...register("amount", {
+                    onChange={handleChange}
+                    {...register("requestedAmount", {
                       required: "This field is required",
                       pattern: {
-                        value: /\b\d{5,}\b/,
+                        value: /\b\d{4,}\b/,
                         message: "Invalid entry.",
                       },
                     })}
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors?.amount?.message}</div>
+                <div className="errorMsg">
+                  {errors?.requestedAmount?.message}
+                </div>
               </div>
               <div>
                 <div>
@@ -286,11 +323,12 @@ function NewEmploymentDetails({ nextStep }) {
                     Loan Company Verification
                   </label>
                   <select
-                    {...register("companyVerification", {
+                    name="Verification_by_Loan_Company"
+                    onChange={handleChange}
+                    {...register("Verification_by_Loan_Company", {
                       required: "This field is required",
                     })}
                     className="input_field"
-                    placeholder="choose answer..."
                   >
                     <option disabled value="">
                       Select option
@@ -298,25 +336,27 @@ function NewEmploymentDetails({ nextStep }) {
                     <option value="Verified">True</option>
                     <option value="Not verified">False</option>
                   </select>
-                  {errors?.companyVerification?.message && (
-                    <p className="errorMsg">
-                      {errors.companyVerification.message}
-                    </p>
-                  )}
+                  <div className="errorMsg">
+                    {errors?.Verification_by_Loan_Company?.message}
+                  </div>
                 </div>
               </div>
               <div>
                 <label className="input_title">Application Type</label>
                 <div>
                   <input
-                    name="appType"
+                    name="Application_Type"
                     type="text"
-                    {...register("appType" , {
-                      required: "This field is required"})}
+                    onChange={handleChange}
+                    {...register("Application_Type", {
+                      required: "This field is required",
+                    })}
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors?.appType?.message}</div>
+                <div className="errorMsg">
+                  {errors?.Application_Type?.message}
+                </div>
               </div>
             </div>
           </div>

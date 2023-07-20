@@ -9,7 +9,7 @@
   display: flex;
   background-color: #ffffff;
   width: 100%;
- justify-content: space-between;
+  justify-content: space-between;
   height: 100vh;
 }
 
@@ -154,47 +154,43 @@ div .login-Btn {
   outline: none;
   padding: 2.5px 0;
   font-size: 16px;
-
 }
 
 @media screen and (max-width: 768px) {
-.login-text-container {
-  width: 100%;
-}
+  .login-text-container {
+    width: 100%;
+  }
 
-.login-message {
-  width: 100%;
-  gap: 1.5em;
+  .login-message {
+    width: 100%;
+    gap: 1.5em;
     margin-top: -50%;
+  }
+
+  .login-text-container {
+    padding: 0 5%;
+  }
+
+  .logo-container2 {
+    width: 50%;
+    align-self: self-start;
+  }
+
+  .login-message label {
+    font-size: 1em;
+  }
+
+  .login-message label span {
+    font-size: 1em;
+  }
+
+  .forgotpass-btn {
+    font-size: 1em;
+  }
+
+  .login-Btn {
+    height: 40px;
+    padding: 0;
+    font-size: 1.2em;
+  }
 }
-
-.login-text-container {
-  padding: 0 5%;
-}
-
-.logo-container2 {
-  width: 50%;
-      align-self: self-start;
-}
-
-.login-message label {
-  font-size: 1em;
-
-}
-
-.login-message label span {
-  font-size: 1em;
-}
-
-.forgotpass-btn {
-  font-size: 1em;
-}
-
-.login-Btn {
-   height: 40px;
-  padding: 0;
-   font-size: 1.2em;
-}
-}
-
-

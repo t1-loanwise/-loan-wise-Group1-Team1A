@@ -160,6 +160,8 @@ gap: 0.3em
 .verify_head_content {
   width: 100%;
   padding: 0 5%;
+  justify-content: flex-start;
+  gap: 2.5em;
 }
 
 .verify_container {
@@ -182,7 +184,9 @@ gap: 0.3em
 }
 
 .verify_head_content {
-justify-content: space-between;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 2.5em;
 }
 
 .verify_body_content {

@@ -79,3 +79,27 @@
 .close-open-icon {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .body {
+    font-size: 0.85em;
+  }
+
+  .content-container {
+    padding: 1em;
+  }
+
+  .accordion-title {
+    padding: 0.5em 1em;
+  }
+
+  .accordion-title  img {
+    width: 10px;
+  }
+
+}

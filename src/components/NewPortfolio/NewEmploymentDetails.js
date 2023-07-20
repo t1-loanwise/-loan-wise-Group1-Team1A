@@ -114,8 +114,8 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                 </div>
                 <div className="errorMsg">{errors?.currentRole?.message}</div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">Annual Income</label>
                   <div>
                     <input
@@ -137,31 +137,33 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                     {errors?.Annual_Income?.message}
                   </div>
                 </div>
-              </div>
-              <div>
-                <label className="input_title">Total Years of Employment</label>
-                <div>
-                  <input
-                    name="Total_Years_of_Employment"
-                    type="text"
-                    placeholder="Enter answer"
-                    onChange={handleChange}
-                    {...register("Total_Years_of_Employment", {
-                      required: "This field is required",
-                      pattern: {
-                        value: /\b\d{1,}\b/,
-                        message: "Invalid entry.",
-                      },
-                    })}
-                    className="input_field"
-                  />
+                <div className="phone-container-div">
+                  <label className="input_title">
+                    Total Years of Employment
+                  </label>
+                  <div>
+                    <input
+                      name="Total_Years_of_Employment"
+                      type="text"
+                      placeholder="Enter answer"
+                      onChange={handleChange}
+                      {...register("Total_Years_of_Employment", {
+                        required: "This field is required",
+                        pattern: {
+                          value: /\b\d{1,}\b/,
+                          message: "Invalid entry.",
+                        },
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.Total_Years_of_Employment?.message}
+                  </div>
                 </div>
-                <div className="errorMsg">
-                  {errors?.Total_Years_of_Employment?.message}
-                </div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">Income-Debt Ratio</label>
                   <div>
                     <input
@@ -183,27 +185,27 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                     {errors?.Income_Debt_Ratio?.message}
                   </div>
                 </div>
-              </div>
-              <div>
-                <label className="input_title">No of Open Credit Lines</label>
-                <div>
-                  <input
-                    name="No_of_Open_Credit_Lines"
-                    type="text"
-                    placeholder="Enter answer"
-                    onChange={handleChange}
-                    {...register("No_of_Open_Credit_Lines", {
-                      required: "This field is required",
-                      pattern: {
-                        value: /\b\d{1,}\b/,
-                        message: "Invalid entry.",
-                      },
-                    })}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors?.No_of_Open_Credit_Lines?.message}
+                <div className="phone-container-div">
+                  <label className="input_title">No of Open Credit Lines</label>
+                  <div>
+                    <input
+                      name="No_of_Open_Credit_Lines"
+                      type="text"
+                      placeholder="Enter answer"
+                      onChange={handleChange}
+                      {...register("No_of_Open_Credit_Lines", {
+                        required: "This field is required",
+                        pattern: {
+                          value: /\b\d{1,}\b/,
+                          message: "Invalid entry.",
+                        },
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.No_of_Open_Credit_Lines?.message}
+                  </div>
                 </div>
               </div>
               <div>
@@ -229,29 +231,30 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                     {errors?.Credit_Utilization_Rate?.message}
                   </div>
                 </div>
-              </div>
-              <div>
-                <label className="input_title">No of Mortgage Account</label>
                 <div>
-                  <input
-                    name="No_of_Mortgage_Account"
-                    type="text"
-                    placeholder="Enter answer"
-                    onChange={handleChange}
-                    {...register("No_of_Mortgage_Account", {
-                      required: "This field is required",
-                      pattern: {
-                        value: /\b\d{1,}\b/,
-                        message: "Invalid entry.",
-                      },
-                    })}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors?.No_of_Mortgage_Account?.message}
+                  <label className="input_title">No of Mortgage Account</label>
+                  <div>
+                    <input
+                      name="No_of_Mortgage_Account"
+                      type="text"
+                      placeholder="Enter answer"
+                      onChange={handleChange}
+                      {...register("No_of_Mortgage_Account", {
+                        required: "This field is required",
+                        pattern: {
+                          value: /\b\d{1,}\b/,
+                          message: "Invalid entry.",
+                        },
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.No_of_Mortgage_Account?.message}
+                  </div>
                 </div>
               </div>
+
               <h3>Loan Information</h3>
               <div>
                 <label className="input_title">Loan Purpose</label>
@@ -273,8 +276,8 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                 </div>
                 <div className="errorMsg">{errors?.Loan_Purpose?.message}</div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">Loan Term</label>
                   <div>
                     <input
@@ -294,31 +297,31 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                   </div>
                   <div className="errorMsg">{errors?.Loan_Term?.message}</div>
                 </div>
-              </div>
-              <div>
-                <label className="input_title">Requested Amount</label>
-                <div>
-                  <input
-                    name="requestedAmount"
-                    type="number"
-                    placeholder="$0.00"
-                    onChange={handleChange}
-                    {...register("requestedAmount", {
-                      required: "This field is required",
-                      pattern: {
-                        value: /\b\d{4,}\b/,
-                        message: "Invalid entry.",
-                      },
-                    })}
-                    className="input_field"
-                  />
+                <div className="phone-container-div">
+                  <label className="input_title">Requested Amount</label>
+                  <div>
+                    <input
+                      name="requestedAmount"
+                      type="number"
+                      placeholder="$0.00"
+                      onChange={handleChange}
+                      {...register("requestedAmount", {
+                        required: "This field is required",
+                        pattern: {
+                          value: /\b\d{4,}\b/,
+                          message: "Invalid entry.",
+                        },
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.requestedAmount?.message}
+                  </div>
                 </div>
-                <div className="errorMsg">
-                  {errors?.requestedAmount?.message}
-                </div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">
                     Loan Company Verification
                   </label>
@@ -340,22 +343,22 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                     {errors?.Verification_by_Loan_Company?.message}
                   </div>
                 </div>
-              </div>
-              <div>
-                <label className="input_title">Application Type</label>
-                <div>
-                  <input
-                    name="Application_Type"
-                    type="text"
-                    onChange={handleChange}
-                    {...register("Application_Type", {
-                      required: "This field is required",
-                    })}
-                    className="input_field"
-                  />
-                </div>
-                <div className="errorMsg">
-                  {errors?.Application_Type?.message}
+                <div className="phone-container-div">
+                  <label className="input_title">Application Type</label>
+                  <div>
+                    <input
+                      name="Application_Type"
+                      type="text"
+                      onChange={handleChange}
+                      {...register("Application_Type", {
+                        required: "This field is required",
+                      })}
+                      className="input_field"
+                    />
+                  </div>
+                  <div className="errorMsg">
+                    {errors?.Application_Type?.message}
+                  </div>
                 </div>
               </div>
             </div>

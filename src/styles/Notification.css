@@ -37,3 +37,9 @@ border-bottom: 1px solid rgba(176, 215, 223, 0.5);
 .customer td {
   padding-left: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .customer td {
+    font-size: 0.9em;
+  }
+}

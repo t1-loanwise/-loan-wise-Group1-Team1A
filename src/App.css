@@ -747,4 +747,33 @@ display: flex;
 .card1_container p {
   font-size: 0.9em
 }
+
+#user-p-link {
+  font-size: 1em;
+  font-weight: bold;
 }
+
+.frame_three_contents {
+  margin-left: 0px;
+  padding: 1em;
+}
+
+.headings p {
+  font-size: 1em;
+}
+
+.toggle p {
+ font-size: 1em;
+}
+
+.setting-form label, .setting-form input, .setting-form select {
+  width: 100%;
+  font-size: 0.9em;
+  color: #00151a;
+}
+
+.user-p-box {
+  padding: 1em;
+}
+}
+

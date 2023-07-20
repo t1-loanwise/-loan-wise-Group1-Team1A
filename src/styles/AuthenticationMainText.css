@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .mainTextHeader {
   font-size: 1.7em;
   text-align: center;

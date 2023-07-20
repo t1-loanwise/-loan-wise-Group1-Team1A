@@ -19,7 +19,7 @@ import { UserContext } from "../pages/AuthenticationPage/lib/UserContext";
 
 const SideBar = ({sideMenu, toggleSideMenu}) => {
   const [dropMenu, setDropMenu ] = useState(false);
-    const { userName } = useContext(UserContext);
+    // const { userName } = useContext(UserContext);
 
 
   const toggleDropMenu = () => {
@@ -36,7 +36,7 @@ const SideBar = ({sideMenu, toggleSideMenu}) => {
             <img src={profile} alt="profile" />
           </Link>
           <div className="user-details">
-            <Link className="user-name">{userName}</Link>
+            <Link className="user-name">{localStorage.getItem("userName")}</Link>
             <Link className="user-profession">Analyst</Link>
           </div>
         </div>

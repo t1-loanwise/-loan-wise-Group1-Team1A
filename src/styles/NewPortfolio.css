@@ -17,6 +17,15 @@
   font-size: 16px;
   align-self: center;
 }
+.new_portfolio_btn2 {
+  width: 25%;
+  color: #e6f2f5;
+  background: #007e99;
+  border: #007e99;
+  padding: 8px;
+  font-size: 16px;
+  align-self: center;
+}
 
 .portfolio-form-container {
   display: flex;
@@ -60,6 +69,11 @@
   border-radius: 5px;
   border: 1px solid #e6f2f5;
   margin-top: 8px;
+}
+.bvn_box::-webkit-inner-spin-button,
+.bvn_box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .portfolio_calendar {
   display: flex;
@@ -158,6 +172,9 @@
 }
 
 .result-analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   text-align: center;
   padding-top: 30px;
 }

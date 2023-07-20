@@ -103,6 +103,12 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                   })}
                   className="input_field"
                 />
+                <input
+                  name="address"
+                  type="text"
+                  onChange={handleChange}
+                  className="input_field"
+                />
               </div>
               <div className="errorMsg">
                 <div className="errorMsg">{errors?.address?.message}</div>
@@ -184,7 +190,9 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                 <div className="errorMsg">{errors?.dateOfBirth?.message}</div>
               </div>
               <div className="phone-container-div">
-                <label className="input_title">Bank Verification Number</label>
+                <label className="input_title bvn_box">
+                  Bank Verification Number
+                </label>
                 <div>
                   <input
                     name="bvn"
@@ -202,7 +210,7 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                         message: "BVN is not valid.",
                       },
                     })}
-                    className="input_field"
+                    className="input_field bvn_box"
                   />
                 </div>
                 <div className="errorMsg">{errors?.bvn?.message}</div>

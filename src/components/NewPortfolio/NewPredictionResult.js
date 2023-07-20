@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/NewPortfolio.css";
 import SuccessReport from "./SuccessReport";
 import UnsuccessfulReport from "./UnsuccessfulReport";
 
@@ -14,7 +15,7 @@ function NewPredictionResult({ customer_id, report }) {
   };
   return (
     <div className="result-analysis">
-      <h3>Customer’s ID:{customer_id}</h3>
+      <h3>Customer’s ID: {customer_id}</h3>
       {showReport()}
       <button className="new_portfolio_btn2" type="submit">
         Download Report

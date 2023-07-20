@@ -4,16 +4,12 @@ import fail from "../../assets/close-circle.svg";
 function UnsuccessfulReport() {
   return (
     <>
-      <h3>Customer’s ID: #012346789</h3>
       <div>
-        <img src={fail} alt="pass" />
+        <img src={fail} alt="fail" />
         <p>
           Borrower is likely to default on this loan amount, consider a lesser
           amount
         </p>
-        <button className="new_portfolio_btn" type="submit">
-          Proceed
-        </button>
       </div>
     </>
   );

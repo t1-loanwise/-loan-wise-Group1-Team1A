@@ -1,6 +1,5 @@
 .taable {
   width: 100%;
-
 }
 
 .scroll-table {
@@ -130,9 +129,8 @@
   gap: 4em;
   width: 100%;
   height: 100%;
-  background-color: #E6F2F5;
-  padding: 30px 30px 70px ;
-
+  background-color: #e6f2f5;
+  padding: 30px 30px 70px;
 }
 
 .borrowersDetails img {
@@ -154,8 +152,8 @@
 .details-border {
   display: flex;
   width: 100%;
-   justify-content: space-between;
-   align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .details-minus-image div span:nth-of-type(1) {
@@ -167,11 +165,11 @@
 .details-minus-image div span:nth-of-type(2),
 .details-minus-image p {
   font-size: 18px;
-  color: #55666A;
+  color: #55666a;
 }
 
 .details-history-analysis {
-  background-color: #E6F2F5;
+  background-color: #e6f2f5;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -180,28 +178,28 @@
 }
 
 .loan_container {
-padding: 0px 30px 70px ;
+  padding: 0px 30px 70px;
 }
 
 .dha-links {
   display: flex;
   justify-content: center;
   gap: 1em;
-  border-bottom: 1px solid #B0D7DF80;
+  border-bottom: 1px solid #b0d7df80;
   padding: 15px 0;
 }
 
 .dha-links a {
   text-decoration: none;
   font-size: 20px;
-  color: #55666A;
+  color: #55666a;
   padding-bottom: 2px;
   font-weight: bold;
 }
 
 .dha-links .active {
   border-bottom: 1.8px solid #007e99;
-  color: #007E99;
+  color: #007e99;
 }
 
 .analysis-container {
@@ -213,7 +211,7 @@ padding: 0px 30px 70px ;
 .analysis-result {
   display: flex;
   flex-direction: column;
-   justify-content: center;
+  justify-content: center;
   align-items: center;
   gap: 1.5em;
   text-align: center;
@@ -232,7 +230,7 @@ padding: 0px 30px 70px ;
   padding: 15px 25px;
   border: 0;
   border-radius: 5px;
-  background: #007E99;
+  background: #007e99;
   color: #ffffff;
   font-size: 16px;
 }
@@ -254,63 +252,64 @@ padding: 0px 30px 70px ;
 }
 
 .loan-p {
-    font-weight: 600;
-    font-size: 1.5rem;
-    width: fit-content;
-    margin-bottom: 1rem;
-    margin-top: 3rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  width: fit-content;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .table-contain {
   margin-top: 50px;
 }
 
-@media screen and (max-width: 768px){
-.borrowersDetailsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
+@media screen and (max-width: 768px) {
+  .borrowersDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 
-.borrowersDetails {
-  padding: 30px 20px 70px;
-}
+  .borrowersDetails {
+    padding: 30px 20px 70px;
+  }
 
-.borrowersDetails img {
-  width: 140px;
-}
+  .borrowersDetails img {
+    width: 140px;
+  }
 
-.details-history-analysis {
-  gap: 1em;
-}
+  .details-history-analysis {
+    gap: 1em;
+  }
 
-.details-minus-image div span:nth-of-type(1) {
-  font-size: 1em;
-}
+  .details-minus-image div span:nth-of-type(1) {
+    font-size: 1em;
+  }
 
-.details-minus-image div span:nth-of-type(2), .details-minus-image p {
-  font-size: 1em;
-}
+  .details-minus-image div span:nth-of-type(2),
+  .details-minus-image p {
+    font-size: 1em;
+  }
 
-.dha-links a {
-  font-size: 1.1em;
-}
+  .dha-links a {
+    font-size: 1.1em;
+  }
 
-.borrowers {
-  margin-top: 0px;
-}
+  .borrowers {
+    margin-top: 0px;
+  }
 
-.loan_container {
-  padding: 0px 20px 50px;
-}
+  .loan_container {
+    padding: 0px 20px 50px;
+  }
 
-.scroll-table {
-  width: 85vw;
-   overflow-x: scroll;
-}
+  .scroll-table {
+    width: 90vw;
+    overflow-x: scroll;
+  }
 
- .taable {
-  width: 700px;
+  .taable {
+    width: 700px;
   }
 
   .explore {
@@ -318,20 +317,27 @@ padding: 0px 30px 70px ;
   }
 
   .overviewHeader {
-  font-size: 1.2em;
-}
+    font-size: 1.2em;
+  }
 
-.ths {
-  font-size: 1em;
-}
+  .ths {
+    font-size: 1em;
+  }
 
-.tds {
-  font-size: 0.85em;
-}
+  .tds {
+    font-size: 0.85em;
+  }
 
-.Active button, .Completed button, .Defaulted button, .Declined button, .Approved button{
-  font-size: 0.85em;
-  width: 100px;
-}
+  .Active button,
+  .Completed button,
+  .Defaulted button,
+  .Declined button,
+  .Approved button {
+    font-size: 0.85em;
+    width: 100px;
+  }
 
+  .table-contain {
+    width: 100%
+  }
 }

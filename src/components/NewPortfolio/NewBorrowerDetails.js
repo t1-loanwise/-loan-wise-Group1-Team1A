@@ -4,35 +4,53 @@ import "../../styles/NewPortfolio.css";
 import { useState } from "react";
 import axios from "axios";
 
-const NewBorrowerDetails = ({ nextStep }) => {
-  const [data, setData] = useState({});
-  const [error, setError] = useState(false);
+const INITIAL_STATE = {
+  fullName: "",
+  address: "",
+  email: "",
+  phoneNumber: "",
+  dateOfBirth: "",
+  bvn: "",
+};
+const NewBorrowerDetails = ({ nextStep, customer_id }) => {
+  const [data, setData] = useState(INITIAL_STATE);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleFormSubmit = async (event) => {
-    const user = {
-      fullName: data.fullName,
-      address: data.resAddress,
-      email: data.email,
-      phoneNumber: data.phoneNumber,
-      dateOfBirth: data.dob,
-      bvn: data.number,
-    };
+    console.log(event);
+    const user = { ...event };
+    console.log(user);
+
     try {
       setLoading(true);
       const response = await axios.post(
         "https://loanwise.onrender.com/api/borrowers-details",
         user
       );
-      nextStep();
-      console.log(response);
+
       console.log(response.data);
+      console.log(response.data.borrower.customer_id);
+      customer_id(response.data.borrower.customer_id);
+      console.log(response);
+      setData(INITIAL_STATE);
+      setError(null);
+      nextStep();
     } catch (error) {
-      setError(error.message);
+      setError(error);
       setLoading(false);
       console.log(error);
     }
@@ -53,6 +71,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
                   name="fullName"
                   type="text"
                   placeholder="Enter full name"
+                  onChange={handleChange}
                   {...register("fullName", {
                     required: "Enter your full name",
                     minLength: {
@@ -64,17 +83,18 @@ const NewBorrowerDetails = ({ nextStep }) => {
                 />
               </div>
               <div className="errorMsg">
-                {errors.fullName && <p>{errors.fullName.message}</p>}
+                <div className="errorMsg">{errors?.fullName?.message}</div>
               </div>
             </div>
             <div>
               <label className="input_title">Residential address</label>
               <div>
                 <input
-                  name="resAddress"
+                  name="address"
                   type="text"
                   placeholder="Enter address"
-                  {...register("resAddress", {
+                  onChange={handleChange}
+                  {...register("address", {
                     required: "Enter your residential address",
                     minLength: {
                       value: 11,
@@ -85,9 +105,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
                 />
               </div>
               <div className="errorMsg">
-                {errors.resAddress && (
-                  <p className="errorMsg">{errors.resAddress.message}</p>
-                )}
+                <div className="errorMsg">{errors?.address?.message}</div>
               </div>
             </div>
             <div>
@@ -97,6 +115,7 @@ const NewBorrowerDetails = ({ nextStep }) => {
                   name="email"
                   type="email"
                   placeholder="Enter email address"
+                  onChange={handleChange}
                   {...register("email", {
                     required: "Enter a valid email address",
                     pattern: {
@@ -110,14 +129,15 @@ const NewBorrowerDetails = ({ nextStep }) => {
               </div>
               <div className="errorMsg">{errors?.email?.message}</div>
             </div>
-            <div>
-              <div>
+            <div className="phone-container">
+              <div className="phone-container-div">
                 <label className="input_title">Phone Number</label>
                 <div>
                   <input
                     name="phone"
-                    type="phone"
+                    type="tel"
                     placeholder="Enter number"
+                    onChange={handleChange}
                     {...register("phoneNumber", {
                       required: "Enter a valid phone number",
                       pattern: {
@@ -131,58 +151,62 @@ const NewBorrowerDetails = ({ nextStep }) => {
                 </div>
                 <div className="errorMsg">{errors?.phoneNumber?.message}</div>
               </div>
-            </div>
-            <div>
-              <label className="input_title">Alternative Phone Number</label>
-              <div>
-                <input
-                  name="phone"
-                  type="phone"
-                  placeholder="Enter number"
-                  {...register("altPhoneNumber")}
-                  className="input_field"
-                />
+              <div className="phone-container-div">
+                <label className="input_title">Alternative Phone Number</label>
+                <div>
+                  <input
+                    name="phone"
+                    type="phone"
+                    placeholder="Enter number"
+                    onChange={handleChange}
+                    {...register("altPhoneNumber")}
+                    className="input_field"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <div>
+
+            <div className="phone-container">
+              <div className="phone-container-div">
                 <label className="input_title">Date of Birth</label>
                 <div>
                   <input
-                    name="dob"
+                    name="dateOfBirth"
                     type="date"
                     placeholder="Enter number"
-                    {...register("dob", {
+                    onChange={handleChange}
+                    {...register("dateOfBirth", {
                       required: "This field is required",
                     })}
                     className="input_field"
                   />
                 </div>
-                <div className="errorMsg">{errors?.dob?.message}</div>
+                <div className="errorMsg">{errors?.dateOfBirth?.message}</div>
               </div>
-            </div>
-            <div>
-              <label className="input_title">Bank Verification Number</label>
-              <div>
-                <input
-                  name="number"
-                  type="number"
-                  placeholder="Enter number"
-                  {...register("number", {
-                    required: "This field is required",
-                    minLength: {
-                      value: 11,
-                      message: "Must be 11 numbers",
-                    },
-                    pattern: {
-                      value: /^\d{11}$/,
-                      message: "BVN is not valid.",
-                    },
-                  })}
-                  className="input_field"
-                />
+              <div className="phone-container-div">
+                <label className="input_title">Bank Verification Number</label>
+                <div>
+                  <input
+                    name="bvn"
+                    type="number"
+                    placeholder="Enter number"
+                    onChange={handleChange}
+                    {...register("bvn", {
+                      required: "This field is required",
+                      minLength: {
+                        value: 11,
+                        message: "Must be 11 numbers",
+                      },
+                      pattern: {
+                        value: /^\d{11}$/,
+                        message: "BVN is not valid.",
+                      },
+                    })}
+                    className="input_field"
+                  />
+                </div>
+                <div className="errorMsg">{errors?.bvn?.message}</div>
               </div>
-              <div className="errorMsg">{errors?.number?.message}</div>
             </div>
           </div>
         </div>

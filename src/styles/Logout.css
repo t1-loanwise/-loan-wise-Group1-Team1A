@@ -1,4 +1,4 @@
-.logout-btn{
+.logout-btn {
   background: #007e99;
   padding: 10px 0;
   width: 20%;
@@ -13,20 +13,18 @@
   }
 }
 
-.logout-btn a{
-text-decoration: none;
-color: #ffffff;
-
+.logout-btn a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
-.emoji-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 80px;
+.emoji-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
 }
-.emoji-div h1{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    
+.emoji-div h1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

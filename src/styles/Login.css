@@ -9,8 +9,9 @@
   display: flex;
   background-color: #ffffff;
   width: 100%;
- justify-content: space-between;
+  justify-content: space-between;
   height: 100vh;
+  gap: 70px
 }
 
 .logo-container2 {
@@ -154,7 +155,6 @@ div .login-Btn {
   outline: none;
   padding: 2.5px 0;
   font-size: 16px;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -197,5 +197,3 @@ div .login-Btn {
    font-size: 1.2em;
 }
 }
-
-

@@ -329,4 +329,9 @@ padding: 0px 30px 70px ;
   font-size: 0.85em;
 }
 
+.Active button, .Completed button, .Defaulted button, .Declined button, .Approved button{
+  font-size: 0.85em;
+  width: 100px;
+}
+
 }

@@ -44,12 +44,16 @@
 
 @media screen and (max-width: 768px) {
    .dateArea {
-    padding: 0.85em 10px;
+    padding: 0.9em 10px;
     gap: 5px;
     font-size: 0.8em;
   }
 
   .dateArea img {
     width: 20px;
+  }
+
+  .calendarInput {
+    font-size: 0.85em;
   }
 }

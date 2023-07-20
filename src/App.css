@@ -747,4 +747,22 @@ display: flex;
 .card1_container p {
   font-size: 0.9em
 }
+
+#user-p-link {
+  font-size: 0.85em;
 }
+
+.frame_three_contents {
+  margin-left: 0px;
+  padding: 1em;
+}
+
+.headings p {
+  font-size: 1em;
+}
+
+.toggle p {
+ font-size: 1em;
+}
+}
+

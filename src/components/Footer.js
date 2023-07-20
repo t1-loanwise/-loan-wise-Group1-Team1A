@@ -24,7 +24,8 @@ const DivContainers = styled.div`
   border-bottom: 1px solid #ccd1d2;
   padding-bottom: 20px;
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    gap: 2.5em;
   }
 `;
 
@@ -189,6 +190,7 @@ const Copyright = styled.span`
   font-size: 1.25em;
   @media (max-width: 768px) {
     font-size: 1em;
+    text-align: center;
   }
 `;
 

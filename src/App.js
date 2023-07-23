@@ -37,6 +37,7 @@ import SelectRole from "./pages/AuthenticationPage/SelectRole";
 
 const App = () => {
   const [token, setToken] = useState(null);
+
   const handleTokenData = (data) => {
     console.log(data);
     setToken(data);
@@ -67,7 +68,7 @@ const App = () => {
         <Route path="/newPassword" element={<CreateNewPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/success" element={<Successfulpage />} />
-        <Route path="/selectRole" element={<SelectRole/>}/>
+        <Route path="/selectRole" element={<SelectRole />} />
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />

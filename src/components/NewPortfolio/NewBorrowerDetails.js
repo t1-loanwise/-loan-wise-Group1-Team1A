@@ -190,9 +190,7 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                 <div className="errorMsg">{errors?.dateOfBirth?.message}</div>
               </div>
               <div className="phone-container-div">
-                <label className="input_title bvn_box">
-                  Bank Verification Number
-                </label>
+                <label className="input_title">Bank Verification Number</label>
                 <div>
                   <input
                     name="bvn"

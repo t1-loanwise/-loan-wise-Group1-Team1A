@@ -36,7 +36,7 @@ const VerifyCode = () => {
 
   const resendCode = () => {
     setSeconds(60);
-     setCountdownFinished(false);
+    setCountdownFinished(false);
   };
 
   const routeHandler = async (e) => {
@@ -67,7 +67,8 @@ const VerifyCode = () => {
       }
     }
   };
-
+  const displayEmail = localStorage.getItem("resetEmail");
+  const Body = `Please enter the verification code we sent to your registered email address@ ${displayEmail}`;
   return (
     <>
       <div className="verify_container">
@@ -79,9 +80,7 @@ const VerifyCode = () => {
           <div className="verify_body_content formInputContainerVerify ">
             <AuthenticationMainText
               Title={"Verify Email Address"}
-              Body={
-                "Please enter the verification code we sent to your registered email address @johndoe@gmail.com"
-              }
+              Body={Body}
             />
             <form onSubmit={routeHandler}>
               <div className="code-error-container">

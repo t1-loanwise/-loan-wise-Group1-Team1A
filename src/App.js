@@ -37,11 +37,18 @@ import SelectRole from "./pages/AuthenticationPage/SelectRole";
 
 const App = () => {
   const [token, setToken] = useState(null);
+  const [authenticated, setAuthenticated] = useState("");
 
   const handleTokenData = (data) => {
     console.log(data);
     setToken(data);
   };
+
+  const handleLoggedInUser = (data) => {
+    console.log(data);
+    setAuthenticated(data);
+  };
+
   useEffect(() => {
     console.log("Token:", token);
   }, [token]);
@@ -66,10 +73,13 @@ const App = () => {
           element={<VerifyRegistration tokenData={handleTokenData} />}
         />
         <Route path="/newPassword" element={<CreateNewPassword />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login loggedInUser={handleLoggedInUser} />}
+        />
         <Route path="/success" element={<Successfulpage />} />
         <Route path="/selectRole" element={<SelectRole />} />
-        <Route element={<Layout />}>
+        <Route element={<Layout authenticated={authenticated} />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/customer/:customerName" element={<BorrowersDetails />}>

@@ -56,7 +56,7 @@ const Login = ({ loggedInUser }) => {
       <Onboarding />
       <div className="login-text-container">
         <div className="logo-container2">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="login-message">
           <AuthenticationMainText

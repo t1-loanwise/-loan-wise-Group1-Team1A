@@ -77,7 +77,7 @@ const SignUp = () => {
 
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="createAccount">
           <AuthenticationMainText Title="Create an account" />

@@ -15,7 +15,7 @@ import SideBar from "./SideBar";
 const TopBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const {userName} = useContext(UserContext)
+  // const {userName} = useContext(UserContext)
    const [sideMenu, setSideMenu] = useState(false);
   const goBack = () => {
     navigate(-1);
@@ -55,7 +55,9 @@ const TopBar = () => {
             <img src={profile} alt="profile" />
           </Link>
           <div className="user-details">
-            <Link className="user-name">{userName}</Link>
+            <Link className="user-name">
+              {localStorage.getItem("userName")}
+            </Link>
             <Link className="user-profession">Analyst</Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "../styles/SearchComponent.css"
+import search from "../assets/search.svg"
 
 const SearchComponent = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,17 +27,21 @@ const SearchComponent = ({ onSearch }) => {
 
   return (
     <div className="searchArea">
-        <input className="searchInput" 
-        type="text" 
-        value={searchTerm} 
+      <input
+        className="searchInput"
+        type="text"
+        value={searchTerm}
         onChange={handleInputChange}
-        placeholder="Search For Loans" />
+        placeholder="Search For Loans"
+      />
 
-        <button 
+      <button
         onClick={handleSearch}
-        className={`searchButtton ${isButtonClicked ? "clicked" : ""}`}>
-          Search
-        </button>
+        className={`searchButtton ${isButtonClicked ? "clicked" : ""}`}
+      >
+        <img src={search} alt="search icon" className="search-img" />
+        <span className="search-text">Search</span>
+      </button>
     </div>
   );
 };

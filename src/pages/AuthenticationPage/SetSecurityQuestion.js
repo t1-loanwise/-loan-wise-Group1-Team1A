@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthenticationMainText from "../../components/AuthenticationMainText";
 import Logo from "../../assets/Vector.svg";
-import { useNavigate } from "react-router";
 import Onboarding from "../../components/Onboarding";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const SetSecurityQuestion = ({ token }) => {
   const {
@@ -69,7 +69,7 @@ const SetSecurityQuestion = ({ token }) => {
                   {...register("question1", { required: "true" })}
                   defaultValue=""
                 >
-                  <option className="selectedOption" disabled hidden>
+                  <option className="selectedOption" selected disabled hidden>
                     Select question
                   </option>
                   <option>What is your Mother's maiden name?</option>
@@ -91,7 +91,7 @@ const SetSecurityQuestion = ({ token }) => {
                   {...register("question2", { required: "true" })}
                   defaultValue=""
                 >
-                  <option className="selectedOption" disabled hidden>
+                  <option className="selectedOption" selected disabled hidden>
                     Select question
                   </option>
                   <option>What is your Mother's maiden name?</option>

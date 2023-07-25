@@ -87,6 +87,7 @@
   margin-top: 10px;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .pagiNumbs {
@@ -263,6 +264,11 @@
   margin-top: 50px;
 }
 
+.search-img {
+  width: 18px;
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .borrowersDetailsContainer {
     display: flex;
@@ -340,4 +346,16 @@
   .table-contain {
     width: 100%
   }
+
+  .pagination-container {
+  width: 90vw;
+}
+
+.search-text {
+  display: none;
+}
+
+.search-img {
+  display: inline;
+}
 }

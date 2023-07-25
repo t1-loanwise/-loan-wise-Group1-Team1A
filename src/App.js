@@ -25,7 +25,7 @@ import Dashboard from "./pages/DashBoardPages/Dashboard/Dashboard";
 import NotFound from "./pages/DashBoardPages/NotFound";
 import Profile from "./pages/DashBoardPages/ComingSoon/Profile";
 import Notification from "./pages/DashBoardPages/ComingSoon/Notification";
-import UserPreferenceMain from "./components/UserPreferenceMain";
+import UserPreferenceMain from "./pages/DashBoardPages/Settings/UserPreferenceMain";
 import NewPortfolioPages from "./components/NewPortfolio/NewPortfolioPages";
 import VerifyRegistration from "./pages/AuthenticationPage/VerifyRegistration";
 import BorrowersDetails from "./pages/DashBoardPages/Dashboard/BorrowersDetails";

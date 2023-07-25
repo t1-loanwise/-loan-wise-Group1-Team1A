@@ -111,5 +111,6 @@ width: 18px;
   .line-chart-container {
     width: auto;
     flex: none;
+    padding: 5px;
   }
 }

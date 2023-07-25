@@ -20,9 +20,9 @@ useEffect(() => {
       );
       setLoanData(response.data);
       const TotalLoans = response.data.reduce((acc, item) => acc + item.Disbursed, 0);
-      setTotalAmountofLoans(TotalLoans)
+      setTotalAmountofLoans(TotalLoans.toFixed(2))
       const TotalRecovered = response.data.reduce((acc, item) => acc + item.Refunded, 0);
-      setTotalRecoveredLoans(TotalRecovered)
+      setTotalRecoveredLoans(TotalRecovered.toFixed(2))
     } catch (error) {
       console.error("Error fetching loan data:", error);
     }
@@ -91,17 +91,6 @@ const numberOfDefaults = loanData.filter((loan) => loan.Default >= 1).length;
         <Linechart />
         <Barchart />
       </div>
-      {/* <div className="line-bar-container">
-        <div className="dashCard">
-          <div className="iconContainer">
-            <img src={CardIcon} alt="arrows" className="cardIcon" />
-          </div>
-          <span className="cardMetric">N6,000,000.00</span>
-          <span className="cardText">Interest Earnings</span>
-        </div>
-        <Linechart />
-        <Barchart />
-      </div> */}
     </div>
   );
 };

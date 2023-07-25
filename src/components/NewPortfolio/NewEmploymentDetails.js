@@ -208,8 +208,8 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                   </div>
                 </div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">Credit Utilization Rate</label>
                   <div>
                     <input

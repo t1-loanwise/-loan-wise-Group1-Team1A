@@ -103,12 +103,6 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                   })}
                   className="input_field"
                 />
-                <input
-                  name="address"
-                  type="text"
-                  onChange={handleChange}
-                  className="input_field"
-                />
               </div>
               <div className="errorMsg">
                 <div className="errorMsg">{errors?.address?.message}</div>

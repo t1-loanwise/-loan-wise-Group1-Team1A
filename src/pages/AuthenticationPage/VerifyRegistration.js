@@ -85,7 +85,6 @@ const VerifyRegistration = ({ tokenData }) => {
         navigate("/securityQuestions");
         console.log("Entered OTP:", enteredOtp);
         console.log(response.data);
-        alert(response.data.message);
       } catch (error) {
         setError(true);
         setIsSubmitting(false);

@@ -15,7 +15,7 @@
   flex-direction: column;
   gap: 0.7em;
   color: #00151a;
-  width: 19.2%;
+  width: 24.25%;
   height: fit-content;
   padding: 15px 10px;
   background: #ffffff;
@@ -46,7 +46,7 @@
 }
 
 .line-chart-container {
-  width: 39.4%;
+  flex: 1 49%;
   height: 200px;
   background: #ffffff;
   border: 1.10609px solid #e6f2f5;
@@ -68,7 +68,7 @@
 
 .line-bar-container {
   display: flex;
-  column-gap: 1%;
+  gap: 1%;
 }
 
 @media screen and (max-width: 768px) {
@@ -77,25 +77,40 @@
     flex-wrap: wrap;
     width: 100%;
     padding-bottom: 10px;
-    gap: 1em;
+    gap: 2%;
   }
 
+  .cardMetric {
+  font-size: 1em;
+}
+
+.cardIcon {
+width: 18px;
+}
+
+.cardText {
+  font-size: 0.7em;
+}
+
+.iconContainer {
+  padding: 4px 8px;
+}
+
   .dashCard {
-    padding: 20px 20px;
+    padding: 20px 10px;
     flex: 1 48%;
   }
 
   .line-bar-container {
-    flex-wrap: wrap;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2%;
   }
 
   .line-chart-container {
-    flex: 1 48%;
-    height: 200px;
-  }
-
-  .cardGraphContainer {
-
+    width: auto;
+    flex: none;
+    padding: 5px;
   }
 }

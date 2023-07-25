@@ -28,11 +28,13 @@
 @media screen and (max-width: 768px) {
     .searchFilterDate {
         width: 100%;
-        gap: 0.6em;
+        gap: 0.3em;
+        margin-bottom: 0.7em;
     }
 
     .searchFilterDate2 {
-  gap: 0.4em;
+  gap: 0.3em;
+  margin-bottom: 0em;
 }
 
     .searchFilter {

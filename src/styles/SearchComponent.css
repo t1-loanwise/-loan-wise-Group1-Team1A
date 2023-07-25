@@ -48,11 +48,16 @@
     .searchInput {
   font-size: 0.85em;
   width: 80%;
-  padding: 0.85em 10px;
+  padding: 0.5em 10px;
 }
 
+.searchInput::placeholder {
+    font-size: 0.85em;
+}
+
+
 .searchButtton {
-    padding: 0.85em 0;
+    padding: 0.5em 5px;
     width: 20%;
 }
 }

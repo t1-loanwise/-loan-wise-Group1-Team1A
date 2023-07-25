@@ -20,7 +20,7 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -211,7 +211,11 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
           </div>
         </div>
         <button className="new_portfolio_btn" type="submit">
-          Proceed
+          {isSubmitting ? (
+            <i className="fa fa-circle-o-notch fa-spin"></i>
+          ) : (
+            "Proceed"
+          )}
         </button>
       </form>
     </>

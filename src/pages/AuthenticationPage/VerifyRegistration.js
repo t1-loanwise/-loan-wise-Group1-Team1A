@@ -82,9 +82,9 @@ const VerifyRegistration = ({ tokenData }) => {
 
         setError(false);
         setIsSubmitting(false);
+         console.log("Entered OTP:", enteredOtp);
+         console.log(response.data);
         navigate("/securityQuestions");
-        console.log("Entered OTP:", enteredOtp);
-        console.log(response.data);
       } catch (error) {
         setError(true);
         setIsSubmitting(false);

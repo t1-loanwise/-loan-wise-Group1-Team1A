@@ -27,7 +27,7 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -208,8 +208,8 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                   </div>
                 </div>
               </div>
-              <div>
-                <div>
+              <div className="phone-container">
+                <div className="phone-container-div">
                   <label className="input_title">Credit Utilization Rate</label>
                   <div>
                     <input
@@ -365,7 +365,11 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
           </div>
         </div>
         <button className="new_portfolio_btn" type="submit">
-          Analyze
+          {isSubmitting ? (
+            <i className="fa fa-circle-o-notch fa-spin"></i>
+          ) : (
+            "Analyze,"
+          )}
         </button>
       </form>
     </>

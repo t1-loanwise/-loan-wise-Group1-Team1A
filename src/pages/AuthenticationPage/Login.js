@@ -64,6 +64,12 @@ const Login = ({ loggedInUser }) => {
             Body="Enter your details to sign in"
           />
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+            {error && (
+              <span className="invalid-token">
+                Incorrect username or password.
+              </span>
+            )}
+
             <div className="login-form-control">
               <label>Email address</label>
               <input

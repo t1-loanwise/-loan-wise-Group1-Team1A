@@ -20,7 +20,7 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -101,12 +101,6 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
                       message: "Must be more than 11 characters",
                     },
                   })}
-                  className="input_field"
-                />
-                <input
-                  name="address"
-                  type="text"
-                  onChange={handleChange}
                   className="input_field"
                 />
               </div>
@@ -217,7 +211,11 @@ const NewBorrowerDetails = ({ nextStep, customer_id }) => {
           </div>
         </div>
         <button className="new_portfolio_btn" type="submit">
-          Proceed
+          {isSubmitting ? (
+            <i className="fa fa-circle-o-notch fa-spin"></i>
+          ) : (
+            "Proceed"
+          )}
         </button>
       </form>
     </>

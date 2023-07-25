@@ -48,7 +48,7 @@ const SetSecurityQuestion = ({ token }) => {
       <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="createAccount">
           <AuthenticationMainText
@@ -67,8 +67,9 @@ const SetSecurityQuestion = ({ token }) => {
                 <select
                   name="question1"
                   {...register("question1", { required: "true" })}
+                  defaultValue=""
                 >
-                  <option className="selectedOption" selected disabled hidden>
+                  <option className="selectedOption" disabled hidden>
                     Select question
                   </option>
                   <option>What is your Mother's maiden name?</option>
@@ -88,8 +89,9 @@ const SetSecurityQuestion = ({ token }) => {
                 <select
                   name="question2"
                   {...register("question2", { required: "true" })}
+                  defaultValue=""
                 >
-                  <option className="selectedOption" selected disabled hidden>
+                  <option className="selectedOption" disabled hidden>
                     Select question
                   </option>
                   <option>What is your Mother's maiden name?</option>

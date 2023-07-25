@@ -11,7 +11,7 @@ const SuccessfulPage = () => {
     <div className="Successful-page-container">
       <div className="success-logo-container">
         <div className="logo-container">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
       </div>
 

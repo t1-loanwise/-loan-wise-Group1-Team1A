@@ -25,7 +25,6 @@
   padding: 8px;
   font-size: 16px;
   align-self: center;
-  margin-top: 20px;
 }
 
 .portfolio-form-container {
@@ -70,6 +69,11 @@
   border-radius: 5px;
   border: 1px solid #e6f2f5;
   margin-top: 8px;
+}
+.bvn_box::-webkit-inner-spin-button,
+.bvn_box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .portfolio_calendar {
   display: flex;
@@ -168,6 +172,9 @@
 }
 
 .result-analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   text-align: center;
   padding-top: 30px;
 }
@@ -189,21 +196,20 @@
 .phone-container {
   display: flex;
   justify-content: space-between;
-  gap: 8px
+  gap: 8px;
 }
 
 .phone-container-div {
-  width: 50%
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
   .input-form {
     width: 100%;
-
   }
 
   .details-form {
-  gap: 0.5em;
+    gap: 0.5em;
   }
 
   .details-form h2 {
@@ -215,25 +221,26 @@
   }
 
   .phone-container {
- flex-direction: column;
- gap: 0.5em;
-}
+    flex-direction: column;
+    gap: 0.5em;
+  }
 
-.phone-container-div {
-  width: 100%
-}
+  .phone-container-div {
+    width: 100%;
+  }
 
-.filler {
-  height: 5px
-}
+  .filler {
+    height: 5px;
+  }
 
-.progress_bar {
-  width: 90%;
-}
+  .progress_bar {
+    width: 90%;
+  }
 
-.progress_circle1, .progress_circle2, .progress_circle3 {
-  top: -10px;
-  padding: 10px;
-}
-
+  .progress_circle1,
+  .progress_circle2,
+  .progress_circle3 {
+    top: -10px;
+    padding: 10px;
+  }
 }

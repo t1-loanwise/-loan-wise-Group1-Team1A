@@ -1,19 +1,29 @@
-import React from 'react'
-import '../../styles/dashNavigation.css'
-import TopBar from '../../components/TopBar';
-import SideBar from '../../components/SideBar';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from "react";
+import "../../styles/dashNavigation.css";
+import TopBar from "../../components/TopBar";
+import SideBar from "../../components/SideBar";
+import { Outlet, useNavigate } from "react-router-dom";
 
-const Layout = () => {
+const Layout = ({ authenticated }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!authenticated) {
+      navigate("/login");
+    }
+  }, [authenticated, navigate]);
+  if (!authenticated) {
+    return null;
+  }
+
   return (
-    <div >
+    <div>
       <TopBar />
-      <div className='overview'>
+      <div className="overview">
         <SideBar />
         <Outlet />
       </div>
     </div>
   );
-}
+};
 
-export default Layout
+export default Layout;

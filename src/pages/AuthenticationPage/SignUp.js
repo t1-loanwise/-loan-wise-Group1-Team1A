@@ -10,7 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Onboarding from "../../components/Onboarding";
 import axios from "axios";
 
-
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required(),
@@ -38,6 +37,7 @@ const SignUp = () => {
   } = useForm(formOptions);
   const [showPswd, setShowPswd] = useState(false);
   const [showConfirmPswd, setShowConfirmPswd] = useState(false);
+
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(false);
 
@@ -71,14 +71,13 @@ const SignUp = () => {
       reset();
     }
   };
-
   return (
     <div className="createAccount_parentContainer">
       <Onboarding />
 
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-         <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2"/>
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="createAccount">
           <AuthenticationMainText Title="Create an account" />

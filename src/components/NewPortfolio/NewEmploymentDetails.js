@@ -312,7 +312,7 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
                           message: "Invalid entry.",
                         },
                       })}
-                      className="input_field"
+                      className="input_field bvn_box"
                     />
                   </div>
                   <div className="errorMsg">

@@ -10,7 +10,7 @@ import AuthenticationMainText from "../../components/AuthenticationMainText";
 import axios from "axios";
 import { UserContext } from "./lib/UserContext";
 
-const Login = () => {
+const Login = ({ loggedInUser }) => {
   const {
     register,
     handleSubmit,
@@ -40,7 +40,8 @@ const Login = () => {
       console.log(response.data);
       setGetData(response.data);
       // setUserName(response.data.user.name)
-      localStorage.setItem("userName", response.data.user.name)
+      localStorage.setItem("userName", response.data.user.name);
+      loggedInUser(response.data.token);
       console.log(response.data.user.name);
       setError(null);
       navigate("/dashboard");
@@ -55,7 +56,7 @@ const Login = () => {
       <Onboarding />
       <div className="login-text-container">
         <div className="logo-container2">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="login-message">
           <AuthenticationMainText

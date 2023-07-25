@@ -122,7 +122,7 @@
 }
 
 .registered-user a {
-font-size: 18px;
+  font-size: 18px;
   color: red;
   font-weight: bold;
 }
@@ -299,87 +299,85 @@ font-size: 18px;
   }
 
   .Logo-loanwise2 {
-  width: 70%;
-  display: flex;
-  justify-content: left;
-}
+    width: 70%;
+    display: flex;
+    justify-content: left;
+  }
 
   .createAccount_parentContainer {
-  height: 100vh;
-}
+    height: 100vh;
+  }
 
-.createAccountContainer {
-  width: 100%;
-  height: 100%;
-  justify-content: flex-start;
-  gap: 2.5em;
-}
+  .createAccountContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    gap: 2.5em;
+  }
 
-.createAccount,
-.formInputContainerVerify {
-  width: 100%;
-padding: 0 5%;
-}
+  .createAccount,
+  .formInputContainerVerify {
+    width: 100%;
+    padding: 0 5%;
+  }
 
+  .createAccount_form .passwordContainer {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.4em;
+  }
 
-.createAccount_form .passwordContainer {
-  flex-direction: column;
-  align-items: start;
-  gap: 0.4em;
-}
+  .createAccount_form .passwordContainer .passwd,
+  .createAccount_form .passwordContainer .confirmPswd {
+    width: 100%;
+  }
 
-.createAccount_form .passwordContainer .passwd,
-.createAccount_form .passwordContainer .confirmPswd {
-  width: 100%;
-}
+  .input-error-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 40px;
+  }
 
-.input-error-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  margin-bottom: 40px;
-}
+  .verifyInput input {
+    height: 100px;
+    font-size: 24px;
+  }
 
-.verifyInput input {
-  height: 100px;
-  font-size: 24px;
+  .createAccountBtn {
+    height: 40px;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
 
-}
+  .createAccount_form {
+    gap: 0.3em;
+  }
 
-.createAccountBtn {
-  height: 40px;
-  font-size: 1.2em;
-  margin-top: 10px;
-}
+  .createAccount_form label {
+    font-size: 1em;
+  }
 
-.createAccount_form {
-  gap: 0.3em;
-}
+  .toLoginPageBtn {
+    font-size: 1.1em;
+  }
 
-.createAccount_form label {
-  font-size: 1em;
-}
+  .no_OTP {
+    font-size: 1.1em;
+  }
 
-.toLoginPageBtn {
-  font-size: 1.1em;
-}
+  .radioBtnContainer {
+    font-size: 0.9em;
+    font-weight: normal;
+    justify-content: left;
+  }
 
-.no_OTP {
-  font-size: 1.1em;
-}
+  .radio-btn {
+    width: 12px;
+    height: 12px;
+  }
 
-.radioBtnContainer {
-  font-size: 0.9em;
-  font-weight: normal;
-  justify-content: left;
-}
-
-.radio-btn {
-  width: 12px;
-  height: 12px;
-}
-
-.empty-div{
-  display: none;
-}
+  .empty-div {
+    display: none;
+  }
 }

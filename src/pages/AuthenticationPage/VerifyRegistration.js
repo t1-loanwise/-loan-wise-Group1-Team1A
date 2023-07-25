@@ -9,6 +9,7 @@ const VerifyRegistration = ({ tokenData }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const inputRefs = useRef([]);
   const [timer, setTimer] = useState(60);
+
   const [disabled, setDisabled] = useState(false);
   const [countdownFinished, setCountdownFinished] = useState(false);
   const navigate = useNavigate();
@@ -77,12 +78,13 @@ const VerifyRegistration = ({ tokenData }) => {
           }
         );
         tokenData(response.data.user_id);
+        console.log(email);
+
         setError(false);
         setIsSubmitting(false);
         navigate("/securityQuestions");
         console.log("Entered OTP:", enteredOtp);
         console.log(response.data);
-        console.log(tokenData);
         alert(response.data.message);
       } catch (error) {
         setError(true);
@@ -91,18 +93,18 @@ const VerifyRegistration = ({ tokenData }) => {
       }
     }
   };
+  const displayEmail = localStorage.getItem("email");
+  const Body = `Thank you for signing up, please enter the verification code we sent to your email address@ ${displayEmail}`;
   return (
     <div className="createAccount_parentContainer">
       <Onboarding />
       <div className="createAccountContainer">
         <div className="loanwiselogo-container">
-          <img src={Logo} alt="Loanwise Logo" class="Logo-loanwise2" />
+          <img src={Logo} alt="Loanwise Logo" className="Logo-loanwise2" />
         </div>
         <div className="formInputContainerVerify">
-          <AuthenticationMainText
-            Title="Verify Email Address"
-            Body="Thank you for signing up, please enter the verification code we sent to your email address @johndoe@gmail.com"
-          />
+          <AuthenticationMainText Title="Verify Email Address" Body={Body} />
+
           <form onSubmit={handleVerify}>
             <div className="input-error-container">
               {error && (

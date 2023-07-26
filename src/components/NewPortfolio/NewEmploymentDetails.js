@@ -368,7 +368,7 @@ function NewEmploymentDetails({ nextStep, customer_id, report }) {
           {isSubmitting ? (
             <i className="fa fa-circle-o-notch fa-spin"></i>
           ) : (
-            "Analyze,"
+            "Analyze"
           )}
         </button>
       </form>

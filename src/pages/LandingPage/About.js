@@ -3,12 +3,14 @@ import Card2 from "../../components/Card2";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import Newsletter from "../../components/Newsletter";
-import WireframeA from "../../assets/WireframeA.svg";
-import WireframeB from "../../assets/WireframeB.svg";
-import WireframeC from "../../assets/WireframeC.svg";
-import WireframeD from "../../assets/WireframeD.svg";
-import WireframeE from "../../assets/WireframeE.svg";
-import WireframeF from "../../assets/WireframeF.svg";
+import WireframeA from "../../assets/profilepictures/blessing.JPG";
+import WireframeB from "../../assets/profilepictures/muftiat.JPG";
+import WireframeC from "../../assets/profilepictures/temi.JPG";
+import WireframeD from "../../assets/profilepictures/toyin.JPG";
+import WireframeE from "../../assets/profilepictures/mimi.JPG";
+import WireframeF from "../../assets/profilepictures/nancy.JPG";
+import WireframeG from "../../assets/profilepictures/esther.JPG";
+import WireframeH from "../../assets/WireframeC.svg";
 import AboutUs from "../../assets/About Us Hero Section.svg";
 import Table from "../../assets/Table.svg";
 import LoanOverview from "../../assets/Special Feature.svg";
@@ -90,39 +92,51 @@ const About = () => {
           <div className="card2_container">
             <Card2
               text={"WireframeA"}
-              body={"Team Lead."}
+              body={"Front-End Developer"}
               link={WireframeA}
-              title={"Mofifoluwa Osakuni "}
+              title={"Blessing Ukanah"}
             />
             <Card2
               text={"WireframeB"}
-              body={"Senior Product Designer"}
+              body={"Front-End Developer"}
               link={WireframeB}
-              title={"Ojasanya Fatimoh"}
+              title={"Muftiat Bakare"}
             />
             <Card2
               text={"WireframeC"}
-              body={"Senior Product Designer."}
+              body={"Front-End Developer"}
               link={WireframeC}
-              title={"Oluwadamilola Abiodun "}
+              title={"Temidayo Kehinde"}
             />
             <Card2
               text={"WireframeD"}
-              body={"Product Designer."}
+              body={"Front-End Developer"}
               link={WireframeD}
-              title={"Nnamdi Kent "}
+              title={"Oluwatoyin Bello"}
             />
             <Card2
               text={"WireframeE"}
-              body={"Product Designer"}
+              body={"Front-End Developer"}
               link={WireframeE}
-              title={"Balogun  Mariam"}
+              title={"Miriam Okpalaeke"}
             />
             <Card2
               text={"WireframeF"}
-              body={"Product Designer"}
+              body={"Front-End Developer"}
               link={WireframeF}
-              title={"Pelumi Oyediji "}
+              title={"Nancy Olatuja"}
+            />
+            <Card2
+              text={"WireframeF"}
+              body={"Front-End Developer"}
+              link={WireframeG}
+              title={"Esther Okon"}
+            />
+            <Card2
+              text={"WireframeF"}
+              body={"Front-End Developer"}
+              link={WireframeH}
+              title={"Eke Ukeni"}
             />
           </div>
         </div>

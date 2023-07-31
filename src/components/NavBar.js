@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Logo from "./Logo";
-import menu from "../assets/icons8-menu-rounded-50.png";
-import menu2 from "../assets/menu2.png";
-import close from "../assets/icons8-close.svg";
+import menu2 from "../assets/menu.png";
+import close from "../assets/close.svg";
 
 const Navbar = styled.nav`
   display: flex;
@@ -34,16 +33,18 @@ const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px;
+  top: 62px;
   left: 0;
-  height: 100vh;
+  height: fit;
   z-index: 1000;
-  gap: 2em;
+  gap: 1.5em;
   align-items: center;
   width: 100%;
+  padding: 8% 0;
+  border-top: 1px solid #d5dee0;
   font-weight: bold;
-  background-color: #007e99;
-  transition: .6s ease-in-out;
+  background-color: #ffffff;
+  transition: 0.6s ease-in-out;
 `;
 
 const Nav = styled(NavLink)`
@@ -51,7 +52,7 @@ const Nav = styled(NavLink)`
 `;
 
 const Nav2 = styled(NavLink)`
-  color: #ffffff;
+  color: #007e99;
 `;
 
 const List = styled.ul`
@@ -67,9 +68,8 @@ const List2 = styled.ul`
   display: flex;
   list-style-type: none;
   gap: 1.5em;
-  font-size: 1.3em;
+  font-size: 1em;
   flex-direction: column;
-  text-align: center;
   width: 100%;
 `;
 
@@ -82,8 +82,7 @@ const ButtonsContainer = styled.div`
 `;
 const ButtonsContainer2 = styled.div`
   display: flex;
-  align-items: center;
-  padding-top: 50px;
+  flex-direction: column;
   gap: 0.2em;
 `;
 
@@ -117,12 +116,14 @@ const Login = styled(Link)`
 const Register2 = styled(Link)`
   border: none;
   background: #006980;
+  border: 1px solid #007e99;
   color: #ffffff;
-  font-size: 1.1em;
-  border-radius: 10px;
+  font-size: 1em;
+  border-radius: 5px;
   text-decoration: none;
+  width: fit-content;
   height: fit-content;
-  padding: 15px 30px;
+  padding: 10px 20px;
   font-weight: bold;
   &:hover {
     background-color: #005466;
@@ -131,17 +132,19 @@ const Register2 = styled(Link)`
 `;
 
 const Login2 = styled(Link)`
-  background: #006980;
-  color: #ffffff;
-  border-radius: 10px;
-  border: 0;
-  font-size: 1.1em;
+  background: #ffffff;
+  border: 1px solid #007e99;
+  color: #006980;
+  border-radius: 5px;
+  font-size: 1em;
   height: fit-content;
-  padding: 15px 40px;
+  width: fit-content;
+  padding: 10px 40px;
   text-decoration: none;
   font-weight: bold;
   &:hover {
     background-color: #005466;
+    color: #ffffff;
     transition: ease-in-out 0.3s;
   }
 `;
@@ -151,7 +154,6 @@ const DropDown = () => {
     <Dropdown>
       <ButtonsContainer2>
         <Register2 to="/register">Register</Register2>
-        <Login2 to="/login">Login</Login2>
       </ButtonsContainer2>
       <List2>
         <Nav2
@@ -159,7 +161,8 @@ const DropDown = () => {
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            padding: isActive ? "10px" : "0px",
+            padding: isActive ? "10px 5%" : "0px 5% ",
+            color: isActive ? "white" : "",
           })}
         >
           <li>Home</li>
@@ -169,7 +172,8 @@ const DropDown = () => {
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            padding: isActive ? "10px" : "0px",
+            padding: isActive ? "10px 5%" : "0px 5% ",
+            color: isActive ? "white" : "",
           })}
         >
           <li>About Us</li>
@@ -179,7 +183,8 @@ const DropDown = () => {
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            padding: isActive ? "10px" : "0px",
+            padding: isActive ? "10px 5%" : "0px 5%",
+            color: isActive ? "white" : "",
           })}
         >
           <li>Pricing</li>
@@ -189,12 +194,14 @@ const DropDown = () => {
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#005466" : "transparent",
             textDecoration: isActive ? "none" : "none",
-            padding: isActive ? "10px" : "0px",
+            padding: isActive ? "10px 5%" : "0px 5% ",
+            color: isActive ? "white" : "",
           })}
         >
           <li>Blog</li>
         </Nav2>
       </List2>
+      <Login2 to="/login">Login</Login2>
     </Dropdown>
   );
 };
@@ -254,7 +261,7 @@ const NavBar = () => {
           <Register to="/register">Register</Register>
           <Login to="/login">Login</Login>
         </ButtonsContainer>
-        <div>
+        <div className="dropddown">
           <div className="menu menu2" onClick={toggleSideMenu}>
             {/* <span>Menu</span> */}
             <img src={sideMenu ? close : menu2} />

@@ -77,7 +77,8 @@
     flex-wrap: wrap;
     width: 100%;
     padding-bottom: 10px;
-    gap: 2%;
+    column-gap: 2%;
+    row-gap: 8px;
   }
 
   .cardMetric {
@@ -105,7 +106,8 @@ width: 18px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2%;
+    column-gap: 2%;
+    row-gap: 8px;
   }
 
   .line-chart-container {

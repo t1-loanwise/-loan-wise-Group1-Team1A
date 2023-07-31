@@ -4,7 +4,7 @@ import success from "../../assets/success.svg";
 function SuccessReport() {
   return (
     <>
-      <div>
+      <div className="result-img">
         <img src={success} alt="pass" />
         <p>
           Congratulations, borrower is not likely to default on this loan amount

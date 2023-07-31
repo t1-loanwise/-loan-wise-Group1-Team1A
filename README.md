@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Loan Wise - Innovative Creditworthiness Assessment System for Financial Institutions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Loan Wise is an innovative project aimed at developing a sophisticated creditworthiness assessment system specifically designed for financial institutions. The system's primary objective is to empower financial institutions to make data-driven and well-informed decisions when evaluating the creditworthiness of potential borrowers.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+In the dynamic landscape of financial services, Loan Wise addresses the critical need for accurate and efficient credit risk evaluation. By harnessing the power of cutting-edge technologies and data analytics, Loan Wise streamlines the loan application and approval process, reduces the risk of loan defaults, and improves profitability for both the financial institution and borrowers.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Loan Wise offers a range of key features to enhance credit risk evaluation:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Comprehensive Data Analysis:** The system conducts an in-depth analysis of various financial data and credit history to gain a holistic view of the borrower's financial standing.
 
-### `npm test`
+- **Predictive Analytics:** Advanced predictive analytics algorithms assess the borrower's ability to repay the loan, providing financial institutions with reliable risk predictions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Automated Decision-making:** Loan Wise automates the credit evaluation process, allowing financial institutions to efficiently evaluate loan applications and make informed lending decisions.
 
-### `npm run build`
+- **Real-time Reporting and Insights:** The system provides real-time reports and insights, enabling financial institutions to monitor and manage their loan portfolios effectively.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Loan Wise's frontend utilizes a robust technology stack to deliver powerful credit assessment capabilities:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Frontend: HTML5, CSS3, JavaScript (React)
+- Data Visualization: [Recharts](https://recharts.org/)
 
-### `npm run eject`
+## Contributions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Team Lead (TereCodes)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Performance tracking, bringing the team together to achieve project goals, and ensuring a smooth workflow.
+- Developed the **blog page** in the home section, the **logout page** in the dashboard section and **notifications component** in the settings section.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Team Member 1 (MUFTIATBAKARE)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Developed the **WhoCanUseLoanWise** component in the landing section.
 
-## Learn More
+- Developed the **Forgot Password**, **New Password**, and **VerifyEmail** pages in the authentication section, providing users with a seamless experience during the password recovery process.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Developed all **New Portfolio** pages in the portfolio analysis section.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Integrated APIs in all assigned pages, enabling real-time data retrieval and updates, enhancing the responsiveness and accuracy of the system.
 
-### Code Splitting
+- Conducted thorough **Code Review and Editing**, providing valuable feedback to team members on code quality, readability, and adherence to best practices. Collaborated with team members to improve overall codebase quality and maintainability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Team Member 2 (Temidayo24)
 
-### Analyzing the Bundle Size
+- Developed the **Header** and **Footer** components of the Landing Page section and the **Top** and **Side** Navigation bars components in the Dashboard section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Developed **Create an Account**, **Verify Registration**, and **Set Security Questions** pages in the authentication section, providing users with a seamless experience during the registration process.
 
-### Making a Progressive Web App
+- Developed the **Applicant's Details** page in the portfolio overview and loan performance table section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Integrated APIs in all assigned pages, ensuring seamless data retrieval and updates for improved user experience.
 
-### Advanced Configuration
+- Conducted thorough **Code Review and Editing**, providing valuable feedback on code quality, readability, and adherence to best practices. Collaborated to enhance overall codebase quality and maintainability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Assisted in **Style Editing**, ensuring visual consistency and a cohesive design across all pages.
 
-### Deployment
+- Ensured **Responsive Design** for all pages, except the **coming soon** page, to optimize usability on smaller screen sizes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Team Member 3 (moni-nancy)
 
-### `npm run build` fails to minify
+- Developed the **User Preferences** page in the settings section and the **Home** page in the landing section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Team Member 4 (MiriamOkpalaeke)
+
+- Developed the **Login** and the **Congratulations** pages in the authentication section and the **Coming Soon** page in the dashboard section.
+
+- Ensured **responsive design** for the coming soon page.
+
+- Integrated APIs in all assigned pages, ensuring seamless data retrieval and updates for improved user experience.
+
+### Team Member 5 (TeeWhyBells)
+
+- Developed the **Pricing** page in the landing section and the **Security and privacy** component in the settings section.
+
+### Team Member 6 (SmartBabbe)
+
+- Developed a fully functional **search bar** and **filter** component for the dashboard page.
+
+- Developed the **loan performance table** in the dashboard section.
+
+- Integrated the API for the loan performance table
+
+### Team Member 7 (EkeUkeni)
+
+- Developed the **portfolio analysis** page
+
+- Integrated the API for the portfolio overview table
+
+## Usage
+
+To access Loan Wise and leverage its powerful creditworthiness assessment features, simply visit our website at [https://loan-wise-dev.netlify.app/]. Users can register and then log in using their credentials to evaluate borrower creditworthiness and make informed lending decisions.
+
+## Note
+
+While each team member made valuable contributions to Loan Wise, it's essential to recognize the collaborative effort that brought this project to fruition. The collective expertise of the team has resulted in a powerful creditworthiness assessment system for financial institutions.

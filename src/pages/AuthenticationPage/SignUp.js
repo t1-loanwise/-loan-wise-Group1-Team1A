@@ -12,7 +12,7 @@ import axios from "axios";
 
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required(),
+    name: Yup.string().required("Please enter your full name"),
     email: Yup.string().email().required("Enter a valid email address"),
     password: Yup.string()
       .required(true)
@@ -23,7 +23,7 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required(true)
       .oneOf([Yup.ref("password")], "Passwords do not match!"),
-    radioBtn: Yup.string().required(true),
+    radioBtn: Yup.boolean().oneOf([true], "You need to accept terms of service and privacy policy"),
   });
 
   const formOptions = { resolver: yupResolver(validationSchema) };
@@ -173,7 +173,7 @@ const SignUp = () => {
               />
               I agree to the terms of service and privacy policy
             </div>
-            <div className="">{errors.radioBtn?.message}</div>
+            <div className="signUpErrorMsg">{errors.radioBtn?.message}</div>
 
             <button
               type="submit"

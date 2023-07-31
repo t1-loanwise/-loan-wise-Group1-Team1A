@@ -260,4 +260,8 @@
   width: 150px;
   font-size: 1em;
 }
+
+ .result-img img {
+  width: 30%;
+}
 }

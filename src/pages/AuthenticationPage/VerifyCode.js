@@ -68,7 +68,7 @@ const VerifyCode = () => {
     }
   };
   const displayEmail = localStorage.getItem("resetEmail");
-  const Body = `Please enter the verification code we sent to your registered email address@ ${displayEmail}`;
+  const Body = `Please enter the verification code we sent to your registered email address ${displayEmail}`;
   return (
     <>
       <div className="verify_container">

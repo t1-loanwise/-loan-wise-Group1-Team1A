@@ -93,7 +93,7 @@ const VerifyRegistration = ({ tokenData }) => {
     }
   };
   const displayEmail = localStorage.getItem("email");
-  const Body = `Thank you for signing up, please enter the verification code we sent to your email address@ ${displayEmail}`;
+  const Body = `Thank you for signing up, please enter the verification code we sent to your email address ${displayEmail}`;
   return (
     <div className="createAccount_parentContainer">
       <Onboarding />

@@ -200,4 +200,9 @@ div .login-Btn {
 .siign-up {
   font-size: 1.1em;
 }
+
+.check-btn {
+  height: 15px;
+  width: 15px;
+}
 }

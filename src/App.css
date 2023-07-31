@@ -19,8 +19,7 @@
 .card1_container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: 32px;
-  row-gap: 0;
+  gap: 32px;
   margin: 0;
   width: 100%;
   text-align: center;
@@ -28,7 +27,7 @@
 .card1_content {
   background-color: #ffffff;
   border: 1px solid #aab2b4;
-  margin: 20px auto;
+  /* margin: 20px auto; */
   padding: 32px 20px;
   display: flex;
   flex-direction: column;
@@ -104,6 +103,7 @@
 
 .react-icon1 {
   font-size: 32px;
+  padding-top: 8%;
 }
 
 .pricing {
@@ -736,16 +736,18 @@ input:checked + .slider:before {
 display: flex;
  flex-wrap: wrap;
   width: 100%;
-  gap: 24px;
+  gap: 1em;
 }
 
 .card1_content {
    padding: 32px 15px;
   flex: 1 48%;
+  gap: 8px;
 }
 
 .card1_container p {
-  font-size: 0.9em
+  font-size: 0.9em;
+  margin-bottom: 1.5em;
 }
 
 #user-p-link {
@@ -774,6 +776,13 @@ display: flex;
 
 .user-p-box {
   padding: 1em;
+}
+
+.button2 {
+  padding: 0 10px;
+  height: 40px;
+  width: fit;
+  gap: 8px;
 }
 }
 

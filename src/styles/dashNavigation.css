@@ -118,6 +118,10 @@
    display: none;
 }
 
+.dropddown {
+display: none;
+}
+
 
 .side-bar-nav1 ,
 .side-bar-nav2 {
@@ -275,9 +279,9 @@ height: 100%;
 }
 
 .menu2 {
-  background-color: #007e99;
+  /* background-color: #007e99;
   border-radius: 50%;
-  padding: 5px;
+  padding: 5px; */
 }
 
 .logo-back-button {
@@ -293,6 +297,11 @@ height: 100%;
 }
 
 .uppsDash {
- 
+
 }
+
+.dropddown {
+  display: block;
+}
+
 }

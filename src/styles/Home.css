@@ -363,7 +363,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 4%;
+    column-gap: 4%;
+    row-gap: 10px;
   }
 
   .featureCard-container {
